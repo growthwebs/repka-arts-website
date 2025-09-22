@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_carousel": {
@@ -6,58 +15,28 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "heading": "Repka Arts",
-            "subheading": "Contemporary Art Gallery",
-            "text": "Discover original artworks, limited editions, and commissioned pieces",
-            "button_label_1": "Explore Gallery",
-            "button_link_1": "/collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "View Series",
-            "button_link_2": "/collections/series",
-            "button_style_secondary_2": true,
+            "image": "",
             "image_overlay_opacity": 30,
-            "desktop_content_position": "middle-center",
-            "desktop_content_alignment": "center",
-            "mobile_content_alignment": "center",
-            "image": ""
+            "heading": "Repka Arts",
+            "subheading": "Contemporary Art Gallery"
           }
         },
         "slide_2": {
           "type": "slide",
           "settings": {
-            "heading": "Newest Additions",
-            "subheading": "Fresh from the Studio",
-            "text": "Explore our latest collection of contemporary artworks",
-            "button_label_1": "View New Works",
-            "button_link_1": "/collections/newest",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false,
+            "image": "",
             "image_overlay_opacity": 30,
-            "desktop_content_position": "middle-center",
-            "desktop_content_alignment": "center",
-            "mobile_content_alignment": "center",
-            "image": ""
+            "heading": "Newest Additions",
+            "subheading": "Fresh from the Studio"
           }
         },
         "slide_3": {
           "type": "slide",
           "settings": {
-            "heading": "Commission Your Art",
-            "subheading": "Custom Artwork",
-            "text": "Bring your vision to life with a commissioned piece",
-            "button_label_1": "Start Commission",
-            "button_link_1": "/pages/commissions",
-            "button_style_secondary_1": false,
-            "button_label_2": "View Portfolio",
-            "button_link_2": "/collections/commissions",
-            "button_style_secondary_2": true,
+            "image": "",
             "image_overlay_opacity": 30,
-            "desktop_content_position": "middle-center",
-            "desktop_content_alignment": "center",
-            "mobile_content_alignment": "center",
-            "image": ""
+            "heading": "Commission Your Art",
+            "subheading": "Custom Artwork"
           }
         }
       },
@@ -71,11 +50,8 @@
         "slide_height": "large",
         "auto_rotate": true,
         "change_slides_speed": 7,
-        "pagination_style": "dots",
         "image_behavior": "ambient",
-        "show_text_below": false,
-        "color_scheme": "scheme-1",
-        "image_overlay_opacity": 30
+        "show_text_below": false
       }
     },
     "brand_story": {
@@ -109,20 +85,20 @@
     "newest_additions": {
       "type": "featured-collection",
       "settings": {
-        "title": "Newest Additions",
-        "heading_size": "h2",
         "collection": "all",
         "products_to_show": 8,
+        "title": "Newest Additions",
+        "heading_size": "h2",
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "show_view_all": true,
         "view_all_style": "solid",
-        "swipe_on_mobile": true,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -165,57 +141,12 @@
         "padding_bottom": 36
       }
     },
-    "series_showcase": {
-      "type": "collection-list",
-      "blocks": {
-        "series_1": {
-          "type": "collection",
-          "settings": {
-            "collection": "contemporary-abstraction"
-          }
-        },
-        "series_2": {
-          "type": "collection",
-          "settings": {
-            "collection": "botanical-explorations"
-          }
-        },
-        "series_3": {
-          "type": "collection",
-          "settings": {
-            "collection": "urban-landscapes"
-          }
-        },
-        "series_4": {
-          "type": "collection",
-          "settings": {
-            "collection": "figurative-studies"
-          }
-        }
-      },
-      "block_order": [
-        "series_1",
-        "series_2",
-        "series_3",
-        "series_4"
-      ],
-      "settings": {
-        "title": "Shop by Series",
-        "heading_size": "h2",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "events_carousel": {
       "type": "video",
       "settings": {
         "heading": "Upcoming Events",
-        "video_url": "",
         "heading_size": "h2",
+        "video_url": "",
         "description": "Join our workshops and exhibitions",
         "full_width": false,
         "color_scheme": "scheme-1",
@@ -264,14 +195,14 @@
         "heading_size": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "center",
         "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -282,7 +213,6 @@
     "brand_story",
     "newest_additions",
     "shop_by_category",
-    "series_showcase",
     "events_carousel",
     "services"
   ]
