@@ -1,0 +1,637 @@
+{% doc %}
+  @prompt
+    I want to build a section similar to a product highlight but for selling a gift card
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-gift-card-highlight-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.content_gap }}px;
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-gift-card-highlight-{{ ai_gen_id }}--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .ai-gift-card-image-{{ ai_gen_id }} {
+    flex: 0 0 {{ block.settings.image_width }}%;
+    position: relative;
+  }
+
+  .ai-gift-card-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    aspect-ratio: {{ block.settings.image_aspect_ratio }};
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-gift-card-image-wrapper-{{ ai_gen_id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-gift-card-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-gift-card-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-gift-card-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-gift-card-content-{{ ai_gen_id }} {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.text_spacing }}px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-gift-card-badge-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: {{ block.settings.badge_background_color }};
+    color: {{ block.settings.badge_text_color }};
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    align-self: flex-start;
+  }
+
+  .ai-gift-card-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    color: {{ block.settings.title_color }};
+  }
+
+  .ai-gift-card-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    line-height: 1.5;
+    margin: 0;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-gift-card-amounts-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0;
+  }
+
+  .ai-gift-card-amount-{{ ai_gen_id }} {
+    padding: 8px 16px;
+    background-color: {{ block.settings.amount_background_color }};
+    color: {{ block.settings.amount_text_color }};
+    border: 1px solid {{ block.settings.amount_border_color }};
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .ai-gift-card-amount-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.amount_hover_background_color }};
+    color: {{ block.settings.amount_hover_text_color }};
+    border-color: {{ block.settings.amount_hover_border_color }};
+    transform: translateY(-1px);
+  }
+
+  .ai-gift-card-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: 1px solid {{ block.settings.button_border_color }};
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-gift-card-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background_color }};
+    color: {{ block.settings.button_hover_text_color }};
+    border-color: {{ block.settings.button_hover_border_color }};
+    transform: translateY(-1px);
+  }
+
+  .ai-gift-card-features-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ai-gift-card-feature-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: {{ block.settings.text_color }};
+  }
+
+  .ai-gift-card-feature-icon-{{ ai_gen_id }} {
+    width: 16px;
+    height: 16px;
+    color: {{ block.settings.feature_icon_color }};
+    flex-shrink: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-gift-card-highlight-{{ ai_gen_id }} {
+      flex-direction: column;
+      text-align: center;
+      gap: {{ block.settings.content_gap | times: 0.75 }}px;
+      padding: {{ block.settings.section_padding | times: 0.75 }}px;
+    }
+
+    .ai-gift-card-highlight-{{ ai_gen_id }}--reverse {
+      flex-direction: column;
+    }
+
+    .ai-gift-card-image-{{ ai_gen_id }} {
+      flex: none;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .ai-gift-card-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.85 }}px;
+    }
+
+    .ai-gift-card-amounts-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+
+    .ai-gift-card-button-{{ ai_gen_id }} {
+      align-self: center;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-gift-card-highlight-{{ ai_gen_id }} {% if block.settings.reverse_layout %}ai-gift-card-highlight-{{ ai_gen_id }}--reverse{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-gift-card-image-{{ ai_gen_id }}">
+    <div class="ai-gift-card-image-wrapper-{{ ai_gen_id }}">
+      {% if block.settings.image %}
+        <img
+          src="{{ block.settings.image | image_url: width: 800 }}"
+          alt="{{ block.settings.image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+        >
+      {% else %}
+        <div class="ai-gift-card-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+          <div class="ai-gift-card-empty-state-{{ ai_gen_id }}">
+            Add a gift card image
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ai-gift-card-content-{{ ai_gen_id }}">
+    {% if block.settings.badge_text != blank %}
+      <span class="ai-gift-card-badge-{{ ai_gen_id }}">{{ block.settings.badge_text }}</span>
+    {% endif %}
+
+    {% if block.settings.title != blank %}
+      <h2 class="ai-gift-card-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+
+    {% if block.settings.description != blank %}
+      <div class="ai-gift-card-description-{{ ai_gen_id }}">{{ block.settings.description }}</div>
+    {% endif %}
+
+    {% if block.settings.show_amounts %}
+      <div class="ai-gift-card-amounts-{{ ai_gen_id }}">
+        {% assign amounts = block.settings.gift_card_amounts | split: ',' %}
+        {% for amount in amounts %}
+          {% assign trimmed_amount = amount | strip %}
+          {% if trimmed_amount != blank %}
+            <a
+              href="{{ block.settings.gift_card_url }}?amount={{ trimmed_amount | times: 100 }}"
+              class="ai-gift-card-amount-{{ ai_gen_id }}"
+            >
+              {{ trimmed_amount | money }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_features %}
+      <div class="ai-gift-card-features-{{ ai_gen_id }}">
+        {% if block.settings.feature_1 != blank %}
+          <div class="ai-gift-card-feature-{{ ai_gen_id }}">
+            <svg class="ai-gift-card-feature-icon-{{ ai_gen_id }}" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <span>{{ block.settings.feature_1 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_2 != blank %}
+          <div class="ai-gift-card-feature-{{ ai_gen_id }}">
+            <svg class="ai-gift-card-feature-icon-{{ ai_gen_id }}" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <span>{{ block.settings.feature_2 }}</span>
+          </div>
+        {% endif %}
+
+        {% if block.settings.feature_3 != blank %}
+          <div class="ai-gift-card-feature-{{ ai_gen_id }}">
+            <svg class="ai-gift-card-feature-icon-{{ ai_gen_id }}" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <span>{{ block.settings.feature_3 }}</span>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+      <a
+        href="{{ block.settings.button_url }}"
+        class="ai-gift-card-button-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_text }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gift card highlight",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Gift card image"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Perfect Gift"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Give the Gift of Choice"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Let them choose exactly what they want with our digital gift cards. Perfect for any occasion and delivered instantly.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_amounts",
+      "label": "Show amount options",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "gift_card_amounts",
+      "label": "Gift card amounts",
+      "default": "25, 50, 100, 200",
+      "info": "Comma-separated list of amounts (e.g., 25, 50, 100)"
+    },
+    {
+      "type": "url",
+      "id": "gift_card_url",
+      "label": "Gift card page URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_features",
+      "label": "Show features",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "feature_1",
+      "label": "Feature 1",
+      "default": "Instant digital delivery"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Never expires"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "Works on entire store"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Buy Gift Card"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse layout",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 30,
+      "max": 60,
+      "step": 5,
+      "unit": "%",
+      "label": "Image width",
+      "default": 45
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "1/1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4/3",
+          "label": "Landscape (4:3)"
+        },
+        {
+          "value": "3/2",
+          "label": "Classic (3:2)"
+        },
+        {
+          "value": "16/9",
+          "label": "Wide (16:9)"
+        }
+      ],
+      "default": "4/3"
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Content gap",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Text spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "min": 20,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Section border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#212121"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#212121"
+    },
+    {
+      "type": "color",
+      "id": "badge_background_color",
+      "label": "Badge background",
+      "default": "#13308c"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "feature_icon_color",
+      "label": "Feature icon color",
+      "default": "#13308c"
+    },
+    {
+      "type": "header",
+      "content": "Amount buttons"
+    },
+    {
+      "type": "color",
+      "id": "amount_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "amount_text_color",
+      "label": "Text",
+      "default": "#212121"
+    },
+    {
+      "type": "color",
+      "id": "amount_border_color",
+      "label": "Border",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "color",
+      "id": "amount_hover_background_color",
+      "label": "Hover background",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "color",
+      "id": "amount_hover_text_color",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "amount_hover_border_color",
+      "label": "Hover border",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "header",
+      "content": "Main button"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Background",
+      "default": "#13308c"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border",
+      "default": "#13308c"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background_color",
+      "label": "Hover background",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border",
+      "default": "#4e81cc"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift card highlight"
+    }
+  ]
+}
+{% endschema %}

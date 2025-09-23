@@ -10,266 +10,102 @@
 {
   "sections": {
     "hero_iyt6zg": {
-      "type": "slideshow",
+      "type": "hero",
       "blocks": {
-        "slide_1": {
-          "type": "_slide",
+        "image_bBr8Wm": {
+          "type": "image",
+          "name": "hero-logo",
           "settings": {
-            "text": "<h1>Repka Arts<br/>Contemporary Art Gallery</h1><p>Discover contemporary art that speaks to your soul</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-heading--family)",
-            "font_size": "",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
+            "image": "shopify://shop_images/Repka_arts_logo-10.svg",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "custom",
+            "custom_width": 8,
+            "width_mobile": "custom",
+            "custom_width_mobile": 30,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "link": "",
-            "open_in_new_tab": false
-          }
-        },
-        "slide_2": {
-          "type": "_slide",
-          "settings": {
-            "text": "<h1>Original Artworks</h1><p>Handcrafted pieces from emerging and established artists</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-heading--family)",
-            "font_size": "",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "link": "",
-            "open_in_new_tab": false
-          }
-        },
-        "slide_3": {
-          "type": "_slide",
-          "settings": {
-            "text": "<h1>Curated Collections</h1><p>Explore our carefully selected series and medium categories</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "custom",
-            "font": "var(--font-heading--family)",
-            "font_size": "",
-            "line_height": "tight",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0,
-            "link": "",
-            "open_in_new_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "slide_1",
-        "slide_2",
-        "slide_3"
-      ],
-      "settings": {
-        "slide_height": "x-large",
-        "image_position": "center",
-        "image_behavior": "cover",
-        "image_ratio": "adapt",
-        "slide_layout": "content_on_image",
-        "content_alignment": "center",
-        "content_alignment_mobile": "center",
-        "text_box": true,
-        "text_box_background": true,
-        "text_box_background_opacity": 30,
-        "text_box_background_color": "#000000",
-        "text_box_background_radius": 0,
-        "text_box_border": false,
-        "text_box_border_width": 1,
-        "text_box_border_color": "#000000",
-        "text_box_border_radius": 0,
-        "text_box_padding": 40,
-        "text_box_margin": 40,
-        "color_scheme": "scheme-1",
-        "auto_rotate": true,
-        "change_slides_speed": 7,
-        "show_navigation": true,
-        "show_pagination": true,
-        "section_width": "full-width",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "collection_links_Ut4aMz": {
-      "type": "collection-links",
-      "blocks": {
-        "link": {
-          "type": "_collection-link",
-          "static": true,
-          "settings": {
-            "show_count": true
-          },
-          "blocks": {
-            "title": {
-              "type": "_inline-collection-title",
-              "static": true,
-              "settings": {
-                "font": "var(--font-heading--family)",
-                "weight": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none"
-              },
-              "blocks": {}
-            },
-            "image": {
-              "type": "_image",
-              "static": true,
-              "settings": {
-                "height": "medium",
-                "ratio": "portrait",
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "name": "Collection links",
-      "settings": {
-        "collection_list": [
-          "oil-paintings",
-          "watercolours",
-          "mixed-media",
-          "ceramics"
-        ],
-        "layout": "spotlight",
-        "section_width": "page-width",
-        "alignment": "left",
-        "image_position": "right",
-        "color_scheme": "",
-        "padding-block-start": 82,
-        "padding-block-end": 82
-      }
-    },
-    "featured_product_mTUbKC": {
-      "type": "featured-product",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "static": true,
-          "settings": {
-            "media_type": "image",
-            "image": "shopify://shop_images/f6a915_c022428fce144cc298321aa13076314f_mv2.jpg",
-            "link": "",
-            "video_loop": true,
-            "video_autoplay": false,
-            "image_position": "cover",
-            "video_position": "cover"
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
-        "featured-product": {
-          "type": "_featured-product",
-          "name": "t:names.product",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "featured-product-title": {
-              "type": "product-title",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "featured-product-price": {
-              "type": "_featured-product-price",
-              "static": true,
-              "settings": {
-                "show_sale_price_first": true,
-                "type_preset": "h5"
-              },
-              "blocks": {}
-            },
-            "featured-product-gallery": {
-              "type": "_featured-product-gallery",
-              "name": "t:names.image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "constrain_to_viewport": "true"
-              },
-              "blocks": {}
-            },
-            "featured-product-swatches": {
-              "type": "swatches",
-              "name": "t:content.swatches",
-              "static": true,
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": false,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 4,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            }
+        "text_tzGazA": {
+          "type": "text",
+          "name": "hero-headline",
+          "settings": {
+            "text": "<h1>Original paintings & handmade ceramics by Maryna Riepnova</h1>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "4.5rem",
+            "line_height": "tight",
+            "letter_spacing": "loose",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 30,
+            "padding-block-end": 30,
+            "padding-inline-start": 60,
+            "padding-inline-end": 60
           },
-          "block_order": []
+          "blocks": {}
+        },
+        "button_JTRQwp": {
+          "type": "button",
+          "name": "hero-button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "custom",
+            "custom_width": 10,
+            "width_mobile": "custom",
+            "custom_width_mobile": 40
+          },
+          "blocks": {}
         }
       },
-      "name": "t:names.featured_product",
+      "block_order": [
+        "image_bBr8Wm",
+        "text_tzGazA",
+        "button_JTRQwp"
+      ],
       "settings": {
-        "product": "el-jardin-de-la-abuela",
-        "layout": "media-left",
-        "color_scheme": "scheme-3",
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/Mountain_shimmer.jpg",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "full-screen",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-6",
+        "toggle_overlay": true,
+        "overlay_color": "#00000099",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 0,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -318,7 +154,7 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "h4",
+                "type_preset": "h2",
                 "font": "var(--font-primary--family)",
                 "font_size": "",
                 "line_height": "normal",
@@ -459,7 +295,7 @@
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
-                        "type_preset": "h5",
+                        "type_preset": "custom",
                         "font": "var(--font-body--family)",
                         "font_size": "1rem",
                         "line_height": "normal",
@@ -471,7 +307,7 @@
                         "background_color": "#00000026",
                         "corner_radius": 0,
                         "padding-block-start": 0,
-                        "padding-block-end": 0,
+                        "padding-block-end": 5,
                         "padding-inline-start": 0,
                         "padding-inline-end": 0
                       },
@@ -483,11 +319,11 @@
                         "show_sale_price_first": true,
                         "show_installments": false,
                         "show_tax_info": false,
-                        "type_preset": "h5",
+                        "type_preset": "custom",
                         "width": "100%",
                         "alignment": "left",
                         "font": "var(--font-body--family)",
-                        "font_size": "1rem",
+                        "font_size": "0.875rem",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
@@ -596,6 +432,156 @@
         "padding-block-end": 100
       }
     },
+    "collection_links_Ut4aMz": {
+      "type": "collection-links",
+      "blocks": {
+        "link": {
+          "type": "_collection-link",
+          "static": true,
+          "settings": {
+            "show_count": true
+          },
+          "blocks": {
+            "title": {
+              "type": "_inline-collection-title",
+              "static": true,
+              "settings": {
+                "font": "var(--font-heading--family)",
+                "weight": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none"
+              },
+              "blocks": {}
+            },
+            "image": {
+              "type": "_image",
+              "static": true,
+              "settings": {
+                "height": "medium",
+                "ratio": "portrait",
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "name": "Collection links",
+      "settings": {
+        "collection_list": [
+          "oil-paintings",
+          "watercolours",
+          "mixed-media",
+          "ceramics"
+        ],
+        "layout": "spotlight",
+        "section_width": "page-width",
+        "alignment": "left",
+        "image_position": "right",
+        "color_scheme": "",
+        "padding-block-start": 82,
+        "padding-block-end": 82
+      }
+    },
+    "featured_product_mTUbKC": {
+      "type": "featured-product",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "image": "shopify://shop_images/f6a915_c022428fce144cc298321aa13076314f_mv2.jpg",
+            "link": "",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "featured-product": {
+          "type": "_featured-product",
+          "name": "t:names.product",
+          "static": true,
+          "settings": {},
+          "blocks": {
+            "featured-product-title": {
+              "type": "product-title",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "featured-product-price": {
+              "type": "_featured-product-price",
+              "static": true,
+              "settings": {
+                "show_sale_price_first": true,
+                "type_preset": "h5"
+              },
+              "blocks": {}
+            },
+            "featured-product-gallery": {
+              "type": "_featured-product-gallery",
+              "name": "t:names.image",
+              "static": true,
+              "settings": {
+                "image_ratio": "adapt",
+                "constrain_to_viewport": "true"
+              },
+              "blocks": {}
+            },
+            "featured-product-swatches": {
+              "type": "swatches",
+              "name": "t:content.swatches",
+              "static": true,
+              "settings": {
+                "product_swatches_alignment": "flex-start",
+                "product_swatches_alignment_mobile": "flex-start",
+                "hide_padding": false,
+                "product_swatches_padding_top": 4,
+                "product_swatches_padding_bottom": 4,
+                "product_swatches_padding_left": 0,
+                "product_swatches_padding_right": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "disabled": true,
+      "name": "t:names.featured_product",
+      "settings": {
+        "product": "el-jardin-de-la-abuela",
+        "layout": "media-left",
+        "color_scheme": "scheme-3",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "hero_MVUtj6": {
       "type": "hero",
       "blocks": {
@@ -606,7 +592,7 @@
             "width": "fit-content",
             "max_width": "none",
             "alignment": "left",
-            "type_preset": "h3",
+            "type_preset": "h2",
             "font": "var(--font-primary--family)",
             "font_size": "",
             "line_height": "normal",
@@ -657,7 +643,9 @@
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
+        "image_1": "shopify://shop_images/Quiosco.jpg",
         "media_type_2": "image",
+        "image_2": "shopify://shop_images/Oasis_sentinels.jpg",
         "link": "",
         "open_in_new_tab": false,
         "content_direction": "row",
@@ -681,13 +669,482 @@
         "padding-block-start": 0,
         "padding-block-end": 40
       }
+    },
+    "collection_list_dnRNYQ": {
+      "type": "collection-list",
+      "blocks": {
+        "group_7jEEHC": {
+          "type": "group",
+          "name": "t:names.header",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 16,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 32,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_wnKCHc": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h2>Check out my series</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 16,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_wnKCHc"
+          ]
+        },
+        "static-collection-card": {
+          "type": "_collection-card",
+          "name": "t:names.collection_card",
+          "static": true,
+          "settings": {
+            "placement": "on_image",
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-end",
+            "collection_card_gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0
+          },
+          "blocks": {
+            "collection_title_ymUNVB": {
+              "type": "collection-title",
+              "name": "t:names.collection_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#ffffff",
+                "corner_radius": 16,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
+              },
+              "blocks": {}
+            },
+            "collection-card-image": {
+              "type": "_collection-card-image",
+              "name": "t:names.collection_card_image",
+              "static": true,
+              "settings": {
+                "image_ratio": "adapt",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "collection_title_ymUNVB"
+          ]
+        }
+      },
+      "block_order": [
+        "group_7jEEHC"
+      ],
+      "name": "t:names.collections_bento",
+      "settings": {
+        "collection_list": [
+          "toulouse-spirit",
+          "abstract-moments",
+          "vibrant-impressions",
+          "timeless-elegance",
+          "andalusian-spirit",
+          "wild-at-heart",
+          "gemstones",
+          "balanced-art",
+          "ceramics",
+          "serenity-in-bloom",
+          "savannah-vibes"
+        ],
+        "layout_type": "bento",
+        "carousel_on_mobile": false,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 8,
+        "bento_gap": 8,
+        "rows_gap": 8,
+        "max_collections": 4,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 12,
+        "color_scheme": "",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      }
+    },
+    "section_9CzpAF": {
+      "type": "section",
+      "blocks": {
+        "text_gzwKG3": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Frequently asked questions</h2>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_Yk97mz": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": false,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "accordion_row_f4xG4A": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Do you ship internationally?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_UdQCeh": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Yes, we securely ship original art, ceramics, and prints to collectors all over the world from our studio in Málaga, Spain.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_UdQCeh"
+              ]
+            },
+            "accordion_row_6inUkf": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What kind of art do you create?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_8Mgkna": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_8Mgkna"
+              ]
+            },
+            "accordion_row_p6RJAb": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Can I request a custom piece or collaboration?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_9hgnTK": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_9hgnTK"
+              ]
+            },
+            "accordion_row_ybqKRk": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Do you offer art workshops or events?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_z9TA7e": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Yes, we host public plein-air sessions and also design private art workshops for groups, hotels, and corporate team-building events.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_z9TA7e"
+              ]
+            },
+            "accordion_row_arbU8F": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "How do I join a painting session?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_UVpTe7": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_UVpTe7"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_f4xG4A",
+            "accordion_row_6inUkf",
+            "accordion_row_p6RJAb",
+            "accordion_row_ybqKRk",
+            "accordion_row_arbU8F"
+          ]
+        }
+      },
+      "block_order": [
+        "text_gzwKG3",
+        "accordion_Yk97mz"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "hero_iyt6zg",
+    "product_list_UwRqN4",
     "collection_links_Ut4aMz",
     "featured_product_mTUbKC",
-    "product_list_UwRqN4",
-    "hero_MVUtj6"
+    "hero_MVUtj6",
+    "collection_list_dnRNYQ",
+    "section_9CzpAF"
   ]
 }
