@@ -6,19 +6,19 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "hero_iyt6zg": {
-      "type": "hero",
+      "type": "slideshow",
       "blocks": {
-        "text_tzGazA": {
-          "type": "text",
-          "name": "t:names.text",
+        "slide_1": {
+          "type": "_slide",
           "settings": {
-            "text": "<h1>The Elements <br/>of Style</h1>",
+            "text": "<h1>Repka Arts<br/>Contemporary Art Gallery</h1><p>Discover contemporary art that speaks to your soul</p>",
             "width": "fit-content",
             "max_width": "normal",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "",
@@ -33,36 +33,94 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "padding-inline-end": 0,
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "slide_2": {
+          "type": "_slide",
+          "settings": {
+            "text": "<h1>Original Artworks</h1><p>Handcrafted pieces from emerging and established artists</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "slide_3": {
+          "type": "_slide",
+          "settings": {
+            "text": "<h1>Curated Collections</h1><p>Explore our carefully selected series and medium categories</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0,
+            "link": "",
+            "open_in_new_tab": false
+          }
         }
       },
       "block_order": [
-        "text_tzGazA"
+        "slide_1",
+        "slide_2",
+        "slide_3"
       ],
       "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "page-width",
-        "section_height": "full-screen",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-6",
-        "toggle_overlay": true,
-        "overlay_color": "#00000099",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
+        "slide_height": "x-large",
+        "image_position": "center",
+        "image_behavior": "cover",
+        "image_ratio": "adapt",
+        "slide_layout": "content_on_image",
+        "content_alignment": "center",
+        "content_alignment_mobile": "center",
+        "text_box": true,
+        "text_box_background": true,
+        "text_box_background_opacity": 30,
+        "text_box_background_color": "#000000",
+        "text_box_background_radius": 0,
+        "text_box_border": false,
+        "text_box_border_width": 1,
+        "text_box_border_color": "#000000",
+        "text_box_border_radius": 0,
+        "text_box_padding": 40,
+        "text_box_margin": 40,
+        "color_scheme": "scheme-1",
+        "auto_rotate": true,
+        "change_slides_speed": 7,
+        "show_navigation": true,
+        "show_pagination": true,
+        "section_width": "full-width",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -105,6 +163,12 @@
       },
       "name": "Collection links",
       "settings": {
+        "collection_list": [
+          "oil-paintings",
+          "watercolours",
+          "mixed-media",
+          "ceramics"
+        ],
         "layout": "spotlight",
         "section_width": "page-width",
         "alignment": "left",
@@ -122,6 +186,8 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "shopify://shop_images/f6a915_c022428fce144cc298321aa13076314f_mv2.jpg",
+            "link": "",
             "video_loop": true,
             "video_autoplay": false,
             "image_position": "cover",
@@ -201,6 +267,7 @@
       },
       "name": "t:names.featured_product",
       "settings": {
+        "product": "el-jardin-de-la-abuela",
         "layout": "media-left",
         "color_scheme": "scheme-3",
         "padding-block-start": 0,
@@ -311,6 +378,7 @@
             "group_JHtHYm": {
               "type": "_product-card-group",
               "settings": {
+                "link": "",
                 "open_in_new_tab": false,
                 "content_direction": "row",
                 "vertical_on_mobile": true,
@@ -349,6 +417,7 @@
                   "type": "_product-card-group",
                   "name": "t:names.group",
                   "settings": {
+                    "link": "",
                     "open_in_new_tab": false,
                     "content_direction": "column",
                     "vertical_on_mobile": true,
@@ -440,6 +509,7 @@
                   "type": "_product-card-group",
                   "name": "t:names.group",
                   "settings": {
+                    "link": "",
                     "open_in_new_tab": false,
                     "content_direction": "column",
                     "vertical_on_mobile": true,
@@ -507,7 +577,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "season-highlights",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 4,
@@ -588,6 +658,7 @@
       "settings": {
         "media_type_1": "image",
         "media_type_2": "image",
+        "link": "",
         "open_in_new_tab": false,
         "content_direction": "row",
         "vertical_on_mobile": true,
