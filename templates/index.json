@@ -918,7 +918,7 @@
             "review_1": {
               "type": "text",
               "settings": {
-                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.\"</p><div class=\"review-footer\"><strong>Sarah M.</strong><br><span class=\"review-location\">Madrid</span><br><small>via Google</small></div></div>",
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.\"</em></p><p><strong>Sarah M.</strong><br>Madrid<br>via Google</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -942,7 +942,7 @@
             "review_2": {
               "type": "text",
               "settings": {
-                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!\"</p><div class=\"review-footer\"><strong>John D.</strong><br><span class=\"review-location\">Barcelona</span><br><small>via Google</small></div></div>",
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!\"</em></p><p><strong>John D.</strong><br>Barcelona<br>via Google</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -966,7 +966,7 @@
             "review_3": {
               "type": "text",
               "settings": {
-                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.\"</p><div class=\"review-footer\"><strong>Maria L.</strong><br><span class=\"review-location\">Valencia</span><br><small>via Google</small></div></div>",
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.\"</em></p><p><strong>Maria L.</strong><br>Valencia<br>via Google</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
