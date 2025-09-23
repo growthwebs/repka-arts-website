@@ -4409,8 +4409,6 @@ text-component {
   }
 }
 
-/* Carousel JavaScript will be added via theme.liquid */
-
 /* FAQ Answer Font Size Fix - Make FAQ answers more readable */
 .accordion__content.rte {
   font-size: 1.6rem !important;
