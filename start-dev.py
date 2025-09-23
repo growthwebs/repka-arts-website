@@ -28,11 +28,17 @@ class ThemeDevHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         # Serve theme files
         if self.path == '/':
-            self.path = '/templates/index.liquid'
+            # Check if index.html exists, otherwise serve development index
+            if os.path.exists(os.path.join(self.directory, 'index.html')):
+                self.path = '/index.html'
+            else:
+                self.path = '/templates/index.liquid'
         
-        # Handle Liquid files
+        # Handle Liquid files - serve as HTML for development
         if self.path.endswith('.liquid'):
-            self.path = self.path.replace('.liquid', '.html')
+            # For development, we'll serve liquid files as plain text
+            # In production, Shopify processes these
+            pass
         
         return super().do_GET()
 
