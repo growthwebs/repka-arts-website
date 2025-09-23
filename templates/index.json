@@ -20,7 +20,7 @@
             "link": "",
             "image_ratio": "adapt",
             "width": "custom",
-            "custom_width": 8,
+            "custom_width": 10,
             "width_mobile": "custom",
             "custom_width_mobile": 30,
             "height": "fit",
@@ -69,9 +69,9 @@
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
-            "width": "custom",
-            "custom_width": 10,
-            "width_mobile": "custom",
+            "width": "fit-content",
+            "custom_width": 30,
+            "width_mobile": "fit-content",
             "custom_width_mobile": 40
           },
           "blocks": {}
@@ -297,7 +297,7 @@
                         "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
-                        "font_size": "1.6rem",
+                        "font_size": "1rem",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
@@ -845,6 +845,128 @@
         "padding-block-end": 64
       }
     },
+    "section_AUmBke": {
+      "type": "section",
+      "name": "t:names.custom_section",
+      "blocks": {
+        "reviews_heading": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Trusted by art lovers & businesses</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h1",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "reviews_carousel": {
+          "type": "reviews-carousel",
+          "blocks": {
+            "review_1": {
+              "type": "customer_review",
+              "settings": {
+                "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
+                "customer_name": "Sarah M.",
+                "customer_location": "Madrid"
+              }
+            },
+            "review_2": {
+              "type": "customer_review",
+              "settings": {
+                "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
+                "customer_name": "John D.",
+                "customer_location": "Barcelona"
+              }
+            },
+            "review_3": {
+              "type": "customer_review",
+              "settings": {
+                "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
+                "customer_name": "Maria L.",
+                "customer_location": "Valencia"
+              }
+            },
+            "review_4": {
+              "type": "customer_review",
+              "settings": {
+                "review_text": "Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.",
+                "customer_name": "Hotel Manager",
+                "customer_location": "Malaga"
+              }
+            },
+            "review_5": {
+              "type": "customer_review",
+              "settings": {
+                "review_text": "The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.",
+                "customer_name": "Elena R.",
+                "customer_location": "Granada"
+              }
+            }
+          },
+          "block_order": [
+            "review_1",
+            "review_2",
+            "review_3",
+            "review_4",
+            "review_5"
+          ],
+          "settings": {
+            "heading": "",
+            "heading_size": "h1",
+            "color_scheme": "scheme-1",
+            "padding_top": 40,
+            "padding_bottom": 40
+          }
+        }
+      },
+      "block_order": [
+        "reviews_heading",
+        "reviews_carousel"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 64,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 80,
+        "padding-block-end": 80
+      }
+    },
     "section_9CzpAF": {
       "type": "section",
       "blocks": {
@@ -911,7 +1033,7 @@
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.6rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -950,7 +1072,7 @@
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.6rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -991,7 +1113,7 @@
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.6rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -1032,7 +1154,7 @@
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.6rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -1073,7 +1195,7 @@
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
-                    "font_size": "1.6rem",
+                    "font_size": "1rem",
                     "line_height": "normal",
                     "letter_spacing": "normal",
                     "case": "none",
@@ -1136,110 +1258,6 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "reviews_carousel_ABC123": {
-      "type": "reviews-carousel",
-      "blocks": {
-        "review_1": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
-            "customer_name": "Sarah M.",
-            "customer_location": "Madrid"
-          }
-        },
-        "review_2": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
-            "customer_name": "John D.",
-            "customer_location": "Barcelona"
-          }
-        },
-        "review_3": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
-            "customer_name": "Maria L.",
-            "customer_location": "Valencia"
-          }
-        },
-        "review_4": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Stunning collection that exceeded our expectations. The ceramics are beautifully crafted and the paintings are breathtaking.",
-            "customer_name": "Alex K.",
-            "customer_location": "Seville"
-          }
-        },
-        "review_5": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.",
-            "customer_name": "Hotel Manager",
-            "customer_location": "Malaga"
-          }
-        },
-        "review_6": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.",
-            "customer_name": "Elena R.",
-            "customer_location": "Granada"
-          }
-        },
-        "review_7": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Exceptional watercolour paintings that capture the essence of Andalusia perfectly. The artist's talent is remarkable.",
-            "customer_name": "David S.",
-            "customer_location": "Cordoba"
-          }
-        },
-        "review_8": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Our corporate office looks incredible with these artworks. Professional service and stunning pieces that inspire our team daily.",
-            "customer_name": "Corporate Client",
-            "customer_location": "Madrid"
-          }
-        },
-        "review_9": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "The oil paintings are museum quality. We've been collecting art for years and this is among our finest pieces.",
-            "customer_name": "Art Collector",
-            "customer_location": "Barcelona"
-          }
-        },
-        "review_10": {
-          "type": "customer_review",
-          "settings": {
-            "review_text": "Beautiful ceramics that are both functional and artistic. Perfect for our modern home. The craftsmanship is exceptional.",
-            "customer_name": "Sophie W.",
-            "customer_location": "Valencia"
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4",
-        "review_5",
-        "review_6",
-        "review_7",
-        "review_8",
-        "review_9",
-        "review_10"
-      ],
-      "settings": {
-        "heading": "Trusted by art lovers & businesses",
-        "heading_size": "h1",
-        "color_scheme": "scheme-1",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
@@ -1249,7 +1267,7 @@
     "featured_product_mTUbKC",
     "hero_MVUtj6",
     "collection_list_dnRNYQ",
-    "reviews_carousel_ABC123",
+    "section_AUmBke",
     "section_9CzpAF"
   ]
 }
