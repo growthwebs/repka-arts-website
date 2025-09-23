@@ -4303,13 +4303,7 @@ text-component {
   letter-spacing: 0.5px;
 }
 
-/* Reviews Carousel Styles */
-.reviews-carousel-wrapper {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-}
+/* Simple Reviews Display */
 
 .review-slide {
   display: none;
