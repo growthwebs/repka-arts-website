@@ -42,7 +42,7 @@
             "text": "<h1>Original paintings & handmade ceramics by Maryna Riepnova</h1>",
             "width": "fit-content",
             "max_width": "normal",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
             "font_size": "4.5rem",
@@ -69,10 +69,10 @@
             "link": "shopify://collections/all",
             "open_in_new_tab": false,
             "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "width": "custom",
+            "custom_width": 10,
+            "width_mobile": "custom",
+            "custom_width_mobile": 40
           },
           "blocks": {}
         }
