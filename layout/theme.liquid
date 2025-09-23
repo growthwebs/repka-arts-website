@@ -76,18 +76,18 @@
       function showSlide(index) {
         // Hide all slides
         const slides = document.querySelectorAll('.review-slide');
-        slides.forEach(slide => slide.classList.remove('active'));
-        
+        slides.forEach((slide) => slide.classList.remove('active'));
+
         // Show current slide
         const currentSlides = document.querySelectorAll(`[data-review="${index + 1}"]`);
-        currentSlides.forEach(slide => slide.classList.add('active'));
-        
+        currentSlides.forEach((slide) => slide.classList.add('active'));
+
         // Update dots
         const dots = document.querySelectorAll('.dot');
         dots.forEach((dot, i) => {
           dot.classList.toggle('active', i === index);
         });
-        
+
         currentSlide = index;
       }
 
@@ -122,13 +122,13 @@
       }
 
       // Initialize carousel when DOM is loaded
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         // Show first slide
         showSlide(0);
-        
+
         // Start auto-slide
         startAutoSlide();
-        
+
         // Add navigation buttons if they don't exist
         const carouselWrapper = document.querySelector('.reviews-carousel-wrapper');
         if (carouselWrapper && !document.querySelector('.carousel-navigation')) {
@@ -138,27 +138,27 @@
             <button class="carousel-btn prev" onclick="prevSlide()">‹</button>
             <button class="carousel-btn next" onclick="nextSlide()">›</button>
           `;
-          
+
           const dots = document.createElement('div');
           dots.className = 'carousel-dots';
           for (let i = 0; i < totalSlides; i++) {
             dots.innerHTML += `<button class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></button>`;
           }
-          
+
           carouselWrapper.appendChild(navigation);
           carouselWrapper.appendChild(dots);
         }
-        
+
         // Pause on hover
         const slides = document.querySelectorAll('.review-slide');
-        slides.forEach(slide => {
+        slides.forEach((slide) => {
           slide.addEventListener('mouseenter', stopAutoSlide);
           slide.addEventListener('mouseleave', startAutoSlide);
         });
       });
 
       // Make functions global for onclick handlers
-      window.changeSlide = function(direction) {
+      window.changeSlide = function (direction) {
         if (direction === 1) nextSlide();
         else prevSlide();
         resetAutoSlide();
