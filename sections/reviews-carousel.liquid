@@ -120,13 +120,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 2rem;
+    box-sizing: border-box;
   }
 
   .review-card {
     background: {{ section.settings.card_background_color | default: '#FFFFFF' }};
     border-radius: 20px;
     padding: 4rem 3rem;
-    margin: 0 2rem;
+    margin: 0;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
@@ -134,8 +136,8 @@
     position: relative;
     overflow: hidden;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .review-card::before {
@@ -271,6 +273,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    flex-shrink: 0;
   }
 
   .carousel-dot.active {
