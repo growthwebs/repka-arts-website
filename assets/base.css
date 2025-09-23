@@ -4303,13 +4303,7 @@ text-component {
   letter-spacing: 0.5px;
 }
 
-/* Reviews Carousel Styles */
-.reviews-carousel-wrapper {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-}
+/* Simple Reviews Display */
 
 .review-slide {
   display: none;
@@ -4391,8 +4385,15 @@ text-component {
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile Responsive */
@@ -4401,7 +4402,7 @@ text-component {
     padding: 1.5rem;
     margin: 0 0.5rem;
   }
-  
+
   .carousel-btn {
     width: 2.5rem;
     height: 2.5rem;

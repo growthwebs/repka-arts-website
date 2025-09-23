@@ -915,11 +915,11 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "carousel_wrapper": {
+            "review_1": {
               "type": "text",
               "settings": {
-                "text": "<p data-review=\"1\" class=\"review-slide active\"><strong>★★★★★</strong></p><p data-review=\"1\" class=\"review-slide active\"><em>\"Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.\"</em></p><p data-review=\"1\" class=\"review-slide active\"><strong>Sarah M.</strong><br>Madrid<br>via Google</p><p data-review=\"2\" class=\"review-slide\"><strong>★★★★★</strong></p><p data-review=\"2\" class=\"review-slide\"><em>\"Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!\"</em></p><p data-review=\"2\" class=\"review-slide\"><strong>John D.</strong><br>Barcelona<br>via Google</p><p data-review=\"3\" class=\"review-slide\"><strong>★★★★★</strong></p><p data-review=\"3\" class=\"review-slide\"><em>\"The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.\"</em></p><p data-review=\"3\" class=\"review-slide\"><strong>Maria L.</strong><br>Valencia<br>via Google</p><p data-review=\"4\" class=\"review-slide\"><strong>★★★★★</strong></p><p data-review=\"4\" class=\"review-slide\"><em>\"Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.\"</em></p><p data-review=\"4\" class=\"review-slide\"><strong>Hotel Manager</strong><br>Malaga<br>via Google</p><p data-review=\"5\" class=\"review-slide\"><strong>★★★★★</strong></p><p data-review=\"5\" class=\"review-slide\"><em>\"The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.\"</em></p><p data-review=\"5\" class=\"review-slide\"><strong>Elena R.</strong><br>Granada<br>via Google</p>",
-                "width": "fill",
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"Absolutely stunning artwork. The quality is outstanding and the delivery was perfect.\"</em></p><p><strong>Sarah M.</strong><br>Madrid</p>",
+                "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
                 "type_preset": "custom",
@@ -930,18 +930,68 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
+              }
+            },
+            "review_2": {
+              "type": "text",
+              "settings": {
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible.\"</em></p><p><strong>John D.</strong><br>Barcelona</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
+              }
+            },
+            "review_3": {
+              "type": "text",
+              "settings": {
+                "text": "<p><strong>★★★★★</strong></p><p><em>\"The art quality is incredible. Each piece tells a story and brings such warmth to our home.\"</em></p><p><strong>Maria L.</strong><br>Valencia</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
               }
             }
           },
           "block_order": [
-            "carousel_wrapper"
+            "review_1",
+            "review_2",
+            "review_3"
           ]
         }
       },
