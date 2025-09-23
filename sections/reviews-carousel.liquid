@@ -1,228 +1,342 @@
-{{ 'component-reviews-carousel.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  Reviews Carousel Section
+  Displays customer reviews in a carousel format
+{% endcomment %}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="reviews-carousel isolate page-width section-{{ section.id }}-padding">
+<div class="reviews-carousel-section page-width section-{{ section.id }}-padding">
+  {% if section.settings.heading != blank %}
     <div class="reviews-carousel__header">
-      <h2 class="reviews-carousel__heading {{ section.settings.heading_size }}">
-        {{ section.settings.heading | default: 'Trusted by art lovers & businesses' }}
+      <h2 class="reviews-carousel__title {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
       </h2>
     </div>
+  {% endif %}
 
-    <div class="reviews-carousel__container">
-      <div class="reviews-carousel__wrapper" data-reviews-carousel>
-        <div class="reviews-carousel__track">
-          {%- for block in section.blocks -%}
-            {%- case block.type -%}
-              {%- when 'customer_review' -%}
-                <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
-                  <div class="review-card">
-                    <div class="review-card__stars">
-                      {%- for i in (1..5) -%}
-                        <span class="review-card__star">★</span>
-                      {%- endfor -%}
-                    </div>
-                    
-                    <blockquote class="review-card__text">
-                      {{ block.settings.review_text }}
-                    </blockquote>
-                    
-                    <div class="review-card__footer">
-                      <div class="review-card__author">
-                        <strong>{{ block.settings.customer_name }}</strong>
-                        <span class="review-card__location">{{ block.settings.customer_location }}</span>
-                      </div>
-                      <div class="review-card__source">
-                        <small>via Google</small>
-                      </div>
-                    </div>
+  <div class="reviews-carousel__container">
+    <div class="reviews-carousel__wrapper" id="reviews-carousel-{{ section.id }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'review' %}
+            <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
+              <div class="review-card">
+                {% if block.settings.rating > 0 %}
+                  <div class="review-stars">
+                    {% for i in (1..5) %}
+                      {% if i <= block.settings.rating %}
+                        <span class="star filled">★</span>
+                      {% else %}
+                        <span class="star">☆</span>
+                      {% endif %}
+                    {% endfor %}
                   </div>
+                {% endif %}
+                
+                {% if block.settings.review_text != blank %}
+                  <blockquote class="review-text">
+                    "{{ block.settings.review_text }}"
+                  </blockquote>
+                {% endif %}
+                
+                <div class="review-footer">
+                  {% if block.settings.customer_name != blank %}
+                    <strong class="review-name">{{ block.settings.customer_name }}</strong>
+                  {% endif %}
+                  {% if block.settings.customer_location != blank %}
+                    <span class="review-location">{{ block.settings.customer_location }}</span>
+                  {% endif %}
+                  {% if block.settings.review_source != blank %}
+                    <small class="review-source">{{ block.settings.review_source }}</small>
+                  {% endif %}
                 </div>
-            {%- endcase -%}
-          {%- endfor -%}
-        </div>
-      </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
 
+    {% if section.blocks.size > 1 %}
       <div class="reviews-carousel__navigation">
-        <button class="reviews-carousel__btn reviews-carousel__btn--prev" aria-label="Previous reviews">
+        <button class="carousel-btn carousel-prev" aria-label="Previous review">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        
-        <button class="reviews-carousel__btn reviews-carousel__btn--next" aria-label="Next reviews">
+        <button class="carousel-btn carousel-next" aria-label="Next review">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
 
-      <div class="reviews-carousel__dots" data-reviews-dots>
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'customer_review' -%}
-          <button class="reviews-carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to review {{ forloop.index }}"></button>
-        {%- endif -%}
-      {%- endfor -%}
+      <div class="reviews-carousel__dots">
+        {% for block in section.blocks %}
+          {% if block.type == 'review' %}
+            <button class="carousel-dot {% if forloop.first %}active{% endif %}" 
+                    aria-label="Go to review {{ forloop.index }}"
+                    data-slide="{{ forloop.index0 }}">
+            </button>
+          {% endif %}
+        {% endfor %}
       </div>
-    </div>
+    {% endif %}
   </div>
 </div>
 
-<script>
-  class ReviewsCarousel {
-    constructor(element) {
-      this.carousel = element;
-      this.track = this.carousel.querySelector('[data-reviews-carousel] .reviews-carousel__track');
-      this.slides = this.track.querySelectorAll('.reviews-carousel__slide');
-      this.dots = this.carousel.querySelectorAll('[data-reviews-dots] .reviews-carousel__dot');
-      this.prevBtn = this.carousel.querySelector('.reviews-carousel__btn--prev');
-      this.nextBtn = this.carousel.querySelector('.reviews-carousel__btn--next');
-      
-      this.currentSlide = 0;
-      this.totalSlides = this.slides.length;
-      this.autoPlayInterval = null;
-      this.isAutoPlaying = true;
-      
-      this.init();
+<style>
+  .reviews-carousel-section {
+    padding: {{ section.settings.padding_top | default: 80 }}px 0 {{ section.settings.padding_bottom | default: 80 }}px;
+  }
+
+  .reviews-carousel__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .reviews-carousel__title {
+    margin: 0;
+    color: var(--color-foreground);
+  }
+
+  .reviews-carousel__container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .reviews-carousel__wrapper {
+    display: flex;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .reviews-carousel__slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .review-card {
+    background: {{ section.settings.card_background_color | default: '#FFFFFF' }};
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 0 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid {{ section.settings.card_border_color | default: 'rgba(0, 0, 0, 0.1)' }};
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .review-stars {
+    margin-bottom: 1.5rem;
+  }
+
+  .star {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin: 0 0.1rem;
+  }
+
+  .review-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0 0 2rem 0;
+    color: var(--color-foreground);
+  }
+
+  .review-footer {
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+    padding-top: 1rem;
+  }
+
+  .review-name {
+    display: block;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    color: var(--color-foreground);
+    margin-bottom: 0.25rem;
+  }
+
+  .review-location {
+    display: block;
+    color: rgba(var(--color-foreground), 0.7);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-source {
+    color: rgba(var(--color-foreground), 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .reviews-carousel__navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  .carousel-btn {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+  }
+
+  .carousel-btn:hover {
+    background: var(--color-foreground);
+    color: var(--color-background);
+    transform: scale(1.1);
+  }
+
+  .carousel-prev {
+    margin-left: -1.5rem;
+  }
+
+  .carousel-next {
+    margin-right: -1.5rem;
+  }
+
+  .reviews-carousel__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .carousel-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba(var(--color-foreground), 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .carousel-dot.active,
+  .carousel-dot:hover {
+    background: var(--color-foreground);
+    transform: scale(1.2);
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 749px) {
+    .review-card {
+      padding: 2rem 1.5rem;
+      margin: 0 0.5rem;
     }
     
-    init() {
-      this.setupResponsive();
-      this.bindEvents();
-      this.startAutoPlay();
-      this.updateSlides();
+    .carousel-btn {
+      width: 2.5rem;
+      height: 2.5rem;
     }
     
-    setupResponsive() {
-      const updateSlidesPerView = () => {
-        if (window.innerWidth >= 1200) {
-          this.slidesPerView = 4;
-        } else if (window.innerWidth >= 900) {
-          this.slidesPerView = 3;
-        } else if (window.innerWidth >= 600) {
-          this.slidesPerView = 2;
-        } else {
-          this.slidesPerView = 1;
-        }
-        this.updateSlides();
-      };
-      
-      window.addEventListener('resize', updateSlidesPerView);
-      updateSlidesPerView();
+    .carousel-prev {
+      margin-left: -1rem;
     }
     
-    bindEvents() {
-      this.prevBtn.addEventListener('click', () => this.prevSlide());
-      this.nextBtn.addEventListener('click', () => this.nextSlide());
-      
-      this.dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => this.goToSlide(index));
-      });
-      
-      // Pause on hover
-      this.carousel.addEventListener('mouseenter', () => this.pauseAutoPlay());
-      this.carousel.addEventListener('mouseleave', () => this.startAutoPlay());
-      
-      // Touch/swipe support
-      this.addSwipeSupport();
-    }
-    
-    addSwipeSupport() {
-      let startX = 0;
-      let endX = 0;
-      
-      this.track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        this.pauseAutoPlay();
-      });
-      
-      this.track.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-        
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) {
-            this.nextSlide();
-          } else {
-            this.prevSlide();
-          }
-        }
-        
-        this.startAutoPlay();
-      });
-    }
-    
-    updateSlides() {
-      const translateX = -(this.currentSlide * (100 / this.slidesPerView));
-      this.track.style.transform = `translateX(${translateX}%)`;
-      
-      // Update dots
-      this.dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === this.currentSlide);
-      });
-      
-      // Update button states
-      this.prevBtn.disabled = this.currentSlide === 0;
-      this.nextBtn.disabled = this.currentSlide >= this.totalSlides - this.slidesPerView;
-    }
-    
-    nextSlide() {
-      if (this.currentSlide < this.totalSlides - this.slidesPerView) {
-        this.currentSlide++;
-      } else {
-        this.currentSlide = 0;
-      }
-      this.updateSlides();
-    }
-    
-    prevSlide() {
-      if (this.currentSlide > 0) {
-        this.currentSlide--;
-      } else {
-        this.currentSlide = this.totalSlides - this.slidesPerView;
-      }
-      this.updateSlides();
-    }
-    
-    goToSlide(index) {
-      this.currentSlide = Math.min(index, this.totalSlides - this.slidesPerView);
-      this.updateSlides();
-    }
-    
-    startAutoPlay() {
-      this.isAutoPlaying = true;
-      this.autoPlayInterval = setInterval(() => {
-        this.nextSlide();
-      }, 5000);
-    }
-    
-    pauseAutoPlay() {
-      this.isAutoPlaying = false;
-      if (this.autoPlayInterval) {
-        clearInterval(this.autoPlayInterval);
-      }
+    .carousel-next {
+      margin-right: -1rem;
     }
   }
-  
-  // Initialize carousel when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    const carouselElement = document.querySelector('[data-reviews-carousel]').closest('.reviews-carousel__container');
-    if (carouselElement) {
-      new ReviewsCarousel(carouselElement);
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselId = 'reviews-carousel-{{ section.id }}';
+    const carousel = document.getElementById(carouselId);
+    
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.reviews-carousel__slide');
+    const prevBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-prev');
+    const nextBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-next');
+    const dots = carousel.closest('.reviews-carousel-section').querySelectorAll('.carousel-dot');
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(-${index * 100}%)`;
+      });
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+      
+      currentSlide = index;
     }
+    
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+    
+    function prevSlide() {
+      const prev = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(prev);
+    }
+    
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    function stopAutoSlide() {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+      }
+    }
+    
+    // Event listeners
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+    
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoSlide();
+      });
+    });
+    
+    function resetAutoSlide() {
+      stopAutoSlide();
+      startAutoSlide();
+    }
+    
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+    
+    // Initialize
+    showSlide(0);
+    startAutoSlide();
   });
 </script>
 
@@ -231,9 +345,6 @@
   "name": "Reviews Carousel",
   "tag": "section",
   "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
   "settings": [
     {
       "type": "text",
@@ -244,6 +355,7 @@
     {
       "type": "select",
       "id": "heading_size",
+      "label": "Heading size",
       "options": [
         {
           "value": "h2",
@@ -258,18 +370,19 @@
           "label": "Large"
         }
       ],
-      "default": "h1",
-      "label": "Heading size"
+      "default": "h1"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color scheme",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background color",
+      "default": "#FFFFFF"
     },
     {
-      "type": "header",
-      "content": "Section padding"
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "rgba(0, 0, 0, 0.1)"
     },
     {
       "type": "range",
@@ -279,7 +392,7 @@
       "step": 4,
       "unit": "px",
       "label": "Top padding",
-      "default": 36
+      "default": 80
     },
     {
       "type": "range",
@@ -289,19 +402,28 @@
       "step": 4,
       "unit": "px",
       "label": "Bottom padding",
-      "default": 36
+      "default": 80
     }
   ],
   "blocks": [
     {
-      "type": "customer_review",
-      "name": "Customer Review",
+      "type": "review",
+      "name": "Review",
       "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Star rating",
+          "default": 5
+        },
         {
           "type": "textarea",
           "id": "review_text",
           "label": "Review text",
-          "default": "This is an amazing piece of art. The quality is outstanding and the delivery was perfect."
+          "default": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect."
         },
         {
           "type": "text",
@@ -314,6 +436,12 @@
           "id": "customer_location",
           "label": "Customer location",
           "default": "Madrid"
+        },
+        {
+          "type": "text",
+          "id": "review_source",
+          "label": "Review source",
+          "default": "via Google"
         }
       ]
     }
@@ -323,19 +451,34 @@
       "name": "Reviews Carousel",
       "blocks": [
         {
-          "type": "customer_review"
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
+            "customer_name": "Sarah M.",
+            "customer_location": "Madrid",
+            "review_source": "via Google"
+          }
         },
         {
-          "type": "customer_review"
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
+            "customer_name": "John D.",
+            "customer_location": "Barcelona",
+            "review_source": "via Google"
+          }
         },
         {
-          "type": "customer_review"
-        },
-        {
-          "type": "customer_review"
-        },
-        {
-          "type": "customer_review"
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
+            "customer_name": "Maria L.",
+            "customer_location": "Valencia",
+            "review_source": "via Google"
+          }
         }
       ]
     }
