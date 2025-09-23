@@ -875,69 +875,129 @@
           },
           "blocks": {}
         },
-        "reviews_carousel": {
-          "type": "reviews-carousel",
+        "reviews_container": {
+          "type": "group",
+          "name": "Reviews Container",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
           "blocks": {
             "review_1": {
-              "type": "customer_review",
+              "type": "text",
               "settings": {
-                "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
-                "customer_name": "Sarah M.",
-                "customer_location": "Madrid"
+                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.\"</p><div class=\"review-footer\"><strong>Sarah M.</strong><br><span class=\"review-location\">Madrid</span><br><small>via Google</small></div></div>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
               }
             },
             "review_2": {
-              "type": "customer_review",
+              "type": "text",
               "settings": {
-                "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
-                "customer_name": "John D.",
-                "customer_location": "Barcelona"
+                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!\"</p><div class=\"review-footer\"><strong>John D.</strong><br><span class=\"review-location\">Barcelona</span><br><small>via Google</small></div></div>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
               }
             },
             "review_3": {
-              "type": "customer_review",
+              "type": "text",
               "settings": {
-                "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
-                "customer_name": "Maria L.",
-                "customer_location": "Valencia"
-              }
-            },
-            "review_4": {
-              "type": "customer_review",
-              "settings": {
-                "review_text": "Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.",
-                "customer_name": "Hotel Manager",
-                "customer_location": "Malaga"
-              }
-            },
-            "review_5": {
-              "type": "customer_review",
-              "settings": {
-                "review_text": "The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.",
-                "customer_name": "Elena R.",
-                "customer_location": "Granada"
+                "text": "<div class=\"review-card\"><div class=\"review-stars\">★★★★★</div><p class=\"review-text\">\"The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.\"</p><div class=\"review-footer\"><strong>Maria L.</strong><br><span class=\"review-location\">Valencia</span><br><small>via Google</small></div></div>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#FFFFFF",
+                "corner_radius": 16,
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 24,
+                "padding-inline-end": 24
               }
             }
           },
           "block_order": [
             "review_1",
             "review_2",
-            "review_3",
-            "review_4",
-            "review_5"
-          ],
-          "settings": {
-            "heading": "",
-            "heading_size": "h1",
-            "color_scheme": "scheme-1",
-            "padding_top": 40,
-            "padding_bottom": 40
-          }
+            "review_3"
+          ]
         }
       },
       "block_order": [
         "reviews_heading",
-        "reviews_carousel"
+        "reviews_container"
       ],
       "settings": {
         "content_direction": "column",
