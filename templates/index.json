@@ -1141,7 +1141,7 @@
       "type": "reviews-carousel",
       "blocks": {
         "review_1": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
             "customer_name": "Sarah M.",
@@ -1149,7 +1149,7 @@
           }
         },
         "review_2": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
             "customer_name": "John D.",
@@ -1157,7 +1157,7 @@
           }
         },
         "review_3": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
             "customer_name": "Maria L.",
@@ -1165,7 +1165,7 @@
           }
         },
         "review_4": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Stunning collection that exceeded our expectations. The ceramics are beautifully crafted and the paintings are breathtaking.",
             "customer_name": "Alex K.",
@@ -1173,7 +1173,7 @@
           }
         },
         "review_5": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.",
             "customer_name": "Hotel Manager",
@@ -1181,7 +1181,7 @@
           }
         },
         "review_6": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.",
             "customer_name": "Elena R.",
@@ -1189,7 +1189,7 @@
           }
         },
         "review_7": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Exceptional watercolour paintings that capture the essence of Andalusia perfectly. The artist's talent is remarkable.",
             "customer_name": "David S.",
@@ -1197,7 +1197,7 @@
           }
         },
         "review_8": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Our corporate office looks incredible with these artworks. Professional service and stunning pieces that inspire our team daily.",
             "customer_name": "Corporate Client",
@@ -1205,7 +1205,7 @@
           }
         },
         "review_9": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "The oil paintings are museum quality. We've been collecting art for years and this is among our finest pieces.",
             "customer_name": "Art Collector",
@@ -1213,7 +1213,7 @@
           }
         },
         "review_10": {
-          "type": "review",
+          "type": "customer_review",
           "settings": {
             "review_text": "Beautiful ceramics that are both functional and artistic. Perfect for our modern home. The craftsmanship is exceptional.",
             "customer_name": "Sophie W.",

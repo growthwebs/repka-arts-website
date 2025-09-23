@@ -27,7 +27,7 @@
         <div class="reviews-carousel__track">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
-              {%- when 'review' -%}
+              {%- when 'customer_review' -%}
                 <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
                   <div class="review-card">
                     <div class="review-card__stars">
@@ -71,11 +71,11 @@
       </div>
 
       <div class="reviews-carousel__dots" data-reviews-dots>
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'review' -%}
-            <button class="reviews-carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to review {{ forloop.index }}"></button>
-          {%- endif -%}
-        {%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'customer_review' -%}
+          <button class="reviews-carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to review {{ forloop.index }}"></button>
+        {%- endif -%}
+      {%- endfor -%}
       </div>
     </div>
   </div>
@@ -294,8 +294,8 @@
   ],
   "blocks": [
     {
-      "type": "review",
-      "name": "Review",
+      "type": "customer_review",
+      "name": "Customer Review",
       "settings": [
         {
           "type": "textarea",
@@ -323,19 +323,19 @@
       "name": "Reviews Carousel",
       "blocks": [
         {
-          "type": "review"
+          "type": "customer_review"
         },
         {
-          "type": "review"
+          "type": "customer_review"
         },
         {
-          "type": "review"
+          "type": "customer_review"
         },
         {
-          "type": "review"
+          "type": "customer_review"
         },
         {
-          "type": "review"
+          "type": "customer_review"
         }
       ]
     }
