@@ -1,0 +1,14 @@
+{
+  "shopify": {
+    "store": "ipvqw0-j9.myshopify.com",
+    "theme_id_dev": "187662336264",
+    "theme_id_live": "187671675144",
+    "port": 3005,
+    "live_reload": true
+  },
+  "development": {
+    "node_env": "development",
+    "theme_name": "repka-arts-website",
+    "auto_sync": false
+  }
+}

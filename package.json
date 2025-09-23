@@ -1,0 +1,23 @@
+{
+  "name": "repka-arts-theme",
+  "version": "1.0.0",
+  "description": "Repka Arts Contemporary Art Gallery - Shopify Theme",
+  "scripts": {
+    "dev": "shopify theme dev --theme=187662336264 --port=3005 --live-reload",
+    "dev:alt": "shopify theme dev --theme=187662336264 --port=8080 --live-reload",
+    "dev:local": "python3 -m http.server 8080 --directory .",
+    "build": "shopify theme build",
+    "push:dev": "shopify theme push --theme=187662336264 --development",
+    "push:live": "shopify theme push --theme=187671675144 --live",
+    "pull": "shopify theme pull --theme=187671675144",
+    "deploy": "npm run build && npm run push:live",
+    "sync": "npm run pull && git add . && git commit -m 'Sync from Shopify' && git push"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.0.0",
+    "@shopify/theme": "^3.0.0"
+  },
+  "keywords": ["shopify", "theme", "art", "gallery", "ecommerce"],
+  "author": "Repka Arts",
+  "license": "MIT"
+}
