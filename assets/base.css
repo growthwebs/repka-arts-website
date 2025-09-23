@@ -4265,6 +4265,61 @@ text-component {
   }
 }
 
+/* Simple Review Cards for Custom Section */
+.review-card {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.review-stars {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.review-footer {
+  border-top: 1px solid rgba(var(--color-foreground), 0.1);
+  padding-top: 1rem;
+}
+
+.review-footer strong {
+  font-family: var(--font-heading--family);
+  font-weight: var(--font-heading--weight);
+  color: var(--color-foreground);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.review-location {
+  color: rgba(var(--color-foreground), 0.7);
+  font-style: italic;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.review-footer small {
+  color: rgba(var(--color-foreground), 0.5);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* FAQ Answer Font Size Fix - Make FAQ answers more readable */
 .accordion__content.rte {
   font-size: 1.6rem !important;
