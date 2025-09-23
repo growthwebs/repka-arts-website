@@ -243,7 +243,7 @@
                 "inverse": false,
                 "font": "heading",
                 "unit": "percent",
-                "percent_width": 100,
+                "percent_width": 10,
                 "pixel_height": 48,
                 "custom_mobile_size": false,
                 "unit_mobile": "percent",
@@ -318,14 +318,6 @@
                   },
                   "blocks": {}
                 },
-                "social_link_fEwdRd": {
-                  "type": "_social-link",
-                  "name": "X / Twitter",
-                  "settings": {
-                    "link": "https://www.x.com/"
-                  },
-                  "blocks": {}
-                },
                 "social_link_EHYCPE": {
                   "type": "_social-link",
                   "name": "Youtube",
@@ -339,7 +331,6 @@
                 "social_link_RQNdgj",
                 "social_link_nJ8rCy",
                 "social_link_XLRrJj",
-                "social_link_fEwdRd",
                 "social_link_EHYCPE"
               ]
             }

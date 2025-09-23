@@ -9,6 +9,9 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/Repka_arts_logo-11.svg",
+    "logo_inverse": "shopify://shop_images/Repka_arts_logo-08.svg",
+    "favicon": "shopify://shop_images/Favicon.svg",
     "type_body_font": "red_hat_text_n4",
     "type_subheading_font": "newsreader_n2",
     "type_heading_font": "newsreader_n2",
@@ -60,6 +63,7 @@
     "variant_swatch_radius": 0,
     "variant_button_radius": 0,
     "variant_button_width": "default-width-buttons",
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
