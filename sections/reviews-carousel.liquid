@@ -71,11 +71,11 @@
       </div>
 
       <div class="reviews-carousel__dots" data-reviews-dots>
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'review' -%}
-            <button class="reviews-carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to review {{ forloop.index }}"></button>
-          {%- endif -%}
-        {%- endfor -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'customer_review' -%}
+          <button class="reviews-carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to review {{ forloop.index }}"></button>
+        {%- endif -%}
+      {%- endfor -%}
       </div>
     </div>
   </div>
