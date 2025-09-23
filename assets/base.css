@@ -4264,3 +4264,17 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+
+/* FAQ Answer Font Size Fix - Make FAQ answers more readable */
+.accordion__content.rte {
+  font-size: 1.6rem !important;
+  line-height: 1.6;
+}
+
+/* Ensure FAQ answers are properly sized on mobile */
+@media screen and (max-width: 749px) {
+  .accordion__content.rte {
+    font-size: 1.4rem !important;
+    line-height: 1.5;
+  }
+}
