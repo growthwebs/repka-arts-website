@@ -10,11 +10,7 @@
   {{ block.shopify_attributes }}
 >
   <span class="footer-utilities__text">
-    &copy; {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url -}}
-    {%- if block_settings.show_powered_by -%}
-      , {{ powered_by_link }}
-    {%- endif -%}
+    &copy; {{ 'now' | date: '%Y' }} Repka Arts. Built by <strong><a href="https://growthwebs.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">growthwebs</a></strong>
   </span>
 </div>
 
