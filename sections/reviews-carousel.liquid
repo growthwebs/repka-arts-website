@@ -101,9 +101,9 @@
 
   .reviews-carousel__container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3rem;
   }
 
   .reviews-carousel__wrapper {
@@ -121,14 +121,17 @@
   .review-card {
     background: {{ section.settings.card_background_color | default: '#FFFFFF' }};
     border-radius: 20px;
-    padding: 3rem 2.5rem;
-    margin: 0 1.5rem;
+    padding: 4rem 3rem;
+    margin: 0 2rem;
     text-align: center;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
     border: 1px solid {{ section.settings.card_border_color | default: 'rgba(0, 0, 0, 0.06)' }};
     position: relative;
     overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .review-card::before {
@@ -158,12 +161,15 @@
   }
 
   .review-text {
-    font-size: 1.3rem;
-    line-height: 1.7;
+    font-size: 1.4rem;
+    line-height: 1.8;
     font-style: italic;
     margin: 0 0 2.5rem 0;
     color: #2c2c2c;
     font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .review-footer {
@@ -231,11 +237,11 @@
   }
 
   .carousel-prev {
-    margin-left: -2rem;
+    margin-left: -3rem;
   }
 
   .carousel-next {
-    margin-right: -2rem;
+    margin-right: -3rem;
   }
 
   .reviews-carousel__dots {
@@ -269,45 +275,67 @@
     transform: scale(1.1);
   }
 
+  /* Large Desktop */
+  @media screen and (min-width: 1200px) {
+    .reviews-carousel__container {
+      max-width: 1600px;
+      padding: 0 4rem;
+    }
+    
+    .review-card {
+      max-width: 900px;
+      padding: 5rem 4rem;
+    }
+    
+    .review-text {
+      font-size: 1.5rem;
+      max-width: 700px;
+    }
+    
+    .reviews-carousel__title {
+      font-size: 3rem;
+    }
+  }
+
   /* Mobile Responsive */
   @media screen and (max-width: 749px) {
     .reviews-carousel__container {
       padding: 0 1rem;
     }
-    
+
     .reviews-carousel__title {
       font-size: 2rem;
       margin-bottom: 2rem;
     }
-    
+
     .review-card {
       padding: 2.5rem 2rem;
       margin: 0 1rem;
     }
-    
+
     .review-text {
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    
+
     .carousel-btn {
       width: 3rem;
       height: 3rem;
     }
-    
+
     .carousel-prev {
       margin-left: -1.5rem;
     }
-    
+
     .carousel-next {
       margin-right: -1.5rem;
     }
-    
+
     .reviews-carousel__dots {
       gap: 0.5rem;
       margin-top: 2rem;
     }
-    
+
     .carousel-dot {
       width: 0.8rem;
       height: 0.8rem;
@@ -318,25 +346,25 @@
     .reviews-carousel__container {
       padding: 0 0.5rem;
     }
-    
+
     .review-card {
       padding: 2rem 1.5rem;
       margin: 0 0.5rem;
     }
-    
+
     .reviews-carousel__title {
       font-size: 1.8rem;
     }
-    
+
     .carousel-btn {
       width: 2.5rem;
       height: 2.5rem;
     }
-    
+
     .carousel-prev {
       margin-left: -1rem;
     }
-    
+
     .carousel-next {
       margin-right: -1rem;
     }
