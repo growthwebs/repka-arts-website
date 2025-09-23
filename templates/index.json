@@ -845,87 +845,6 @@
         "padding-block-end": 64
       }
     },
-    "17586335761b9b1335": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_84bfb49_YnU6Pb": {
-          "type": "ai_gen_block_84bfb49",
-          "settings": {
-            "badge_text": "Perfect Gift",
-            "title": "Give the Gift of Choice",
-            "description": "<p>Let them choose exactly what they want with our digital gift cards. Perfect for any occasion and delivered instantly.</p>",
-            "show_amounts": true,
-            "gift_card_amounts": "25, 50, 100, 200",
-            "gift_card_url": "",
-            "show_features": true,
-            "feature_1": "Instant digital delivery",
-            "feature_2": "Never expires",
-            "feature_3": "Works on entire store",
-            "button_text": "Buy Gift Card",
-            "button_url": "",
-            "reverse_layout": true,
-            "image_width": 45,
-            "image_aspect_ratio": "4/3",
-            "content_gap": 40,
-            "text_spacing": 16,
-            "section_padding": 40,
-            "border_radius": 16,
-            "image_border_radius": 12,
-            "title_size": 32,
-            "description_size": 14,
-            "background_color": "#ffffff",
-            "title_color": "#212121",
-            "text_color": "#212121",
-            "badge_background_color": "#13308c",
-            "badge_text_color": "#ffffff",
-            "feature_icon_color": "#13308c",
-            "amount_background_color": "#ffffff",
-            "amount_text_color": "#212121",
-            "amount_border_color": "#4e81cc",
-            "amount_hover_background_color": "#4e81cc",
-            "amount_hover_text_color": "#ffffff",
-            "amount_hover_border_color": "#4e81cc",
-            "button_background_color": "#13308c",
-            "button_text_color": "#ffffff",
-            "button_border_color": "#13308c",
-            "button_hover_background_color": "#4e81cc",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_border_color": "#4e81cc"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_84bfb49_YnU6Pb"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "section_9CzpAF": {
       "type": "section",
       "blocks": {
@@ -959,8 +878,8 @@
           "type": "accordion",
           "name": "t:names.accordion",
           "settings": {
-            "icon": "caret",
-            "dividers": true,
+            "icon": "plus",
+            "dividers": false,
             "type_preset": "h5",
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -977,7 +896,7 @@
             "accordion_row_f4xG4A": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the return policy?",
+                "heading": "Do you ship internationally?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -986,7 +905,7 @@
                 "text_UdQCeh": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn’t the case, let us know and we’ll do our best to work with you to make it right. </p>",
+                    "text": "<p>Yes, we securely ship original art, ceramics, and prints to collectors all over the world from our studio in Málaga, Spain.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1016,7 +935,7 @@
             "accordion_row_6inUkf": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Are any purchases final sale?",
+                "heading": "What kind of art do you create?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1025,7 +944,7 @@
                 "text_8Mgkna": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>We are unable to accept returns on certain items. These will be carefully marked before purchase.</p>",
+                    "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1056,7 +975,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "When will I get my order?",
+                "heading": "Can I request a custom piece or collaboration?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1066,7 +985,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
+                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1097,7 +1016,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "Where are your products manufactured?",
+                "heading": "Do you offer art workshops or events?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1107,7 +1026,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value. </p>",
+                    "text": "<p>Yes, we host public plein-air sessions and also design private art workshops for groups, hotels, and corporate team-building events.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1138,7 +1057,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "How much does shipping cost?",
+                "heading": "How do I join a painting session?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1148,7 +1067,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Shipping is calculated based on your location and the items in your order. You will always know the shipping price before you purchase.</p>",
+                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1226,7 +1145,6 @@
     "featured_product_mTUbKC",
     "hero_MVUtj6",
     "collection_list_dnRNYQ",
-    "17586335761b9b1335",
     "section_9CzpAF"
   ]
 }
