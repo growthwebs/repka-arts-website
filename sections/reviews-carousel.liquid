@@ -30,13 +30,11 @@
                     {% endfor %}
                   </div>
                 {% endif %}
-                
+
                 {% if block.settings.review_text != blank %}
-                  <blockquote class="review-text">
-                    "{{ block.settings.review_text }}"
-                  </blockquote>
+                  <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
                 {% endif %}
-                
+
                 <div class="review-footer">
                   {% if block.settings.customer_name != blank %}
                     <strong class="review-name">{{ block.settings.customer_name }}</strong>
@@ -71,10 +69,11 @@
       <div class="reviews-carousel__dots">
         {% for block in section.blocks %}
           {% if block.type == 'review' %}
-            <button class="carousel-dot {% if forloop.first %}active{% endif %}" 
-                    aria-label="Go to review {{ forloop.index }}"
-                    data-slide="{{ forloop.index0 }}">
-            </button>
+            <button
+              class="carousel-dot {% if forloop.first %}active{% endif %}"
+              aria-label="Go to review {{ forloop.index }}"
+              data-slide="{{ forloop.index0 }}"
+            ></button>
           {% endif %}
         {% endfor %}
       </div>
@@ -244,16 +243,16 @@
       padding: 2rem 1.5rem;
       margin: 0 0.5rem;
     }
-    
+
     .carousel-btn {
       width: 2.5rem;
       height: 2.5rem;
     }
-    
+
     .carousel-prev {
       margin-left: -1rem;
     }
-    
+
     .carousel-next {
       margin-right: -1rem;
     }
@@ -261,79 +260,81 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const carouselId = 'reviews-carousel-{{ section.id }}';
     const carousel = document.getElementById(carouselId);
-    
+
     if (!carousel) return;
-    
+
     const slides = carousel.querySelectorAll('.reviews-carousel__slide');
     const prevBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-prev');
     const nextBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-next');
     const dots = carousel.closest('.reviews-carousel-section').querySelectorAll('.carousel-dot');
-    
+
     let currentSlide = 0;
     let autoSlideInterval;
-    
+
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.style.transform = `translateX(-${index * 100}%)`;
       });
-      
+
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
-      
+
       currentSlide = index;
     }
-    
+
     function nextSlide() {
       const next = (currentSlide + 1) % slides.length;
       showSlide(next);
     }
-    
+
     function prevSlide() {
       const prev = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(prev);
     }
-    
+
     function startAutoSlide() {
       autoSlideInterval = setInterval(nextSlide, 5000);
     }
-    
+
     function stopAutoSlide() {
       if (autoSlideInterval) {
         clearInterval(autoSlideInterval);
       }
     }
-    
+
     // Event listeners
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetAutoSlide();
-    });
-    
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-      prevSlide();
-      resetAutoSlide();
-    });
-    
+    if (nextBtn)
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+
+    if (prevBtn)
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         showSlide(index);
         resetAutoSlide();
       });
     });
-    
+
     function resetAutoSlide() {
       stopAutoSlide();
       startAutoSlide();
     }
-    
+
     // Pause on hover
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
-    
+
     // Initialize
     showSlide(0);
     startAutoSlide();
