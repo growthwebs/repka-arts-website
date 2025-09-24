@@ -14,61 +14,65 @@
   {% endif %}
 
   <div class="reviews-carousel__container">
-    <div class="reviews-carousel__wrapper" id="reviews-carousel-{{ section.id }}">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'review' %}
-            <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
-              <div class="review-card">
-                <div class="review-content">
-                  {% if block.settings.rating > 0 %}
-                    <div class="review-stars">
-                      {% for i in (1..5) %}
-                        {% if i <= block.settings.rating %}
-                          <span class="star filled">★</span>
-                        {% else %}
-                          <span class="star">☆</span>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                  {% endif %}
+    <div class="reviews-carousel__inner-container">
+      <div class="reviews-carousel__wrapper" id="reviews-carousel-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'review' %}
+              <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
+                <div class="review-card">
+                  <div class="review-content">
+                    {% if block.settings.rating > 0 %}
+                      <div class="review-stars">
+                        {% for i in (1..5) %}
+                          {% if i <= block.settings.rating %}
+                            <span class="star filled">★</span>
+                          {% else %}
+                            <span class="star">☆</span>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
 
-                  {% if block.settings.review_text != blank %}
-                    <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
-                  {% endif %}
-                </div>
+                    {% if block.settings.review_text != blank %}
+                      <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
+                    {% endif %}
+                  </div>
 
-                <div class="review-footer">
-                  {% if block.settings.customer_name != blank %}
-                    <strong class="review-name">{{ block.settings.customer_name }}</strong>
-                  {% endif %}
-                  {% if block.settings.customer_location != blank %}
-                    <span class="review-location">{{ block.settings.customer_location }}</span>
-                  {% endif %}
-                  {% if block.settings.review_source != blank %}
-                    <small class="review-source">{{ block.settings.review_source }}</small>
-                  {% endif %}
+                  <div class="review-footer">
+                    {% if block.settings.customer_name != blank %}
+                      <strong class="review-name">{{ block.settings.customer_name }}</strong>
+                    {% endif %}
+                    {% if block.settings.customer_location != blank %}
+                      <span class="review-location">{{ block.settings.customer_location }}</span>
+                    {% endif %}
+                    {% if block.settings.review_source != blank %}
+                      <small class="review-source">{{ block.settings.review_source }}</small>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
-            </div>
-        {% endcase %}
-      {% endfor %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 1 %}
+        <div class="reviews-carousel__navigation">
+          <button class="carousel-btn carousel-prev" aria-label="Previous review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Next review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      {% endif %}
     </div>
 
     {% if section.blocks.size > 1 %}
-      <div class="reviews-carousel__navigation">
-        <button class="carousel-btn carousel-prev" aria-label="Previous review">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="carousel-btn carousel-next" aria-label="Next review">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-
       <div class="reviews-carousel__dots">
         {% for block in section.blocks %}
           {% if block.type == 'review' %}
@@ -115,13 +119,26 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-carousel__inner-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem; /* Space for arrows */
   }
 
   .reviews-carousel__wrapper {
     display: flex;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: var(--style-border-radius);
     width: 100%;
+    max-width: calc(100% - 8rem); /* Account for arrow space */
   }
 
   .reviews-carousel__slide {
@@ -131,7 +148,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -148,7 +165,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
     min-height: 500px;
     box-sizing: border-box;
@@ -243,7 +260,7 @@
     align-items: center;
     pointer-events: none;
     z-index: 10;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    padding: 0 1rem;
   }
 
   .carousel-btn {
@@ -319,6 +336,14 @@
       padding: 0 4rem;
     }
 
+    .reviews-carousel__inner-container {
+      padding: 0 5rem; /* More space for arrows on tablet */
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 10rem); /* Account for larger arrow space */
+    }
+
     .review-card {
       max-width: 500px;
       padding: 4rem 3rem;
@@ -361,6 +386,14 @@
 
     .reviews-carousel__container {
       padding: 0 6rem;
+    }
+
+    .reviews-carousel__inner-container {
+      padding: 0 6rem; /* More space for arrows on desktop */
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 12rem); /* Account for desktop arrow space */
     }
 
     .review-card {
@@ -427,91 +460,6 @@
     }
   }
 
-  /* All devices now use elegant, Shopify-integrated responsive design */
-    .reviews-carousel__container {
-      padding: 0 6vw;
-    }
-
-    .reviews-carousel__slide {
-      padding: 0 3vw;
-    }
-
-    .review-card {
-      width: 100%;
-      max-width: 80vw;
-      padding: 4vh 5vw;
-      min-height: 40vh;
-      max-height: 50vh;
-      flex-direction: row;
-      align-items: center;
-      text-align: left;
-    }
-
-    .review-content {
-      flex: 1;
-      padding-right: 4vw;
-    }
-
-    .review-text {
-      font-size: clamp(20px, 2.2vw, 24px);
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-
-    .review-stars {
-      margin-bottom: 3vh;
-    }
-
-    .star {
-      font-size: clamp(20px, 2.5vw, 22px);
-      margin: 0 3px;
-    }
-
-    .review-footer {
-      flex: 0 0 auto;
-      border-top: none;
-      border-left: 1px solid rgba(0, 0, 0, 0.08);
-      padding-top: 0;
-      padding-left: 3vw;
-      text-align: center;
-      min-width: 18vw;
-    }
-
-    .review-name {
-      font-size: clamp(18px, 2vw, 20px);
-      margin-bottom: 1.5vh;
-    }
-
-    .review-location {
-      font-size: clamp(16px, 1.8vw, 18px);
-      margin-bottom: 1.5vh;
-    }
-
-    .review-source {
-      font-size: clamp(13px, 1.5vw, 14px);
-    }
-
-    .reviews-carousel__navigation {
-      padding: 0 3vw;
-    }
-
-    .carousel-btn {
-      width: clamp(48px, 5vw, 52px);
-      height: clamp(48px, 5vw, 52px);
-    }
-
-    .reviews-carousel__dots {
-      gap: clamp(12px, 1.5vw, 16px);
-      margin-top: clamp(32px, 4vh, 48px);
-    }
-
-    .carousel-dot {
-      width: clamp(10px, 1.2vw, 12px);
-      height: clamp(10px, 1.2vw, 12px);
-    }
-  }
-
-  /* All devices now use simple, clean responsive design */
 </style>
 
 <script>
@@ -761,3 +709,4 @@
   ]
 }
 {% endschema %}
+
