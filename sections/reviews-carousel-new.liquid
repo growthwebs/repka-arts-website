@@ -90,14 +90,14 @@
 
 <style>
   .reviews-carousel-section {
-    padding: 80px 0;
+    padding: clamp(3rem, 8vw, 6rem) 0;
     background: var(--color-background);
   }
 
   .reviews-carousel__header {
     text-align: center;
-    margin-bottom: 4rem;
-    padding: 0 2rem;
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+    padding: 0 clamp(1rem, 4vw, 2rem);
   }
 
   .reviews-carousel__title {
@@ -105,16 +105,16 @@
     color: var(--color-foreground);
     font-family: var(--font-heading--family);
     font-weight: var(--font-heading--weight);
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.1;
   }
 
   .reviews-carousel__container {
     position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: min(100vw, 1200px);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 clamp(1rem, 4vw, 2rem);
   }
 
   .reviews-carousel__inner-container {
@@ -123,14 +123,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 0 clamp(2rem, 6vw, 4rem);
   }
 
   .reviews-carousel__wrapper {
     display: flex;
     overflow: hidden;
     width: 100%;
-    max-width: calc(100% - 4rem);
+    max-width: calc(100% - clamp(4rem, 12vw, 8rem));
   }
 
   .reviews-carousel__slide {
@@ -140,24 +140,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
   .review-card {
     background: {{ section.settings.card_background_color | default: 'var(--color-background)' }};
     border-radius: var(--style-border-radius);
-    padding: 2rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
     text-align: center;
     box-shadow: var(--style-shadow);
     border: var(--style-border-width) solid {{ section.settings.card_border_color | default: 'var(--color-border)' }};
     width: 100%;
-    max-width: 400px;
-    min-height: 400px;
+    max-width: min(90vw, clamp(320px, 50vw, 800px));
+    min-height: clamp(350px, 60vh, 500px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1 / 1.2;
   }
 
   .review-card::before {
@@ -302,42 +303,58 @@
     opacity: 0.6;
   }
 
-  /* Tablet Portrait - fix spacing */
+  /* Tablet Portrait - VERTICAL STACKING */
   @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: portrait) {
     .reviews-carousel__inner-container {
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
 
     .reviews-carousel__wrapper {
-      max-width: calc(100% - 4rem);
+      max-width: calc(100% - 2rem);
     }
 
     .review-card {
-      max-width: 500px;
+      max-width: 100%;
       padding: 2.5rem;
-      min-height: 450px;
+      min-height: 500px;
+      flex-direction: column; /* VERTICAL STACKING */
+      text-align: center; /* Center text for portrait */
+    }
+
+    .review-content {
+      flex: 1;
+      padding-right: 0; /* Remove horizontal padding */
+    }
+
+    .review-footer {
+      border-left: none; /* Remove left border */
+      border-top: 1px solid var(--color-border); /* Add top border */
+      padding-left: 0; /* Remove left padding */
+      padding-top: 1.5rem; /* Add top padding */
+      text-align: center;
+      min-width: auto; /* Remove min-width */
     }
   }
 
-  /* Mobile Portrait - fix spacing */
+  /* Mobile Portrait - FIX ARROW SPACING AND CARD FIT */
   @media screen and (max-width: 749px) {
     .reviews-carousel__inner-container {
-      padding: 0 1.5rem;
+      padding: 0 0.5rem; /* Much less padding - arrows closer to screen edges */
     }
 
     .reviews-carousel__wrapper {
-      max-width: calc(100% - 3rem);
+      max-width: calc(100% - 1rem); /* Much tighter - cards fit properly */
     }
 
     .review-card {
-      max-width: 350px;
+      max-width: 100%; /* Use full available width */
       padding: 1.5rem;
       min-height: 350px;
     }
 
     .carousel-btn {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
     }
   }
 
