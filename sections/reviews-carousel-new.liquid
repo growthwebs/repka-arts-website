@@ -158,7 +158,6 @@
     justify-content: space-between;
     position: relative;
     overflow: visible;
-    aspect-ratio: 1 / 1.4;
   }
 
   .review-card::before {
@@ -205,10 +204,6 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .review-footer {
@@ -335,8 +330,9 @@
   /* Mobile-specific fixes for text overflow */
   @media screen and (max-width: 749px) {
     .review-card {
-      min-height: clamp(450px, 80vh, 600px);
-      aspect-ratio: 1 / 1.5;
+      min-height: clamp(500px, 90vh, 700px);
+      aspect-ratio: unset;
+      height: auto;
     }
 
     .review-text {
