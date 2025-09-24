@@ -297,28 +297,28 @@
     transform: scale(1.1);
   }
 
-  /* DESKTOP: Landscape Layout */
+  /* DESKTOP: Dynamic Landscape Layout */
   @media screen and (min-width: 769px) {
     .reviews-carousel__container {
-      max-width: 1400px;
-      padding: 0 3rem;
+      max-width: min(90vw, 1400px);
+      padding: 0 clamp(2rem, 4vw, 3rem);
     }
 
     .reviews-carousel__title {
-      font-size: 3rem;
-      margin-bottom: 5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: clamp(3rem, 6vw, 5rem);
     }
 
     .reviews-carousel__slide {
-      padding: 0 3rem;
+      padding: 0 clamp(2rem, 4vw, 3rem);
     }
 
     .review-card {
-      max-width: 900px;
-      padding: 3rem 4rem;
+      max-width: min(80vw, 900px);
+      padding: clamp(2rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
 
-      /* Desktop: Landscape aspect ratio */
-      aspect-ratio: 2.5 / 1;
+      /* Dynamic landscape aspect ratio */
+      aspect-ratio: clamp(2, 100vw / 40vh, 2.5);
       flex-direction: row;
       align-items: center;
       text-align: left;
@@ -326,54 +326,54 @@
 
     .review-content {
       flex: 1;
-      padding-right: 3rem;
+      padding-right: clamp(2rem, 4vw, 3rem);
     }
 
     .review-text {
-      font-size: 1.3rem;
-      line-height: 1.7;
+      font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+      line-height: clamp(1.5, 2.5vw, 1.7);
       margin-bottom: 0;
     }
 
     .review-stars {
-      margin-bottom: 2rem;
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
     }
 
     .star {
-      font-size: 1.8rem;
-      margin: 0 0.3rem;
+      font-size: clamp(1.5rem, 2.8vw, 1.8rem);
+      margin: 0 clamp(0.2rem, 0.5vw, 0.3rem);
     }
 
     .review-footer {
       border-top: none;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
       padding-top: 0;
-      padding-left: 3rem;
+      padding-left: clamp(2rem, 4vw, 3rem);
       text-align: center;
-      min-width: 200px;
+      min-width: clamp(150px, 20vw, 200px);
     }
 
     .review-name {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
     }
 
     .review-location {
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
     }
 
     .review-source {
-      font-size: 0.8rem;
+      font-size: clamp(0.75rem, 1.5vw, 0.8rem);
     }
 
     .reviews-carousel__navigation {
-      padding: 0 2rem;
+      padding: 0 clamp(2rem, 4vw, 2rem);
     }
 
     .carousel-btn {
-      width: 3.5rem;
-      height: 3.5rem;
+      width: clamp(3rem, 5vw, 3.5rem);
+      height: clamp(3rem, 5vw, 3.5rem);
     }
 
     .reviews-carousel__dots {
