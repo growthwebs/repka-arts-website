@@ -72,13 +72,13 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .collection-title {
     /* Balanced opacity for tablets */
-    background: rgba(255, 255, 255, 0.18) !important;
+    background: rgba(0, 0, 0, 0.45) !important;
     
     /* Medium padding */
     padding: clamp(10px, 2.2vw, 14px) clamp(18px, 4.2vw, 22px) !important;
     
     /* Balanced font size */
-    font-size: clamp(0.95rem, 2.3vw, 1.15rem) !important;
+    font-size: clamp(0.8rem, 2vw, 1rem) !important;
   }
 }
 
