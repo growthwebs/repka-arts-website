@@ -202,7 +202,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Experience the beauty of crafted oil, watercolour, ceramic, and mixed media artwork.</p>",
+                "text": "<p>Experience an array of flavours reflecting various inspirations in every series.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -237,9 +237,9 @@
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/Oasis_sentinels.jpg",
+        "image_1": "shopify://shop_images/f6a915_7b59034c0e7c4f6bbf2d9621ca2886a7_mv2.jpg",
         "media_type_2": "image",
-        "image_2": "shopify://shop_images/f6a915_696f0888b0ab43f29bb7ed2dfe3a3b6b_mv2.jpg",
+        "image_2": "shopify://shop_images/f6a915_44b62b872e664d668ab229cc52f6c70c_mv2.jpg",
         "link": "",
         "open_in_new_tab": false,
         "content_direction": "column",
@@ -311,7 +311,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Shop by </h3>",
+                "text": "<h3>Shop by series</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -408,7 +408,19 @@
       ],
       "name": "t:names.collections_editorial",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "abstract-moments",
+          "andalusian-spirit",
+          "balanced-art",
+          "ceramics",
+          "gemstones",
+          "savannah-vibes",
+          "serenity-in-bloom",
+          "timeless-elegance",
+          "toulouse-spirit",
+          "vibrant-impressions",
+          "wild-at-heart"
+        ],
         "layout_type": "editorial",
         "carousel_on_mobile": false,
         "columns": 3,
@@ -421,7 +433,7 @@
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
-        "gap": 64,
+        "gap": 24,
         "color_scheme": "",
         "padding-block-start": 48,
         "padding-block-end": 48
