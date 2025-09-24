@@ -279,21 +279,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(4px, 1vw, 8px);
-    margin-top: clamp(1.5rem, 4vw, 2.5rem);
+    gap: 6px;
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
   }
 
   .carousel-dot {
+    display: inline-block;
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: var(--color-border);
+    background-color: var(--color-border);
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    flex-shrink: 0;
-    min-width: 4px;
-    min-height: 4px;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .carousel-dot.active {
@@ -358,6 +363,15 @@
     .carousel-btn {
       width: clamp(1.5rem, 3vw, 2rem);
       height: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .carousel-dot {
+      width: 4px !important;
+      height: 4px !important;
+      min-width: 4px !important;
+      min-height: 4px !important;
+      max-width: 4px !important;
+      max-height: 4px !important;
     }
   }
 
