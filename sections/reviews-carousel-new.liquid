@@ -391,24 +391,27 @@
     }
   }
 
-  /* Large Desktop */
+  /* Large Desktop - Fluid Scaling */
   @media screen and (min-width: 1200px) {
     .reviews-carousel__container {
-      max-width: 1600px;
+      width: 100%;
+      max-width: none;
+      padding: 0 10vw;
     }
 
     .review-card {
-      max-width: 1000px;
-      padding: 4rem 5rem;
+      width: 100%;
+      max-width: none;
+      padding: clamp(3rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
     }
 
     .review-content {
-      padding-right: 4rem;
+      padding-right: clamp(3rem, 5vw, 4rem);
     }
 
     .review-footer {
-      padding-left: 4rem;
-      min-width: 220px;
+      padding-left: clamp(3rem, 5vw, 4rem);
+      min-width: clamp(200px, 25vw, 250px);
     }
   }
 
