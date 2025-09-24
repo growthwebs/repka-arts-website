@@ -247,7 +247,7 @@
     align-items: center;
     pointer-events: none;
     z-index: 10;
-    padding: 0 1rem;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
   }
 
   .carousel-btn {
@@ -255,8 +255,8 @@
     color: #333;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    width: clamp(2.5rem, 5vw, 3.5rem);
-    height: clamp(2.5rem, 5vw, 3.5rem);
+    width: clamp(2rem, 4vw, 3rem);
+    height: clamp(2rem, 4vw, 3rem);
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -265,7 +265,7 @@
     pointer-events: auto;
     box-shadow: 0 clamp(2px, 0.5vw, 4px) clamp(8px, 2vw, 16px) rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
   }
 
   .carousel-btn:hover {
