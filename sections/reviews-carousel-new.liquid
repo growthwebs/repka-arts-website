@@ -104,8 +104,10 @@
 
   .reviews-carousel__container {
     position: relative;
-    max-width: 1200px;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
+    padding: 0 5vw;
   }
 
   .reviews-carousel__wrapper {
@@ -122,7 +124,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 3vw;
     box-sizing: border-box;
   }
 
@@ -139,7 +141,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: min(90vw, 1000px);
+    max-width: none;
     box-sizing: border-box;
     
     /* Dynamic aspect ratio based on viewport */
@@ -300,8 +302,9 @@
   /* DESKTOP: Dynamic Landscape Layout */
   @media screen and (min-width: 769px) {
     .reviews-carousel__container {
-      max-width: min(90vw, 1400px);
-      padding: 0 clamp(2rem, 4vw, 3rem);
+      width: 100%;
+      max-width: none;
+      padding: 0 8vw;
     }
 
     .reviews-carousel__title {
@@ -310,11 +313,12 @@
     }
 
     .reviews-carousel__slide {
-      padding: 0 clamp(2rem, 4vw, 3rem);
+      padding: 0 5vw;
     }
 
     .review-card {
-      max-width: min(80vw, 900px);
+      width: 100%;
+      max-width: none;
       padding: clamp(2rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
 
       /* Dynamic landscape aspect ratio */
@@ -387,149 +391,31 @@
     }
   }
 
-  /* Large Desktop */
+  /* Large Desktop - Fluid Scaling */
   @media screen and (min-width: 1200px) {
     .reviews-carousel__container {
-      max-width: 1600px;
+      width: 100%;
+      max-width: none;
+      padding: 0 10vw;
     }
 
     .review-card {
-      max-width: 1000px;
-      padding: 4rem 5rem;
+      width: 100%;
+      max-width: none;
+      padding: clamp(3rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
     }
 
     .review-content {
-      padding-right: 4rem;
+      padding-right: clamp(3rem, 5vw, 4rem);
     }
 
     .review-footer {
-      padding-left: 4rem;
-      min-width: 220px;
+      padding-left: clamp(3rem, 5vw, 4rem);
+      min-width: clamp(200px, 25vw, 250px);
     }
   }
 
-  /* Tablet */
-  @media screen and (max-width: 768px) {
-    .reviews-carousel-section {
-      padding: 60px 0;
-    }
-
-    .reviews-carousel__header {
-      margin-bottom: 3rem;
-    }
-
-    .reviews-carousel__title {
-      font-size: 2.2rem;
-    }
-
-    .reviews-carousel__container {
-      padding: 0 1rem;
-    }
-
-    .reviews-carousel__slide {
-      padding: 0 1rem;
-    }
-
-    .review-card {
-      padding: 2rem 1.5rem;
-      max-width: 100%;
-    }
-
-    .review-text {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .reviews-carousel__navigation {
-      padding: 0 0.5rem;
-    }
-
-    .carousel-btn {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-
-    .reviews-carousel__dots {
-      gap: 0.5rem;
-      margin-top: 2rem;
-      padding: 0 1rem;
-    }
-
-    .carousel-dot {
-      width: 0.8rem;
-      height: 0.8rem;
-    }
-  }
-
-  /* Small Mobile */
-  @media screen and (max-width: 480px) {
-    .reviews-carousel-section {
-      padding: 50px 0;
-    }
-
-    .reviews-carousel__title {
-      font-size: 1.9rem;
-    }
-
-    .reviews-carousel__container {
-      padding: 0 0.5rem;
-    }
-
-    .reviews-carousel__slide {
-      padding: 0 0.5rem;
-    }
-
-    .review-card {
-      padding: 1.5rem 1rem;
-    }
-
-    .review-text {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-
-    .review-stars {
-      margin-bottom: 1rem;
-    }
-
-    .star {
-      font-size: 1.2rem;
-      margin: 0 0.1rem;
-    }
-
-    .review-footer {
-      padding-top: 1rem;
-    }
-
-    .review-name {
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .review-location {
-      font-size: 0.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .review-source {
-      font-size: 0.7rem;
-    }
-
-    .carousel-btn {
-      width: 2rem;
-      height: 2rem;
-    }
-
-    .reviews-carousel__dots {
-      gap: 0.4rem;
-      margin-top: 1.5rem;
-    }
-
-    .carousel-dot {
-      width: 0.6rem;
-      height: 0.6rem;
-    }
-  }
+  /* All devices now use fluid design - no fixed breakpoints needed */
 </style>
 
 <script>
