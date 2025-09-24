@@ -86,27 +86,35 @@
 
 <style>
   .reviews-carousel-section {
-    padding: {{ section.settings.padding_top | default: 80 }}px 0 {{ section.settings.padding_bottom | default: 80 }}px;
+    padding: {{ section.settings.padding_top | default: 120 }}px 0 {{ section.settings.padding_bottom | default: 120 }}px;
+    background: var(--color-background);
   }
 
   .reviews-carousel__header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
   }
 
   .reviews-carousel__title {
     margin: 0;
     color: var(--color-foreground);
-    font-size: 2.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
   }
 
   .reviews-carousel__container {
     position: relative;
     width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 2rem;
   }
 
   .reviews-carousel__wrapper {
