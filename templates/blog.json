@@ -214,7 +214,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>Latest news</h1>",
+                    "text": "<h1>Check out the blog</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -297,7 +297,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#38383895",
+        "overlay_color": "#38383894",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -430,7 +430,7 @@
       },
       "name": "t:names.blog_posts_editorial",
       "settings": {
-        "blog": "",
+        "blog": "news",
         "layout_type": "editorial",
         "carousel_on_mobile": false,
         "post_limit": 5,
