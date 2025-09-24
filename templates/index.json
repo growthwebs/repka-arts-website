@@ -297,7 +297,7 @@
                         "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
-                        "font_size": "1rem",
+                        "font_size": "clamp(1rem, 2vw, 1.1rem)",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
