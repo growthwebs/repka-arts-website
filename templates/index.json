@@ -983,7 +983,7 @@
             "alignment": "center",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
-            "font_size": "1.5rem",
+            "font_size": "clamp(1.5rem, 3vw, 2rem)",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
