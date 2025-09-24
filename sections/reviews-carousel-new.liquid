@@ -152,13 +152,13 @@
     border: var(--style-border-width) solid {{ section.settings.card_border_color | default: 'var(--color-border)' }};
     width: 100%;
     max-width: min(90vw, clamp(320px, 50vw, 800px));
-    min-height: clamp(350px, 60vh, 500px);
+    min-height: clamp(400px, 70vh, 500px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    overflow: hidden;
-    aspect-ratio: 1 / 1.2;
+    overflow: visible;
+    aspect-ratio: 1 / 1.4;
   }
 
   .review-card::before {
