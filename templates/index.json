@@ -45,7 +45,7 @@
             "alignment": "center",
             "type_preset": "custom",
             "font": "var(--font-heading--family)",
-            "font_size": "clamp(2.2rem, 5vw, 3.5rem)",
+            "font_size": "3.5rem",
             "line_height": "tight",
             "letter_spacing": "normal",
             "case": "none",
@@ -156,7 +156,7 @@
                 "alignment": "center",
                 "type_preset": "h2",
                 "font": "var(--font-primary--family)",
-                "font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
+                "font_size": "2rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -297,7 +297,7 @@
                         "alignment": "left",
                         "type_preset": "custom",
                         "font": "var(--font-body--family)",
-                        "font_size": "clamp(1rem, 2vw, 1.1rem)",
+                        "font_size": "1rem",
                         "line_height": "normal",
                         "letter_spacing": "normal",
                         "case": "none",
@@ -594,7 +594,7 @@
             "alignment": "left",
             "type_preset": "h2",
             "font": "var(--font-primary--family)",
-            "font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
+            "font_size": "2rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
@@ -619,7 +619,7 @@
             "alignment": "right",
             "type_preset": "h6",
             "font": "var(--font-secondary--family)",
-            "font_size": "clamp(0.9rem, 1.8vw, 1.1rem)",
+            "font_size": "",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "uppercase",
@@ -718,12 +718,12 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<h2>Check out my series</h2>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
-                "font_size": "clamp(1.5rem, 3vw, 2rem)",
+                "font_size": "1.5rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -768,21 +768,21 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-heading--family)",
-                "font_size": "12px",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "#000000",
+                "color": "var(--color-foreground)",
                 "background": true,
                 "background_color": "#ffffff",
-                "corner_radius": 20,
-                "padding-block-start": 12,
-                "padding-block-end": 12,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 8,
+                "padding-inline-end": 8
               },
               "blocks": {}
             },
@@ -852,9 +852,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Absolutely stunning artwork. The quality is outstanding and the delivery was perfect. I've received so many compliments on this piece.",
-            "customer_name": "Sarah M.",
-            "customer_location": "Madrid",
+            "review_text": "We have collaborated with Repka Arts on 2 projects: custom made ceramics for the photoshoot of the menu of our coffee shop and the poster for our grand opening that was designed on the basis of one of Maryna’s paintings. Both projects were very important for our business and we are 100% happy with the result.",
+            "customer_name": "Anna Deouve",
+            "customer_location": "Fuengirola, Spain",
             "review_source": "via Google"
           }
         },
@@ -862,9 +862,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Beautiful pieces that perfectly complement our office space. The artist's attention to detail is incredible. Highly recommended!",
-            "customer_name": "John D.",
-            "customer_location": "Barcelona",
+            "review_text": "Maryna es una gran profesional, estoy encantada con el cuadro que me ha hecho y seguramente pediré más, se nota la dedicación a su trabajo. La comunicación ha sido muy fácil también. Recomiendo para quienes buscan arte auténtico y único!",
+            "customer_name": "Marina Mnatsakanian",
+            "customer_location": "Málaga, Spain",
             "review_source": "via Google"
           }
         },
@@ -872,9 +872,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "The art quality is incredible. Each piece tells a story and brings such warmth to our home. The shipping was fast and secure.",
-            "customer_name": "Maria L.",
-            "customer_location": "Valencia",
+            "review_text": "Это не просто картина, а настоящее произведение искусства. Для меня картины этой художницы - настоящая находка. В них прекрасно все: качество исполнения, стиль, энергетика. Не могу налюбоваться. Спасибо огромное за эту красоту и прекрасный сервис. Желаю дальнейших творческих успехов!",
+            "customer_name": "Yana Serbul",
+            "customer_location": "Odesa, Ukraine",
             "review_source": "via Google"
           }
         },
@@ -882,9 +882,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Working with Repka Arts for our hotel lobby was a dream. Professional, creative, and delivered exactly what we envisioned.",
-            "customer_name": "Hotel Manager",
-            "customer_location": "Malaga",
+            "review_text": "J’étais à la recherche d’un truc pour donner un peu de peps à mon salon, et après avoir fouillé partout, j’ai enfin trouvé la perle rare. Sérieusement, chaque matin, dès que je rentre, elle me saute aux yeux—je peux pas m’arrêter de la regarder ! Je suis trop fan ! La livraison, c’était top aussi, je suis en France et tout est arrivé nickel. Merci beaucoup ! Je reviendrai sans hésiter.",
+            "customer_name": "Isis Fancello",
+            "customer_location": "Toulouse, France",
             "review_source": "via Google"
           }
         },
@@ -892,9 +892,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "The mixed media pieces are absolutely unique. We've commissioned several works and each one is more beautiful than the last.",
-            "customer_name": "Elena R.",
-            "customer_location": "Granada",
+            "review_text": "We recently got a stunning painting, and we couldn’t be happier! Maryna is an incredibly talented artist who creates such breathtaking work. Her attention to detail and creativity are truly remarkable. Highly recommend!",
+            "customer_name": "Vladyslav Apukhtin",
+            "customer_location": "Málaga, Spain",
             "review_source": "via Google"
           }
         },
@@ -902,9 +902,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Maryna's oil paintings are simply breathtaking. The way she captures light and emotion is extraordinary. We treasure every piece.",
-            "customer_name": "Carlos M.",
-            "customer_location": "Seville",
+            "review_text": "Repka is such a lovely artist! She created a beautiful drawing for me that captures a very special memory 🥹 Her kindness and talent shine through her work. I’m truly grateful and would absolutely recommend her to anyone looking for meaningful art✨",
+            "customer_name": "Norah Alhadab",
+            "customer_location": "Riyah, Saudi Arabia",
             "review_source": "via Google"
           }
         },
@@ -912,9 +912,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "The ceramics collection is stunning. Each piece is handcrafted with such care and attention to detail. Perfect for our gallery.",
-            "customer_name": "Isabella F.",
-            "customer_location": "Cordoba",
+            "review_text": "Maryna is a great professional! We worked with her as a supplier artist for our Stay Salty Málaga store, and we decided to commission a painting to display in our small establishment. The result was much better than expected! We're delighted! She's a great artist and a true professional. 100% recommended!",
+            "customer_name": "Tiffany Cámara",
+            "customer_location": "Málaga, Spain",
             "review_source": "via Google"
           }
         },
@@ -922,9 +922,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Fast delivery and exceptional packaging. The watercolour pieces arrived in perfect condition and look even more beautiful in person.",
-            "customer_name": "Antonio G.",
-            "customer_location": "Cadiz",
+            "review_text": "Ordered your work. Really satisfied!!! It was done quickly, and in real life the picture is even more beautiful than in the photo. Thank you very much😍",
+            "customer_name": "Natalia Husieva",
+            "customer_location": "Odesa, Ukraine",
             "review_source": "via Google"
           }
         },
@@ -932,9 +932,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Professional service from start to finish. The custom commission exceeded our expectations and perfectly matches our interior design.",
-            "customer_name": "Sofia L.",
-            "customer_location": "Alicante",
+            "review_text": "I was looking for something to change up my living room, and after a lot of searching, I finally found the perfect piece of art. Every morning, I walk in, and it just grabs my attention. I love it! Shipping was super easy too. I’m in Colombia, and it got here without any problems. Thanks so much! I’ll definitely order again.",
+            "customer_name": "Andres Uribe",
+            "customer_location": "Bogotá, Colombia",
             "review_source": "via Google"
           }
         },
@@ -942,9 +942,9 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "review_text": "Incredible talent and artistic vision. These pieces have transformed our living space and receive constant compliments from visitors.",
-            "customer_name": "Miguel R.",
-            "customer_location": "Murcia",
+            "review_text": "Отличный сервис! Рада знакомству с Мариной, это безумно талантливый человек и работы её уникальны! Рекомендую приобрести что-нибудь из её творчества, ведь всё создано с необычайно тонким вкусом прекрасного, эстетикой, 100% профессиональным подходом! Приобретенная работа подчеркнёт так же и Вашу уникальность!)",
+            "customer_name": "Анна Шкляр",
+            "customer_location": "Kyiv, Ukraine",
             "review_source": "via Google"
           }
         }
@@ -978,12 +978,12 @@
           "name": "t:names.heading",
           "settings": {
             "text": "<h2>Frequently asked questions</h2>",
-            "width": "fit-content",
+            "width": "100%",
             "max_width": "narrow",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
-            "font_size": "clamp(1.5rem, 3vw, 2rem)",
+            "font_size": "1.5rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
