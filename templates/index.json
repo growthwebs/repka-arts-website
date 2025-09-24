@@ -777,7 +777,7 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "background": true,
-                "background_color": "rgba(0, 0, 0, 0.6)",
+                "background_color": "#ffffff",
                 "corner_radius": 20,
                 "padding-block-start": 12,
                 "padding-block-end": 12,

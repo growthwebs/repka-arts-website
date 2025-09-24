@@ -58,22 +58,26 @@
 /* Dark Mode Support (if theme supports it) */
 @media (prefers-color-scheme: dark) {
   .collection-title {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.95) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff;
   }
 
   .collection-title:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background-color: #f0f0f0 !important;
   }
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   .collection-title {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 2px solid var(--color-foreground);
-    color: var(--color-foreground) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000;
+    border-width: 2px;
+  }
+  .collection-title:hover {
+    background-color: #f0f0f0 !important;
   }
 }
 
