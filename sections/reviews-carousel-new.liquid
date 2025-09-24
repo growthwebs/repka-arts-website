@@ -123,14 +123,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 clamp(2rem, 6vw, 4rem);
+    padding: 0 clamp(1rem, 4vw, 3rem);
   }
 
   .reviews-carousel__wrapper {
     display: flex;
     overflow: hidden;
     width: 100%;
-    max-width: calc(100% - clamp(4rem, 12vw, 8rem));
+    max-width: calc(100% - clamp(2rem, 8vw, 6rem));
   }
 
   .reviews-carousel__slide {
@@ -284,14 +284,16 @@
   }
 
   .carousel-dot {
-    width: clamp(3px, 0.8vw, 5px);
-    height: clamp(3px, 0.8vw, 5px);
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--color-border);
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    min-width: 4px;
+    min-height: 4px;
   }
 
   .carousel-dot.active {
@@ -327,17 +329,35 @@
     }
   }
 
-  /* Mobile-specific fixes for text overflow */
+  /* Mobile-specific fixes for text overflow and spacing */
   @media screen and (max-width: 749px) {
+    .reviews-carousel__container {
+      padding: 0 0.5rem;
+    }
+
+    .reviews-carousel__inner-container {
+      padding: 0 0.5rem;
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 1rem);
+    }
+
     .review-card {
       min-height: clamp(500px, 90vh, 700px);
       aspect-ratio: unset;
       height: auto;
+      padding: clamp(1rem, 3vw, 2rem);
     }
 
     .review-text {
       font-size: clamp(0.85rem, 2vw, 1.1rem);
       line-height: 1.4;
+    }
+
+    .carousel-btn {
+      width: clamp(1.5rem, 3vw, 2rem);
+      height: clamp(1.5rem, 3vw, 2rem);
     }
   }
 
