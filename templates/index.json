@@ -594,7 +594,7 @@
             "alignment": "left",
             "type_preset": "h2",
             "font": "var(--font-primary--family)",
-            "font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
+            "font_size": "2rem",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "none",
