@@ -284,14 +284,16 @@
   }
 
   .carousel-dot {
-    width: clamp(3px, 0.8vw, 5px);
-    height: clamp(3px, 0.8vw, 5px);
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--color-border);
     cursor: pointer;
     transition: all 0.3s ease;
     border: none;
-    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    min-width: 4px;
+    min-height: 4px;
   }
 
   .carousel-dot.active {
