@@ -195,8 +195,8 @@
   }
 
   .review-text {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    line-height: 1.6;
+    font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+    line-height: 1.5;
     font-style: italic;
     margin: 0 0 clamp(1rem, 3vw, 2rem) 0;
     color: var(--color-foreground);
@@ -204,6 +204,11 @@
     font-weight: var(--font-body--weight);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    hyphens: auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .review-footer {
@@ -324,6 +329,19 @@
       padding-left: clamp(1.5rem, 3vw, 2rem);
       text-align: center;
       min-width: clamp(120px, 20vw, 150px);
+    }
+  }
+
+  /* Mobile-specific fixes for text overflow */
+  @media screen and (max-width: 749px) {
+    .review-card {
+      min-height: clamp(450px, 80vh, 600px);
+      aspect-ratio: 1 / 1.5;
+    }
+
+    .review-text {
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      line-height: 1.4;
     }
   }
 
