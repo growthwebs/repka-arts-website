@@ -14,61 +14,65 @@
   {% endif %}
 
   <div class="reviews-carousel__container">
-    <div class="reviews-carousel__wrapper" id="reviews-carousel-{{ section.id }}">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'review' %}
-            <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
-              <div class="review-card">
-                <div class="review-content">
-                  {% if block.settings.rating > 0 %}
-                    <div class="review-stars">
-                      {% for i in (1..5) %}
-                        {% if i <= block.settings.rating %}
-                          <span class="star filled">★</span>
-                        {% else %}
-                          <span class="star">☆</span>
-                        {% endif %}
-                      {% endfor %}
-                    </div>
-                  {% endif %}
+    <div class="reviews-carousel__inner-container">
+      <div class="reviews-carousel__wrapper" id="reviews-carousel-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'review' %}
+              <div class="reviews-carousel__slide" {{ block.shopify_attributes }}>
+                <div class="review-card">
+                  <div class="review-content">
+                    {% if block.settings.rating > 0 %}
+                      <div class="review-stars">
+                        {% for i in (1..5) %}
+                          {% if i <= block.settings.rating %}
+                            <span class="star filled">★</span>
+                          {% else %}
+                            <span class="star">☆</span>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endif %}
 
-                  {% if block.settings.review_text != blank %}
-                    <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
-                  {% endif %}
-                </div>
+                    {% if block.settings.review_text != blank %}
+                      <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
+                    {% endif %}
+                  </div>
 
-                <div class="review-footer">
-                  {% if block.settings.customer_name != blank %}
-                    <strong class="review-name">{{ block.settings.customer_name }}</strong>
-                  {% endif %}
-                  {% if block.settings.customer_location != blank %}
-                    <span class="review-location">{{ block.settings.customer_location }}</span>
-                  {% endif %}
-                  {% if block.settings.review_source != blank %}
-                    <small class="review-source">{{ block.settings.review_source }}</small>
-                  {% endif %}
+                  <div class="review-footer">
+                    {% if block.settings.customer_name != blank %}
+                      <strong class="review-name">{{ block.settings.customer_name }}</strong>
+                    {% endif %}
+                    {% if block.settings.customer_location != blank %}
+                      <span class="review-location">{{ block.settings.customer_location }}</span>
+                    {% endif %}
+                    {% if block.settings.review_source != blank %}
+                      <small class="review-source">{{ block.settings.review_source }}</small>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
-            </div>
-        {% endcase %}
-      {% endfor %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 1 %}
+        <div class="reviews-carousel__navigation">
+          <button class="carousel-btn carousel-prev" aria-label="Previous review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Next review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      {% endif %}
     </div>
 
     {% if section.blocks.size > 1 %}
-      <div class="reviews-carousel__navigation">
-        <button class="carousel-btn carousel-prev" aria-label="Previous review">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="carousel-btn carousel-next" aria-label="Next review">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-
       <div class="reviews-carousel__dots">
         {% for block in section.blocks %}
           {% if block.type == 'review' %}
@@ -126,6 +130,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 4rem; /* Space for arrows */
   }
 
   .reviews-carousel__wrapper {
@@ -133,7 +138,7 @@
     overflow: hidden;
     border-radius: var(--style-border-radius);
     width: 100%;
-    max-width: 100%;
+    max-width: calc(100% - 8rem); /* Account for arrow space */
   }
 
   .reviews-carousel__slide {
