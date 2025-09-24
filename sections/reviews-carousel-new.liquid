@@ -90,16 +90,13 @@
 
 <style>
   .reviews-carousel-section {
-    padding: {{ section.settings.padding_top | default: 120 }}px 0 {{ section.settings.padding_bottom | default: 120 }}px;
+    padding: 80px 0;
     background: var(--color-background);
   }
 
   .reviews-carousel__header {
     text-align: center;
-    margin-bottom: 6rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 4rem;
     padding: 0 2rem;
   }
 
@@ -108,20 +105,16 @@
     color: var(--color-foreground);
     font-family: var(--font-heading--family);
     font-weight: var(--font-heading--weight);
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 2.5rem;
     line-height: 1.1;
-    letter-spacing: -0.03em;
   }
 
   .reviews-carousel__container {
     position: relative;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .reviews-carousel__inner-container {
@@ -130,15 +123,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 4rem; /* Space for arrows */
+    padding: 0 3rem;
   }
 
   .reviews-carousel__wrapper {
     display: flex;
     overflow: hidden;
-    border-radius: var(--style-border-radius);
     width: 100%;
-    max-width: calc(100% - 8rem); /* Account for arrow space */
+    max-width: calc(100% - 6rem);
   }
 
   .reviews-carousel__slide {
@@ -148,27 +140,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 0 1rem;
   }
 
-  /* Mobile First - Elegant Portrait Cards */
   .review-card {
     background: {{ section.settings.card_background_color | default: 'var(--color-background)' }};
     border-radius: var(--style-border-radius);
-    padding: 3rem 2rem;
-    margin: 0 auto;
+    padding: 2rem;
     text-align: center;
     box-shadow: var(--style-shadow);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: var(--style-border-width) solid {{ section.settings.card_border_color | default: 'var(--color-border)' }};
-    position: relative;
-    overflow: hidden;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 500px;
-    box-sizing: border-box;
+    max-width: 400px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -292,28 +276,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     margin-top: 2rem;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .carousel-dot {
-    width: 3px;
-    height: 3px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--color-border);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    flex-shrink: 0;
+    transition: all 0.3s ease;
     border: none;
-    outline: none;
-    display: block;
-    aspect-ratio: 1 / 1;
-    min-width: 3px;
-    min-height: 3px;
   }
 
   .carousel-dot.active {
@@ -326,84 +300,12 @@
     opacity: 0.6;
   }
 
-  /* Mobile Portrait (≤749px) - Default styles already applied above */
-
-  /* Tablet Portrait (750px - 1023px) - Fix spacing and overlapping */
-  @media screen and (min-width: 750px) {
-    .reviews-carousel__header {
-      margin-bottom: 4rem;
-      padding: 0 2rem;
-    }
-
-    .reviews-carousel__container {
-      padding: 0 2rem;
-    }
-
-    .reviews-carousel__inner-container {
-      padding: 0 3rem; /* Less space to prevent overlapping */
-    }
-
-    .reviews-carousel__wrapper {
-      max-width: calc(100% - 6rem); /* Tighter constraints */
-    }
-
-    .review-card {
-      max-width: 600px;
-      padding: 3rem 2.5rem;
-      min-height: 450px;
-    }
-
-    .review-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .review-name {
-      font-size: 1rem;
-    }
-
-    .review-location {
-      font-size: 0.9rem;
-    }
-
-    .review-source {
-      font-size: 0.8rem;
-    }
-
-    .reviews-carousel__dots {
-      gap: 4px;
-      margin-top: 2.5rem;
-    }
-
-    .carousel-dot {
-      width: 3px;
-      height: 3px;
-    }
-  }
-
-  /* Desktop (≥1024px) - Elegant landscape layout */
+  /* Desktop - landscape layout */
   @media screen and (min-width: 1024px) {
-    .reviews-carousel__header {
-      margin-bottom: 10rem;
-      padding: 0 6rem;
-    }
-
-    .reviews-carousel__container {
-      padding: 0 6rem;
-    }
-
-    .reviews-carousel__inner-container {
-      padding: 0 6rem; /* More space for arrows on desktop */
-    }
-
-    .reviews-carousel__wrapper {
-      max-width: calc(100% - 12rem); /* Account for desktop arrow space */
-    }
-
     .review-card {
       max-width: 800px;
-      padding: 4rem 5rem;
-      min-height: 320px;
+      padding: 3rem;
+      min-height: 300px;
       flex-direction: row;
       align-items: center;
       text-align: left;
@@ -411,82 +313,15 @@
 
     .review-content {
       flex: 1;
-      padding-right: 4rem;
-    }
-
-    .review-text {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-
-    .review-stars {
-      margin-bottom: 2rem;
+      padding-right: 3rem;
     }
 
     .review-footer {
-      flex: 0 0 auto;
       border-top: none;
-      border-left: var(--style-border-width) solid var(--color-border);
-      padding-top: 0;
-      padding-left: 3rem;
+      border-left: 1px solid var(--color-border);
+      padding-left: 2rem;
       text-align: center;
-      min-width: 200px;
-    }
-
-    .review-name {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .review-location {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .review-source {
-      font-size: 0.9rem;
-    }
-
-    .carousel-btn {
-      width: 48px;
-      height: 48px;
-    }
-
-    .reviews-carousel__dots {
-      gap: 10px;
-      margin-top: 6rem;
-    }
-
-    .carousel-dot {
-      width: 4px;
-      height: 4px;
-    }
-  }
-
-  /* Mobile responsive adjustments */
-  @media screen and (max-width: 749px) {
-    .reviews-carousel__inner-container {
-      padding: 0 3rem; /* Less space for arrows on mobile */
-    }
-
-    .reviews-carousel__wrapper {
-      max-width: calc(100% - 6rem); /* Account for mobile arrow space */
-    }
-
-    .review-card {
-      max-width: 100%;
-      padding: 2rem 1.5rem;
-      min-height: 480px;
-    }
-
-    .reviews-carousel__navigation {
-      padding: 0 0.5rem;
-    }
-
-    .carousel-btn {
-      width: 40px;
-      height: 40px;
+      min-width: 150px;
     }
   }
 </style>
