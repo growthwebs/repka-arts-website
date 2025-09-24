@@ -127,19 +127,21 @@
     box-sizing: border-box;
   }
 
-  /* Mobile First - Simple Responsive */
+  /* Mobile First - Portrait Cards */
   .review-card {
     background: {{ section.settings.card_background_color | default: '#FFFFFF' }};
-    border-radius: 16px;
-    padding: 16px;
+    border-radius: 20px;
+    padding: 24px;
     margin: 0;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
     border: 1px solid {{ section.settings.card_border_color | default: 'rgba(0, 0, 0, 0.06)' }};
     position: relative;
     overflow: hidden;
-    width: calc(100vw - 32px);
+    width: calc(100vw - 40px);
+    height: auto;
+    min-height: 400px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -180,10 +182,10 @@
   }
 
   .review-text {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.7;
     font-style: italic;
-    margin: 0 0 20px 0;
+    margin: 0 0 24px 0;
     color: #2c2c2c;
     font-weight: 400;
     word-wrap: break-word;
@@ -291,23 +293,26 @@
     transform: scale(1.1);
   }
 
-  /* Tablet */
-  @media screen and (min-width: 481px) {
+  /* Tablet - Medium Portrait */
+  @media screen and (min-width: 768px) {
     .reviews-carousel__slide {
-      padding: 0 32px;
+      padding: 0 40px;
     }
 
     .review-card {
-      width: calc(100vw - 64px);
-      padding: 24px;
+      width: calc(100vw - 80px);
+      max-width: 600px;
+      padding: 32px;
+      min-height: 450px;
     }
 
     .review-text {
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 1.8;
     }
 
     .star {
-      font-size: 22px;
+      font-size: 24px;
     }
 
     .review-name {
@@ -319,40 +324,68 @@
     }
 
     .review-source {
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 
-  /* Desktop */
-  @media screen and (min-width: 769px) {
+  /* Desktop - Landscape Layout */
+  @media screen and (min-width: 1024px) {
     .reviews-carousel__slide {
-      padding: 0 80px;
+      padding: 0 60px;
     }
 
     .review-card {
-      width: calc(100vw - 160px);
-      padding: 32px;
+      width: calc(100vw - 120px);
+      max-width: 900px;
+      padding: 40px 48px;
+      min-height: 280px;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+    }
+
+    .review-content {
+      flex: 1;
+      padding-right: 40px;
     }
 
     .review-text {
-      font-size: 20px;
-      line-height: 1.7;
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .review-stars {
+      margin-bottom: 20px;
     }
 
     .star {
-      font-size: 24px;
+      font-size: 20px;
+      margin: 0 3px;
+    }
+
+    .review-footer {
+      flex: 0 0 auto;
+      border-top: none;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 0;
+      padding-left: 32px;
+      text-align: center;
+      min-width: 180px;
     }
 
     .review-name {
-      font-size: 20px;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
     .review-location {
-      font-size: 18px;
+      font-size: 16px;
+      margin-bottom: 8px;
     }
 
     .review-source {
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .carousel-btn {
@@ -616,4 +649,3 @@
   ]
 }
 {% endschema %}
-
