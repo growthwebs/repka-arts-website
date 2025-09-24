@@ -293,52 +293,64 @@
     transform: scale(1.1);
   }
 
-  /* Tablet - Better Portrait Proportions */
-  @media screen and (min-width: 768px) {
+  /* Mobile Portrait (≤749px) - Default styles already applied above */
+
+  /* Tablet Portrait (750px - 1023px) */
+  @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: portrait) {
     .reviews-carousel__slide {
-      padding: 0 60px;
+      padding: 0 80px;
     }
 
     .review-card {
-      width: calc(100vw - 120px);
+      width: calc(100vw - 160px);
       max-width: 500px;
-      padding: 36px;
-      min-height: 520px;
+      padding: 40px;
+      min-height: 600px;
     }
 
     .review-text {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.8;
     }
 
     .star {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     .review-name {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .review-location {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .review-source {
-      font-size: 14px;
+      font-size: 15px;
+    }
+
+    .reviews-carousel__dots {
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
     }
   }
 
-  /* Desktop - Landscape Layout */
-  @media screen and (min-width: 1024px) {
+  /* Tablet Landscape (750px - 1023px) */
+  @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: landscape) {
     .reviews-carousel__slide {
       padding: 0 60px;
     }
 
     .review-card {
       width: calc(100vw - 120px);
-      max-width: 900px;
-      padding: 40px 48px;
-      min-height: 320px;
+      max-width: 800px;
+      padding: 32px 40px;
+      min-height: 280px;
       flex-direction: row;
       align-items: center;
       text-align: left;
@@ -346,21 +358,21 @@
 
     .review-content {
       flex: 1;
-      padding-right: 40px;
+      padding-right: 32px;
     }
 
     .review-text {
-      font-size: 22px;
+      font-size: 20px;
       line-height: 1.6;
       margin-bottom: 0;
     }
 
     .review-stars {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .star {
-      font-size: 20px;
+      font-size: 22px;
       margin: 0 3px;
     }
 
@@ -369,9 +381,9 @@
       border-top: none;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
       padding-top: 0;
-      padding-left: 32px;
+      padding-left: 24px;
       text-align: center;
-      min-width: 180px;
+      min-width: 160px;
     }
 
     .review-name {
@@ -389,18 +401,94 @@
     }
 
     .carousel-btn {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
     }
 
     .reviews-carousel__dots {
-      gap: 16px;
-      margin-top: 48px;
+      gap: 14px;
+      margin-top: 40px;
     }
 
     .carousel-dot {
-      width: 12px;
-      height: 12px;
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  /* Desktop (≥1024px) - Landscape Layout */
+  @media screen and (min-width: 1024px) {
+    .reviews-carousel__slide {
+      padding: 0 80px;
+    }
+
+    .review-card {
+      width: calc(100vw - 160px);
+      max-width: 1000px;
+      padding: 48px 56px;
+      min-height: 320px;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+    }
+
+    .review-content {
+      flex: 1;
+      padding-right: 48px;
+    }
+
+    .review-text {
+      font-size: 24px;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .review-stars {
+      margin-bottom: 24px;
+    }
+
+    .star {
+      font-size: 22px;
+      margin: 0 4px;
+    }
+
+    .review-footer {
+      flex: 0 0 auto;
+      border-top: none;
+      border-left: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 0;
+      padding-left: 40px;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .review-name {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .review-location {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .review-source {
+      font-size: 14px;
+    }
+
+    .carousel-btn {
+      width: 52px;
+      height: 52px;
+    }
+
+    .reviews-carousel__dots {
+      gap: 18px;
+      margin-top: 56px;
+    }
+
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
     }
   }
 
