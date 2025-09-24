@@ -619,7 +619,7 @@
             "alignment": "right",
             "type_preset": "h6",
             "font": "var(--font-secondary--family)",
-            "font_size": "",
+            "font_size": "clamp(0.9rem, 1.8vw, 1.1rem)",
             "line_height": "normal",
             "letter_spacing": "normal",
             "case": "uppercase",
