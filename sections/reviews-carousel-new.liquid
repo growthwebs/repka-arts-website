@@ -298,62 +298,81 @@
 
   /* Mobile Portrait (≤749px) - Default styles already applied above */
 
-  /* Tablet Portrait (750px - 1023px) */
+  /* Tablet Portrait (750px - 1023px) - Fluid based on viewport */
   @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: portrait) {
+    .reviews-carousel__container {
+      padding: 0 5vw;
+    }
+
     .reviews-carousel__slide {
-      padding: 0 80px;
+      padding: 0 3vw;
     }
 
     .review-card {
-      width: calc(100vw - 160px);
-      max-width: 500px;
-      padding: 40px;
-      min-height: 600px;
+      width: 100%;
+      max-width: 90vw;
+      padding: 4vh 5vw;
+      min-height: 70vh;
+      max-height: 80vh;
     }
 
     .review-text {
-      font-size: 22px;
-      line-height: 1.8;
+      font-size: clamp(18px, 2.5vw, 22px);
+      line-height: 1.7;
     }
 
     .star {
-      font-size: 26px;
+      font-size: clamp(20px, 3vw, 24px);
     }
 
     .review-name {
-      font-size: 20px;
+      font-size: clamp(16px, 2.2vw, 18px);
     }
 
     .review-location {
-      font-size: 18px;
+      font-size: clamp(14px, 2vw, 16px);
     }
 
     .review-source {
-      font-size: 15px;
+      font-size: clamp(12px, 1.8vw, 14px);
+    }
+
+    .reviews-carousel__navigation {
+      padding: 0 3vw;
+    }
+
+    .carousel-btn {
+      width: clamp(36px, 5vw, 44px);
+      height: clamp(36px, 5vw, 44px);
     }
 
     .reviews-carousel__dots {
-      gap: 16px;
-      margin-top: 48px;
+      gap: clamp(10px, 1.5vw, 14px);
+      margin-top: clamp(24px, 4vh, 32px);
     }
 
     .carousel-dot {
-      width: 12px;
-      height: 12px;
+      width: clamp(8px, 1.2vw, 10px);
+      height: clamp(8px, 1.2vw, 10px);
     }
   }
 
-  /* Tablet Landscape (750px - 1023px) */
+  /* Tablet Landscape (750px - 1023px) - Fluid landscape */
   @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: landscape) {
+    .reviews-carousel__container {
+      padding: 0 4vw;
+    }
+
     .reviews-carousel__slide {
-      padding: 0 60px;
+      padding: 0 2vw;
     }
 
     .review-card {
-      width: calc(100vw - 120px);
-      max-width: 800px;
-      padding: 32px 40px;
-      min-height: 280px;
+      width: 100%;
+      max-width: 85vw;
+      padding: 3vh 4vw;
+      min-height: 45vh;
+      max-height: 55vh;
       flex-direction: row;
       align-items: center;
       text-align: left;
@@ -361,22 +380,22 @@
 
     .review-content {
       flex: 1;
-      padding-right: 32px;
+      padding-right: 3vw;
     }
 
     .review-text {
-      font-size: 20px;
+      font-size: clamp(18px, 2.2vw, 20px);
       line-height: 1.6;
       margin-bottom: 0;
     }
 
     .review-stars {
-      margin-bottom: 16px;
+      margin-bottom: 2vh;
     }
 
     .star {
-      font-size: 22px;
-      margin: 0 3px;
+      font-size: clamp(18px, 2.5vw, 20px);
+      margin: 0 2px;
     }
 
     .review-footer {
@@ -384,38 +403,42 @@
       border-top: none;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
       padding-top: 0;
-      padding-left: 24px;
+      padding-left: 2.5vw;
       text-align: center;
-      min-width: 160px;
+      min-width: 15vw;
     }
 
     .review-name {
-      font-size: 18px;
-      margin-bottom: 8px;
+      font-size: clamp(16px, 2vw, 18px);
+      margin-bottom: 1vh;
     }
 
     .review-location {
-      font-size: 16px;
-      margin-bottom: 8px;
+      font-size: clamp(14px, 1.8vw, 16px);
+      margin-bottom: 1vh;
     }
 
     .review-source {
-      font-size: 13px;
+      font-size: clamp(12px, 1.5vw, 13px);
+    }
+
+    .reviews-carousel__navigation {
+      padding: 0 2vw;
     }
 
     .carousel-btn {
-      width: 44px;
-      height: 44px;
+      width: clamp(40px, 4.5vw, 44px);
+      height: clamp(40px, 4.5vw, 44px);
     }
 
     .reviews-carousel__dots {
-      gap: 14px;
-      margin-top: 40px;
+      gap: clamp(10px, 1.2vw, 12px);
+      margin-top: clamp(24px, 3vh, 32px);
     }
 
     .carousel-dot {
-      width: 11px;
-      height: 11px;
+      width: clamp(8px, 1vw, 10px);
+      height: clamp(8px, 1vw, 10px);
     }
   }
 
