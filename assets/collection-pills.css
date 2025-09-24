@@ -77,8 +77,8 @@
     /* Medium padding */
     padding: clamp(10px, 2.2vw, 14px) clamp(18px, 4.2vw, 22px) !important;
     
-        /* Fixed 12px font size */
-        font-size: 12px !important;
+    /* Balanced font size */
+    font-size: clamp(0.8rem, 2vw, 1rem) !important;
   }
 }
 
