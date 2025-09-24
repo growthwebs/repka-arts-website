@@ -50,15 +50,15 @@
 
 /* Mobile Optimizations */
 @media screen and (max-width: 767px) {
-  .collection-title {
-    /* Slightly more opaque on mobile for better readability */
-    background: rgba(0, 0, 0, 0.5) !important;
+      .collection-title {
+        /* Slightly more opaque on mobile for better readability */
+        background: rgba(0, 0, 0, 0.65) !important;
     
     /* Adjust padding for touch targets */
     padding: clamp(10px, 2.5vw, 14px) clamp(18px, 4.5vw, 22px) !important;
     
-    /* Slightly larger text on mobile */
-    font-size: clamp(0.8rem, 2vw, 1rem) !important;
+        /* Fixed 12px text on mobile */
+        font-size: 12px !important;
     
     /* Enhanced shadow for better visibility */
     box-shadow: 
