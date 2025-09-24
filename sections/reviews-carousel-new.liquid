@@ -156,6 +156,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    overflow: hidden;
   }
 
   .review-card::before {
@@ -298,6 +300,45 @@
   .carousel-dot:hover:not(.active) {
     background: var(--color-foreground);
     opacity: 0.6;
+  }
+
+  /* Tablet Portrait - fix spacing */
+  @media screen and (min-width: 750px) and (max-width: 1023px) and (orientation: portrait) {
+    .reviews-carousel__inner-container {
+      padding: 0 2rem;
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 4rem);
+    }
+
+    .review-card {
+      max-width: 500px;
+      padding: 2.5rem;
+      min-height: 450px;
+    }
+  }
+
+  /* Mobile Portrait - fix spacing */
+  @media screen and (max-width: 749px) {
+    .reviews-carousel__inner-container {
+      padding: 0 1.5rem;
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 3rem);
+    }
+
+    .review-card {
+      max-width: 350px;
+      padding: 1.5rem;
+      min-height: 350px;
+    }
+
+    .carousel-btn {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   /* Desktop - landscape layout */
