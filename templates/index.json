@@ -775,7 +775,7 @@
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "#000000",
                 "background": true,
                 "background_color": "#ffffff",
                 "corner_radius": 20,

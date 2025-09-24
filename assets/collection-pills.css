@@ -71,13 +71,9 @@
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   .collection-title {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border-color: #000000;
-    border-width: 2px;
-  }
-  .collection-title:hover {
-    background-color: #f0f0f0 !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid var(--color-foreground);
+    color: var(--color-foreground) !important;
   }
 }
 
