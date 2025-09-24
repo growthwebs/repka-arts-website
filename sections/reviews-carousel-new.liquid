@@ -460,6 +460,31 @@
     }
   }
 
+  /* Mobile responsive adjustments */
+  @media screen and (max-width: 749px) {
+    .reviews-carousel__inner-container {
+      padding: 0 3rem; /* Less space for arrows on mobile */
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 6rem); /* Account for mobile arrow space */
+    }
+
+    .review-card {
+      max-width: 100%;
+      padding: 2rem 1.5rem;
+      min-height: 480px;
+    }
+
+    .reviews-carousel__navigation {
+      padding: 0 0.5rem;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+    }
+  }
 </style>
 
 <script>
@@ -709,4 +734,3 @@
   ]
 }
 {% endschema %}
-
