@@ -897,6 +897,56 @@
             "customer_location": "Granada",
             "review_source": "via Google"
           }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Maryna's oil paintings are simply breathtaking. The way she captures light and emotion is extraordinary. We treasure every piece.",
+            "customer_name": "Carlos M.",
+            "customer_location": "Seville",
+            "review_source": "via Google"
+          }
+        },
+        "review_7": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "The ceramics collection is stunning. Each piece is handcrafted with such care and attention to detail. Perfect for our gallery.",
+            "customer_name": "Isabella F.",
+            "customer_location": "Cordoba",
+            "review_source": "via Google"
+          }
+        },
+        "review_8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Fast delivery and exceptional packaging. The watercolour pieces arrived in perfect condition and look even more beautiful in person.",
+            "customer_name": "Antonio G.",
+            "customer_location": "Cadiz",
+            "review_source": "via Google"
+          }
+        },
+        "review_9": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Professional service from start to finish. The custom commission exceeded our expectations and perfectly matches our interior design.",
+            "customer_name": "Sofia L.",
+            "customer_location": "Alicante",
+            "review_source": "via Google"
+          }
+        },
+        "review_10": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Incredible talent and artistic vision. These pieces have transformed our living space and receive constant compliments from visitors.",
+            "customer_name": "Miguel R.",
+            "customer_location": "Murcia",
+            "review_source": "via Google"
+          }
         }
       },
       "block_order": [
@@ -904,7 +954,12 @@
         "review_2",
         "review_3",
         "review_4",
-        "review_5"
+        "review_5",
+        "review_6",
+        "review_7",
+        "review_8",
+        "review_9",
+        "review_10"
       ],
       "settings": {
         "heading": "Trusted by art lovers & businesses",
