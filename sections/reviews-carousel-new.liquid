@@ -337,32 +337,34 @@
   /* Mobile-specific fixes for text overflow and spacing */
   @media screen and (max-width: 749px) {
     .reviews-carousel__container {
-      padding: 0 0.5rem;
+      padding: 0 0.25rem;
     }
 
     .reviews-carousel__inner-container {
-      padding: 0 0.5rem;
+      padding: 0 0.25rem;
     }
 
     .reviews-carousel__wrapper {
-      max-width: calc(100% - 1rem);
+      max-width: calc(100% - 0.5rem);
     }
 
     .review-card {
-      min-height: clamp(500px, 90vh, 700px);
+      min-height: clamp(400px, 80vh, 600px);
       aspect-ratio: unset;
       height: auto;
-      padding: clamp(1rem, 3vw, 2rem);
+      padding: clamp(1rem, 2.5vw, 1.5rem);
+      max-width: 85vw;
+      width: 85vw;
     }
 
     .review-text {
-      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      font-size: clamp(0.9rem, 2.2vw, 1.1rem);
       line-height: 1.4;
     }
 
     .carousel-btn {
-      width: clamp(1.5rem, 3vw, 2rem);
-      height: clamp(1.5rem, 3vw, 2rem);
+      width: clamp(1.25rem, 2.5vw, 1.75rem);
+      height: clamp(1.25rem, 2.5vw, 1.75rem);
     }
 
     .carousel-dot {
