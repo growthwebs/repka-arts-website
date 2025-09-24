@@ -115,13 +115,25 @@
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-carousel__inner-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .reviews-carousel__wrapper {
     display: flex;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: var(--style-border-radius);
     width: 100%;
+    max-width: 100%;
   }
 
   .reviews-carousel__slide {
@@ -131,7 +143,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
   }
 
@@ -243,7 +255,7 @@
     align-items: center;
     pointer-events: none;
     z-index: 10;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    padding: 0 1rem;
   }
 
   .carousel-btn {
@@ -761,3 +773,4 @@
   ]
 }
 {% endschema %}
+
