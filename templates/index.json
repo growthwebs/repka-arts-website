@@ -846,7 +846,7 @@
       }
     },
     "reviews_carousel": {
-      "type": "reviews-carousel-responsive",
+      "type": "reviews-carousel-new",
       "blocks": {
         "review_1": {
           "type": "review",

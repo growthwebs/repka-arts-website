@@ -32,14 +32,12 @@
                       {% endfor %}
                     </div>
                   {% endif %}
-                  
+
                   {% if block.settings.review_text != blank %}
-                    <blockquote class="review-text">
-                      "{{ block.settings.review_text }}"
-                    </blockquote>
+                    <blockquote class="review-text">"{{ block.settings.review_text }}"</blockquote>
                   {% endif %}
                 </div>
-                
+
                 <div class="review-footer">
                   {% if block.settings.customer_name != blank %}
                     <strong class="review-name">{{ block.settings.customer_name }}</strong>
@@ -74,10 +72,11 @@
       <div class="reviews-carousel__dots">
         {% for block in section.blocks %}
           {% if block.type == 'review' %}
-            <button class="carousel-dot {% if forloop.first %}active{% endif %}" 
-                    aria-label="Go to review {{ forloop.index }}"
-                    data-slide="{{ forloop.index0 }}">
-            </button>
+            <button
+              class="carousel-dot {% if forloop.first %}active{% endif %}"
+              aria-label="Go to review {{ forloop.index }}"
+              data-slide="{{ forloop.index0 }}"
+            ></button>
           {% endif %}
         {% endfor %}
       </div>
@@ -142,7 +141,7 @@
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
-    
+
     /* Mobile: Portrait aspect ratio */
     aspect-ratio: 1 / 1.3;
     display: flex;
@@ -301,47 +300,47 @@
       max-width: 1400px;
       padding: 0 3rem;
     }
-    
+
     .reviews-carousel__title {
       font-size: 3rem;
       margin-bottom: 5rem;
     }
-    
+
     .reviews-carousel__slide {
       padding: 0 3rem;
     }
-    
+
     .review-card {
       max-width: 900px;
       padding: 3rem 4rem;
-      
+
       /* Desktop: Landscape aspect ratio */
       aspect-ratio: 2.5 / 1;
       flex-direction: row;
       align-items: center;
       text-align: left;
     }
-    
+
     .review-content {
       flex: 1;
       padding-right: 3rem;
     }
-    
+
     .review-text {
       font-size: 1.3rem;
       line-height: 1.7;
       margin-bottom: 0;
     }
-    
+
     .review-stars {
       margin-bottom: 2rem;
     }
-    
+
     .star {
       font-size: 1.8rem;
       margin: 0 0.3rem;
     }
-    
+
     .review-footer {
       border-top: none;
       border-left: 1px solid rgba(0, 0, 0, 0.08);
@@ -350,35 +349,35 @@
       text-align: center;
       min-width: 200px;
     }
-    
+
     .review-name {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
     }
-    
+
     .review-location {
       font-size: 1rem;
       margin-bottom: 0.75rem;
     }
-    
+
     .review-source {
       font-size: 0.8rem;
     }
-    
+
     .reviews-carousel__navigation {
       padding: 0 2rem;
     }
-    
+
     .carousel-btn {
       width: 3.5rem;
       height: 3.5rem;
     }
-    
+
     .reviews-carousel__dots {
       gap: 1rem;
       margin-top: 4rem;
     }
-    
+
     .carousel-dot {
       width: 1.2rem;
       height: 1.2rem;
@@ -390,16 +389,16 @@
     .reviews-carousel__container {
       max-width: 1600px;
     }
-    
+
     .review-card {
       max-width: 1000px;
       padding: 4rem 5rem;
     }
-    
+
     .review-content {
       padding-right: 4rem;
     }
-    
+
     .review-footer {
       padding-left: 4rem;
       min-width: 220px;
@@ -411,48 +410,48 @@
     .reviews-carousel-section {
       padding: 60px 0;
     }
-    
+
     .reviews-carousel__header {
       margin-bottom: 3rem;
     }
-    
+
     .reviews-carousel__title {
       font-size: 2.2rem;
     }
-    
+
     .reviews-carousel__container {
       padding: 0 1rem;
     }
-    
+
     .reviews-carousel__slide {
       padding: 0 1rem;
     }
-    
+
     .review-card {
       padding: 2rem 1.5rem;
       max-width: 100%;
     }
-    
+
     .review-text {
       font-size: 1rem;
       line-height: 1.5;
     }
-    
+
     .reviews-carousel__navigation {
       padding: 0 0.5rem;
     }
-    
+
     .carousel-btn {
       width: 2.5rem;
       height: 2.5rem;
     }
-    
+
     .reviews-carousel__dots {
       gap: 0.5rem;
       margin-top: 2rem;
       padding: 0 1rem;
     }
-    
+
     .carousel-dot {
       width: 0.8rem;
       height: 0.8rem;
@@ -464,65 +463,65 @@
     .reviews-carousel-section {
       padding: 50px 0;
     }
-    
+
     .reviews-carousel__title {
       font-size: 1.9rem;
     }
-    
+
     .reviews-carousel__container {
       padding: 0 0.5rem;
     }
-    
+
     .reviews-carousel__slide {
       padding: 0 0.5rem;
     }
-    
+
     .review-card {
       padding: 1.5rem 1rem;
     }
-    
+
     .review-text {
       font-size: 0.95rem;
       line-height: 1.4;
     }
-    
+
     .review-stars {
       margin-bottom: 1rem;
     }
-    
+
     .star {
       font-size: 1.2rem;
       margin: 0 0.1rem;
     }
-    
+
     .review-footer {
       padding-top: 1rem;
     }
-    
+
     .review-name {
       font-size: 0.9rem;
       margin-bottom: 0.3rem;
     }
-    
+
     .review-location {
       font-size: 0.8rem;
       margin-bottom: 0.5rem;
     }
-    
+
     .review-source {
       font-size: 0.7rem;
     }
-    
+
     .carousel-btn {
       width: 2rem;
       height: 2rem;
     }
-    
+
     .reviews-carousel__dots {
       gap: 0.4rem;
       margin-top: 1.5rem;
     }
-    
+
     .carousel-dot {
       width: 0.6rem;
       height: 0.6rem;
@@ -534,76 +533,78 @@
   document.addEventListener('DOMContentLoaded', function () {
     const carouselId = 'reviews-carousel-{{ section.id }}';
     const carousel = document.getElementById(carouselId);
-    
+
     if (!carousel) return;
-    
+
     const slides = carousel.querySelectorAll('.reviews-carousel__slide');
     const prevBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-prev');
     const nextBtn = carousel.closest('.reviews-carousel-section').querySelector('.carousel-next');
     const dots = carousel.closest('.reviews-carousel-section').querySelectorAll('.carousel-dot');
-    
+
     let currentSlide = 0;
     let autoSlideInterval;
-    
+
     function showSlide(index) {
       slides.forEach((slide, i) => {
         slide.style.transform = `translateX(-${index * 100}%)`;
       });
-      
+
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
-      
+
       currentSlide = index;
     }
-    
+
     function nextSlide() {
       const next = (currentSlide + 1) % slides.length;
       showSlide(next);
     }
-    
+
     function prevSlide() {
       const prev = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(prev);
     }
-    
+
     function startAutoSlide() {
       autoSlideInterval = setInterval(nextSlide, 5000);
     }
-    
+
     function stopAutoSlide() {
       if (autoSlideInterval) {
         clearInterval(autoSlideInterval);
       }
     }
-    
+
     // Event listeners
-    if (nextBtn) nextBtn.addEventListener('click', () => {
-      nextSlide();
-      resetAutoSlide();
-    });
-    
-    if (prevBtn) prevBtn.addEventListener('click', () => {
-      prevSlide();
-      resetAutoSlide();
-    });
-    
+    if (nextBtn)
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+
+    if (prevBtn)
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         showSlide(index);
         resetAutoSlide();
       });
     });
-    
+
     function resetAutoSlide() {
       stopAutoSlide();
       startAutoSlide();
     }
-    
+
     // Pause on hover
     carousel.addEventListener('mouseenter', stopAutoSlide);
     carousel.addEventListener('mouseleave', startAutoSlide);
-    
+
     // Initialize
     showSlide(0);
     startAutoSlide();
@@ -612,7 +613,7 @@
 
 {% schema %}
 {
-  "name": "Responsive Reviews Carousel",
+  "name": "Reviews Carousel",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -718,7 +719,7 @@
   ],
   "presets": [
     {
-      "name": "Responsive Reviews Carousel",
+      "name": "Reviews Carousel",
       "blocks": [
         {
           "type": "review",
