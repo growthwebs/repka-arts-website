@@ -6,63 +6,64 @@
 /* Collection Title Pills - Glassmorphism Effect */
 .collection-title {
   /* Glassmorphism Core */
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   
   /* Elegant Border */
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   
   /* Sophisticated Shadows */
   box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.1),
-    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   
   /* Typography Enhancement */
   font-family: var(--font-heading--family) !important;
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   
   /* Responsive Sizing */
-  font-size: clamp(0.9rem, 2.2vw, 1.1rem) !important;
+  font-size: clamp(0.75rem, 1.8vw, 0.9rem) !important;
   padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 20px) !important;
   border-radius: clamp(12px, 3vw, 20px) !important;
   
   /* Smooth Transitions */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Ensure proper contrast */
-  color: var(--color-foreground) !important;
+  /* White text for better contrast */
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Hover Effects for Interactive Feel */
 .collection-title:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
   transform: translateY(-1px);
   box-shadow: 
-    0 6px 25px rgba(0, 0, 0, 0.15),
-    0 3px 12px rgba(0, 0, 0, 0.08),
+    0 6px 25px rgba(0, 0, 0, 0.2),
+    0 3px 12px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Optimizations */
 @media screen and (max-width: 767px) {
   .collection-title {
     /* Slightly more opaque on mobile for better readability */
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(0, 0, 0, 0.5) !important;
     
     /* Adjust padding for touch targets */
     padding: clamp(10px, 2.5vw, 14px) clamp(18px, 4.5vw, 22px) !important;
     
     /* Slightly larger text on mobile */
-    font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+    font-size: clamp(0.8rem, 2vw, 1rem) !important;
     
     /* Enhanced shadow for better visibility */
     box-shadow: 
-      0 3px 15px rgba(0, 0, 0, 0.15),
-      0 1px 6px rgba(0, 0, 0, 0.1),
+      0 3px 15px rgba(0, 0, 0, 0.2),
+      0 1px 6px rgba(0, 0, 0, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 }
