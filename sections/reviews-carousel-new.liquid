@@ -152,13 +152,13 @@
     border: var(--style-border-width) solid {{ section.settings.card_border_color | default: 'var(--color-border)' }};
     width: 100%;
     max-width: min(90vw, clamp(320px, 50vw, 800px));
-    min-height: clamp(350px, 60vh, 500px);
+    min-height: clamp(400px, 70vh, 500px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    overflow: hidden;
-    aspect-ratio: 1 / 1.2;
+    overflow: visible;
+    aspect-ratio: 1 / 1.4;
   }
 
   .review-card::before {
@@ -195,8 +195,8 @@
   }
 
   .review-text {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    line-height: 1.6;
+    font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+    line-height: 1.5;
     font-style: italic;
     margin: 0 0 clamp(1rem, 3vw, 2rem) 0;
     color: var(--color-foreground);
@@ -204,6 +204,11 @@
     font-weight: var(--font-body--weight);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    hyphens: auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .review-footer {
@@ -324,6 +329,19 @@
       padding-left: clamp(1.5rem, 3vw, 2rem);
       text-align: center;
       min-width: clamp(120px, 20vw, 150px);
+    }
+  }
+
+  /* Mobile-specific fixes for text overflow */
+  @media screen and (max-width: 749px) {
+    .review-card {
+      min-height: clamp(450px, 80vh, 600px);
+      aspect-ratio: 1 / 1.5;
+    }
+
+    .review-text {
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      line-height: 1.4;
     }
   }
 
