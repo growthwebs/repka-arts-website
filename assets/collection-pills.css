@@ -5,8 +5,8 @@
 
 /* Collection Title Pills - Glassmorphism Effect */
 .collection-title {
-  /* Glassmorphism Core */
-  background: rgba(0, 0, 0, 0.4) !important;
+    /* Glassmorphism Core */
+    background: rgba(0, 0, 0, 0.6) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   
@@ -25,8 +25,8 @@
   letter-spacing: 0.02em;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   
-  /* Responsive Sizing */
-  font-size: clamp(0.75rem, 1.8vw, 0.9rem) !important;
+    /* Responsive Sizing */
+    font-size: 12px !important;
   padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 20px) !important;
   border-radius: clamp(12px, 3vw, 20px) !important;
   
@@ -38,8 +38,8 @@
 }
 
 /* Hover Effects for Interactive Feel */
-.collection-title:hover {
-  background: rgba(0, 0, 0, 0.5) !important;
+    .collection-title:hover {
+      background: rgba(0, 0, 0, 0.7) !important;
   transform: translateY(-1px);
   box-shadow: 
     0 6px 25px rgba(0, 0, 0, 0.2),
@@ -85,13 +85,13 @@
 /* Dark Mode Support (if theme supports it) */
 @media (prefers-color-scheme: dark) {
   .collection-title {
-    background: rgba(0, 0, 0, 0.3) !important;
-    border-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.95) !important;
   }
   
   .collection-title:hover {
-    background: rgba(0, 0, 0, 0.4) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
   }
 }
 
