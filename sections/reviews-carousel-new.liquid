@@ -165,7 +165,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-width: 400px;
+    max-width: 100%;
     height: auto;
     min-height: 500px;
     box-sizing: border-box;
@@ -334,6 +334,14 @@
 
     .reviews-carousel__container {
       padding: 0 4rem;
+    }
+
+    .reviews-carousel__inner-container {
+      padding: 0 5rem; /* More space for arrows on tablet */
+    }
+
+    .reviews-carousel__wrapper {
+      max-width: calc(100% - 10rem); /* Account for larger arrow space */
     }
 
     .review-card {
