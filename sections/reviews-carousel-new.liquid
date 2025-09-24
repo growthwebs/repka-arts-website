@@ -347,6 +347,13 @@
     .reviews-carousel__wrapper {
       max-width: 100%;
       margin: 0;
+      overflow: hidden;
+    }
+    
+    .reviews-carousel__slide {
+      min-width: 100% !important;
+      width: 100% !important;
+      padding: 0;
     }
 
     .reviews-carousel__navigation {
@@ -358,9 +365,10 @@
       aspect-ratio: unset;
       height: auto;
       padding: 2rem 1.5rem;
-      max-width: 100%;
-      width: 100%;
-      margin: 0;
+      max-width: calc(100% - 2rem);
+      width: calc(100% - 2rem);
+      margin: 0 1rem;
+      box-sizing: border-box;
     }
 
     .review-text {
