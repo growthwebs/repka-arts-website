@@ -3,104 +3,81 @@
    Glassmorphism Design System
    ======================================== */
 
-/* Collection Title Pills - Glassmorphism Effect */
+/* Collection Title Pills - Clean Badge Style */
 .collection-title {
-    /* Glassmorphism Core */
-    background: rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  
-  /* Elegant Border */
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  
-  /* Sophisticated Shadows */
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.15),
-    0 2px 8px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  
-  /* Typography Enhancement */
-  font-family: var(--font-heading--family) !important;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  
-    /* Responsive Sizing */
+    /* Clean Badge Style */
+    background-color: #ffffff !important;
+    border: 1px solid var(--color-border);
+    border-radius: var(--style-border-radius-buttons);
+    display: inline-block;
+    
+    /* Typography */
+    font-family: var(--font-heading--family) !important;
+    font-weight: 500;
     font-size: 12px !important;
-  padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 20px) !important;
-  border-radius: clamp(12px, 3vw, 20px) !important;
-  
-  /* Smooth Transitions */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* White text for better contrast */
-  color: rgba(255, 255, 255, 0.95) !important;
+    color: #000000 !important;
+    text-align: center;
+    
+    /* Sizing */
+    padding: var(--padding-md) !important;
+    line-height: 1.2;
+    
+    /* Smooth Transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Hover Effects for Interactive Feel */
-    .collection-title:hover {
-      background: rgba(0, 0, 0, 0.7) !important;
+.collection-title:hover {
+  background-color: #f5f5f5 !important;
   transform: translateY(-1px);
-  box-shadow: 
-    0 6px 25px rgba(0, 0, 0, 0.2),
-    0 3px 12px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-foreground);
 }
 
 /* Mobile Optimizations */
 @media screen and (max-width: 767px) {
-      .collection-title {
-        /* Slightly more opaque on mobile for better readability */
-        background: rgba(0, 0, 0, 0.65) !important;
-    
-    /* Adjust padding for touch targets */
-    padding: clamp(10px, 2.5vw, 14px) clamp(18px, 4.5vw, 22px) !important;
-    
-        /* Fixed 12px text on mobile */
-        font-size: 12px !important;
-    
-    /* Enhanced shadow for better visibility */
-    box-shadow: 
-      0 3px 15px rgba(0, 0, 0, 0.2),
-      0 1px 6px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  .collection-title {
+    /* Consistent styling on mobile */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+    padding: var(--padding-md) !important;
   }
 }
 
 /* Tablet Optimizations */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-      .collection-title {
-        /* Balanced opacity for tablets */
-        background: rgba(0, 0, 0, 0.6) !important;
-    
-    /* Medium padding */
-    padding: clamp(10px, 2.2vw, 14px) clamp(18px, 4.2vw, 22px) !important;
-    
-        /* Fixed 12px font size */
-        font-size: 12px !important;
+  .collection-title {
+    /* Consistent styling on tablet */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12px !important;
+    padding: var(--padding-md) !important;
   }
 }
 
 /* Dark Mode Support (if theme supports it) */
 @media (prefers-color-scheme: dark) {
   .collection-title {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.95) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff;
   }
-  
+
   .collection-title:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background-color: #f0f0f0 !important;
   }
 }
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   .collection-title {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 2px solid var(--color-foreground);
-    color: var(--color-foreground) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000;
+    border-width: 2px;
+  }
+  .collection-title:hover {
+    background-color: #f0f0f0 !important;
   }
 }
 
@@ -109,7 +86,7 @@
   .collection-title {
     transition: none;
   }
-  
+
   .collection-title:hover {
     transform: none;
   }
