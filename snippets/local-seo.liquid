@@ -104,14 +104,14 @@
 </script>
 
 {% comment %} Local Business Meta Tags {% endcomment %}
-<meta name="geo.region" content="US">
-<meta name="geo.placename" content="United States">
-<meta name="geo.position" content="40.7128;-74.0060">
-<meta name="ICBM" content="40.7128, -74.0060">
+<meta name="geo.region" content="ES">
+<meta name="geo.placename" content="Spain">
+<meta name="geo.position" content="40.4168;-3.7038">
+<meta name="ICBM" content="40.4168, -3.7038">
 <meta name="DC.title" content="{{ business_name }} - {{ business_type }}">
 <meta name="business:contact_data:street_address" content="{{ business_address }}">
-<meta name="business:contact_data:locality" content="United States">
-<meta name="business:contact_data:country_name" content="United States">
+<meta name="business:contact_data:locality" content="Spain">
+<meta name="business:contact_data:country_name" content="Spain">
 <meta name="business:contact_data:phone_number" content="{{ business_phone }}">
 <meta name="business:contact_data:email" content="{{ business_email }}">
 <meta name="business:contact_data:website" content="{{ shop.url }}">
@@ -119,7 +119,7 @@
 {% comment %} Local Keywords for SEO {% endcomment %}
 <meta
   name="local-keywords"
-  content="art gallery near me, local art commissions, art gallery online, watercolor artist near me, ceramic art local, custom art commissions online, art prints online, fine art gallery, contemporary art gallery, original artwork online"
+  content="galería de arte cerca de mí, comisiones de arte locales, galería de arte online, artista acuarela cerca de mí, arte cerámico local, comisiones de arte personalizadas online, impresiones de arte online, galería de arte fina, galería de arte contemporáneo, obra de arte original online"
 >
 
 {% comment %} Google My Business Optimization {% endcomment %}
@@ -130,10 +130,10 @@
     "name": "{{ business_name }}",
     "image": "{{ settings.logo | image_url: width: 500 | prepend: 'https:' }}",
     "description": "{{ business_description }}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US"
-    },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ES"
+  },
     "telephone": "{{ business_phone }}",
     "url": "{{ shop.url }}",
     "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-16:00",
@@ -193,11 +193,11 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Where is Repka Arts located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Repka Arts is an online art gallery that serves customers worldwide. We specialize in watercolor paintings, ceramic art, custom commissions, and fine art prints with worldwide shipping available."
-        }
+      "name": "¿Dónde está ubicada Repka Arts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repka Arts es una galería de arte online ubicada en España que atiende clientes de todo el mundo. Nos especializamos en pinturas de acuarela, arte cerámico, comisiones personalizadas y impresiones de arte fino con envío mundial disponible."
+      }
       },
       {
         "@type": "Question",
