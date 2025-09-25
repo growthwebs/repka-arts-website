@@ -13,7 +13,7 @@
   assign tiktok_title = ''
   assign tiktok_description = ''
   assign tiktok_image = ''
-  
+
   if template contains 'product' and product
     comment
       Product TikTok optimization
@@ -34,7 +34,7 @@
     else
       assign tiktok_title = 'Original Artwork - ' | append: product.title
     endif
-    
+
     comment
       TikTok-optimized product descriptions (engaging, shorter)
     endcomment
@@ -51,14 +51,14 @@
     else
       assign tiktok_description = 'Original artwork with artistic excellence ✨ Free shipping for selected products. Explore this beautiful artwork!'
     endif
-    
+
     comment
       TikTok-optimized image (vertical format preferred)
     endcomment
     if product.featured_image
       assign tiktok_image = product.featured_image | image_url: width: 1080 | prepend: 'https:'
     endif
-    
+
   elsif template contains 'collection' and collection
     comment
       Collection TikTok optimization
@@ -79,7 +79,7 @@
     else
       assign tiktok_title = collection.title | append: ' Collection - Repka Arts'
     endif
-    
+
     comment
       TikTok-optimized collection descriptions
     endcomment
@@ -96,33 +96,33 @@
     else
       assign tiktok_description = 'Original artwork collection with artistic excellence ✨ Free shipping for selected products. Explore our curated collection!'
     endif
-    
+
     comment
       TikTok-optimized collection image
     endcomment
     if collection.featured_image
       assign tiktok_image = collection.featured_image | image_url: width: 1080 | prepend: 'https:'
     endif
-    
+
   else
     comment
       Homepage TikTok optimization
     endcomment
     assign tiktok_title = 'Repka Arts - Original Artwork'
     assign tiktok_description = 'Exquisite original artwork by talented artists ✨ Watercolour, oil, ceramic art & custom commissions. Free shipping for selected products. Explore our gallery!'
-    
+
     if settings.logo
       assign tiktok_image = settings.logo | image_url: width: 1080 | prepend: 'https:'
     endif
   endif
-  
+
   comment
     Ensure TikTok title is within 50 characters for optimal engagement
   endcomment
   if tiktok_title.size > 50
     assign tiktok_title = tiktok_title | truncate: 47 | append: '...'
   endif
-  
+
   comment
     Ensure TikTok description is within 2200 characters for optimal engagement
   endcomment
@@ -135,9 +135,9 @@
 <meta name="tiktok-title" content="{{ tiktok_title | escape }}">
 <meta name="tiktok-description" content="{{ tiktok_description | escape }}">
 {% if tiktok_image != blank %}
-<meta name="tiktok-image" content="{{ tiktok_image }}">
-<meta name="tiktok-image-width" content="1080">
-<meta name="tiktok-image-height" content="1920">
+  <meta name="tiktok-image" content="{{ tiktok_image }}">
+  <meta name="tiktok-image-width" content="1080">
+  <meta name="tiktok-image-height" content="1920">
 {% endif %}
 <meta name="tiktok-site" content="@repka_arts">
 <meta name="tiktok-creator" content="@repka_arts">
@@ -146,9 +146,9 @@
 <meta property="og:title" content="{{ tiktok_title | escape }}">
 <meta property="og:description" content="{{ tiktok_description | escape }}">
 {% if tiktok_image != blank %}
-<meta property="og:image" content="{{ tiktok_image }}">
-<meta property="og:image:width" content="1080">
-<meta property="og:image:height" content="1920">
+  <meta property="og:image" content="{{ tiktok_image }}">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1920">
 {% endif %}
 <meta property="og:site_name" content="Repka Arts">
 <meta property="og:type" content="website">
