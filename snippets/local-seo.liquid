@@ -1,0 +1,225 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - LOCAL SEO OPTIMIZATION
+  Location-Based SEO for Art Gallery
+  Google My Business & Local Search
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Local SEO configuration for Repka Arts
+  endcomment
+  assign business_name = shop.name
+  assign business_type = 'Art Gallery'
+  assign business_description = 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Original artwork by talented artists with worldwide shipping.'
+  assign business_address = 'United States'
+  assign business_phone = shop.phone | default: '+1-555-0123'
+  assign business_email = shop.email
+  assign business_hours = 'Monday-Friday: 9AM-6PM, Saturday: 10AM-4PM, Sunday: Closed'
+  assign business_services = 'Art Sales, Custom Commissions, Art Consultation, Framing Services, Worldwide Shipping'
+-%}
+
+{% comment %} Local Business Schema Markup {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ArtGallery",
+  "name": "{{ business_name }}",
+  "description": "{{ business_description }}",
+  "url": "{{ shop.url }}",
+  "telephone": "{{ business_phone }}",
+  "email": "{{ business_email }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US",
+    "addressRegion": "United States"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.7128",
+    "longitude": "-74.0060"
+  },
+  "openingHours": [
+    "Mo-Fr 09:00-18:00",
+    "Sa 10:00-16:00"
+  ],
+  "priceRange": "$$",
+  "paymentAccepted": ["Credit Card", "PayPal", "Shopify Pay"],
+  "currenciesAccepted": "USD",
+  "hasMap": "{{ shop.url }}/pages/contact",
+  "sameAs": [
+    {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+    {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+    {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}"{% endif %}
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.7128",
+      "longitude": "-74.0060"
+    },
+    "geoRadius": "10000000"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Worldwide"
+  },
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Watercolor Paintings",
+        "description": "Original watercolor artwork and custom commissions"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Ceramic Art",
+        "description": "Handmade ceramic sculptures and pottery"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Custom Art Commissions",
+        "description": "Personalized artwork commissions in various mediums"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Fine Art Prints",
+        "description": "High-quality art prints and reproductions"
+      }
+    }
+  ]
+}
+</script>
+
+{% comment %} Local Business Meta Tags {% endcomment %}
+<meta name="geo.region" content="US">
+<meta name="geo.placename" content="United States">
+<meta name="geo.position" content="40.7128;-74.0060">
+<meta name="ICBM" content="40.7128, -74.0060">
+<meta name="DC.title" content="{{ business_name }} - {{ business_type }}">
+<meta name="business:contact_data:street_address" content="{{ business_address }}">
+<meta name="business:contact_data:locality" content="United States">
+<meta name="business:contact_data:country_name" content="United States">
+<meta name="business:contact_data:phone_number" content="{{ business_phone }}">
+<meta name="business:contact_data:email" content="{{ business_email }}">
+<meta name="business:contact_data:website" content="{{ shop.url }}">
+
+{% comment %} Local Keywords for SEO {% endcomment %}
+<meta name="local-keywords" content="art gallery near me, local art commissions, art gallery online, watercolor artist near me, ceramic art local, custom art commissions online, art prints online, fine art gallery, contemporary art gallery, original artwork online">
+
+{% comment %} Google My Business Optimization {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ business_name }}",
+  "image": "{{ settings.logo | image_url: width: 500 | prepend: 'https:' }}",
+  "description": "{{ business_description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  },
+  "telephone": "{{ business_phone }}",
+  "url": "{{ shop.url }}",
+  "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-16:00",
+  "priceRange": "$$",
+  "paymentAccepted": ["Credit Card", "PayPal", "Shopify Pay"],
+  "currenciesAccepted": "USD",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Worldwide"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Art Collection",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Watercolor Paintings",
+          "description": "Original watercolor artwork"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Ceramic Art",
+          "description": "Handmade ceramic sculptures"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Custom Commissions",
+          "description": "Personalized artwork commissions"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Art Prints",
+          "description": "Fine art prints and reproductions"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+{% comment %} Local Business FAQ for AI Optimization {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is Repka Arts located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repka Arts is an online art gallery that serves customers worldwide. We specialize in watercolor paintings, ceramic art, custom commissions, and fine art prints with worldwide shipping available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer local art commissions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer custom art commissions worldwide. You can commission watercolor paintings, ceramic art, or other personalized artwork regardless of your location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does shipping take for artwork?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We ship artwork worldwide with secure packaging. Domestic shipping typically takes 3-5 business days, while international shipping takes 7-14 business days depending on the destination."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer local pickup for artwork?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We primarily operate as an online gallery with worldwide shipping. Please contact us to discuss pickup options in your area."
+      }
+    }
+  ]
+}
+</script>
