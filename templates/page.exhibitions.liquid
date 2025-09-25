@@ -1,71 +1,83 @@
 {% comment %}
   Template for exhibitions listing page
-  Displays all exhibition metaobjects in a grid layout
+  Displays all exhibition metaobjects with hero banner and alternating card layout
 {% endcomment %}
 
 <div class="exhibitions-listing-page">
-  <!-- Hero Section -->
-  <section class="exhibitions-hero">
-    <div class="container">
-      <h1 class="exhibitions-title">{{ page.title | default: 'My Exhibitions' }}</h1>
-      <p class="exhibitions-description">{{ page.content }}</p>
+  <!-- Hero Banner Section -->
+  <section class="exhibitions-hero-banner">
+    <div class="hero-video-container">
+      {% comment %} Video background will be added through page settings {% endcomment %}
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ page.title | default: 'My Exhibitions' }}</h1>
+          <p class="hero-subtitle">{{ page.content | default: 'Explore my artistic journey through exhibitions around the world.' }}</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Exhibitions Grid -->
-  <section class="exhibitions-grid-section">
+  <!-- Exhibitions Gallery -->
+  <section class="exhibitions-gallery">
     <div class="container">
-      <div class="exhibitions-grid">
-        {% for exhibition in shop.metaobjects.exhibition.values %}
-          <div class="exhibition-card">
+      {% for exhibition in shop.metaobjects.exhibition.values %}
+        {% assign is_even = forloop.index | modulo: 2 %}
+        <div class="exhibition-card {% if is_even == 0 %}exhibition-card-reverse{% endif %}">
+          <div class="exhibition-image-container">
             {% if exhibition.banner.value %}
-              <div class="exhibition-image">
+              <a href="/pages/{{ exhibition.exhibition_name.value | handle }}" class="exhibition-image-link">
                 <img
-                  src="{{ exhibition.banner.value | img_url: '600x400' }}"
+                  src="{{ exhibition.banner.value | img_url: '800x600' }}"
                   alt="{{ exhibition.exhibition_name.value }}"
                   loading="lazy"
+                  class="exhibition-banner-image"
                 >
-              </div>
+              </a>
             {% endif %}
-
+          </div>
+          
+          <div class="exhibition-content-container">
             <div class="exhibition-content">
-              <h3 class="exhibition-title">{{ exhibition.exhibition_name.value }}</h3>
+              <h2 class="exhibition-title">{{ exhibition.exhibition_name.value }}</h2>
+              
               {% if exhibition.exhibition_subtitle.value %}
                 <p class="exhibition-subtitle">{{ exhibition.exhibition_subtitle.value }}</p>
               {% endif %}
 
               <div class="exhibition-details">
                 {% if exhibition.venue_name.value %}
-                  <p><strong>Venue:</strong> {{ exhibition.venue_name.value }}</p>
+                  <p class="exhibition-venue"><strong>Venue:</strong> {{ exhibition.venue_name.value }}</p>
                 {% endif %}
 
                 {% if exhibition.venue_location.value %}
-                  <p><strong>Location:</strong> {{ exhibition.venue_location.value }}</p>
-                {% endif %}
-
-                {% if exhibition.start_date.value and exhibition.end_date.value %}
-                  <p>
-                    <strong>Dates:</strong> {{ exhibition.start_date.value | date: '%B %d, %Y' }} -
-                    {{ exhibition.end_date.value | date: '%B %d, %Y' }}
+                  <p class="exhibition-location">
+                    <strong>Location:</strong> 
+                    {% if exhibition.venue_website.value %}
+                      <a href="{{ exhibition.venue_website.value }}" target="_blank" class="location-link">
+                        {{ exhibition.venue_location.value }}
+                      </a>
+                    {% else %}
+                      {{ exhibition.venue_location.value }}
+                    {% endif %}
                   </p>
                 {% endif %}
 
-                {% if exhibition.status.value %}
-                  <span class="exhibition-status status-{{ exhibition.status.value | downcase }}">
-                    {{- exhibition.status.value -}}
-                  </span>
+                {% if exhibition.start_date.value and exhibition.end_date.value %}
+                  <p class="exhibition-dates">
+                    <strong>Dates:</strong> 
+                    {{ exhibition.start_date.value | date: '%B %d, %Y' }} - 
+                    {{ exhibition.end_date.value | date: '%B %d, %Y' }}
+                  </p>
                 {% endif %}
               </div>
 
-              {% if exhibition.venue_website.value %}
-                <a href="{{ exhibition.venue_website.value }}" target="_blank" class="exhibition-link">
-                  Visit Venue Website
-                </a>
-              {% endif %}
+              <a href="/pages/{{ exhibition.exhibition_name.value | handle }}" class="btn btn-primary exhibition-button">
+                Open Exhibition
+              </a>
             </div>
           </div>
-        {% endfor %}
-      </div>
+        </div>
+      {% endfor %}
     </div>
   </section>
 </div>
