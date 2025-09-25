@@ -576,7 +576,19 @@
       ],
       "name": "t:names.collections_carousel",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "abstract-moments",
+          "andalusian-spirit",
+          "balanced-art",
+          "ceramics",
+          "gemstones",
+          "savannah-vibes",
+          "serenity-in-bloom",
+          "timeless-elegance",
+          "toulouse-spirit",
+          "vibrant-impressions",
+          "wild-at-heart"
+        ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "columns": 3,
