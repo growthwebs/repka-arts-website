@@ -87,66 +87,9 @@
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
-    },
-    "175883030971c70169": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_77b2d0c_cTD9Jq": {
-          "type": "ai_gen_block_77b2d0c",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/a98489b640004d479a36164c94417cae.mov",
-            "title": "Come to my exhibitions",
-            "subtitle": "Discover how I showcase my artworks in person",
-            "content_position": "center",
-            "text_alignment": "center",
-            "content_max_width": 800,
-            "title_size": 72,
-            "subtitle_size": 20,
-            "title_spacing": 20,
-            "text_color": "#ffffff",
-            "text_shadow_intensity": 2,
-            "text_shadow_opacity": 50,
-            "show_overlay": true,
-            "overlay_color": "#000000",
-            "overlay_opacity": 40
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_77b2d0c_cTD9Jq"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
     }
   },
   "order": [
-    "header_section",
-    "175883030971c70169"
+    "header_section"
   ]
 }
