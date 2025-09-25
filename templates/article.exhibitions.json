@@ -924,7 +924,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</h4>",
+                        "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
