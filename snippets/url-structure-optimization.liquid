@@ -1,0 +1,235 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - URL STRUCTURE OPTIMIZATION
+  Clean URLs & Canonical Tags for repkaarts.com
+  Better SEO & User Experience
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate optimized URLs and canonical tags for repkaarts.com
+  endcomment
+  assign shop_url = 'https://repkaarts.com'
+  assign canonical_url = ''
+  assign clean_url = ''
+  
+  if template contains 'product' and product
+    assign canonical_url = shop_url | append: product.url
+    assign clean_url = product.url
+    
+  elsif template contains 'collection' and collection
+    assign canonical_url = shop_url | append: collection.url
+    assign clean_url = collection.url
+    
+  elsif template contains 'blog' and blog
+    assign canonical_url = shop_url | append: blog.url
+    assign clean_url = blog.url
+    
+  elsif template contains 'article' and article
+    assign canonical_url = shop_url | append: article.url
+    assign clean_url = article.url
+    
+  elsif template contains 'page' and page
+    assign canonical_url = shop_url | append: page.url
+    assign clean_url = page.url
+    
+  else
+    assign canonical_url = shop_url | append: request.path
+    assign clean_url = request.path
+  endif
+  
+  comment
+    Remove trailing slashes and clean up URLs
+  endcomment
+  if clean_url != '/' and clean_url != ''
+    assign clean_url = clean_url | remove: '/' | prepend: '/'
+  endif
+-%}
+
+{% comment %} Canonical URL {% endcomment %}
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% comment %} Alternative Language URLs {% endcomment %}
+<link rel="alternate" hreflang="en" href="{{ canonical_url }}">
+<link rel="alternate" hreflang="es" href="{{ canonical_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
+
+{% comment %} URL Structure Schema {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if template contains 'product' %}Product{% elsif template contains 'collection' %}CollectionPage{% elsif template contains 'blog' %}Blog{% elsif template contains 'article' %}BlogPosting{% elsif template contains 'page' %}WebPage{% else %}WebPage{% endif %}",
+  "url": "{{ canonical_url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ canonical_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Repka Arts",
+    "url": "{{ shop_url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ settings.logo | image_url: width: 500 | prepend: shop_url }}"
+    }
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Repka Arts",
+    "url": "{{ shop_url }}"
+  },
+  "datePublished": "{% if template contains 'product' %}{{ product.created_at | date: '%Y-%m-%d' }}{% elsif template contains 'collection' %}{{ collection.created_at | date: '%Y-%m-%d' }}{% elsif template contains 'blog' %}{{ blog.created_at | date: '%Y-%m-%d' }}{% elsif template contains 'article' %}{{ article.published_at | date: '%Y-%m-%d' }}{% elsif template contains 'page' %}{{ page.created_at | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y-%m-%d' }}{% endif %}",
+  "dateModified": "{% if template contains 'product' %}{{ product.updated_at | date: '%Y-%m-%d' }}{% elsif template contains 'collection' %}{{ collection.updated_at | date: '%Y-%m-%d' }}{% elsif template contains 'blog' %}{{ blog.updated_at | date: '%Y-%m-%d' }}{% elsif template contains 'article' %}{{ article.updated_at | date: '%Y-%m-%d' }}{% elsif template contains 'page' %}{{ page.updated_at | date: '%Y-%m-%d' }}{% else %}{{ 'now' | date: '%Y-%m-%d' }}{% endif %}",
+  "inLanguage": "en-GB",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Repka Arts",
+    "url": "{{ shop_url }}"
+  }
+}
+</script>
+
+{% comment %} URL Structure Meta Tags {% endcomment %}
+<meta name="url" content="{{ canonical_url }}">
+<meta name="clean-url" content="{{ clean_url }}">
+<meta name="base-url" content="{{ shop_url }}">
+
+{% comment %} URL Structure for SEO {% endcomment %}
+<div class="url-structure-seo" style="display: none;">
+  <div class="canonical-url">{{ canonical_url }}</div>
+  <div class="clean-url">{{ clean_url }}</div>
+  <div class="shop-url">{{ shop_url }}</div>
+  <div class="template-type">{% if template contains 'product' %}product{% elsif template contains 'collection' %}collection{% elsif template contains 'blog' %}blog{% elsif template contains 'article' %}article{% elsif template contains 'page' %}page{% else %}homepage{% endif %}</div>
+</div>
+
+{% comment %} URL Structure Optimization for repkaarts.com {% endcomment %}
+{% if template contains 'product' and product %}
+  {% comment %}
+    Product URL Structure:
+    /products/product-handle
+    Example: /products/toulouse-spirit-watercolour-painting
+  {% endcomment %}
+  <meta name="product-url" content="{{ canonical_url }}">
+  <meta name="product-handle" content="{{ product.handle }}">
+  <meta name="product-id" content="{{ product.id }}">
+  
+{% elsif template contains 'collection' and collection %}
+  {% comment %}
+    Collection URL Structure:
+    /collections/collection-handle
+    Example: /collections/watercolour-paintings
+  {% endcomment %}
+  <meta name="collection-url" content="{{ canonical_url }}">
+  <meta name="collection-handle" content="{{ collection.handle }}">
+  <meta name="collection-id" content="{{ collection.id }}">
+  
+{% elsif template contains 'blog' and blog %}
+  {% comment %}
+    Blog URL Structure:
+    /blogs/blog-handle
+    Example: /blogs/art-education
+  {% endcomment %}
+  <meta name="blog-url" content="{{ canonical_url }}">
+  <meta name="blog-handle" content="{{ blog.handle }}">
+  <meta name="blog-id" content="{{ blog.id }}">
+  
+{% elsif template contains 'article' and article %}
+  {% comment %}
+    Article URL Structure:
+    /blogs/blog-handle/articles/article-handle
+    Example: /blogs/art-education/articles/watercolour-techniques-beginners
+  {% endcomment %}
+  <meta name="article-url" content="{{ canonical_url }}">
+  <meta name="article-handle" content="{{ article.handle }}">
+  <meta name="article-id" content="{{ article.id }}">
+  
+{% elsif template contains 'page' and page %}
+  {% comment %}
+    Page URL Structure:
+    /pages/page-handle
+    Example: /pages/about-repka-arts
+  {% endcomment %}
+  <meta name="page-url" content="{{ canonical_url }}">
+  <meta name="page-handle" content="{{ page.handle }}">
+  <meta name="page-id" content="{{ page.id }}">
+  
+{% else %}
+  {% comment %}
+    Homepage URL Structure:
+    /
+    Example: https://repkaarts.com/
+  {% endcomment %}
+  <meta name="homepage-url" content="{{ canonical_url }}">
+  <meta name="homepage-type" content="index">
+{% endif %}
+
+{% comment %} URL Structure Validation {% endcomment %}
+<script>
+  // Validate URL structure for SEO
+  function validateURLStructure() {
+    const currentURL = window.location.href;
+    const cleanURL = currentURL.replace(/[?#].*$/, ''); // Remove query parameters and fragments
+    
+    // Check for clean URLs (no unnecessary parameters)
+    if (cleanURL.includes('?') || cleanURL.includes('#')) {
+      console.warn('URL contains unnecessary parameters:', cleanURL);
+    }
+    
+    // Check for trailing slashes (except for root)
+    if (cleanURL !== '{{ shop_url }}/' && cleanURL.endsWith('/')) {
+      console.warn('URL has trailing slash:', cleanURL);
+    }
+    
+    // Check for canonical URL consistency
+    const canonicalURL = document.querySelector('link[rel="canonical"]')?.href;
+    if (canonicalURL && canonicalURL !== cleanURL) {
+      console.warn('Canonical URL mismatch:', canonicalURL, 'vs', cleanURL);
+    }
+  }
+  
+  // Run validation on page load
+  document.addEventListener('DOMContentLoaded', validateURLStructure);
+</script>
+
+{% comment %} URL Structure CSS {% endcomment %}
+<style>
+  /* URL Structure Indicators (for development) */
+  .url-structure-seo {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+  }
+  
+  /* Breadcrumb URL Structure */
+  .breadcrumb-nav .breadcrumb-link {
+    text-decoration: none;
+    color: #0066cc;
+  }
+  
+  .breadcrumb-nav .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Clean URL Structure for Navigation */
+  .main-navigation a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .main-navigation a:hover {
+    color: #0066cc;
+  }
+  
+  /* URL Structure for Search Results */
+  .search-results .result-url {
+    color: #0066cc;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  
+  .search-results .result-url:hover {
+    text-decoration: underline;
+  }
+</style>
