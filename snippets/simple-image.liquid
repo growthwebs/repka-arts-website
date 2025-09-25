@@ -1,0 +1,73 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SIMPLE IMAGE COMPONENT
+  Clean Image with Simple SEO Alt Text
+  Easy to Use Throughout Theme
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate simple, clear alt text for any image
+  endcomment
+  assign image_alt = ''
+  
+  if image.alt != blank
+    comment
+      Use existing alt text if available
+    endcomment
+    assign image_alt = image.alt
+  else
+    comment
+      Generate simple alt text based on context
+    endcomment
+    if template contains 'product' and product
+      if product.tags contains 'watercolor'
+        assign image_alt = 'Beautiful watercolour painting - ' | append: product.title
+      elsif product.tags contains 'oil'
+        assign image_alt = 'Rich oil painting - ' | append: product.title
+      elsif product.tags contains 'ceramic'
+        assign image_alt = 'Handmade ceramic art - ' | append: product.title
+      elsif product.tags contains 'commission'
+        assign image_alt = 'Custom artwork - ' | append: product.title
+      elsif product.tags contains 'print'
+        assign image_alt = 'Fine art print - ' | append: product.title
+      else
+        assign image_alt = 'Original artwork - ' | append: product.title
+      endif
+    elsif template contains 'collection' and collection
+      assign image_alt = collection.title | append: ' art collection'
+    else
+      assign image_alt = 'Artwork by ' | append: shop.name
+    endif
+  endif
+  
+  comment
+    Keep alt text short and clear (under 100 characters)
+  endcomment
+  if image_alt.size > 100
+    assign image_alt = image_alt | truncate: 97 | append: '...'
+  endif
+  
+  comment
+    Set up image dimensions
+  endcomment
+  assign image_height = height | default: image.height
+  assign image_height_2x = height | default: image_height | times: 2
+  assign image_height_3x = height | default: image_height | times: 3
+
+  assign image_srcset = image | image_url: height: image_height | append: ' 1x, ' | append: image | image_url: height: image_height_2x | append: ' 2x, ' | append: image | image_url: height: image_height_3x | append: ' 3x'
+
+  assign style_value = style | default: ''
+
+  if unset_image_tag
+    assign style_value = style_value | append: 'object-position: inherit;'
+  endif
+-%}
+
+{% comment %} Simple Image with SEO Alt Text {% endcomment %}
+{% if image != blank %}
+  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value, alt: image_alt }}
+{% elsif text_fallback %}
+  {{ text_fallback }}
+{% endif %}
