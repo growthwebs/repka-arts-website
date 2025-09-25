@@ -1,0 +1,102 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - AI CONTENT OPTIMIZATION
+  Natural Language Processing Enhancement
+  AI-Friendly Content Structure
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    AI-optimized content generation for better search engine and AI assistant visibility
+  endcomment
+  assign ai_content_ready = false
+  
+  if template contains 'product' and product
+    assign ai_content_ready = true
+    assign artwork_type = 'artwork'
+    assign medium_description = 'mixed media'
+    
+    if product.tags contains 'watercolor'
+      assign artwork_type = 'watercolor painting'
+      assign medium_description = 'watercolor on paper'
+    elsif product.tags contains 'ceramic'
+      assign artwork_type = 'ceramic art'
+      assign medium_description = 'handmade ceramic'
+    elsif product.tags contains 'commission'
+      assign artwork_type = 'custom commission'
+      assign medium_description = 'personalized artwork'
+    elsif product.tags contains 'print'
+      assign artwork_type = 'art print'
+      assign medium_description = 'fine art reproduction'
+    endif
+  endif
+-%}
+
+{% comment %} AI-optimized content structure for better understanding {% endcomment %}
+{% if ai_content_ready %}
+<div class="ai-content-optimization" style="display: none;">
+  <div class="artwork-details">
+    <span class="artwork-type">{{ artwork_type }}</span>
+    <span class="medium">{{ medium_description }}</span>
+    <span class="artist">{{ shop.name }}</span>
+    <span class="category">original artwork</span>
+    {% if product.tags contains 'watercolor' %}
+    <span class="keywords">watercolor painting, original watercolor, watercolor art, custom watercolor, watercolor commission</span>
+    {% elsif product.tags contains 'ceramic' %}
+    <span class="keywords">ceramic art, handmade ceramic, ceramic sculpture, pottery art, ceramic commission</span>
+    {% elsif product.tags contains 'commission' %}
+    <span class="keywords">art commission, custom artwork, personalized art, commissioned painting, custom art piece</span>
+    {% elsif product.tags contains 'print' %}
+    <span class="keywords">art print, fine art print, limited edition print, artwork reproduction, art poster</span>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% comment %} Structured FAQ content for AI assistants {% endcomment %}
+{% if template == 'index' %}
+<div class="ai-faq-content" style="display: none;">
+  <div class="faq-item">
+    <h3>What types of artwork does Repka Arts offer?</h3>
+    <p>Repka Arts specializes in watercolor paintings, ceramic art, custom commissions, and fine art prints. We offer original artworks and personalized commissions in various mediums.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do you offer custom art commissions?</h3>
+    <p>Yes, we offer custom art commissions in watercolor, ceramics, and other mediums. Contact us to discuss your personalized artwork requirements.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is your shipping policy for artwork?</h3>
+    <p>We ship artwork worldwide with secure packaging to ensure your art arrives in perfect condition. Most orders ship within 3-5 business days.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Are your art prints limited edition?</h3>
+    <p>Many of our art prints are limited edition, providing collectors with exclusive pieces. Each print is numbered and comes with a certificate of authenticity.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How do I care for my watercolor painting?</h3>
+    <p>Watercolor paintings should be kept away from direct sunlight and humidity. Frame them behind UV-protective glass and avoid touching the surface.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do you offer international shipping?</h3>
+    <p>Yes, we ship our artwork worldwide with secure packaging to ensure your art arrives in perfect condition.</p>
+  </div>
+</div>
+{% endif %}
+
+{% comment %} Natural language product descriptions for AI {% endcomment %}
+{% if template contains 'product' and product %}
+<div class="ai-product-description" style="display: none;">
+  <p>This is an {{ artwork_type }} created by {{ shop.name }}. The artwork is made using {{ medium_description }} techniques. This piece represents original artwork that can be purchased for your home or office collection.</p>
+  
+  {% if product.tags contains 'watercolor' %}
+  <p>Watercolor paintings are known for their delicate beauty and fluid techniques. This original watercolor artwork showcases the artist's mastery of this challenging medium.</p>
+  {% elsif product.tags contains 'ceramic' %}
+  <p>Ceramic art combines traditional pottery techniques with contemporary artistic expression. This handmade ceramic piece is a unique addition to any art collection.</p>
+  {% elsif product.tags contains 'commission' %}
+  <p>Custom art commissions allow you to work directly with the artist to create a personalized artwork that meets your specific vision and requirements.</p>
+  {% elsif product.tags contains 'print' %}
+  <p>Fine art prints offer an affordable way to own beautiful artwork. This limited edition print maintains the quality and beauty of the original artwork.</p>
+  {% endif %}
+</div>
+{% endif %}
