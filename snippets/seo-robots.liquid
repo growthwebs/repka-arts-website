@@ -1,0 +1,56 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SEO ROBOTS.TXT OPTIMIZATION
+  Enhanced for Art Gallery SEO
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate robots.txt content for better SEO
+  endcomment
+  assign shop_domain = shop.permanent_domain
+  assign sitemap_url = 'https://' | append: shop_domain | append: '/sitemap.xml'
+-%}
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /search?*
+Disallow: /collections/*?*
+Disallow: /pages/*?*
+Disallow: /blogs/*?*
+Disallow: /products/*?*
+
+# Allow important pages for SEO
+Allow: /collections/
+Allow: /products/
+Allow: /pages/
+Allow: /blogs/
+Allow: /about/
+Allow: /contact/
+
+# Sitemap location
+Sitemap: {{ sitemap_url }}
+
+# Additional directives for AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Crawl delay for better server performance
+Crawl-delay: 1

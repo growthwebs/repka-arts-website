@@ -1,0 +1,160 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ENHANCED SEO META TAGS
+  AI & LLM Optimized Meta Information
+  Keyword-Rich for Art Gallery SEO
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Enhanced page title with keyword optimization
+  endcomment
+  assign seo_title = page_title
+  
+  if template contains 'product' and product
+    assign seo_title = product.title
+    if product.tags contains 'watercolor' or product.title contains 'watercolor'
+      assign seo_title = seo_title | append: ' | Original Watercolor Painting'
+    elsif product.tags contains 'ceramic' or product.title contains 'ceramic'
+      assign seo_title = seo_title | append: ' | Handmade Ceramic Art'
+    elsif product.tags contains 'commission' or product.title contains 'commission'
+      assign seo_title = seo_title | append: ' | Custom Art Commission'
+    elsif product.tags contains 'print' or product.title contains 'print'
+      assign seo_title = seo_title | append: ' | Fine Art Print'
+    endif
+    assign seo_title = seo_title | append: ' | ' | append: shop.name
+  elsif template contains 'collection' and collection
+    assign seo_title = collection.title
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign seo_title = seo_title | append: ' | Watercolor Paintings Collection'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign seo_title = seo_title | append: ' | Ceramic Art Collection'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign seo_title = seo_title | append: ' | Custom Art Commissions'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign seo_title = seo_title | append: ' | Art Prints Collection'
+    endif
+    assign seo_title = seo_title | append: ' | ' | append: shop.name
+  elsif template == 'index'
+    assign seo_title = shop.name | append: ' | Premium Art Gallery - Watercolor Paintings, Ceramic Art & Custom Commissions'
+  else
+    unless seo_title contains shop.name
+      assign seo_title = seo_title | append: ' | ' | append: shop.name
+    endunless
+  endif
+  
+  comment
+    Enhanced meta description with keywords
+  endcomment
+  assign seo_description = page_description | default: shop.description
+  
+  if template contains 'product' and product
+    assign seo_description = product.description | strip_html | truncate: 155
+    if product.tags contains 'watercolor'
+      assign seo_description = 'Original watercolor painting by ' | append: shop.name | append: '. ' | append: seo_description
+    elsif product.tags contains 'ceramic'
+      assign seo_description = 'Handmade ceramic art by ' | append: shop.name | append: '. ' | append: seo_description
+    elsif product.tags contains 'commission'
+      assign seo_description = 'Custom art commission by ' | append: shop.name | append: '. ' | append: seo_description
+    elsif product.tags contains 'print'
+      assign seo_description = 'Fine art print by ' | append: shop.name | append: '. ' | append: seo_description
+    endif
+  elsif template contains 'collection' and collection
+    assign seo_description = 'Browse our ' | append: collection.title | downcase | append: ' collection. ' | append: collection.description | default: 'Discover unique artworks in our curated collection.'
+  elsif template == 'index'
+    assign seo_description = 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Discover original artworks by talented artists. Worldwide shipping available.'
+  endif
+  
+  comment
+    Determine keywords based on template and content
+  endcomment
+  assign seo_keywords = 'art gallery, original artwork, fine art'
+  
+  if template contains 'product' and product
+    if product.tags contains 'watercolor'
+      assign seo_keywords = 'watercolor painting, original watercolor, watercolor art, custom watercolor'
+    elsif product.tags contains 'ceramic'
+      assign seo_keywords = 'ceramic art, handmade ceramic, ceramic sculpture, pottery art'
+    elsif product.tags contains 'commission'
+      assign seo_keywords = 'art commission, custom artwork, personalized art, commissioned painting'
+    elsif product.tags contains 'print'
+      assign seo_keywords = 'art print, fine art print, limited edition print, artwork reproduction'
+    endif
+    assign seo_keywords = seo_keywords | append: ', art gallery, original artwork'
+  elsif template contains 'collection' and collection
+    if collection.title contains 'watercolor'
+      assign seo_keywords = 'watercolor paintings, watercolor collection, original watercolors'
+    elsif collection.title contains 'ceramic'
+      assign seo_keywords = 'ceramic art, ceramic collection, handmade ceramics'
+    elsif collection.title contains 'commission'
+      assign seo_keywords = 'art commissions, custom artwork, commissioned art'
+    elsif collection.title contains 'print'
+      assign seo_keywords = 'art prints, fine art prints, print collection'
+    endif
+    assign seo_keywords = seo_keywords | append: ', art gallery, original artwork'
+  elsif template == 'index'
+    assign seo_keywords = 'art gallery, watercolor paintings, ceramic art, custom commissions, art prints, original artwork, fine art, handmade art, art collection'
+  endif
+-%}
+
+{% comment %} Enhanced Title Tag {% endcomment %}
+<title>{{ seo_title | escape }}</title>
+
+{% comment %} Enhanced Meta Description {% endcomment %}
+<meta name="description" content="{{ seo_description | escape }}">
+
+{% comment %} Enhanced Meta Keywords {% endcomment %}
+<meta name="keywords" content="{{ seo_keywords | escape }}">
+
+{% comment %} AI and Search Engine Optimization Meta Tags {% endcomment %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+{% comment %} Enhanced Open Graph Tags {% endcomment %}
+<meta property="og:title" content="{{ seo_title | escape }}">
+<meta property="og:description" content="{{ seo_description | escape }}">
+<meta property="og:type" content="{% if template contains 'product' %}product{% elsif template contains 'article' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:site_name" content="{{ shop.name }}">
+<meta property="og:locale" content="{{ request.locale.iso_code }}">
+
+{% comment %} Enhanced Twitter Card Tags {% endcomment %}
+<meta name="twitter:title" content="{{ seo_title | escape }}">
+<meta name="twitter:description" content="{{ seo_description | escape }}">
+<meta name="twitter:card" content="summary_large_image">
+
+{% comment %} Additional SEO Meta Tags {% endcomment %}
+<meta name="author" content="{{ shop.name }}">
+<meta name="publisher" content="{{ shop.name }}">
+<meta name="copyright" content="{{ shop.name }}">
+
+{% comment %} AI-Friendly Meta Tags {% endcomment %}
+<meta name="classification" content="Art & Collectibles">
+<meta name="category" content="{% if template contains 'product' %}Artwork{% elsif template contains 'collection' %}Art Collection{% else %}Art Gallery{% endif %}">
+<meta name="coverage" content="Worldwide">
+<meta name="distribution" content="Global">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta name="target" content="art collectors, art enthusiasts, interior designers, gift buyers">
+
+{% comment %} Enhanced Canonical URL {% endcomment %}
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% comment %} Language and Geo Tags {% endcomment %}
+<meta name="language" content="{{ request.locale.iso_code }}">
+<meta name="geo.region" content="US">
+<meta name="geo.placename" content="United States">
+
+{% comment %} Mobile and App Meta Tags {% endcomment %}
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{ shop.name }}">
+
+{% comment %} Preconnect to External Domains for Performance {% endcomment %}
+<link rel="preconnect" href="//fonts.googleapis.com">
+<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//cdn.shopify.com">
+<link rel="dns-prefetch" href="//monorail-edge.shopifysvc.com">
