@@ -24,8 +24,6 @@
 -%}
 
 {% comment %} Critical Resource Hints {% endcomment %}
-<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="//cdn.shopify.com" crossorigin>
 <link rel="dns-prefetch" href="//monorail-edge.shopifysvc.com">
 <link rel="dns-prefetch" href="//shopifycloud.com">
@@ -90,43 +88,7 @@
   {% endfor %}
 {% endif %}
 
-{% comment %} Font Optimization {% endcomment %}
-<style>
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2')
-      format('woff2');
-  }
-
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeA.woff2')
-      format('woff2');
-  }
-
-  /* Critical above-the-fold styles */
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  .page-width {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  .section {
-    padding: 2rem 0;
-  }
-</style>
+{% comment %} Font Optimization - REMOVED {% endcomment %}
 
 {% comment %} Service Worker Registration {% endcomment %}
 <script>
