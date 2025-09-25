@@ -26,7 +26,7 @@
             "thumbnail_position": "left",
             "thumbnail_width": 57,
             "aspect_ratio": "1/1.25",
-            "constrain_to_viewport": false,
+            "constrain_to_viewport": true,
             "media_fit": "cover",
             "media_radius": 0,
             "extend_media": true,
@@ -129,8 +129,8 @@
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
-                "variant_style": "buttons",
-                "show_swatches": true,
+                "variant_style": "dropdowns",
+                "show_swatches": false,
                 "alignment": "left",
                 "padding-block-start": 12,
                 "padding-block-end": 24,
@@ -330,7 +330,7 @@
         }
       },
       "settings": {
-        "content_width": "content-full-width",
+        "content_width": "content-center-aligned",
         "desktop_media_position": "left",
         "equal_columns": true,
         "limit_details_width": true,
