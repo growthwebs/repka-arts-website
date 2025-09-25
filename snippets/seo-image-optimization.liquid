@@ -1,0 +1,73 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SEO IMAGE OPTIMIZATION
+  Enhanced Image SEO with Alt Text
+  UK English & SEO Best Practices
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate SEO-optimised alt text for images
+  endcomment
+  assign seo_alt_text = ''
+  
+  if image.alt != blank
+    assign seo_alt_text = image.alt
+  else
+    comment
+      Generate alt text based on context and product type
+    endcomment
+    if template contains 'product' and product
+      if product.tags contains 'watercolor'
+        assign seo_alt_text = 'Original watercolour painting by ' | append: shop.name | append: ' - ' | append: product.title
+      elsif product.tags contains 'oil'
+        assign seo_alt_text = 'Original oil painting by ' | append: shop.name | append: ' - ' | append: product.title
+      elsif product.tags contains 'ceramic'
+        assign seo_alt_text = 'Handmade ceramic art by ' | append: shop.name | append: ' - ' | append: product.title
+      elsif product.tags contains 'commission'
+        assign seo_alt_text = 'Custom art commission by ' | append: shop.name | append: ' - ' | append: product.title
+      elsif product.tags contains 'print'
+        assign seo_alt_text = 'Fine art print by ' | append: shop.name | append: ' - ' | append: product.title
+      else
+        assign seo_alt_text = 'Original artwork by ' | append: shop.name | append: ' - ' | append: product.title
+      endif
+    elsif template contains 'collection' and collection
+      assign seo_alt_text = collection.title | append: ' collection by ' | append: shop.name | append: ' - Original artwork'
+    elsif template contains 'blog' and blog
+      assign seo_alt_text = 'Art blog post by ' | append: shop.name | append: ' - ' | append: blog.title
+    elsif template contains 'article' and article
+      assign seo_alt_text = 'Art article by ' | append: shop.name | append: ' - ' | append: article.title
+    else
+      assign seo_alt_text = 'Artwork by ' | append: shop.name | append: ' - Premium art gallery'
+    endif
+  endif
+  
+  comment
+    Ensure alt text is not too long (125 characters max for SEO)
+  endcomment
+  if seo_alt_text.size > 125
+    assign seo_alt_text = seo_alt_text | truncate: 122 | append: '...'
+  endif
+-%}
+
+{% comment %} Enhanced Image with SEO Alt Text {% endcomment %}
+{% if image != blank %}
+  {% assign image_height = height | default: image.height %}
+  {% assign image_height_2x = height | default: image_height | times: 2 %}
+  {% assign image_height_3x = height | default: image_height | times: 3 %}
+
+  {% capture image_srcset -%}
+    {{ image | image_url: height: image_height }} 1x, {{ image | image_url: height: image_height_2x }} 2x, {{ image | image_url: height: image_height_3x }} 3x
+  {%- endcapture %}
+
+  {% assign style_value = style | default: '' %}
+
+  {% if unset_image_tag %}
+    {% assign style_value = style_value | append: 'object-position: inherit;' %}
+  {% endif %}
+
+  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value, alt: seo_alt_text }}
+{% elsif text_fallback %}
+  {{ text_fallback }}
+{% endif %}
