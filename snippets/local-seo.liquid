@@ -130,16 +130,16 @@
     "name": "{{ business_name }}",
     "image": "{{ settings.logo | image_url: width: 500 | prepend: 'https:' }}",
     "description": "{{ business_description }}",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "ES"
-  },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ES"
+    },
     "telephone": "{{ business_phone }}",
     "url": "{{ shop.url }}",
     "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-16:00",
     "priceRange": "$$",
-  "paymentAccepted": ["Credit Card", "PayPal", "Shopify Pay"],
-  "currenciesAccepted": "EUR",
+    "paymentAccepted": ["Credit Card", "PayPal", "Shopify Pay"],
+    "currenciesAccepted": "EUR",
     "areaServed": {
       "@type": "Country",
       "name": "Worldwide"
@@ -193,10 +193,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Where is Repka Arts located?",
+        "name": "¿Dónde está ubicada Repka Arts?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Repka Arts is an online art gallery that serves customers worldwide. We specialize in watercolor paintings, ceramic art, custom commissions, and fine art prints with worldwide shipping available."
+          "text": "Repka Arts es una galería de arte online ubicada en España que atiende clientes de todo el mundo. Nos especializamos en pinturas de acuarela, arte cerámico, comisiones personalizadas y impresiones de arte fino con envío mundial disponible."
         }
       },
       {
