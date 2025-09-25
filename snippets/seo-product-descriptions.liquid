@@ -1,0 +1,90 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SEO PRODUCT DESCRIPTIONS
+  Optimized Product Descriptions for Art
+  AI-Friendly Content for Better Rankings
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate SEO-optimized product descriptions based on product type
+  endcomment
+  assign seo_description = ''
+  
+  if product.tags contains 'watercolor'
+    assign seo_description = 'Original watercolor painting by ' | append: shop.name | append: '. This handmade artwork showcases the delicate beauty of watercolor techniques with vibrant colors and fluid brushstrokes. Perfect for art collectors and interior designers seeking unique original artwork. '
+    if product.description != blank
+      assign seo_description = seo_description | append: product.description | strip_html | truncate: 200
+    else
+      assign seo_description = seo_description | append: 'Each watercolor painting is created with premium materials and comes with a certificate of authenticity. '
+    endif
+    assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
+    
+  elsif product.tags contains 'ceramic'
+    assign seo_description = 'Handmade ceramic art by ' | append: shop.name | append: '. This unique ceramic sculpture combines traditional pottery techniques with contemporary artistic expression. Each piece is handcrafted and glazed to perfection. '
+    if product.description != blank
+      assign seo_description = seo_description | append: product.description | strip_html | truncate: 200
+    else
+      assign seo_description = seo_description | append: 'Perfect for art collectors and ceramic enthusiasts seeking original handmade pottery. '
+    endif
+    assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
+    
+  elsif product.tags contains 'commission'
+    assign seo_description = 'Custom art commission by ' | append: shop.name | append: '. Personalized artwork created specifically for you in your preferred medium and style. Perfect for special occasions, home decor, or unique gifts. '
+    if product.description != blank
+      assign seo_description = seo_description | append: product.description | strip_html | truncate: 200
+    else
+      assign seo_description = seo_description | append: 'Work directly with the artist to create your vision. Available in watercolor, ceramic, and other mediums. '
+    endif
+    assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
+    
+  elsif product.tags contains 'print'
+    assign seo_description = 'Fine art print by ' | append: shop.name | append: '. High-quality reproduction of original artwork, perfect for art lovers and interior designers. '
+    if product.description != blank
+      assign seo_description = seo_description | append: product.description | strip_html | truncate: 200
+    else
+      assign seo_description = seo_description | append: 'Limited edition print with certificate of authenticity. '
+    endif
+    assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
+    
+  else
+    assign seo_description = 'Original artwork by ' | append: shop.name | append: '. Unique handmade art piece perfect for collectors and art enthusiasts. '
+    if product.description != blank
+      assign seo_description = seo_description | append: product.description | strip_html | truncate: 200
+    else
+      assign seo_description = seo_description | append: 'Each piece is carefully crafted with attention to detail and artistic excellence. '
+    endif
+    assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
+  endif
+  
+  comment
+    Add Spanish keywords for local SEO
+  endcomment
+  assign spanish_keywords = ''
+  if product.tags contains 'watercolor'
+    assign spanish_keywords = 'pintura acuarela original, arte acuarela, acuarela española, artista acuarela'
+  elsif product.tags contains 'ceramic'
+    assign spanish_keywords = 'arte cerámico, cerámica artesanal, escultura cerámica, cerámica española'
+  elsif product.tags contains 'commission'
+    assign spanish_keywords = 'comisión de arte, arte personalizado, encargo artístico, obra por encargo'
+  elsif product.tags contains 'print'
+    assign spanish_keywords = 'impresión de arte, reproducción artística, arte impreso, lámina artística'
+  endif
+-%}
+
+{% comment %} Enhanced Product Description for SEO {% endcomment %}
+<div class="seo-product-description" style="display: none;">
+  <div class="description-text">{{ seo_description }}</div>
+  <div class="spanish-keywords">{{ spanish_keywords }}</div>
+  <div class="art-category">{% if product.tags contains 'watercolor' %}Watercolor Painting{% elsif product.tags contains 'ceramic' %}Ceramic Art{% elsif product.tags contains 'commission' %}Custom Commission{% elsif product.tags contains 'print' %}Art Print{% else %}Original Artwork{% endif %}</div>
+  <div class="artist-name">{{ shop.name }}</div>
+  <div class="location">Spain</div>
+  <div class="shipping">Worldwide shipping available</div>
+</div>
+
+{% comment %} Generate SEO-rich meta description {% endcomment %}
+{% if template contains 'product' and product %}
+<meta name="description" content="{{ seo_description | escape }}">
+<meta name="keywords" content="{{ spanish_keywords }}, {{ product.title | downcase | replace: ' ', ', ' }}, original artwork, handmade art, art gallery spain">
+{% endif %}

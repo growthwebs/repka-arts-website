@@ -1,0 +1,62 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SEO COLLECTION DESCRIPTIONS
+  Optimized Collection Descriptions for Art
+  Keyword-Rich Content for Better Rankings
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate SEO-optimized collection descriptions
+  endcomment
+  assign seo_collection_description = ''
+  assign collection_keywords = ''
+  
+  if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+    assign seo_collection_description = 'Discover our exclusive collection of original watercolor paintings by talented artists. Each watercolor artwork showcases the delicate beauty of this challenging medium with vibrant colors and fluid brushstrokes. Perfect for art collectors, interior designers, and watercolor enthusiasts seeking unique original artwork. '
+    assign collection_keywords = 'watercolor paintings, original watercolor, watercolor art, watercolor artist, watercolor collection, acuarela original, pintura acuarela, arte acuarela'
+    
+  elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+    assign seo_collection_description = 'Explore our curated collection of handmade ceramic art and pottery. Each ceramic piece combines traditional pottery techniques with contemporary artistic expression. From functional pottery to decorative sculptures, our ceramic collection offers unique handmade pieces for art lovers and collectors. '
+    assign collection_keywords = 'ceramic art, handmade ceramic, ceramic sculpture, pottery art, ceramic collection, arte cerámico, cerámica artesanal, escultura cerámica'
+    
+  elsif collection.title contains 'commission' or collection.title contains 'Commission'
+    assign seo_collection_description = 'Commission custom artwork tailored to your vision and style. Work directly with our talented artists to create personalized watercolor paintings, ceramic art, or other mediums. Perfect for special occasions, home decor, corporate gifts, or unique presents. Each commission is a collaborative process ensuring your perfect piece. '
+    assign collection_keywords = 'art commission, custom artwork, personalized art, commissioned painting, custom art piece, comisión de arte, arte personalizado, encargo artístico'
+    
+  elsif collection.title contains 'print' or collection.title contains 'Print'
+    assign seo_collection_description = 'Browse our collection of fine art prints and reproductions. High-quality prints of original artwork, perfect for art lovers and interior designers. Each print is carefully reproduced to maintain the beauty and detail of the original artwork, available in various sizes and formats. '
+    assign collection_keywords = 'art prints, fine art prints, limited edition prints, artwork reproductions, art posters, impresión de arte, reproducción artística, arte impreso'
+    
+  else
+    assign seo_collection_description = 'Discover our curated collection of original artwork by talented artists. From watercolor paintings to ceramic art, each piece is carefully selected for its artistic excellence and unique character. Perfect for art collectors, interior designers, and art enthusiasts seeking exceptional original artwork. '
+    assign collection_keywords = 'original artwork, art collection, handmade art, contemporary art, art gallery, obra de arte original, colección de arte, arte contemporáneo'
+  endif
+  
+  comment
+    Add location and shipping information
+  endcomment
+  assign seo_collection_description = seo_collection_description | append: 'All artwork ships worldwide from Spain with secure packaging and tracking. '
+  
+  comment
+    Add call to action
+  endcomment
+  assign seo_collection_description = seo_collection_description | append: 'Browse our collection today and find the perfect piece for your space. '
+-%}
+
+{% comment %} Enhanced Collection Description for SEO {% endcomment %}
+<div class="seo-collection-description" style="display: none;">
+  <div class="description-text">{{ seo_collection_description }}</div>
+  <div class="keywords">{{ collection_keywords }}</div>
+  <div class="collection-type">{{ collection.title }}</div>
+  <div class="artist-gallery">{{ shop.name }}</div>
+  <div class="location">Spain</div>
+  <div class="shipping">Worldwide shipping</div>
+</div>
+
+{% comment %} Generate SEO-rich meta description for collections {% endcomment %}
+{% if template contains 'collection' and collection %}
+<meta name="description" content="{{ seo_collection_description | escape }}">
+<meta name="keywords" content="{{ collection_keywords }}, {{ collection.title | downcase | replace: ' ', ', ' }}, art gallery spain, original artwork, handmade art">
+{% endif %}
