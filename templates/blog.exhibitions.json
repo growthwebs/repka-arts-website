@@ -488,7 +488,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Discover more here:</p>",
+                    "text": "<p>More here:</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -514,7 +514,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>https://linkhere.com/post/post</p>{{ metaobjects.exhibition[\"wild-at-heart\"].news_links | metafield_tag }}",
+                    "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].press_links.value }}</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -777,7 +777,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>{{ metaobjects.exhibition[\"wild-at-heart\"].venue.value }}</h4>",
+                        "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
