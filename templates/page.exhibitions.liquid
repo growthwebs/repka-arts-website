@@ -1,0 +1,197 @@
+{% comment %}
+  Template for exhibitions listing page
+  Displays all exhibition metaobjects in a grid layout
+{% endcomment %}
+
+<div class="exhibitions-listing-page">
+  <!-- Hero Section -->
+  <section class="exhibitions-hero">
+    <div class="container">
+      <h1 class="exhibitions-title">{{ page.title | default: 'My Exhibitions' }}</h1>
+      <p class="exhibitions-description">{{ page.content }}</p>
+    </div>
+  </section>
+
+  <!-- Exhibitions Grid -->
+  <section class="exhibitions-grid-section">
+    <div class="container">
+      <div class="exhibitions-grid">
+        {% for exhibition in shop.metaobjects.exhibition.values %}
+          <div class="exhibition-card">
+            {% if exhibition.banner.value %}
+              <div class="exhibition-image">
+                <img
+                  src="{{ exhibition.banner.value | img_url: '600x400' }}"
+                  alt="{{ exhibition.exhibition_name.value }}"
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+
+            <div class="exhibition-content">
+              <h3 class="exhibition-title">{{ exhibition.exhibition_name.value }}</h3>
+              {% if exhibition.exhibition_subtitle.value %}
+                <p class="exhibition-subtitle">{{ exhibition.exhibition_subtitle.value }}</p>
+              {% endif %}
+
+              <div class="exhibition-details">
+                {% if exhibition.venue_name.value %}
+                  <p><strong>Venue:</strong> {{ exhibition.venue_name.value }}</p>
+                {% endif %}
+
+                {% if exhibition.venue_location.value %}
+                  <p><strong>Location:</strong> {{ exhibition.venue_location.value }}</p>
+                {% endif %}
+
+                {% if exhibition.start_date.value and exhibition.end_date.value %}
+                  <p>
+                    <strong>Dates:</strong> {{ exhibition.start_date.value | date: '%B %d, %Y' }} -
+                    {{ exhibition.end_date.value | date: '%B %d, %Y' }}
+                  </p>
+                {% endif %}
+
+                {% if exhibition.status.value %}
+                  <span class="exhibition-status status-{{ exhibition.status.value | downcase }}">
+                    {{- exhibition.status.value -}}
+                  </span>
+                {% endif %}
+              </div>
+
+              {% if exhibition.venue_website.value %}
+                <a href="{{ exhibition.venue_website.value }}" target="_blank" class="exhibition-link">
+                  Visit Venue Website
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .exhibitions-listing-page {
+    padding: 2rem 0;
+  }
+
+  .exhibitions-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .exhibitions-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .exhibitions-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .exhibitions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .exhibition-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .exhibition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .exhibition-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .exhibition-content {
+    padding: 1.5rem;
+  }
+
+  .exhibition-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .exhibition-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .exhibition-details p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .exhibition-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  .status-past {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+
+  .status-current {
+    background-color: #e8f5e8;
+    color: #2d5a2d;
+  }
+
+  .status-upcoming {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .exhibition-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .exhibition-link:hover {
+    background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    .exhibitions-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .exhibitions-title {
+      font-size: 2rem;
+    }
+
+    .exhibition-content {
+      padding: 1rem;
+    }
+  }
+</style>
