@@ -777,7 +777,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</p>",
+                        "text": "<h4>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -961,7 +961,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h2>{{ closest.collection.title }}</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
