@@ -71,35 +71,7 @@
 
 {% comment %} Related Collections Section - REMOVED {% endcomment %}
 
-{% comment %} Related Articles Section {% endcomment %}
-{% if template contains 'article' and article and related_articles.size > 0 %}
-  <section class="related-articles-section">
-    <h2 class="related-articles-title">Read More</h2>
-    <div class="related-articles-grid">
-      {% for related_article in related_articles %}
-        {% unless related_article.id == article.id %}
-          <div class="related-article-item">
-            <a href="{{ related_article.url }}" class="related-article-link">
-              {% if related_article.image %}
-                <img
-                  src="{{ related_article.image | image_url: width: 300 }}"
-                  alt="{{ related_article.title | escape }}"
-                  class="related-article-image"
-                  loading="lazy"
-                >
-              {% endif %}
-              <h3 class="related-article-title">{{ related_article.title }}</h3>
-              <p class="related-article-excerpt">{{ related_article.excerpt | strip_html | truncate: 100 }}</p>
-              <time class="related-article-date" datetime="{{ related_article.published_at | date: '%Y-%m-%d' }}">
-                {{ related_article.published_at | date: '%B %d, %Y' }}
-              </time>
-            </a>
-          </div>
-        {% endunless %}
-      {% endfor %}
-    </div>
-  </section>
-{% endif %}
+{% comment %} Related Articles Section - REMOVED {% endcomment %}
 
 {% comment %} Navigation Links for Better SEO {% endcomment %}
 <nav class="seo-navigation" aria-label="Site Navigation">
