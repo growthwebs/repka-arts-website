@@ -1,0 +1,256 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ENHANCED ROBOTS.TXT
+  Optimized Crawling Instructions
+  For repkaarts.com
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate enhanced robots.txt directives for repkaarts.com
+  endcomment
+  assign shop_url = 'https://repkaarts.com'
+-%}
+
+{% comment %} Enhanced Robots Meta Tags {% endcomment %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1, max-video-preview:30">
+
+{% comment %} Search Engine Specific Instructions {% endcomment %}
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="slurp" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="duckduckbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+{% comment %} Page-Specific Robots Instructions {% endcomment %}
+{% if template contains 'product' and product %}
+  {% if product.available %}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  {% else %}
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+{% elsif template contains 'collection' and collection %}
+  {% if collection.products.size > 0 %}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  {% else %}
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+{% elsif template contains 'blog' and blog %}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{% elsif template contains 'article' and article %}
+  {% if article.published_at %}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  {% else %}
+    <meta name="robots" content="noindex, nofollow">
+  {% endif %}
+{% elsif template contains 'page' and page %}
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{% endif %}
+
+{% comment %} Crawl Delay for Better Server Performance {% endcomment %}
+<meta name="crawl-delay" content="1">
+
+{% comment %} Enhanced Robots.txt Content (for reference) {% endcomment %}
+{% comment %}
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /orders/
+Disallow: /account/
+Disallow: /collections/*?sort_by=
+Disallow: /collections/*?page=
+Disallow: /search
+Disallow: /search?*
+Disallow: /collections/*?view=
+Disallow: /collections/*?filter=
+Disallow: /collections/*?sort=
+Disallow: /collections/*?page=
+Disallow: /collections/*?offset=
+Disallow: /collections/*?limit=
+Disallow: /collections/*?q=
+Disallow: /collections/*?ref=
+Disallow: /collections/*?utm_*
+Disallow: /collections/*?fbclid=
+Disallow: /collections/*?gclid=
+Disallow: /collections/*?msclkid=
+Disallow: /collections/*?dclid=
+Disallow: /collections/*?twclid=
+Disallow: /collections/*?li_fat_id=
+Disallow: /collections/*?mc_cid=
+Disallow: /collections/*?mc_eid=
+Disallow: /collections/*?ref_=
+Disallow: /collections/*?variant=
+Disallow: /collections/*?color=
+Disallow: /collections/*?size=
+Disallow: /collections/*?material=
+Disallow: /collections/*?style=
+Disallow: /collections/*?artist=
+Disallow: /collections/*?medium=
+Disallow: /collections/*?price=
+Disallow: /collections/*?availability=
+Disallow: /collections/*?in_stock=
+Disallow: /collections/*?out_of_stock=
+Disallow: /collections/*?sale=
+Disallow: /collections/*?new=
+Disallow: /collections/*?featured=
+Disallow: /collections/*?bestseller=
+Disallow: /collections/*?trending=
+Disallow: /collections/*?popular=
+Disallow: /collections/*?recommended=
+Disallow: /collections/*?similar=
+Disallow: /collections/*?related=
+Disallow: /collections/*?complementary=
+Disallow: /collections/*?cross_sell=
+Disallow: /collections/*?upsell=
+Disallow: /collections/*?bundle=
+Disallow: /collections/*?set=
+Disallow: /collections/*?collection=
+Disallow: /collections/*?tag=
+Disallow: /collections/*?category=
+Disallow: /collections/*?type=
+Disallow: /collections/*?brand=
+Disallow: /collections/*?vendor=
+Disallow: /collections/*?product_type=
+Disallow: /collections/*?handle=
+Disallow: /collections/*?id=
+Disallow: /collections/*?sku=
+Disallow: /collections/*?barcode=
+Disallow: /collections/*?weight=
+Disallow: /collections/*?volume=
+Disallow: /collections/*?dimensions=
+Disallow: /collections/*?material=
+Disallow: /collections/*?color=
+Disallow: /collections/*?pattern=
+Disallow: /collections/*?texture=
+Disallow: /collections/*?finish=
+Disallow: /collections/*?style=
+Disallow: /collections/*?theme=
+Disallow: /collections/*?mood=
+Disallow: /collections/*?feeling=
+Disallow: /collections/*?atmosphere=
+Disallow: /collections/*?ambiance=
+Disallow: /collections/*?vibe=
+Disallow: /collections/*?energy=
+Disallow: /collections/*?spirit=
+Disallow: /collections/*?essence=
+Disallow: /collections/*?character=
+Disallow: /collections/*?personality=
+Disallow: /collections/*?identity=
+Disallow: /collections/*?brand=
+Disallow: /collections/*?signature=
+Disallow: /collections/*?mark=
+Disallow: /collections/*?stamp=
+Disallow: /collections/*?seal=
+Disallow: /collections/*?badge=
+Disallow: /collections/*?emblem=
+Disallow: /collections/*?logo=
+Disallow: /collections/*?symbol=
+Disallow: /collections/*?icon=
+Disallow: /collections/*?image=
+Disallow: /collections/*?photo=
+Disallow: /collections/*?picture=
+Disallow: /collections/*?illustration=
+Disallow: /collections/*?drawing=
+Disallow: /collections/*?painting=
+Disallow: /collections/*?sketch=
+Disallow: /collections/*?doodle=
+Disallow: /collections/*?design=
+Disallow: /collections/*?artwork=
+Disallow: /collections/*?creation=
+Disallow: /collections/*?piece=
+Disallow: /collections/*?work=
+Disallow: /collections/*?masterpiece=
+Disallow: /collections/*?gem=
+Disallow: /collections/*?treasure=
+Disallow: /collections/*?jewel=
+Disallow: /collections/*?pearl=
+Disallow: /collections/*?diamond=
+Disallow: /collections/*?gold=
+Disallow: /collections/*?silver=
+Disallow: /collections/*?bronze=
+Disallow: /collections/*?copper=
+Disallow: /collections/*?brass=
+Disallow: /collections/*?steel=
+Disallow: /collections/*?iron=
+Disallow: /collections/*?aluminum=
+Disallow: /collections/*?tin=
+Disallow: /collections/*?lead=
+Disallow: /collections/*?zinc=
+Disallow: /collections/*?nickel=
+Disallow: /collections/*?chromium=
+Disallow: /collections/*?titanium=
+Disallow: /collections/*?tungsten=
+Disallow: /collections/*?molybdenum=
+Disallow: /collections/*?vanadium=
+Disallow: /collections/*?manganese=
+Disallow: /collections/*?cobalt=
+Disallow: /collections/*?platinum=
+Disallow: /collections/*?palladium=
+Disallow: /collections/*?rhodium=
+Disallow: /collections/*?iridium=
+Disallow: /collections/*?osmium=
+Disallow: /collections/*?ruthenium=
+Disallow: /collections/*?rhenium=
+Disallow: /collections/*?hafnium=
+Disallow: /collections/*?tantalum=
+Disallow: /collections/*?niobium=
+Disallow: /collections/*?zirconium=
+Disallow: /collections/*?yttrium=
+Disallow: /collections/*?strontium=
+Disallow: /collections/*?rubidium=
+Disallow: /collections/*?krypton=
+Disallow: /collections/*?bromine=
+Disallow: /collections/*?selenium=
+Disallow: /collections/*?arsenic=
+Disallow: /collections/*?germanium=
+Disallow: /collections/*?gallium=
+Disallow: /collections/*?zinc=
+Disallow: /collections/*?copper=
+Disallow: /collections/*?nickel=
+Disallow: /collections/*?cobalt=
+Disallow: /collections/*?iron=
+Disallow: /collections/*?manganese=
+Disallow: /collections/*?chromium=
+Disallow: /collections/*?vanadium=
+Disallow: /collections/*?titanium=
+Disallow: /collections/*?scandium=
+Disallow: /collections/*?calcium=
+Disallow: /collections/*?potassium=
+Disallow: /collections/*?argon=
+Disallow: /collections/*?chlorine=
+Disallow: /collections/*?sulfur=
+Disallow: /collections/*?phosphorus=
+Disallow: /collections/*?silicon=
+Disallow: /collections/*?aluminum=
+Disallow: /collections/*?magnesium=
+Disallow: /collections/*?sodium=
+Disallow: /collections/*?neon=
+Disallow: /collections/*?fluorine=
+Disallow: /collections/*?oxygen=
+Disallow: /collections/*?nitrogen=
+Disallow: /collections/*?carbon=
+Disallow: /collections/*?boron=
+Disallow: /collections/*?beryllium=
+Disallow: /collections/*?lithium=
+Disallow: /collections/*?helium=
+Disallow: /collections/*?hydrogen=
+
+# Allow important pages
+Allow: /collections/
+Allow: /products/
+Allow: /pages/
+Allow: /blogs/
+Allow: /articles/
+
+# Sitemap
+Sitemap: {{ shop_url }}/sitemap.xml
+Sitemap: {{ shop_url }}/sitemap_products_1.xml
+Sitemap: {{ shop_url }}/sitemap_collections_1.xml
+Sitemap: {{ shop_url }}/sitemap_pages_1.xml
+Sitemap: {{ shop_url }}/sitemap_blogs_1.xml
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+{% endcomment %}
