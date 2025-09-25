@@ -11,7 +11,9 @@
       <div class="hero-overlay">
         <div class="hero-content">
           <h1 class="hero-title">{{ page.title | default: 'My Exhibitions' }}</h1>
-          <p class="hero-subtitle">{{ page.content | default: 'Explore my artistic journey through exhibitions around the world.' }}</p>
+          <p class="hero-subtitle">
+            {{ page.content | default: 'Explore my artistic journey through exhibitions around the world.' }}
+          </p>
         </div>
       </div>
     </div>
@@ -35,11 +37,11 @@
               </a>
             {% endif %}
           </div>
-          
+
           <div class="exhibition-content-container">
             <div class="exhibition-content">
               <h2 class="exhibition-title">{{ exhibition.exhibition_name.value }}</h2>
-              
+
               {% if exhibition.exhibition_subtitle.value %}
                 <p class="exhibition-subtitle">{{ exhibition.exhibition_subtitle.value }}</p>
               {% endif %}
@@ -51,7 +53,7 @@
 
                 {% if exhibition.venue_location.value %}
                   <p class="exhibition-location">
-                    <strong>Location:</strong> 
+                    <strong>Location:</strong>
                     {% if exhibition.venue_website.value %}
                       <a href="{{ exhibition.venue_website.value }}" target="_blank" class="location-link">
                         {{ exhibition.venue_location.value }}
@@ -64,14 +66,17 @@
 
                 {% if exhibition.start_date.value and exhibition.end_date.value %}
                   <p class="exhibition-dates">
-                    <strong>Dates:</strong> 
-                    {{ exhibition.start_date.value | date: '%B %d, %Y' }} - 
+                    <strong>Dates:</strong>
+                    {{ exhibition.start_date.value | date: '%B %d, %Y' }} -
                     {{ exhibition.end_date.value | date: '%B %d, %Y' }}
                   </p>
                 {% endif %}
               </div>
 
-              <a href="/pages/{{ exhibition.exhibition_name.value | handle }}" class="btn btn-primary exhibition-button">
+              <a
+                href="/pages/{{ exhibition.exhibition_name.value | handle }}"
+                class="btn btn-primary exhibition-button"
+              >
                 Open Exhibition
               </a>
             </div>
