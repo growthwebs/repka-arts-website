@@ -206,7 +206,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h2>{{ closest.collection.title }}</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -310,6 +310,7 @@
             "text_Ma9W9a": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
                 "width": "fit-content",
@@ -427,7 +428,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>Check my other products</h3>",
+                "text": "<h2>Check my other products</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
