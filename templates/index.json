@@ -690,9 +690,9 @@
               "name": "t:names.heading",
               "settings": {
                 "text": "<h2>About me</h2>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -716,9 +716,9 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<p>Hi, I’m Maryna Riepnova, I'm the founder of Repka Arts. From my studio in Málaga, I create <strong>original oil paintings, watercolours, </strong>and <strong>handmade ceramics </strong>designed to bring beauty and calm to your space. As a Fine Arts graduate, I also <strong>host plein airs, art events and classes </strong>to share the joy of creativity on <strong>La Costa del Sol</strong>.</p>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
