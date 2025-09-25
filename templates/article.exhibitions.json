@@ -261,7 +261,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#00000089",
+        "overlay_color": "#0000008a",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -655,7 +655,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].press_links.value }}</p>",
+                        "text": "{{ closest.article.metafields.custom.exhibition_press_link | metafield_tag }}",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -799,7 +799,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>from {{ metaobjects.exhibition[\"wild-at-heart\"].start_date | metafield_tag }}</h4>",
+                        "text": "<h4>from {{ closest.article.metafields.custom.exhibition_start_date | metafield_tag }}</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -825,7 +825,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>to {{ metaobjects.exhibition[\"wild-at-heart\"].end_date | metafield_tag }}</h4>",
+                        "text": "<h4>to {{ closest.article.metafields.custom.exhibition_end_date | metafield_tag }}</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -924,33 +924,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].venue_name.value }}</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
-                    "text_eYUEKh": {
-                      "type": "text",
-                      "name": "t:names.heading",
-                      "settings": {
-                        "text": "",
+                        "text": "{{ closest.article.metafields.custom.exhibition_venue_location | metafield_tag }}",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -975,8 +949,7 @@
                   },
                   "block_order": [
                     "text_HrJxfr",
-                    "text_3CrfDx",
-                    "text_eYUEKh"
+                    "text_3CrfDx"
                   ]
                 }
               },
@@ -1095,7 +1068,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>{{ metaobjects.exhibition[\"wild-at-heart\"].how_much.value }}</h4>",
+                        "text": "<h4>{{ closest.article.metafields.custom.exhibition_how_much.value }}</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1193,7 +1166,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>{{ metaobjects.exhibition[\"wild-at-heart\"].discounts.value }}</h4>",
+                        "text": "<h4>{{ closest.article.metafields.custom.exhibition_discounts.value }}</h4>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1511,7 +1484,7 @@
       },
       "name": "t:names.products_grid",
       "settings": {
-        "collection": "{{ metaobjects.exhibition[\"wild-at-heart\"].featured_collection.value }}",
+        "collection": "",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
