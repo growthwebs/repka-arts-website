@@ -11,7 +11,7 @@
     Generate simple, clear alt text for any image
   endcomment
   assign image_alt = ''
-  
+
   if image.alt != blank
     comment
       Use existing alt text if available
@@ -41,14 +41,14 @@
       assign image_alt = 'Artwork by ' | append: shop.name
     endif
   endif
-  
+
   comment
     Keep alt text short and clear (under 100 characters)
   endcomment
   if image_alt.size > 100
     assign image_alt = image_alt | truncate: 97 | append: '...'
   endif
-  
+
   comment
     Set up image dimensions
   endcomment
@@ -67,7 +67,11 @@
 
 {% comment %} Simple Image with SEO Alt Text {% endcomment %}
 {% if image != blank %}
-  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value, alt: image_alt }}
+  {{
+    image
+    | image_url: height: image_height
+    | image_tag: class: class, srcset: image_srcset, style: style_value, alt: image_alt
+  }}
 {% elsif text_fallback %}
   {{ text_fallback }}
 {% endif %}

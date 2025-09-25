@@ -13,7 +13,7 @@
   assign simple_alt_text = ''
   assign simple_title = ''
   assign simple_filename = ''
-  
+
   if template contains 'product' and product
     comment
       Simple, beautiful alt text based on art type
@@ -31,17 +31,17 @@
     else
       assign simple_alt_text = 'Original artwork - ' | append: product.title
     endif
-    
+
     comment
       Simple, clear title
     endcomment
     assign simple_title = product.title | append: ' - Original Artwork'
-    
+
     comment
       Simple, clear filename
     endcomment
     assign product_slug = product.title | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: "'", '' | replace: '"', '' | replace: '(', '' | replace: ')', '' | replace: ',', '' | replace: '.', '' | replace: '!', '' | replace: '?', ''
-    
+
     if product.tags contains 'watercolor'
       assign simple_filename = 'watercolour-painting-' | append: product_slug
     elsif product.tags contains 'oil'
@@ -55,7 +55,7 @@
     else
       assign simple_filename = 'original-artwork-' | append: product_slug
     endif
-    
+
   elsif template contains 'collection' and collection
     comment
       Simple collection descriptions
@@ -64,7 +64,7 @@
     assign simple_title = collection.title | append: ' Collection'
     assign collection_slug = collection.title | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: "'", '' | replace: '"', '' | replace: '(', '' | replace: ')', '' | replace: ',', '' | replace: '.', '' | replace: '!', '' | replace: '?', ''
     assign simple_filename = 'art-collection-' | append: collection_slug
-    
+
   else
     comment
       General gallery descriptions
@@ -73,21 +73,21 @@
     assign simple_title = 'Original Artwork by ' | append: shop.name
     assign simple_filename = 'artwork-by-' | append: shop.name | downcase | replace: ' ', '-'
   endif
-  
+
   comment
     Keep descriptions short and clear (under 100 characters)
   endcomment
   if simple_alt_text.size > 100
     assign simple_alt_text = simple_alt_text | truncate: 97 | append: '...'
   endif
-  
+
   comment
     Keep titles clear and concise (under 60 characters)
   endcomment
   if simple_title.size > 60
     assign simple_title = simple_title | truncate: 57 | append: '...'
   endif
-  
+
   comment
     Keep filenames reasonable (under 80 characters)
   endcomment
@@ -103,14 +103,24 @@
   <div class="filename">{{ simple_filename }}</div>
   <div class="art-type">
     {% if template contains 'product' and product %}
-      {% if product.tags contains 'watercolor' %}watercolour painting
-      {% elsif product.tags contains 'oil' %}oil painting
-      {% elsif product.tags contains 'ceramic' %}ceramic art
-      {% elsif product.tags contains 'commission' %}custom artwork
-      {% elsif product.tags contains 'print' %}art print
-      {% else %}original artwork{% endif %}
-    {% elsif template contains 'collection' %}art collection
-    {% else %}artwork{% endif %}
+      {% if product.tags contains 'watercolor' -%}
+        watercolour painting
+      {% elsif product.tags contains 'oil' -%}
+        oil painting
+      {% elsif product.tags contains 'ceramic' -%}
+        ceramic art
+      {% elsif product.tags contains 'commission' -%}
+        custom artwork
+      {% elsif product.tags contains 'print' -%}
+        art print
+      {% else -%}
+        original artwork
+      {%- endif %}
+    {% elsif template contains 'collection' -%}
+      art collection
+    {% else -%}
+      artwork
+    {%- endif %}
   </div>
   <div class="artist">{{ shop.name }}</div>
   <div class="location">Spain</div>
@@ -118,7 +128,7 @@
 
 {% comment %} Simple Meta Tags for Images {% endcomment %}
 {% if template contains 'product' and product %}
-<meta name="image:alt" content="{{ simple_alt_text | escape }}">
-<meta name="image:title" content="{{ simple_title | escape }}">
-<meta name="image:filename" content="{{ simple_filename | escape }}">
+  <meta name="image:alt" content="{{ simple_alt_text | escape }}">
+  <meta name="image:title" content="{{ simple_title | escape }}">
+  <meta name="image:filename" content="{{ simple_filename | escape }}">
 {% endif %}
