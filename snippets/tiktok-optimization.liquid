@@ -1,0 +1,154 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - TIKTOK OPTIMIZATION
+  TikTok-Specific Social Media Tags
+  Vertical Format & Engaging Content
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate TikTok-optimized content
+  endcomment
+  assign tiktok_title = ''
+  assign tiktok_description = ''
+  assign tiktok_image = ''
+  
+  if template contains 'product' and product
+    comment
+      Product TikTok optimization
+    endcomment
+    comment
+      TikTok-optimized product titles (shorter, more engaging)
+    endcomment
+    if product.tags contains 'watercolor'
+      assign tiktok_title = 'Exquisite Watercolour - ' | append: product.title
+    elsif product.tags contains 'oil'
+      assign tiktok_title = 'Rich Oil Painting - ' | append: product.title
+    elsif product.tags contains 'ceramic'
+      assign tiktok_title = 'Handcrafted Ceramic - ' | append: product.title
+    elsif product.tags contains 'commission'
+      assign tiktok_title = 'Custom Artwork - ' | append: product.title
+    elsif product.tags contains 'print'
+      assign tiktok_title = 'Fine Art Print - ' | append: product.title
+    else
+      assign tiktok_title = 'Original Artwork - ' | append: product.title
+    endif
+    
+    comment
+      TikTok-optimized product descriptions (engaging, shorter)
+    endcomment
+    if product.tags contains 'watercolor'
+      assign tiktok_description = 'Exquisite watercolour with delicate brushstrokes ✨ Free shipping for selected products. Explore this beautiful artwork!'
+    elsif product.tags contains 'oil'
+      assign tiktok_description = 'Rich oil painting with expressive technique 🎨 Free shipping for selected products. Explore this beautiful artwork!'
+    elsif product.tags contains 'ceramic'
+      assign tiktok_description = 'Handcrafted ceramic art with contemporary elegance 🏺 Free shipping for selected products. Explore this beautiful artwork!'
+    elsif product.tags contains 'commission'
+      assign tiktok_description = 'Custom artwork created with artistic vision 🎭 Free shipping for selected products. Explore this beautiful artwork!'
+    elsif product.tags contains 'print'
+      assign tiktok_description = 'Fine art print with exceptional quality 🖼️ Free shipping for selected products. Explore this beautiful artwork!'
+    else
+      assign tiktok_description = 'Original artwork with artistic excellence ✨ Free shipping for selected products. Explore this beautiful artwork!'
+    endif
+    
+    comment
+      TikTok-optimized image (vertical format preferred)
+    endcomment
+    if product.featured_image
+      assign tiktok_image = product.featured_image | image_url: width: 1080 | prepend: 'https:'
+    endif
+    
+  elsif template contains 'collection' and collection
+    comment
+      Collection TikTok optimization
+    endcomment
+    comment
+      TikTok-optimized collection titles
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign tiktok_title = 'Watercolour Collection - Repka Arts'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign tiktok_title = 'Oil Paintings Collection - Repka Arts'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign tiktok_title = 'Ceramic Art Collection - Repka Arts'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign tiktok_title = 'Custom Commissions - Repka Arts'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign tiktok_title = 'Art Prints Collection - Repka Arts'
+    else
+      assign tiktok_title = collection.title | append: ' Collection - Repka Arts'
+    endif
+    
+    comment
+      TikTok-optimized collection descriptions
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign tiktok_description = 'Exquisite watercolour collection with delicate techniques ✨ Free shipping for selected products. Explore our curated collection!'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign tiktok_description = 'Rich oil paintings with expressive techniques 🎨 Free shipping for selected products. Explore our curated collection!'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign tiktok_description = 'Handcrafted ceramic art with contemporary elegance 🏺 Free shipping for selected products. Explore our curated collection!'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign tiktok_description = 'Custom art commissions with artistic vision 🎭 Free shipping for selected products. Explore our curated collection!'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign tiktok_description = 'Fine art prints with exceptional quality 🖼️ Free shipping for selected products. Explore our curated collection!'
+    else
+      assign tiktok_description = 'Original artwork collection with artistic excellence ✨ Free shipping for selected products. Explore our curated collection!'
+    endif
+    
+    comment
+      TikTok-optimized collection image
+    endcomment
+    if collection.featured_image
+      assign tiktok_image = collection.featured_image | image_url: width: 1080 | prepend: 'https:'
+    endif
+    
+  else
+    comment
+      Homepage TikTok optimization
+    endcomment
+    assign tiktok_title = 'Repka Arts - Original Artwork'
+    assign tiktok_description = 'Exquisite original artwork by talented artists ✨ Watercolour, oil, ceramic art & custom commissions. Free shipping for selected products. Explore our gallery!'
+    
+    if settings.logo
+      assign tiktok_image = settings.logo | image_url: width: 1080 | prepend: 'https:'
+    endif
+  endif
+  
+  comment
+    Ensure TikTok title is within 50 characters for optimal engagement
+  endcomment
+  if tiktok_title.size > 50
+    assign tiktok_title = tiktok_title | truncate: 47 | append: '...'
+  endif
+  
+  comment
+    Ensure TikTok description is within 2200 characters for optimal engagement
+  endcomment
+  if tiktok_description.size > 2200
+    assign tiktok_description = tiktok_description | truncate: 2197 | append: '...'
+  endif
+-%}
+
+{% comment %} TikTok-Specific Meta Tags {% endcomment %}
+<meta name="tiktok-title" content="{{ tiktok_title | escape }}">
+<meta name="tiktok-description" content="{{ tiktok_description | escape }}">
+{% if tiktok_image != blank %}
+<meta name="tiktok-image" content="{{ tiktok_image }}">
+<meta name="tiktok-image-width" content="1080">
+<meta name="tiktok-image-height" content="1920">
+{% endif %}
+<meta name="tiktok-site" content="@repka_arts">
+<meta name="tiktok-creator" content="@repka_arts">
+
+{% comment %} TikTok Open Graph Tags (for sharing to TikTok) {% endcomment %}
+<meta property="og:title" content="{{ tiktok_title | escape }}">
+<meta property="og:description" content="{{ tiktok_description | escape }}">
+{% if tiktok_image != blank %}
+<meta property="og:image" content="{{ tiktok_image }}">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1920">
+{% endif %}
+<meta property="og:site_name" content="Repka Arts">
+<meta property="og:type" content="website">
