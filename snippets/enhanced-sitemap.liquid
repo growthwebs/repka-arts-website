@@ -28,124 +28,124 @@
 
 {% comment %} Canonical URL for Current Page {% endcomment %}
 {% if template contains 'product' and product %}
-<link rel="canonical" href="{{ shop_url }}{{ product.url }}">
+  <link rel="canonical" href="{{ shop_url }}{{ product.url }}">
 {% elsif template contains 'collection' and collection %}
-<link rel="canonical" href="{{ shop_url }}{{ collection.url }}">
+  <link rel="canonical" href="{{ shop_url }}{{ collection.url }}">
 {% elsif template contains 'blog' and blog %}
-<link rel="canonical" href="{{ shop_url }}{{ blog.url }}">
+  <link rel="canonical" href="{{ shop_url }}{{ blog.url }}">
 {% elsif template contains 'article' and article %}
-<link rel="canonical" href="{{ shop_url }}{{ article.url }}">
+  <link rel="canonical" href="{{ shop_url }}{{ article.url }}">
 {% elsif template contains 'page' and page %}
-<link rel="canonical" href="{{ shop_url }}{{ page.url }}">
+  <link rel="canonical" href="{{ shop_url }}{{ page.url }}">
 {% else %}
-<link rel="canonical" href="{{ shop_url }}{{ request.path }}">
+  <link rel="canonical" href="{{ shop_url }}{{ request.path }}">
 {% endif %}
 
 {% comment %} Robots Meta Tags {% endcomment %}
 {% if template contains 'product' and product %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% elsif template contains 'collection' and collection %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% elsif template contains 'blog' and blog %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% elsif template contains 'article' and article %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% elsif template contains 'page' and page %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% else %}
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 {% endif %}
 
 {% comment %} Enhanced Sitemap Schema {% endcomment %}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Repka Arts",
-  "alternateName": "Repka Arts Gallery",
-  "url": "{{ shop_url }}",
-  "description": "Premium art gallery specializing in watercolour paintings, ceramic art, custom commissions, and fine art prints. Discover original artworks by talented artists.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ shop_url }}/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "publisher": {
-    "@type": "Organization",
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     "name": "Repka Arts",
+    "alternateName": "Repka Arts Gallery",
     "url": "{{ shop_url }}",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ settings.logo | image_url: width: 500 | prepend: shop_url }}"
+    "description": "Premium art gallery specializing in watercolour paintings, ceramic art, custom commissions, and fine art prints. Discover original artworks by talented artists.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ shop_url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Repka Arts",
+      "url": "{{ shop_url }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ settings.logo | image_url: width: 500 | prepend: shop_url }}"
+      }
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Art Collections",
+      "description": "Original artwork collections including watercolour paintings, oil paintings, ceramic art, and custom commissions",
+      "url": "{{ shop_url }}/collections"
     }
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Art Collections",
-    "description": "Original artwork collections including watercolour paintings, oil paintings, ceramic art, and custom commissions",
-    "url": "{{ shop_url }}/collections"
   }
-}
 </script>
 
 {% comment %} Breadcrumb Schema for Better Navigation {% endcomment %}
 {% if template contains 'product' and product %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  <script type="application/ld+json">
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ shop_url }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Products",
-      "item": "{{ shop_url }}/collections"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "{{ product.title | escape }}",
-      "item": "{{ shop_url }}{{ product.url }}"
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "{{ shop_url }}/collections"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ product.title | escape }}",
+          "item": "{{ shop_url }}{{ product.url }}"
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 {% endif %}
 
 {% comment %} Collection Breadcrumb Schema {% endcomment %}
 {% if template contains 'collection' and collection %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  <script type="application/ld+json">
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ shop_url }}"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Collections",
-      "item": "{{ shop_url }}/collections"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "{{ collection.title | escape }}",
-      "item": "{{ shop_url }}{{ collection.url }}"
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Collections",
+          "item": "{{ shop_url }}/collections"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ collection.title | escape }}",
+          "item": "{{ shop_url }}{{ collection.url }}"
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 {% endif %}
 
 {% comment %} Enhanced Meta Tags for Better Crawling {% endcomment %}
@@ -155,15 +155,15 @@
 
 {% comment %} Last Modified Information {% endcomment %}
 {% if template contains 'product' and product %}
-<meta name="last-modified" content="{{ product.updated_at | date: '%Y-%m-%d' }}">
+  <meta name="last-modified" content="{{ product.updated_at | date: '%Y-%m-%d' }}">
 {% elsif template contains 'collection' and collection %}
-<meta name="last-modified" content="{{ collection.updated_at | date: '%Y-%m-%d' }}">
+  <meta name="last-modified" content="{{ collection.updated_at | date: '%Y-%m-%d' }}">
 {% elsif template contains 'blog' and blog %}
-<meta name="last-modified" content="{{ blog.updated_at | date: '%Y-%m-%d' }}">
+  <meta name="last-modified" content="{{ blog.updated_at | date: '%Y-%m-%d' }}">
 {% elsif template contains 'article' and article %}
-<meta name="last-modified" content="{{ article.updated_at | date: '%Y-%m-%d' }}">
+  <meta name="last-modified" content="{{ article.updated_at | date: '%Y-%m-%d' }}">
 {% elsif template contains 'page' and page %}
-<meta name="last-modified" content="{{ page.updated_at | date: '%Y-%m-%d' }}">
+  <meta name="last-modified" content="{{ page.updated_at | date: '%Y-%m-%d' }}">
 {% else %}
-<meta name="last-modified" content="{{ current_time }}">
+  <meta name="last-modified" content="{{ current_time }}">
 {% endif %}

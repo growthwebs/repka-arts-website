@@ -1,0 +1,401 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - INTERNAL LINKING STRATEGY
+  Smart Internal Links for repkaarts.com
+  Better SEO & User Navigation
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate smart internal links for better SEO
+  endcomment
+  assign shop_url = 'https://repkaarts.com'
+  assign internal_links = ''
+  assign related_products = ''
+  assign related_collections = ''
+  assign related_articles = ''
+
+  if template contains 'product' and product
+    comment
+      Product page internal linking
+    endcomment
+    assign product_collections = product.collections | where: 'published', true
+    assign related_products = collections[product_collections.first.handle].products | where: 'available', true | limit: 4
+
+  elsif template contains 'collection' and collection
+    comment
+      Collection page internal linking
+    endcomment
+    assign related_collections = collections | where: 'published', true | limit: 4
+
+  elsif template contains 'blog' and blog
+    comment
+      Blog page internal linking
+    endcomment
+    assign related_articles = blog.articles | limit: 4
+
+  elsif template contains 'article' and article
+    comment
+      Article page internal linking
+    endcomment
+    assign related_articles = blog.articles | where: 'id', article.id | limit: 4
+  endif
+-%}
+
+{% comment %} Smart Internal Links for SEO {% endcomment %}
+<div class="internal-linking-seo" style="display: none;">
+  <div class="current-page">
+    {% if template contains 'product' -%}
+      product
+    {%- elsif template contains 'collection' -%}
+      collection
+    {%- elsif template contains 'blog' -%}
+      blog
+    {%- elsif template contains 'article' -%}
+      article
+    {%- else -%}
+      page
+    {%- endif %}
+  </div>
+  <div class="shop-url">{{ shop_url }}</div>
+  <div class="internal-links">{{ internal_links }}</div>
+  <div class="related-products">{{ related_products }}</div>
+  <div class="related-collections">{{ related_collections }}</div>
+  <div class="related-articles">{{ related_articles }}</div>
+</div>
+
+{% comment %} Breadcrumb Navigation for Better SEO {% endcomment %}
+{% if template contains 'product' and product %}
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}" class="breadcrumb-link">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}/collections" class="breadcrumb-link">Collections</a>
+      </li>
+      {% if product.collections.first %}
+        <li class="breadcrumb-item">
+          <a href="{{ product.collections.first.url }}" class="breadcrumb-link">
+            {{- product.collections.first.title -}}
+          </a>
+        </li>
+      {% endif %}
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ product.title }}
+      </li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% comment %} Collection Breadcrumb Navigation {% endcomment %}
+{% if template contains 'collection' and collection %}
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}" class="breadcrumb-link">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}/collections" class="breadcrumb-link">Collections</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ collection.title }}
+      </li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% comment %} Blog Breadcrumb Navigation {% endcomment %}
+{% if template contains 'blog' and blog %}
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}" class="breadcrumb-link">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}/blogs" class="breadcrumb-link">Blog</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ blog.title }}
+      </li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% comment %} Article Breadcrumb Navigation {% endcomment %}
+{% if template contains 'article' and article %}
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}" class="breadcrumb-link">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ shop_url }}/blogs" class="breadcrumb-link">Blog</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{{ blog.url }}" class="breadcrumb-link">{{ blog.title }}</a>
+      </li>
+      <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+        {{ article.title }}
+      </li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% comment %} Related Products Section {% endcomment %}
+{% if template contains 'product' and product and related_products.size > 0 %}
+  <section class="related-products-section">
+    <h2 class="related-products-title">You Might Also Like</h2>
+    <div class="related-products-grid">
+      {% for related_product in related_products %}
+        {% unless related_product.id == product.id %}
+          <div class="related-product-item">
+            <a href="{{ related_product.url }}" class="related-product-link">
+              {% if related_product.featured_image %}
+                <img
+                  src="{{ related_product.featured_image | image_url: width: 300 }}"
+                  alt="{{ related_product.title | escape }}"
+                  class="related-product-image"
+                  loading="lazy"
+                >
+              {% endif %}
+              <h3 class="related-product-title">{{ related_product.title }}</h3>
+              <p class="related-product-price">{{ related_product.price | money }}</p>
+            </a>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% comment %} Related Collections Section {% endcomment %}
+{% if template contains 'collection' and collection and related_collections.size > 0 %}
+  <section class="related-collections-section">
+    <h2 class="related-collections-title">Explore More Collections</h2>
+    <div class="related-collections-grid">
+      {% for related_collection in related_collections %}
+        {% unless related_collection.id == collection.id %}
+          <div class="related-collection-item">
+            <a href="{{ related_collection.url }}" class="related-collection-link">
+              {% if related_collection.featured_image %}
+                <img
+                  src="{{ related_collection.featured_image | image_url: width: 300 }}"
+                  alt="{{ related_collection.title | escape }}"
+                  class="related-collection-image"
+                  loading="lazy"
+                >
+              {% endif %}
+              <h3 class="related-collection-title">{{ related_collection.title }}</h3>
+              <p class="related-collection-count">{{ related_collection.products_count }} items</p>
+            </a>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% comment %} Related Articles Section {% endcomment %}
+{% if template contains 'article' and article and related_articles.size > 0 %}
+  <section class="related-articles-section">
+    <h2 class="related-articles-title">Read More</h2>
+    <div class="related-articles-grid">
+      {% for related_article in related_articles %}
+        {% unless related_article.id == article.id %}
+          <div class="related-article-item">
+            <a href="{{ related_article.url }}" class="related-article-link">
+              {% if related_article.image %}
+                <img
+                  src="{{ related_article.image | image_url: width: 300 }}"
+                  alt="{{ related_article.title | escape }}"
+                  class="related-article-image"
+                  loading="lazy"
+                >
+              {% endif %}
+              <h3 class="related-article-title">{{ related_article.title }}</h3>
+              <p class="related-article-excerpt">{{ related_article.excerpt | strip_html | truncate: 100 }}</p>
+              <time class="related-article-date" datetime="{{ related_article.published_at | date: '%Y-%m-%d' }}">
+                {{ related_article.published_at | date: '%B %d, %Y' }}
+              </time>
+            </a>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% comment %} Navigation Links for Better SEO {% endcomment %}
+<nav class="seo-navigation" aria-label="Site Navigation">
+  <ul class="seo-nav-list">
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}" class="seo-nav-link">Home</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections" class="seo-nav-link">Collections</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/watercolour-paintings" class="seo-nav-link">Watercolour Paintings</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/oil-paintings" class="seo-nav-link">Oil Paintings</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/ceramic-art" class="seo-nav-link">Ceramic Art</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/custom-commissions" class="seo-nav-link">Custom Commissions</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/art-prints" class="seo-nav-link">Art Prints</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/pages/about" class="seo-nav-link">About</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/pages/contact" class="seo-nav-link">Contact</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/blogs" class="seo-nav-link">Blog</a>
+    </li>
+  </ul>
+</nav>
+
+{% comment %} CSS for Internal Linking {% endcomment %}
+<style>
+  .breadcrumb-nav {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumb-item {
+    margin-right: 0.5rem;
+  }
+
+  .breadcrumb-item:not(:last-child)::after {
+    content: '›';
+    margin-left: 0.5rem;
+    color: #666;
+  }
+
+  .breadcrumb-link {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-current {
+    color: #333;
+    font-weight: 500;
+  }
+
+  .related-products-section,
+  .related-collections-section,
+  .related-articles-section {
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+  }
+
+  .related-products-title,
+  .related-collections-title,
+  .related-articles-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .related-products-grid,
+  .related-collections-grid,
+  .related-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .related-product-item,
+  .related-collection-item,
+  .related-article-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+
+  .related-product-item:hover,
+  .related-collection-item:hover,
+  .related-article-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-product-link,
+  .related-collection-link,
+  .related-article-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .related-product-image,
+  .related-collection-image,
+  .related-article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .related-product-title,
+  .related-collection-title,
+  .related-article-title {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .related-product-price,
+  .related-collection-count,
+  .related-article-excerpt,
+  .related-article-date {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .seo-navigation {
+    display: none; /* Hidden for SEO purposes */
+  }
+
+  .seo-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .seo-nav-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .seo-nav-link {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #0066cc;
+  }
+</style>
