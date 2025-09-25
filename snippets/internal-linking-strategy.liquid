@@ -170,32 +170,7 @@
   </section>
 {% endif %}
 
-{% comment %} Related Collections Section {% endcomment %}
-{% if template contains 'collection' and collection and related_collections.size > 0 %}
-  <section class="related-collections-section">
-    <h2 class="related-collections-title">Explore More Collections</h2>
-    <div class="related-collections-grid">
-      {% for related_collection in related_collections %}
-        {% unless related_collection.id == collection.id %}
-          <div class="related-collection-item">
-            <a href="{{ related_collection.url }}" class="related-collection-link">
-              {% if related_collection.featured_image %}
-                <img
-                  src="{{ related_collection.featured_image | image_url: width: 300 }}"
-                  alt="{{ related_collection.title | escape }}"
-                  class="related-collection-image"
-                  loading="lazy"
-                >
-              {% endif %}
-              <h3 class="related-collection-title">{{ related_collection.title }}</h3>
-              <p class="related-collection-count">{{ related_collection.products_count }} items</p>
-            </a>
-          </div>
-        {% endunless %}
-      {% endfor %}
-    </div>
-  </section>
-{% endif %}
+{% comment %} Related Collections Section - REMOVED {% endcomment %}
 
 {% comment %} Related Articles Section {% endcomment %}
 {% if template contains 'article' and article and related_articles.size > 0 %}
