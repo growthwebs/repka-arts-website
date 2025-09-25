@@ -378,7 +378,11 @@
   }
 
   .seo-navigation {
-    display: none; /* Hidden for SEO purposes */
+    display: none !important; /* Hidden for SEO purposes */
+    visibility: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
   }
 
   .seo-nav-list {
