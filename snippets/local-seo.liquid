@@ -13,11 +13,11 @@
   assign business_name = shop.name
   assign business_type = 'Art Gallery'
   assign business_description = 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Original artwork by talented artists with worldwide shipping.'
-  assign business_address = 'United States'
-  assign business_phone = shop.phone | default: '+1-555-0123'
+  assign business_address = 'Spain'
+  assign business_phone = shop.phone | default: '+34-XXX-XXX-XXX'
   assign business_email = shop.email
-  assign business_hours = 'Monday-Friday: 9AM-6PM, Saturday: 10AM-4PM, Sunday: Closed'
-  assign business_services = 'Art Sales, Custom Commissions, Art Consultation, Framing Services, Worldwide Shipping'
+  assign business_hours = 'Lunes-Viernes: 9:00-18:00, Sábado: 10:00-16:00, Domingo: Cerrado'
+  assign business_services = 'Venta de Arte, Comisiones Personalizadas, Consultoría de Arte, Servicios de Enmarcado, Envío Mundial'
 -%}
 
 {% comment %} Local Business Schema Markup {% endcomment %}
@@ -30,16 +30,16 @@
     "url": "{{ shop.url }}",
     "telephone": "{{ business_phone }}",
     "email": "{{ business_email }}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "US",
-      "addressRegion": "United States"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "40.7128",
-      "longitude": "-74.0060"
-    },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ES",
+    "addressRegion": "Spain"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.4168",
+    "longitude": "-3.7038"
+  },
     "openingHours": [
       "Mo-Fr 09:00-18:00",
       "Sa 10:00-16:00"
