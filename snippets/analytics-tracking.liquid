@@ -1,0 +1,318 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ANALYTICS & TRACKING
+  Comprehensive SEO & AI Performance Monitoring
+  Google Analytics, Search Console, AI Tracking
+  ========================================
+{% endcomment %}
+
+{% comment %} Google Analytics 4 Configuration {% endcomment %}
+{% if settings.google_analytics_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.google_analytics_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '{{ settings.google_analytics_id }}', {
+      custom_map: {
+        custom_parameter_1: 'art_category',
+        custom_parameter_2: 'artwork_medium',
+        custom_parameter_3: 'commission_type',
+      },
+    });
+
+    // Enhanced ecommerce tracking for art sales
+    gtag('config', '{{ settings.google_analytics_id }}', {
+      send_page_view: false,
+    });
+
+    // Track page views
+    gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      art_gallery: 'Repka Arts',
+    });
+  </script>
+{% endif %}
+
+{% comment %} Google Search Console Verification {% endcomment %}
+{% if settings.google_search_console_verification %}
+  <meta name="google-site-verification" content="{{ settings.google_search_console_verification }}">
+{% endif %}
+
+{% comment %} Bing Webmaster Tools Verification {% endcomment %}
+{% if settings.bing_webmaster_verification %}
+  <meta name="msvalidate.01" content="{{ settings.bing_webmaster_verification }}">
+{% endif %}
+
+{% comment %} Enhanced Ecommerce Tracking for Art Sales {% endcomment %}
+<script>
+  // Track art category views
+  function trackArtCategory(category) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'view_item_list', {
+        event_category: 'Art Gallery',
+        event_label: category,
+        items: [
+          {
+            item_category: 'Art',
+            item_category2: category,
+            item_list_name: category + ' Collection',
+          },
+        ],
+      });
+    }
+  }
+
+  // Track individual artwork views
+  function trackArtworkView(productTitle, productType, price) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'view_item', {
+        event_category: 'Art Gallery',
+        event_label: productType,
+        currency: 'USD',
+        value: parseFloat(price),
+        items: [
+          {
+            item_id: productTitle,
+            item_name: productTitle,
+            item_category: 'Art',
+            item_category2: productType,
+            price: parseFloat(price),
+            quantity: 1,
+          },
+        ],
+      });
+    }
+  }
+
+  // Track commission inquiries
+  function trackCommissionInquiry(medium, type) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        event_category: 'Art Commissions',
+        event_label: medium + ' ' + type,
+        value: 1,
+        currency: 'USD',
+      });
+    }
+  }
+
+  // Track art print downloads/views
+  function trackArtPrintView(printTitle, edition) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'view_item', {
+        event_category: 'Art Prints',
+        event_label: edition,
+        items: [
+          {
+            item_id: printTitle,
+            item_name: printTitle,
+            item_category: 'Art Prints',
+            item_category2: edition,
+          },
+        ],
+      });
+    }
+  }
+</script>
+
+{% comment %} AI Search Performance Tracking {% endcomment %}
+<script>
+  // Track AI assistant interactions
+  function trackAISearch(query, source) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ai_search', {
+        event_category: 'AI Interaction',
+        event_label: source,
+        custom_parameter_1: query,
+        custom_parameter_2: 'art_gallery',
+      });
+    }
+  }
+
+  // Track AI-generated content views
+  function trackAIContentView(contentType) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ai_content_view', {
+        event_category: 'AI Content',
+        event_label: contentType,
+        custom_parameter_1: 'Repka Arts',
+      });
+    }
+  }
+
+  // Monitor AI platform referrals
+  function trackAIPlatformReferral(platform, query) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'ai_referral', {
+        event_category: 'AI Platform',
+        event_label: platform,
+        custom_parameter_1: query,
+        custom_parameter_2: 'art_gallery',
+      });
+    }
+  }
+</script>
+
+{% comment %} Core Web Vitals Tracking {% endcomment %}
+<script>
+  // Track Core Web Vitals
+  function trackWebVitals() {
+    // Largest Contentful Paint (LCP)
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'web_vitals', {
+            event_category: 'Performance',
+            event_label: 'LCP',
+            value: Math.round(entry.startTime),
+            non_interaction: true,
+          });
+        }
+      }
+    }).observe({ entryTypes: ['largest-contentful-paint'] });
+
+    // First Input Delay (FID)
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'web_vitals', {
+            event_category: 'Performance',
+            event_label: 'FID',
+            value: Math.round(entry.processingStart - entry.startTime),
+            non_interaction: true,
+          });
+        }
+      }
+    }).observe({ entryTypes: ['first-input'] });
+
+    // Cumulative Layout Shift (CLS)
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          clsValue += entry.value;
+        }
+      }
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'web_vitals', {
+          event_category: 'Performance',
+          event_label: 'CLS',
+          value: Math.round(clsValue * 1000),
+          non_interaction: true,
+        });
+      }
+    }).observe({ entryTypes: ['layout-shift'] });
+  }
+
+  // Initialize tracking when page loads
+  document.addEventListener('DOMContentLoaded', trackWebVitals);
+</script>
+
+{% comment %} SEO Performance Monitoring {% endcomment %}
+<script>
+  // Track SEO-related user interactions
+  function trackSEOInteraction(interaction, value) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'seo_interaction', {
+        event_category: 'SEO',
+        event_label: interaction,
+        value: value,
+        custom_parameter_1: 'Repka Arts',
+      });
+    }
+  }
+
+  // Track keyword performance
+  function trackKeywordPerformance(keyword, position, clicks) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'keyword_performance', {
+        event_category: 'SEO',
+        event_label: keyword,
+        value: position,
+        custom_parameter_1: clicks,
+        custom_parameter_2: 'art_gallery',
+      });
+    }
+  }
+
+  // Track schema markup effectiveness
+  function trackSchemaPerformance(schemaType, pageType) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'schema_performance', {
+        event_category: 'SEO',
+        event_label: schemaType,
+        custom_parameter_1: pageType,
+        custom_parameter_2: 'Repka Arts',
+      });
+    }
+  }
+</script>
+
+{% comment %} Art Gallery Specific Tracking {% endcomment %}
+<script>
+  // Track art medium preferences
+  function trackArtMediumPreference(medium) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'art_medium_preference', {
+        event_category: 'Art Gallery',
+        event_label: medium,
+        custom_parameter_1: 'Repka Arts',
+      });
+    }
+  }
+
+  // Track commission interest
+  function trackCommissionInterest(medium, budget) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'commission_interest', {
+        event_category: 'Art Commissions',
+        event_label: medium,
+        value: budget,
+        currency: 'USD',
+      });
+    }
+  }
+
+  // Track art collection browsing
+  function trackArtCollectionBrowsing(collection, timeSpent) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'art_collection_browsing', {
+        event_category: 'Art Gallery',
+        event_label: collection,
+        value: timeSpent,
+        custom_parameter_1: 'Repka Arts',
+      });
+    }
+  }
+</script>
+
+{% comment %} Error Tracking {% endcomment %}
+<script>
+  // Track JavaScript errors
+  window.addEventListener('error', function (e) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'javascript_error', {
+        event_category: 'Error',
+        event_label: e.message,
+        custom_parameter_1: e.filename,
+        custom_parameter_2: e.lineno,
+      });
+    }
+  });
+
+  // Track 404 errors
+  if (window.location.pathname.includes('404')) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'page_not_found', {
+        event_category: 'Error',
+        event_label: window.location.pathname,
+        custom_parameter_1: 'Repka Arts',
+      });
+    }
+  }
+</script>

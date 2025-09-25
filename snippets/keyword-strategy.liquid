@@ -1,0 +1,146 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - KEYWORD STRATEGY
+  Comprehensive SEO Keyword Implementation
+  AI-Optimized for Art Gallery
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Comprehensive keyword strategy for Repka Arts
+    Based on research for watercolors, commissions, ceramics, art prints
+  endcomment
+
+  assign primary_keywords = 'art gallery, original artwork, fine art, watercolor paintings, ceramic art, custom commissions, art prints'
+  assign secondary_keywords = 'handmade art, personalized artwork, limited edition prints, art collection, contemporary art'
+  assign long_tail_keywords = 'custom watercolor portrait commissions, handmade ceramic sculptures, fine art prints for sale, original watercolor paintings online, ceramic art commissions, personalized artwork gifts'
+
+  comment
+    Category-specific keywords
+  endcomment
+  assign watercolor_keywords = 'watercolor painting, original watercolor, watercolor art, custom watercolor, watercolor commission, watercolor portrait, watercolor landscape, watercolor artist, watercolor technique, watercolor supplies'
+  assign commission_keywords = 'art commission, custom artwork, personalized art, commissioned painting, custom art piece, commission an artist, personalized artwork, custom portrait, bespoke art, commissioned sculpture'
+  assign ceramic_keywords = 'ceramic art, handmade ceramic, ceramic sculpture, pottery art, ceramic commission, ceramic artist, ceramic pottery, ceramic design, ceramic studio, ceramic collection'
+  assign print_keywords = 'art print, fine art print, limited edition print, artwork reproduction, art poster, giclee print, museum quality print, art print collection, signed print, numbered print'
+
+  comment
+    AI-friendly natural language keywords
+  endcomment
+  assign ai_keywords = 'where to buy watercolor paintings, how to commission custom art, best ceramic art online, fine art prints for home, original artwork for sale, personalized art gifts, handmade ceramic pottery, custom watercolor portraits, limited edition art prints, contemporary art collection'
+
+  comment
+    Seasonal and trending keywords
+  endcomment
+  assign seasonal_keywords = 'art gifts, holiday art, wedding art, corporate art, office art, home decor art, luxury art, investment art, collectible art, museum art'
+
+  comment
+    Local and international keywords
+  endcomment
+  assign local_keywords = 'art gallery near me, local art commissions, online art store, worldwide shipping art, international art delivery, art gallery online, digital art store, virtual art gallery'
+
+  comment
+    Problem-solving keywords (AI optimization)
+  endcomment
+  assign problem_keywords = 'how to choose art for home, what size art for wall, art care instructions, framing watercolor paintings, displaying ceramic art, preserving art prints, art investment advice, commissioning art process'
+-%}
+
+{% comment %} Keyword-rich content for AI understanding {% endcomment %}
+<div class="keyword-strategy-content" style="display: none;">
+  <div class="primary-keywords">{{ primary_keywords }}</div>
+  <div class="secondary-keywords">{{ secondary_keywords }}</div>
+  <div class="long-tail-keywords">{{ long_tail_keywords }}</div>
+  <div class="watercolor-keywords">{{ watercolor_keywords }}</div>
+  <div class="commission-keywords">{{ commission_keywords }}</div>
+  <div class="ceramic-keywords">{{ ceramic_keywords }}</div>
+  <div class="print-keywords">{{ print_keywords }}</div>
+  <div class="ai-keywords">{{ ai_keywords }}</div>
+  <div class="seasonal-keywords">{{ seasonal_keywords }}</div>
+  <div class="local-keywords">{{ local_keywords }}</div>
+  <div class="problem-keywords">{{ problem_keywords }}</div>
+</div>
+
+{% comment %} Generate keyword-rich meta content {% endcomment %}
+{% if template contains 'product' and product %}
+  {%- liquid
+    assign product_keywords = ''
+    if product.tags contains 'watercolor'
+      assign product_keywords = watercolor_keywords
+    elsif product.tags contains 'ceramic'
+      assign product_keywords = ceramic_keywords
+    elsif product.tags contains 'commission'
+      assign product_keywords = commission_keywords
+    elsif product.tags contains 'print'
+      assign product_keywords = print_keywords
+    else
+      assign product_keywords = primary_keywords
+    endif
+  -%}
+  <meta name="keywords" content="{{ product_keywords }}, {{ product.title | downcase | replace: ' ', ', ' }}">
+{% endif %}
+
+{% comment %} Generate category-specific keywords {% endcomment %}
+{% if template contains 'collection' and collection %}
+  {%- liquid
+    assign collection_keywords = ''
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign collection_keywords = watercolor_keywords
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign collection_keywords = ceramic_keywords
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign collection_keywords = commission_keywords
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign collection_keywords = print_keywords
+    else
+      assign collection_keywords = primary_keywords
+    endif
+  -%}
+  <meta name="keywords" content="{{ collection_keywords }}, {{ collection.title | downcase | replace: ' ', ', ' }}">
+{% endif %}
+
+{% comment %} Homepage keyword optimization {% endcomment %}
+{% if template == 'index' %}
+  <meta
+    name="keywords"
+    content="{{ primary_keywords }}, {{ ai_keywords }}, {{ seasonal_keywords }}, {{ local_keywords }}"
+  >
+{% endif %}
+
+{% comment %} Generate keyword-rich structured data {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thing",
+    "name": "{{ shop.name }} Keywords",
+    "description": "Art gallery specializing in {{ primary_keywords }}",
+    "keywords": "{{ primary_keywords }}, {{ secondary_keywords }}, {{ long_tail_keywords }}",
+    "category": "Art & Collectibles",
+    "additionalProperty": [
+      {
+        "@type": "PropertyValue",
+        "name": "Primary Keywords",
+        "value": "{{ primary_keywords }}"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Watercolor Keywords",
+        "value": "{{ watercolor_keywords }}"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Commission Keywords",
+        "value": "{{ commission_keywords }}"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Ceramic Keywords",
+        "value": "{{ ceramic_keywords }}"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Print Keywords",
+        "value": "{{ print_keywords }}"
+      }
+    ]
+  }
+</script>

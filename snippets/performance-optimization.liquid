@@ -20,7 +20,7 @@
 
 {% comment %} Resource hints for critical images {% endcomment %}
 {% if template contains 'product' and product.featured_image %}
-<link rel="preload" as="image" href="{{ product.featured_image | image_url: width: 800 }}" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ product.featured_image | image_url: width: 800 }}" fetchpriority="high">
 {% endif %}
 
 {% if template == 'index' %}
@@ -30,101 +30,140 @@
 {% endif %}
 
 {% comment %} Optimize font loading {% endcomment %}
-<link rel="preload" href="{{ 'critical-fonts.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link
+  rel="preload"
+  href="{{ 'critical-fonts.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
 <noscript><link rel="stylesheet" href="{{ 'critical-fonts.css' | asset_url }}"></noscript>
 
 {% comment %} Service Worker registration for caching {% endcomment %}
 <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      console.log('SW registered: ', registration);
-    }).catch(function(registrationError) {
-      console.log('SW registration failed: ', registrationError);
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then(function (registration) {
+          console.log('SW registered: ', registration);
+        })
+        .catch(function (registrationError) {
+          console.log('SW registration failed: ', registrationError);
+        });
     });
-  });
-}
+  }
 </script>
 
 {% comment %} Critical CSS inline {% endcomment %}
 <style>
   /* Critical CSS for above-the-fold content */
-  .header-component { display: block; }
-  .hero-section { min-height: 60vh; }
-  .product-card { display: flex; flex-direction: column; }
-  .navigation { display: flex; justify-content: space-between; }
-  
+  .header-component {
+    display: block;
+  }
+  .hero-section {
+    min-height: 60vh;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+
   /* Performance optimizations */
-  img { max-width: 100%; height: auto; }
-  .lazy-load { opacity: 0; transition: opacity 0.3s; }
-  .lazy-load.loaded { opacity: 1; }
-  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .lazy-load.loaded {
+    opacity: 1;
+  }
+
   /* Reduce layout shift */
-  .product-image { aspect-ratio: 1/1; }
-  .hero-image { aspect-ratio: 16/9; }
-  
+  .product-image {
+    aspect-ratio: 1/1;
+  }
+  .hero-image {
+    aspect-ratio: 16/9;
+  }
+
   /* Optimize fonts */
-  body { font-display: swap; }
-  h1, h2, h3, h4, h5, h6 { font-display: swap; }
+  body {
+    font-display: swap;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-display: swap;
+  }
 </style>
 
 {% comment %} Image optimization settings {% endcomment %}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ shop.name }}",
-  "url": "{{ shop.url }}",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "{{ shop.url }}/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Performance Optimized",
-    "description": "Fast loading art gallery with optimized images and content"
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ shop.name }}",
+    "url": "{{ shop.url }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ shop.url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Performance Optimized",
+      "description": "Fast loading art gallery with optimized images and content"
+    }
   }
-}
 </script>
 
 {% comment %} Core Web Vitals optimization {% endcomment %}
 <script>
-// Optimize Largest Contentful Paint (LCP)
-document.addEventListener('DOMContentLoaded', function() {
-  // Lazy load non-critical images
-  const images = document.querySelectorAll('img[data-src]');
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.classList.remove('lazy-load');
-        img.classList.add('loaded');
-        observer.unobserve(img);
+  // Optimize Largest Contentful Paint (LCP)
+  document.addEventListener('DOMContentLoaded', function () {
+    // Lazy load non-critical images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove('lazy-load');
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach((img) => imageObserver.observe(img));
+
+    // Optimize Cumulative Layout Shift (CLS)
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach((card) => {
+      const image = card.querySelector('.product-card__image');
+      if (image) {
+        image.style.aspectRatio = '1/1';
       }
     });
   });
-  
-  images.forEach(img => imageObserver.observe(img));
-  
-  // Optimize Cumulative Layout Shift (CLS)
-  const productCards = document.querySelectorAll('.product-card');
-  productCards.forEach(card => {
-    const image = card.querySelector('.product-card__image');
-    if (image) {
-      image.style.aspectRatio = '1/1';
-    }
-  });
-});
 
-// Optimize First Input Delay (FID)
-document.addEventListener('DOMContentLoaded', function() {
-  // Defer non-critical JavaScript
-  setTimeout(() => {
-    // Load non-critical scripts here
-  }, 100);
-});
+  // Optimize First Input Delay (FID)
+  document.addEventListener('DOMContentLoaded', function () {
+    // Defer non-critical JavaScript
+    setTimeout(() => {
+      // Load non-critical scripts here
+    }, 100);
+  });
 </script>
 
 {% comment %} Cache control headers via meta tags {% endcomment %}
@@ -133,23 +172,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 {% comment %} Performance monitoring {% endcomment %}
 <script>
-// Core Web Vitals monitoring
-function sendToAnalytics(metric) {
-  // Send to Google Analytics or other analytics service
-  if (typeof gtag !== 'undefined') {
-    gtag('event', metric.name, {
-      event_category: 'Web Vitals',
-      event_label: metric.id,
-      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-      non_interaction: true,
-    });
+  // Core Web Vitals monitoring
+  function sendToAnalytics(metric) {
+    // Send to Google Analytics or other analytics service
+    if (typeof gtag !== 'undefined') {
+      gtag('event', metric.name, {
+        event_category: 'Web Vitals',
+        event_label: metric.id,
+        value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        non_interaction: true,
+      });
+    }
   }
-}
 
-// Measure Core Web Vitals
-if ('web-vital' in window) {
-  getCLS(sendToAnalytics);
-  getFID(sendToAnalytics);
-  getLCP(sendToAnalytics);
-}
+  // Measure Core Web Vitals
+  if ('web-vital' in window) {
+    getCLS(sendToAnalytics);
+    getFID(sendToAnalytics);
+    getLCP(sendToAnalytics);
+  }
 </script>
