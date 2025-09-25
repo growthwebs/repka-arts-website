@@ -31,7 +31,7 @@
             {% if exhibition.banner.value %}
               <a href="/pages/{{ exhibition.exhibition_name.value | handle }}" class="exhibition-image-link">
                 <img
-                  src="{{ exhibition.banner.value | img_url: '800x600' }}"
+                  src="{{ exhibition.banner.value | img_url: '1200x800' }}"
                   alt="{{ exhibition.exhibition_name.value }}"
                   loading="lazy"
                   class="exhibition-banner-image"
@@ -193,7 +193,7 @@
   .exhibition-image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
