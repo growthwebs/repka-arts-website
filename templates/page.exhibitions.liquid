@@ -7,7 +7,9 @@
   <!-- Hero Banner Section -->
   <section class="exhibitions-hero-banner">
     <div class="hero-video-container">
-      {% comment %} Video background will be added through page settings {% endcomment %}
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://cdn.shopify.com/videos/c/o/v/a98489b640004d479a36164c94417cae.mov" type="video/mp4">
+      </video>
       <div class="hero-overlay">
         <div class="hero-content">
           <h1 class="hero-title">{{ page.title | default: 'My Exhibitions' }}</h1>
