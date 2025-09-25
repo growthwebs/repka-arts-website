@@ -1,0 +1,165 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SOCIAL MEDIA OPEN GRAPH
+  Elegant Social Media Sharing
+  Instagram, Pinterest, TikTok, Facebook
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate elegant social media descriptions and titles
+  endcomment
+  assign og_title = ''
+  assign og_description = ''
+  assign og_image = ''
+  assign og_type = 'website'
+  assign og_url = shop.url
+
+  if template contains 'product' and product
+    comment
+      Product page social media optimization
+    endcomment
+    assign og_type = 'product'
+    assign og_url = shop.url | append: product.url
+
+    comment
+      Elegant product titles based on art type
+    endcomment
+    if product.tags contains 'watercolor'
+      assign og_title = 'Exquisite Watercolour Painting - ' | append: product.title | append: ' | Repka Arts'
+    elsif product.tags contains 'oil'
+      assign og_title = 'Rich Oil Painting - ' | append: product.title | append: ' | Repka Arts'
+    elsif product.tags contains 'ceramic'
+      assign og_title = 'Handcrafted Ceramic Art - ' | append: product.title | append: ' | Repka Arts'
+    elsif product.tags contains 'commission'
+      assign og_title = 'Custom Artwork - ' | append: product.title | append: ' | Repka Arts'
+    elsif product.tags contains 'print'
+      assign og_title = 'Fine Art Print - ' | append: product.title | append: ' | Repka Arts'
+    else
+      assign og_title = 'Original Artwork - ' | append: product.title | append: ' | Repka Arts'
+    endif
+
+    comment
+      Elegant product descriptions
+    endcomment
+    if product.tags contains 'watercolor'
+      assign og_description = 'Discover this exquisite watercolour painting with delicate brushstrokes and vibrant colours. Free shipping for selected products - Visit website for details.'
+    elsif product.tags contains 'oil'
+      assign og_description = 'Explore this rich oil painting with expressive technique and bold colours. Free shipping for selected products - Visit website for details.'
+    elsif product.tags contains 'ceramic'
+      assign og_description = 'Admire this handcrafted ceramic art with contemporary elegance and traditional techniques. Free shipping for selected products - Visit website for details.'
+    elsif product.tags contains 'commission'
+      assign og_description = 'Discover this custom artwork created with artistic vision and personal touch. Free shipping for selected products - Visit website for details.'
+    elsif product.tags contains 'print'
+      assign og_description = 'Enjoy this fine art print with exceptional quality and vibrant colours. Free shipping for selected products - Visit website for details.'
+    else
+      assign og_description = 'Explore this original artwork with artistic excellence and unique character. Free shipping for selected products - Visit website for details.'
+    endif
+
+    comment
+      Use product featured image
+    endcomment
+    if product.featured_image
+      assign og_image = product.featured_image | image_url: width: 1200 | prepend: 'https:'
+    endif
+
+  elsif template contains 'collection' and collection
+    comment
+      Collection page social media optimization
+    endcomment
+    assign og_url = shop.url | append: collection.url
+
+    comment
+      Elegant collection titles
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign og_title = 'Watercolour Paintings Collection | Repka Arts'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign og_title = 'Oil Paintings Collection | Repka Arts'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign og_title = 'Ceramic Art Collection | Repka Arts'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign og_title = 'Custom Art Commissions | Repka Arts'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign og_title = 'Fine Art Prints Collection | Repka Arts'
+    else
+      assign og_title = collection.title | append: ' Collection | Repka Arts'
+    endif
+
+    comment
+      Elegant collection descriptions
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign og_description = 'Explore our curated collection of exquisite watercolour paintings. Each piece showcases delicate techniques with vibrant colours. Free shipping for selected products.'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign og_description = 'Discover our collection of rich oil paintings with expressive techniques and bold colours. Perfect for art collectors and interior designers. Free shipping for selected products.'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign og_description = 'Browse our handcrafted ceramic art collection combining traditional pottery with contemporary elegance. Unique pieces for art lovers. Free shipping for selected products.'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign og_description = 'Explore our custom art commissions created with artistic vision and personal touch. Perfect for special occasions and unique gifts. Free shipping for selected products.'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign og_description = 'Discover our fine art prints collection with exceptional quality and vibrant colours. Perfect for art lovers and interior designers. Free shipping for selected products.'
+    else
+      assign og_description = 'Explore our curated collection of original artwork by talented artists. Each piece showcases artistic excellence and unique character. Free shipping for selected products.'
+    endif
+
+    comment
+      Use collection featured image
+    endcomment
+    if collection.featured_image
+      assign og_image = collection.featured_image | image_url: width: 1200 | prepend: 'https:'
+    endif
+
+  else
+    comment
+      Homepage and other pages social media optimization
+    endcomment
+    assign og_title = 'Repka Arts | Original Artwork & Custom Commissions'
+    assign og_description = 'Discover exquisite original artwork by talented artists. Watercolour paintings, oil paintings, ceramic art, and custom commissions. Free shipping for selected products.'
+
+    comment
+      Use shop logo or hero image
+    endcomment
+    if settings.logo
+      assign og_image = settings.logo | image_url: width: 1200 | prepend: 'https:'
+    endif
+  endif
+
+  comment
+    Ensure title is within 60 characters for optimal social sharing
+  endcomment
+  if og_title.size > 60
+    assign og_title = og_title | truncate: 57 | append: '...'
+  endif
+
+  comment
+    Ensure description is within 160 characters for optimal social sharing
+  endcomment
+  if og_description.size > 160
+    assign og_description = og_description | truncate: 157 | append: '...'
+  endif
+-%}
+
+{% comment %} Open Graph Meta Tags {% endcomment %}
+<meta property="og:title" content="{{ og_title | escape }}">
+<meta property="og:description" content="{{ og_description | escape }}">
+{% if og_image != blank %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ og_title | escape }}">
+{% endif %}
+<meta property="og:url" content="{{ og_url }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:site_name" content="Repka Arts">
+<meta property="og:locale" content="en_GB">
+
+{% comment %} Product-specific Open Graph tags {% endcomment %}
+{% if template contains 'product' and product %}
+  <meta property="product:price:amount" content="{{ product.price | money_without_currency }}">
+  <meta property="product:price:currency" content="EUR">
+  <meta property="product:availability" content="{% if product.available %}in stock{% else %}out of stock{% endif %}">
+  <meta property="product:brand" content="Repka Arts">
+  <meta property="product:category" content="Art & Collectibles">
+{% endif %}
