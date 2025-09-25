@@ -11,7 +11,7 @@
     Generate SEO-optimised alt text for images
   endcomment
   assign seo_alt_text = ''
-  
+
   if image.alt != blank
     assign seo_alt_text = image.alt
   else
@@ -42,7 +42,7 @@
       assign seo_alt_text = 'Artwork by ' | append: shop.name | append: ' - Premium art gallery'
     endif
   endif
-  
+
   comment
     Ensure alt text is not too long (125 characters max for SEO)
   endcomment
@@ -67,7 +67,11 @@
     {% assign style_value = style_value | append: 'object-position: inherit;' %}
   {% endif %}
 
-  {{ image | image_url: height: image_height | image_tag: class: class, srcset: image_srcset, style: style_value, alt: seo_alt_text }}
+  {{
+    image
+    | image_url: height: image_height
+    | image_tag: class: class, srcset: image_srcset, style: style_value, alt: seo_alt_text
+  }}
 {% elsif text_fallback %}
   {{ text_fallback }}
 {% endif %}

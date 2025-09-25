@@ -13,13 +13,13 @@
   assign seo_filename = ''
   assign seo_alt_text = ''
   assign seo_title = ''
-  
+
   if template contains 'product' and product
     comment
       Generate SEO-friendly filename based on product type and title
     endcomment
     assign product_slug = product.title | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: "'", '' | replace: '"', '' | replace: '(', '' | replace: ')', '' | replace: ',', '' | replace: '.', '' | replace: '!', '' | replace: '?', ''
-    
+
     if product.tags contains 'watercolor'
       assign seo_filename = 'original-watercolour-painting-' | append: product_slug | append: '-by-' | append: shop.name | downcase | replace: ' ', '-'
     elsif product.tags contains 'oil'
@@ -33,7 +33,7 @@
     else
       assign seo_filename = 'original-artwork-' | append: product_slug | append: '-by-' | append: shop.name | downcase | replace: ' ', '-'
     endif
-    
+
     comment
       Generate SEO-optimised alt text
     endcomment
@@ -50,38 +50,38 @@
     else
       assign seo_alt_text = 'Original artwork by ' | append: shop.name | append: ' - ' | append: product.title | append: '. Unique handmade art piece perfect for collectors.'
     endif
-    
+
     comment
       Generate SEO-optimised title
     endcomment
     assign seo_title = product.title | append: ' - Original Artwork by ' | append: shop.name
-    
+
   elsif template contains 'collection' and collection
     assign collection_slug = collection.title | downcase | replace: ' ', '-' | replace: '&', 'and' | replace: "'", '' | replace: '"', '' | replace: '(', '' | replace: ')', '' | replace: ',', '' | replace: '.', '' | replace: '!', '' | replace: '?', ''
     assign seo_filename = 'art-collection-' | append: collection_slug | append: '-by-' | append: shop.name | downcase | replace: ' ', '-'
     assign seo_alt_text = collection.title | append: ' collection by ' | append: shop.name | append: ' - Original artwork by talented artists'
     assign seo_title = collection.title | append: ' Collection - Original Artwork by ' | append: shop.name
-    
+
   else
     assign seo_filename = 'artwork-by-' | append: shop.name | downcase | replace: ' ', '-'
     assign seo_alt_text = 'Artwork by ' | append: shop.name | append: ' - Premium art gallery specialising in original artwork'
     assign seo_title = 'Original Artwork by ' | append: shop.name
   endif
-  
+
   comment
     Ensure alt text is not too long (125 characters max for SEO)
   endcomment
   if seo_alt_text.size > 125
     assign seo_alt_text = seo_alt_text | truncate: 122 | append: '...'
   endif
-  
+
   comment
     Ensure title is not too long (60 characters max for SEO)
   endcomment
   if seo_title.size > 60
     assign seo_title = seo_title | truncate: 57 | append: '...'
   endif
-  
+
   comment
     Ensure filename is not too long (100 characters max)
   endcomment
@@ -95,14 +95,22 @@
   <div class="seo-filename">{{ seo_filename }}</div>
   <div class="seo-alt-text">{{ seo_alt_text }}</div>
   <div class="seo-title">{{ seo_title }}</div>
-  <div class="image-context">{% if template contains 'product' %}product{% elsif template contains 'collection' %}collection{% else %}general{% endif %}</div>
+  <div class="image-context">
+    {% if template contains 'product' -%}
+      product
+    {%- elsif template contains 'collection' -%}
+      collection
+    {%- else -%}
+      general
+    {%- endif %}
+  </div>
   <div class="artist-gallery">{{ shop.name }}</div>
   <div class="location">Spain</div>
 </div>
 
 {% comment %} Generate SEO meta tags for images {% endcomment %}
 {% if template contains 'product' and product %}
-<meta name="image:alt" content="{{ seo_alt_text | escape }}">
-<meta name="image:title" content="{{ seo_title | escape }}">
-<meta name="image:filename" content="{{ seo_filename | escape }}">
+  <meta name="image:alt" content="{{ seo_alt_text | escape }}">
+  <meta name="image:title" content="{{ seo_title | escape }}">
+  <meta name="image:filename" content="{{ seo_filename | escape }}">
 {% endif %}
