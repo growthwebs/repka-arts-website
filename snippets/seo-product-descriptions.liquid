@@ -14,7 +14,7 @@
   endcomment
   assign seo_description = ''
   assign seo_title = product.title
-  
+
   if product.tags contains 'watercolor'
     assign seo_title = product.title | append: ' | Original Watercolour Painting'
     assign seo_description = 'Original watercolour painting by ' | append: shop.name | append: '. Handmade artwork showcasing delicate watercolour techniques with vibrant colours and fluid brushstrokes. Perfect for art collectors and interior designers seeking unique original artwork. '
@@ -24,7 +24,7 @@
       assign seo_description = seo_description | append: 'Created with premium materials, certificate of authenticity included. '
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
-    
+
   elsif product.tags contains 'oil'
     assign seo_title = product.title | append: ' | Original Oil Painting'
     assign seo_description = 'Original oil painting by ' | append: shop.name | append: '. Handmade artwork featuring rich oil painting techniques with vibrant colours and expressive brushstrokes. Perfect for art collectors and interior designers seeking exceptional original artwork. '
@@ -34,7 +34,7 @@
       assign seo_description = seo_description | append: 'Created with premium oil paints, certificate of authenticity included. '
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
-    
+
   elsif product.tags contains 'ceramic'
     assign seo_title = product.title | append: ' | Handmade Ceramic Art'
     assign seo_description = 'Handmade ceramic art by ' | append: shop.name | append: '. Unique ceramic sculpture combining traditional pottery techniques with contemporary artistic expression. Perfect for art collectors and ceramic enthusiasts seeking original handmade pottery. '
@@ -44,7 +44,7 @@
       assign seo_description = seo_description | append: 'Each piece is handcrafted and glazed to perfection. '
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
-    
+
   elsif product.tags contains 'commission'
     assign seo_title = product.title | append: ' | Custom Art Commission'
     assign seo_description = 'Custom art commission by ' | append: shop.name | append: '. Personalised artwork created specifically for you in your preferred medium and style. Perfect for special occasions, home décor, or unique gifts. Work directly with the artist to create your vision. '
@@ -54,7 +54,7 @@
       assign seo_description = seo_description | append: 'Available in watercolour, oil, ceramic, and other mediums. '
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
-    
+
   elsif product.tags contains 'print'
     assign seo_title = product.title | append: ' | Fine Art Print'
     assign seo_description = 'Fine art print by ' | append: shop.name | append: '. High-quality reproduction of original artwork, perfect for art lovers and interior designers. Limited edition print with certificate of authenticity, carefully reproduced to maintain the beauty of the original. '
@@ -64,7 +64,7 @@
       assign seo_description = seo_description | append: 'Available in various sizes and formats. '
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
-    
+
   else
     assign seo_title = product.title | append: ' | Original Artwork'
     assign seo_description = 'Original artwork by ' | append: shop.name | append: '. Unique handmade art piece perfect for collectors and art enthusiasts. Each piece is carefully crafted with attention to detail and artistic excellence. '
@@ -75,21 +75,21 @@
     endif
     assign seo_description = seo_description | append: 'Free worldwide shipping from Spain. '
   endif
-  
+
   comment
     Ensure title is within 55-60 characters
   endcomment
   if seo_title.size > 60
     assign seo_title = seo_title | truncate: 57 | append: '...'
   endif
-  
+
   comment
     Ensure description is within 150-160 characters
   endcomment
   if seo_description.size > 160
     assign seo_description = seo_description | truncate: 157 | append: '...'
   endif
-  
+
   comment
     Add Spanish keywords for local SEO
   endcomment
@@ -111,7 +111,21 @@
 <div class="seo-product-description" style="display: none;">
   <div class="description-text">{{ seo_description }}</div>
   <div class="spanish-keywords">{{ spanish_keywords }}</div>
-  <div class="art-category">{% if product.tags contains 'watercolor' %}Watercolour Painting{% elsif product.tags contains 'oil' %}Oil Painting{% elsif product.tags contains 'ceramic' %}Ceramic Art{% elsif product.tags contains 'commission' %}Custom Commission{% elsif product.tags contains 'print' %}Art Print{% else %}Original Artwork{% endif %}</div>
+  <div class="art-category">
+    {% if product.tags contains 'watercolor' -%}
+      Watercolour Painting
+    {%- elsif product.tags contains 'oil' -%}
+      Oil Painting
+    {%- elsif product.tags contains 'ceramic' -%}
+      Ceramic Art
+    {%- elsif product.tags contains 'commission' -%}
+      Custom Commission
+    {%- elsif product.tags contains 'print' -%}
+      Art Print
+    {%- else -%}
+      Original Artwork
+    {%- endif %}
+  </div>
   <div class="artist-name">{{ shop.name }}</div>
   <div class="location">Spain</div>
   <div class="shipping">Worldwide shipping available</div>
@@ -119,7 +133,10 @@
 
 {% comment %} Generate SEO-rich meta description and title {% endcomment %}
 {% if template contains 'product' and product %}
-<title>{{ seo_title | escape }}</title>
-<meta name="description" content="{{ seo_description | escape }}">
-<meta name="keywords" content="{{ spanish_keywords }}, {{ product.title | downcase | replace: ' ', ', ' }}, original artwork, handmade art, art gallery spain">
+  <title>{{ seo_title | escape }}</title>
+  <meta name="description" content="{{ seo_description | escape }}">
+  <meta
+    name="keywords"
+    content="{{ spanish_keywords }}, {{ product.title | downcase | replace: ' ', ', ' }}, original artwork, handmade art, art gallery spain"
+  >
 {% endif %}
