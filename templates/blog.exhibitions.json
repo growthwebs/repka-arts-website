@@ -305,7 +305,7 @@
               "static": true,
               "settings": {
                 "show_date": true,
-                "show_author": true,
+                "show_author": false,
                 "type_preset": "",
                 "alignment": "left",
                 "show_alignment": false,
@@ -339,10 +339,10 @@
       "name": "t:names.blog_posts_editorial",
       "settings": {
         "blog": "exhibitions",
-        "layout_type": "editorial",
+        "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "post_limit": 3,
-        "columns": 3,
+        "post_limit": 6,
+        "columns": 2,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 16,
