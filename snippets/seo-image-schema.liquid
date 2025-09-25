@@ -11,14 +11,14 @@
     Generate image schema markup for better SEO
   endcomment
   assign image_schema = ''
-  
+
   if template contains 'product' and product and product.featured_image
     assign product_title_escaped = product.title | escape
     assign product_description_escaped = product.description | strip_html | truncate: 160 | escape
     assign image_url_large = product.featured_image | image_url: width: 1200 | prepend: 'https:'
     assign image_url_small = product.featured_image | image_url: width: 400 | prepend: 'https:'
     assign current_year = 'now' | date: '%Y'
-    
+
     assign image_schema = '{"@context":"https://schema.org","@type":"ImageObject","name":"' | append: product_title_escaped | append: '","description":"' | append: product_description_escaped | append: '","url":"' | append: image_url_large | append: '","thumbnailUrl":"' | append: image_url_small | append: '","contentUrl":"' | append: image_url_large | append: '","width":"' | append: product.featured_image.width | append: '","height":"' | append: product.featured_image.height | append: '","creator":{"@type":"Organization","name":"' | append: shop.name | append: '","url":"' | append: shop.url | append: '"},"copyrightHolder":{"@type":"Organization","name":"' | append: shop.name | append: '"},"copyrightYear":"' | append: current_year | append: '","license":"' | append: shop.url | append: '/terms-of-service","acquireLicensePage":"' | append: shop.url | append: '/contact"}'
   elsif template contains 'collection' and collection and collection.featured_image
     assign collection_title_escaped = collection.title | escape
@@ -26,14 +26,14 @@
     assign image_url_large = collection.featured_image | image_url: width: 1200 | prepend: 'https:'
     assign image_url_small = collection.featured_image | image_url: width: 400 | prepend: 'https:'
     assign current_year = 'now' | date: '%Y'
-    
+
     assign image_schema = '{"@context":"https://schema.org","@type":"ImageObject","name":"' | append: collection_title_escaped | append: ' Collection","description":"' | append: collection_description | append: '","url":"' | append: image_url_large | append: '","thumbnailUrl":"' | append: image_url_small | append: '","contentUrl":"' | append: image_url_large | append: '","width":"' | append: collection.featured_image.width | append: '","height":"' | append: collection.featured_image.height | append: '","creator":{"@type":"Organization","name":"' | append: shop.name | append: '","url":"' | append: shop.url | append: '"},"copyrightHolder":{"@type":"Organization","name":"' | append: shop.name | append: '"},"copyrightYear":"' | append: current_year | append: '","license":"' | append: shop.url | append: '/terms-of-service","acquireLicensePage":"' | append: shop.url | append: '/contact"}'
   endif
 -%}
 
 {% comment %} Output Image Schema Markup {% endcomment %}
 {% if image_schema != blank %}
-<script type="application/ld+json">
-{{ image_schema }}
-</script>
+  <script type="application/ld+json">
+    {{ image_schema }}
+  </script>
 {% endif %}
