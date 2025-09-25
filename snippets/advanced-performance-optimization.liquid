@@ -1,0 +1,205 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ADVANCED PERFORMANCE
+  Core Web Vitals & Speed Optimization
+  For repkaarts.com
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Advanced performance optimizations for repkaarts.com
+  endcomment
+  assign is_homepage = false
+  assign is_product_page = false
+  assign is_collection_page = false
+  
+  if template.name == 'index'
+    assign is_homepage = true
+  elsif template.name == 'product'
+    assign is_product_page = true
+  elsif template.name == 'collection'
+    assign is_collection_page = true
+  endif
+-%}
+
+{% comment %} Critical Resource Hints {% endcomment %}
+<link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="//cdn.shopify.com" crossorigin>
+<link rel="dns-prefetch" href="//monorail-edge.shopifysvc.com">
+<link rel="dns-prefetch" href="//shopifycloud.com">
+
+{% comment %} Critical CSS Preload {% endcomment %}
+{% if is_homepage %}
+  <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ 'component-card.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ 'component-price.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endif %}
+
+{% if is_product_page %}
+  <link rel="preload" href="{{ 'section-main-product.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ 'component-accordion.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endif %}
+
+{% if is_collection_page %}
+  <link rel="preload" href="{{ 'section-main-collection-product-grid.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="{{ 'component-facets.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% endif %}
+
+{% comment %} Critical Image Preload {% endcomment %}
+{% if is_product_page and product.featured_image %}
+  <link rel="preload" as="image" href="{{ product.featured_image | image_url: width: 800 }}" fetchpriority="high">
+{% endif %}
+
+{% if is_homepage %}
+  {% for section in sections %}
+    {% if section.type == 'hero' and section.settings.image %}
+      <link rel="preload" as="image" href="{{ section.settings.image | image_url: width: 1200 }}" fetchpriority="high">
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% comment %} Font Optimization {% endcomment %}
+<style>
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZ9hiJ-Ek-_EeA.woff2') format('woff2');
+  }
+  
+  /* Critical above-the-fold styles */
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-width {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 2rem 0;
+  }
+</style>
+
+{% comment %} Service Worker Registration {% endcomment %}
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        console.log('ServiceWorker registration successful');
+      }, function(err) {
+        console.log('ServiceWorker registration failed');
+      });
+    });
+  }
+</script>
+
+{% comment %} Core Web Vitals Tracking {% endcomment %}
+<script>
+  // Largest Contentful Paint (LCP)
+  function measureLCP() {
+    new PerformanceObserver((entryList) => {
+      const entries = entryList.getEntries();
+      const lastEntry = entries[entries.length - 1];
+      console.log('LCP:', lastEntry.startTime);
+      
+      // Send to analytics if needed
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'LCP', {
+          'custom_parameter_1': lastEntry.startTime
+        });
+      }
+    }).observe({entryTypes: ['largest-contentful-paint']});
+  }
+  
+  // First Input Delay (FID)
+  function measureFID() {
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        console.log('FID:', entry.processingStart - entry.startTime);
+        
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'FID', {
+            'custom_parameter_1': entry.processingStart - entry.startTime
+          });
+        }
+      }
+    }).observe({entryTypes: ['first-input']});
+  }
+  
+  // Cumulative Layout Shift (CLS)
+  function measureCLS() {
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          clsValue += entry.value;
+        }
+      }
+      console.log('CLS:', clsValue);
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'CLS', {
+          'custom_parameter_1': clsValue
+        });
+      }
+    }).observe({entryTypes: ['layout-shift']});
+  }
+  
+  // Initialize Core Web Vitals measurement
+  if (window.PerformanceObserver) {
+    measureLCP();
+    measureFID();
+    measureCLS();
+  }
+</script>
+
+{% comment %} Image Lazy Loading Enhancement {% endcomment %}
+<script>
+  // Enhanced lazy loading for better performance
+  document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      images.forEach(img => imageObserver.observe(img));
+    } else {
+      // Fallback for older browsers
+      images.forEach(img => {
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+      });
+    }
+  });
+</script>
+
+{% comment %} Resource Hints for External Services {% endcomment %}
+{% if template contains 'product' %}
+  <link rel="preconnect" href="//www.google-analytics.com">
+  <link rel="preconnect" href="//www.googletagmanager.com">
+{% endif %}
