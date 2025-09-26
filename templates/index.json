@@ -1802,7 +1802,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Check out my events</h3>",
+                "text": "<h3><a href=\"/collections/events\" title=\"Events\">Check out my events</a></h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
