@@ -314,11 +314,11 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h2>Latest news</h2>",
+            "text": "<h2>{{ closest.blog.title }}</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h3",
+            "type_preset": "h2",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -431,7 +431,7 @@
       "name": "t:names.blog_posts_editorial",
       "settings": {
         "blog": "news",
-        "layout_type": "editorial",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
         "post_limit": 5,
         "columns": 3,
