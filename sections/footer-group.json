@@ -312,19 +312,11 @@
               "static": true,
               "settings": {},
               "blocks": {
-                "social_link_RQNdgj": {
-                  "type": "_social-link",
-                  "name": "Facebook",
-                  "settings": {
-                    "link": "https://www.facebook.com/"
-                  },
-                  "blocks": {}
-                },
                 "social_link_nJ8rCy": {
                   "type": "_social-link",
                   "name": "Instagram",
                   "settings": {
-                    "link": "https://www.instagram.com/"
+                    "link": "https://www.instagram.com/repka_arts/"
                   },
                   "blocks": {}
                 },
@@ -332,7 +324,23 @@
                   "type": "_social-link",
                   "name": "TikTok",
                   "settings": {
-                    "link": "https://www.tiktok.com/"
+                    "link": "https://www.tiktok.com/@repka_arts"
+                  },
+                  "blocks": {}
+                },
+                "social_link_CbEcGG": {
+                  "type": "_social-link",
+                  "name": "Pinterest",
+                  "settings": {
+                    "link": "https://pinterest.com/repkaarts/"
+                  },
+                  "blocks": {}
+                },
+                "social_link_RQNdgj": {
+                  "type": "_social-link",
+                  "name": "Facebook",
+                  "settings": {
+                    "link": "https://www.facebook.com/repkaarts/"
                   },
                   "blocks": {}
                 },
@@ -340,15 +348,16 @@
                   "type": "_social-link",
                   "name": "Youtube",
                   "settings": {
-                    "link": "https://www.youtube.com/"
+                    "link": "https://www.youtube.com/@MarynaRiepnovaRepkaArts"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
-                "social_link_RQNdgj",
                 "social_link_nJ8rCy",
                 "social_link_XLRrJj",
+                "social_link_CbEcGG",
+                "social_link_RQNdgj",
                 "social_link_EHYCPE"
               ]
             }
