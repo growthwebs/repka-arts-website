@@ -2092,7 +2092,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h2>My latest exhibitions</h2>",
+            "text": "<h2><a href=\"/blogs/exhibitions\" title=\"Exhibitions\">My latest exhibitions</a></h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
