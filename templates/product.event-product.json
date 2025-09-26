@@ -118,7 +118,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Date:  {{ closest.product.metafields.custom.event_end_date | metafield_tag }} - {{ closest.product.metafields.custom.event_end_date | metafield_tag }}</p>",
+                "text": "<p>Date:  {{ closest.product.metafields.custom.event_date | metafield_tag }} - {{ closest.product.metafields.custom.event_end_date | metafield_tag }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -137,6 +137,32 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_tAXjcW": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p>{{ closest.product.metafields.custom.event_status.value }}</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#fff5f7",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 8,
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
               },
               "blocks": {}
             },
@@ -349,6 +375,7 @@
             "product_title_9WaLn7",
             "price_a7krng",
             "text_x3EKaw",
+            "text_tAXjcW",
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
