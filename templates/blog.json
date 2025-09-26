@@ -314,7 +314,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h2>{{ closest.blog.title }}</h2>",
+            "text": "<h2>Latest news</h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -489,7 +489,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
+                "text": "<h2><a href=\"/collections/season-highlights\" title=\"Season highlights\">{{ closest.collection.title }}</a></h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
