@@ -416,7 +416,7 @@
         "collection": "season-highlights",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 4,
+        "max_products": 16,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -474,7 +474,8 @@
           "oil-paintings",
           "watercolours",
           "mixed-media",
-          "ceramics"
+          "ceramics",
+          "art-prints"
         ],
         "layout": "spotlight",
         "section_width": "page-width",
@@ -1160,7 +1161,7 @@
         "collection": "art-prints",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 4,
+        "max_products": 16,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
