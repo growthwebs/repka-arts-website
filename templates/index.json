@@ -895,7 +895,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Cannot decide? Check out my art prints!</h3>",
+                "text": "<h3><a href=\"/collections/art-prints\" title=\"Art prints\">Cannot decide? Check out my art prints!</a></h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
