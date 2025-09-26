@@ -1,0 +1,42 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SIMPLE IMAGE SCHEMA
+  Essential Image Information Only
+  Clean & Effective Schema Markup
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate simple, essential image schema
+  endcomment
+  assign simple_schema = ''
+
+  if template contains 'product' and product and product.featured_image
+    comment
+      Simple product image schema
+    endcomment
+    assign product_title = product.title | escape
+    assign image_url = product.featured_image | image_url: width: 1200 | prepend: 'https:'
+    assign thumbnail_url = product.featured_image | image_url: width: 400 | prepend: 'https:'
+
+    assign simple_schema = '{"@context":"https://schema.org","@type":"ImageObject","name":"' | append: product_title | append: '","url":"' | append: image_url | append: '","thumbnailUrl":"' | append: thumbnail_url | append: '","width":"' | append: product.featured_image.width | append: '","height":"' | append: product.featured_image.height | append: '","creator":{"@type":"Organization","name":"' | append: shop.name | append: '"},"copyrightHolder":{"@type":"Organization","name":"' | append: shop.name | append: '"}}'
+
+  elsif template contains 'collection' and collection and collection.featured_image
+    comment
+      Simple collection image schema
+    endcomment
+    assign collection_title = collection.title | escape
+    assign image_url = collection.featured_image | image_url: width: 1200 | prepend: 'https:'
+    assign thumbnail_url = collection.featured_image | image_url: width: 400 | prepend: 'https:'
+
+    assign simple_schema = '{"@context":"https://schema.org","@type":"ImageObject","name":"' | append: collection_title | append: ' Collection","url":"' | append: image_url | append: '","thumbnailUrl":"' | append: thumbnail_url | append: '","width":"' | append: collection.featured_image.width | append: '","height":"' | append: collection.featured_image.height | append: '","creator":{"@type":"Organization","name":"' | append: shop.name | append: '"},"copyrightHolder":{"@type":"Organization","name":"' | append: shop.name | append: '"}}'
+  endif
+-%}
+
+{% comment %} Output Simple Image Schema {% endcomment %}
+{% if simple_schema != blank %}
+  <script type="application/ld+json">
+    {{ simple_schema }}
+  </script>
+{% endif %}

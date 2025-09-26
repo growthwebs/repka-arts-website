@@ -1,0 +1,82 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ENHANCED SITEMAP
+  AI & SEO Optimized Sitemap Generation
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate enhanced sitemap URLs for better SEO
+  endcomment
+  assign shop_domain = shop.permanent_domain
+  assign shop_url = 'https://' | append: shop_domain
+  assign current_time = 'now' | date: '%Y-%m-%d'
+-%}
+
+{% comment %} Add canonical sitemap link {% endcomment %}
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ shop_url }}/sitemap.xml">
+
+{% comment %} Generate structured sitemap data for AI understanding {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": "{{ shop.name }} Navigation",
+    "url": "{{ shop_url }}",
+    "mainEntity": [
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Home",
+        "url": "{{ shop_url }}",
+        "description": "Premium art gallery homepage"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Watercolor Paintings",
+        "url": "{{ shop_url }}/collections/watercolor-paintings",
+        "description": "Original watercolor artwork collection"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Ceramic Art",
+        "url": "{{ shop_url }}/collections/ceramic-art",
+        "description": "Handmade ceramic sculptures and pottery"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Custom Commissions",
+        "url": "{{ shop_url }}/collections/custom-commissions",
+        "description": "Personalized artwork commissions"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Art Prints",
+        "url": "{{ shop_url }}/collections/art-prints",
+        "description": "Fine art prints and reproductions"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "About",
+        "url": "{{ shop_url }}/pages/about",
+        "description": "Learn about Repka Arts gallery"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "name": "Contact",
+        "url": "{{ shop_url }}/pages/contact",
+        "description": "Contact Repka Arts for inquiries"
+      }
+    ]
+  }
+</script>
+
+{% comment %} Add hreflang for international SEO {% endcomment %}
+<link rel="alternate" hreflang="en" href="{{ shop_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ shop_url }}">
+
+{% comment %} Add preload hints for critical pages {% endcomment %}
+<link rel="preload" href="{{ shop_url }}/collections/watercolor-paintings" as="document">
+<link rel="preload" href="{{ shop_url }}/collections/ceramic-art" as="document">
+<link rel="preload" href="{{ shop_url }}/collections/custom-commissions" as="document">
+<link rel="preload" href="{{ shop_url }}/collections/art-prints" as="document">

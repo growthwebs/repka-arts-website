@@ -1,0 +1,185 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - PINTEREST RICH PINS
+  Pinterest Optimization with Pricing
+  Art Discovery & Shopping
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate Pinterest-optimized content
+  endcomment
+  assign pinterest_title = ''
+  assign pinterest_description = ''
+  assign pinterest_image = ''
+  assign pinterest_price = ''
+  assign pinterest_availability = ''
+
+  if template contains 'product' and product
+    comment
+      Product Pinterest optimization
+    endcomment
+    assign pinterest_price = product.price | money_without_currency
+    assign pinterest_availability = product.available
+
+    comment
+      Pinterest-optimized product titles
+    endcomment
+    if product.tags contains 'watercolor'
+      assign pinterest_title = 'Exquisite Watercolour Painting - ' | append: product.title
+    elsif product.tags contains 'oil'
+      assign pinterest_title = 'Rich Oil Painting - ' | append: product.title
+    elsif product.tags contains 'ceramic'
+      assign pinterest_title = 'Handcrafted Ceramic Art - ' | append: product.title
+    elsif product.tags contains 'commission'
+      assign pinterest_title = 'Custom Artwork - ' | append: product.title
+    elsif product.tags contains 'print'
+      assign pinterest_title = 'Fine Art Print - ' | append: product.title
+    else
+      assign pinterest_title = 'Original Artwork - ' | append: product.title
+    endif
+
+    comment
+      Pinterest-optimized product descriptions
+    endcomment
+    if product.tags contains 'watercolor'
+      assign pinterest_description = 'Discover this exquisite watercolour painting with delicate brushstrokes and vibrant colours. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    elsif product.tags contains 'oil'
+      assign pinterest_description = 'Explore this rich oil painting with expressive technique and bold colours. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    elsif product.tags contains 'ceramic'
+      assign pinterest_description = 'Admire this handcrafted ceramic art with contemporary elegance and traditional techniques. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    elsif product.tags contains 'commission'
+      assign pinterest_description = 'Discover this custom artwork created with artistic vision and personal touch. Free shipping for selected products. Perfect for special occasions and unique gifts.'
+    elsif product.tags contains 'print'
+      assign pinterest_description = 'Enjoy this fine art print with exceptional quality and vibrant colours. Free shipping for selected products. Perfect for art lovers and interior designers.'
+    else
+      assign pinterest_description = 'Explore this original artwork with artistic excellence and unique character. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    endif
+
+    comment
+      Pinterest-optimized image (vertical format preferred)
+    endcomment
+    if product.featured_image
+      assign pinterest_image = product.featured_image | image_url: width: 1000 | prepend: 'https:'
+    endif
+
+  elsif template contains 'collection' and collection
+    comment
+      Collection Pinterest optimization
+    endcomment
+    assign pinterest_availability = true
+
+    comment
+      Pinterest-optimized collection titles
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign pinterest_title = 'Watercolour Paintings Collection - Repka Arts'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign pinterest_title = 'Oil Paintings Collection - Repka Arts'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign pinterest_title = 'Ceramic Art Collection - Repka Arts'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign pinterest_title = 'Custom Art Commissions - Repka Arts'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign pinterest_title = 'Fine Art Prints Collection - Repka Arts'
+    else
+      assign pinterest_title = collection.title | append: ' Collection - Repka Arts'
+    endif
+
+    comment
+      Pinterest-optimized collection descriptions
+    endcomment
+    if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
+      assign pinterest_description = 'Explore our curated collection of exquisite watercolour paintings. Each piece showcases delicate techniques with vibrant colours. Free shipping for selected products. Perfect for art collectors.'
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign pinterest_description = 'Discover our collection of rich oil paintings with expressive techniques and bold colours. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
+      assign pinterest_description = 'Browse our handcrafted ceramic art collection combining traditional pottery with contemporary elegance. Free shipping for selected products. Unique pieces for art lovers.'
+    elsif collection.title contains 'commission' or collection.title contains 'Commission'
+      assign pinterest_description = 'Explore our custom art commissions created with artistic vision and personal touch. Free shipping for selected products. Perfect for special occasions and unique gifts.'
+    elsif collection.title contains 'print' or collection.title contains 'Print'
+      assign pinterest_description = 'Discover our fine art prints collection with exceptional quality and vibrant colours. Free shipping for selected products. Perfect for art lovers and interior designers.'
+    else
+      assign pinterest_description = 'Explore our curated collection of original artwork by talented artists. Each piece showcases artistic excellence and unique character. Free shipping for selected products.'
+    endif
+
+    comment
+      Pinterest-optimized collection image
+    endcomment
+    if collection.featured_image
+      assign pinterest_image = collection.featured_image | image_url: width: 1000 | prepend: 'https:'
+    endif
+
+  else
+    comment
+      Homepage Pinterest optimization
+    endcomment
+    assign pinterest_title = 'Repka Arts - Original Artwork & Custom Commissions'
+    assign pinterest_description = 'Discover exquisite original artwork by talented artists. Watercolour paintings, oil paintings, ceramic art, and custom commissions. Free shipping for selected products. Perfect for art collectors and interior designers.'
+    assign pinterest_availability = true
+
+    if settings.logo
+      assign pinterest_image = settings.logo | image_url: width: 1000 | prepend: 'https:'
+    endif
+  endif
+
+  comment
+    Ensure Pinterest title is within 100 characters for optimal pinning
+  endcomment
+  if pinterest_title.size > 100
+    assign pinterest_title = pinterest_title | truncate: 97 | append: '...'
+  endif
+
+  comment
+    Ensure Pinterest description is within 500 characters for optimal pinning
+  endcomment
+  if pinterest_description.size > 500
+    assign pinterest_description = pinterest_description | truncate: 497 | append: '...'
+  endif
+-%}
+
+{% comment %} Pinterest Rich Pins Meta Tags {% endcomment %}
+<meta name="pinterest-rich-pin" content="true">
+<meta name="pinterest-title" content="{{ pinterest_title | escape }}">
+<meta name="pinterest-description" content="{{ pinterest_description | escape }}">
+{% if pinterest_image != blank %}
+  <meta name="pinterest-image" content="{{ pinterest_image }}">
+{% endif %}
+{% if template contains 'product' and product %}
+  <meta name="pinterest-price" content="{{ pinterest_price }}">
+  <meta name="pinterest-currency" content="EUR">
+  <meta
+    name="pinterest-availability"
+    content="{% if pinterest_availability %}in stock{% else %}out of stock{% endif %}"
+  >
+  <meta name="pinterest-brand" content="Repka Arts">
+  <meta name="pinterest-category" content="Art & Collectibles">
+{% endif %}
+
+{% comment %} Pinterest Rich Pins Schema Markup {% endcomment %}
+{% if template contains 'product' and product %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ pinterest_description | escape }}",
+      "image": "{{ pinterest_image }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "Repka Arts"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ pinterest_price }}",
+        "priceCurrency": "EUR",
+        "availability": "{% if pinterest_availability %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "seller": {
+          "@type": "Organization",
+          "name": "Repka Arts"
+        }
+      }
+    }
+  </script>
+{% endif %}

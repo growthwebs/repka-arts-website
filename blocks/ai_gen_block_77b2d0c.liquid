@@ -1,0 +1,347 @@
+{% doc %}
+  @prompt
+    a hero that allows to load video or image, with a title and subtitle that I can manipulate and position either at the top, center, or bottom, the hero needs to occupy full screen, I want a video instead please, no image
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-fullscreen-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: {{ block.settings.content_position }};
+    justify-content: center;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  .ai-fullscreen-hero-media-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-fullscreen-hero-video-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ai-fullscreen-hero-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-fullscreen-hero-placeholder-{{ ai_gen_id }} svg {
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .ai-fullscreen-hero-empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-fullscreen-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 2;
+  }
+
+  .ai-fullscreen-hero-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    text-align: {{ block.settings.text_alignment }};
+    color: {{ block.settings.text_color }};
+    max-width: {{ block.settings.content_max_width }}px;
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .ai-fullscreen-hero-title-{{ ai_gen_id }} {
+    font-family: {{ settings.type_heading_font.family }}, {{ settings.type_heading_font.fallback_families }};
+    font-weight: {{ settings.type_heading_font.weight }};
+    font-size: {{ block.settings.title_size }}px;
+    line-height: 1.2;
+    margin: 0 0 {{ block.settings.title_spacing }}px 0;
+    text-shadow: {{ block.settings.text_shadow_intensity }}px {{ block.settings.text_shadow_intensity }}px {{ block.settings.text_shadow_intensity | times: 2 }}px rgba(0, 0, 0, {{ block.settings.text_shadow_opacity | divided_by: 100.0 }});
+  }
+
+  .ai-fullscreen-hero-subtitle-{{ ai_gen_id }} {
+    font-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+    font-weight: {{ settings.type_body_font.weight }};
+    font-size: {{ block.settings.subtitle_size }}px;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: {{ block.settings.text_shadow_intensity }}px {{ block.settings.text_shadow_intensity }}px {{ block.settings.text_shadow_intensity | times: 2 }}px rgba(0, 0, 0, {{ block.settings.text_shadow_opacity | divided_by: 100.0 }});
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-fullscreen-hero-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-fullscreen-hero-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.8 }}px;
+    }
+
+    .ai-fullscreen-hero-content-{{ ai_gen_id }} {
+      padding: 20px 16px;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-fullscreen-hero-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-fullscreen-hero-media-{{ ai_gen_id }}">
+    {% if block.settings.video_url != blank %}
+      <video
+        class="ai-fullscreen-hero-video-{{ ai_gen_id }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if block.settings.video_poster %}
+          poster="{{ block.settings.video_poster | image_url: width: 1920 }}"
+        {% endif %}
+      >
+        <source src="{{ block.settings.video_url }}" type="video/mp4">
+      </video>
+    {% else %}
+      <div class="ai-fullscreen-hero-placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-fullscreen-hero-empty-state-{{ ai_gen_id }}">
+          Add a video to get started
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if block.settings.show_overlay %}
+    <div class="ai-fullscreen-hero-overlay-{{ ai_gen_id }}"></div>
+  {% endif %}
+
+  <div class="ai-fullscreen-hero-content-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h1 class="ai-fullscreen-hero-title-{{ ai_gen_id }}">
+        {{ block.settings.title }}
+      </h1>
+    {% endif %}
+
+    {% if block.settings.subtitle != blank %}
+      <div class="ai-fullscreen-hero-subtitle-{{ ai_gen_id }}">
+        {{ block.settings.subtitle }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fullscreen video hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Upload your video file to Files in Settings and paste the URL here"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_poster",
+      "label": "Video poster image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Welcome to our store"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Discover amazing products and exceptional quality"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "Content max width",
+      "default": 800
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 24,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Title size",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Title bottom spacing",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Text shadow"
+    },
+    {
+      "type": "range",
+      "id": "text_shadow_intensity",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Shadow intensity",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "text_shadow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Shadow opacity",
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fullscreen video hero"
+    }
+  ]
+}
+{% endschema %}

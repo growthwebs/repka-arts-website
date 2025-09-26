@@ -1,0 +1,237 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ADVANCED SCHEMA MARKUP
+  God-Level SEO Implementation
+  AI & LLM Optimized Structured Data
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  assign shop_domain = shop.permanent_domain
+  assign shop_url = 'https://' | append: shop_domain
+-%}
+
+{% comment %} Organization Schema - Enhanced for Art Gallery {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ArtGallery",
+    "name": "{{ shop.name }}",
+    "alternateName": "Repka Arts",
+    "description": "{{ shop.description | default: 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Discover unique artworks by talented artists.' }}",
+    "url": "{{ shop_url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ settings.logo | image_url: width: 500 | prepend: 'https:' }}"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{ settings.logo | image_url: width: 1200 | prepend: 'https:' }}"
+    },
+    "sameAs": [
+      {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}",{% endif %}
+      {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+      {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+      {% if settings.social_pinterest_link != blank %}"{{ settings.social_pinterest_link }}"{% endif %}
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "{{ shop.email }}",
+      "availableLanguage": ["English"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Art Collection",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Watercolor Paintings",
+            "description": "Original watercolor artworks and custom watercolor commissions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Ceramic Art",
+            "description": "Handcrafted ceramic sculptures and pottery art pieces"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Custom Art Commissions",
+            "description": "Personalized artwork commissions in various mediums"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Fine Art Prints",
+            "description": "High-quality art prints and limited edition reproductions"
+          }
+        }
+      ]
+    },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ shop_url }}/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ViewAction",
+        "target": "{{ shop_url }}"
+      }
+    ],
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Featured Artworks",
+      "description": "Curated collection of premium artworks"
+    }
+  }
+</script>
+
+{% comment %} Website Schema for Better AI Understanding {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ shop.name }}",
+    "alternateName": "Repka Arts Gallery",
+    "url": "{{ shop_url }}",
+    "description": "{{ shop.description | default: 'Discover exceptional watercolor paintings, ceramic art, custom commissions, and fine art prints at Repka Arts. Premium art gallery featuring original artworks by talented artists.' }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ settings.logo | image_url: width: 500 | prepend: 'https:' }}"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop_url }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "inLanguage": "en-US",
+    "copyrightYear": "2025",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    }
+  }
+</script>
+
+{% comment %} BreadcrumbList Schema for Better Navigation {% endcomment %}
+{% if template contains 'product' or template contains 'collection' or template contains 'page' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop_url }}"
+        }
+        {% if template contains 'collection' and collection %}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ collection.title }}",
+          "item": "{{ shop_url }}{{ collection.url }}"
+        }
+        {% endif %}
+        {% if template contains 'product' and product %}
+        {% if collection %}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ collection.title }}",
+          "item": "{{ shop_url }}{{ collection.url }}"
+        }
+        {% endif %}
+        ,{
+          "@type": "ListItem",
+          "position": {% if collection %}3{% else %}2{% endif %},
+          "name": "{{ product.title }}",
+          "item": "{{ shop_url }}{{ product.url }}"
+        }
+        {% endif %}
+        {% if template contains 'page' and page %}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.title }}",
+          "item": "{{ shop_url }}{{ page.url }}"
+        }
+        {% endif %}
+      ]
+    }
+  </script>
+{% endif %}
+
+{% comment %} FAQ Schema for AI Optimization {% endcomment %}
+{% if template == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of artwork does Repka Arts offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repka Arts specializes in watercolor paintings, ceramic art, custom commissions, and fine art prints. We offer original artworks and personalized commissions in various mediums."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer custom art commissions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer custom art commissions in watercolor, ceramics, and other mediums. Contact us to discuss your personalized artwork requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your return policy for artwork?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a satisfaction guarantee on all artwork purchases. Please contact us within 30 days for return inquiries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you ship internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we ship our artwork worldwide with secure packaging to ensure your art arrives in perfect condition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your art prints limited edition?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many of our art prints are limited edition, providing collectors with exclusive pieces. Each print is numbered and comes with a certificate of authenticity."
+          }
+        }
+      ]
+    }
+  </script>
+{% endif %}

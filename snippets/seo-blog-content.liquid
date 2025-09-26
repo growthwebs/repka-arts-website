@@ -1,0 +1,73 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - SEO BLOG CONTENT
+  Art-Focused Blog Content for SEO
+  UK English & SEO Best Practices
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate SEO-optimised blog content suggestions
+  endcomment
+  assign blog_keywords = 'art blog, watercolour techniques, oil painting tips, ceramic art, art commissions, art collecting, interior design art, art gallery spain'
+  assign spanish_blog_keywords = 'blog arte, técnicas acuarela, consejos pintura óleo, arte cerámico, comisiones arte, coleccionismo arte, arte decoración interior, galería arte españa'
+-%}
+
+{% comment %} SEO-optimised blog content suggestions {% endcomment %}
+<div class="seo-blog-content" style="display: none;">
+  <div class="blog-keywords">{{ blog_keywords }}</div>
+  <div class="spanish-blog-keywords">{{ spanish_blog_keywords }}</div>
+
+  <div class="blog-topics">
+    <div class="topic">Watercolour Painting Techniques for Beginners</div>
+    <div class="topic">Oil Painting Tips: Creating Rich Colours and Texture</div>
+    <div class="topic">Ceramic Art: Traditional Techniques Meet Modern Design</div>
+    <div class="topic">How to Commission Custom Artwork</div>
+    <div class="topic">Art Collecting Guide: What Makes Art Valuable</div>
+    <div class="topic">Interior Design with Original Artwork</div>
+    <div class="topic">Caring for Your Art Collection</div>
+    <div class="topic">The Art of Framing: Choosing the Right Frame</div>
+    <div class="topic">Spanish Art Scene: Contemporary Artists to Watch</div>
+    <div class="topic">Art Investment: Building a Collection</div>
+  </div>
+
+  <div class="blog-meta">
+    <div class="author">{{ shop.name }}</div>
+    <div class="location">Spain</div>
+    <div class="expertise">Art Gallery, Art Commissions, Art Education</div>
+  </div>
+</div>
+
+{% comment %} Generate SEO-rich meta for blog pages {% endcomment %}
+{% if template contains 'blog' and blog %}
+  <title>
+    {{ blog.title | escape }}
+    | Art Blog by
+    {{ shop.name }}
+  </title>
+  <meta
+    name="description"
+    content="Discover art insights, techniques, and collecting tips from {{ shop.name }}, a premium art gallery in Spain. Expert advice on watercolour, oil painting, ceramic art, and custom commissions."
+  >
+  <meta
+    name="keywords"
+    content="{{ blog_keywords }}, {{ spanish_blog_keywords }}, {{ blog.title | downcase | replace: ' ', ', ' }}"
+  >
+{% endif %}
+
+{% if template contains 'article' and article %}
+  <title>
+    {{ article.title | escape }}
+    | Art Blog by
+    {{ shop.name }}
+  </title>
+  <meta
+    name="description"
+    content="{{ article.excerpt | default: article.content | strip_html | truncate: 155 | escape }}. Read more art insights from {{ shop.name }}, a premium art gallery in Spain."
+  >
+  <meta
+    name="keywords"
+    content="{{ blog_keywords }}, {{ article.title | downcase | replace: ' ', ', ' }}, art education, art techniques"
+  >
+{% endif %}

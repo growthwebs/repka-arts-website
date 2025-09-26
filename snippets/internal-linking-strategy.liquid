@@ -1,0 +1,141 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - INTERNAL LINKING STRATEGY
+  Smart Internal Links for repkaarts.com
+  Better SEO & User Navigation
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    Generate smart internal links for better SEO
+  endcomment
+  assign shop_url = 'https://repkaarts.com'
+  assign internal_links = ''
+  assign related_products = ''
+  assign related_collections = ''
+  assign related_articles = ''
+
+  if template contains 'product' and product
+    comment
+      Product page internal linking
+    endcomment
+    assign product_collections = product.collections | where: 'published', true
+    assign related_products = collections[product_collections.first.handle].products | where: 'available', true | limit: 4
+
+  elsif template contains 'collection' and collection
+    comment
+      Collection page internal linking
+    endcomment
+    assign related_collections = collections | where: 'published', true | limit: 4
+
+  elsif template contains 'blog' and blog
+    comment
+      Blog page internal linking
+    endcomment
+    assign related_articles = blog.articles | limit: 4
+
+  elsif template contains 'article' and article
+    comment
+      Article page internal linking
+    endcomment
+    assign related_articles = blog.articles | where: 'id', article.id | limit: 4
+  endif
+-%}
+
+{% comment %} Smart Internal Links for SEO {% endcomment %}
+<div class="internal-linking-seo" style="display: none;">
+  <div class="current-page">
+    {% if template contains 'product' -%}
+      product
+    {%- elsif template contains 'collection' -%}
+      collection
+    {%- elsif template contains 'blog' -%}
+      blog
+    {%- elsif template contains 'article' -%}
+      article
+    {%- else -%}
+      page
+    {%- endif %}
+  </div>
+  <div class="shop-url">{{ shop_url }}</div>
+  <div class="internal-links">{{ internal_links }}</div>
+  <div class="related-products">{{ related_products }}</div>
+  <div class="related-collections">{{ related_collections }}</div>
+  <div class="related-articles">{{ related_articles }}</div>
+</div>
+
+{% comment %} Breadcrumb Navigation - REMOVED {% endcomment %}
+
+{% comment %} Related Products Section - REMOVED {% endcomment %}
+
+{% comment %} Related Collections Section - REMOVED {% endcomment %}
+
+{% comment %} Related Articles Section - REMOVED {% endcomment %}
+
+{% comment %} Navigation Links for Better SEO {% endcomment %}
+<nav class="seo-navigation" aria-label="Site Navigation">
+  <ul class="seo-nav-list">
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}" class="seo-nav-link">Home</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections" class="seo-nav-link">Collections</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/watercolour-paintings" class="seo-nav-link">Watercolour Paintings</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/oil-paintings" class="seo-nav-link">Oil Paintings</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/ceramic-art" class="seo-nav-link">Ceramic Art</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/custom-commissions" class="seo-nav-link">Custom Commissions</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/collections/art-prints" class="seo-nav-link">Art Prints</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/pages/about" class="seo-nav-link">About</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/pages/contact" class="seo-nav-link">Contact</a>
+    </li>
+    <li class="seo-nav-item">
+      <a href="{{ shop_url }}/blogs" class="seo-nav-link">Blog</a>
+    </li>
+  </ul>
+</nav>
+
+{% comment %} CSS for Internal Linking {% endcomment %}
+<style>
+  /* All unwanted UI sections removed */
+
+  .seo-navigation {
+    display: none !important; /* Hidden for SEO purposes */
+    visibility: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+
+  .seo-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .seo-nav-item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .seo-nav-link {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #0066cc;
+  }
+</style>

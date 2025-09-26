@@ -170,7 +170,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>Our newest arrivals</h1>",
+                    "text": "<h1>Check my exhibitions</h1>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -202,7 +202,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Experience the beauty of crafted oil, watercolour, ceramic, and mixed media artwork.</p>",
+                "text": "<p>Get your art fix by visiting my artworks at various spots around town!</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -236,10 +236,10 @@
       ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
-        "media_type_1": "image",
-        "image_1": "shopify://shop_images/Oasis_sentinels.jpg",
+        "media_type_1": "video",
+        "image_1": "shopify://shop_images/f6a915_7b59034c0e7c4f6bbf2d9621ca2886a7_mv2.jpg",
+        "video_1": "shopify://files/videos/03 - wild&serene_hero.mov",
         "media_type_2": "image",
-        "image_2": "shopify://shop_images/f6a915_696f0888b0ab43f29bb7ed2dfe3a3b6b_mv2.jpg",
         "link": "",
         "open_in_new_tab": false,
         "content_direction": "column",
@@ -251,11 +251,11 @@
         "vertical_alignment_flex_direction_column": "flex-end",
         "gap": 16,
         "section_width": "page-width",
-        "section_height": "full-screen",
+        "section_height": "large",
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#000000a1",
+        "overlay_color": "#000000bd",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -264,57 +264,72 @@
         "padding-block-end": 40
       }
     },
-    "collection_list_LJLNgC": {
-      "type": "collection-list",
+    "featured_blog_posts_hNrVPj": {
+      "type": "featured-blog-posts",
       "blocks": {
-        "group_hyUjUk": {
-          "type": "group",
-          "name": "t:names.header",
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "name": "t:names.title",
+          "static": true,
           "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
+            "text": "<h3>{{ closest.blog.title }}</h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "name": "t:names.blog_card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 8,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_GmiRjK": {
-              "type": "text",
-              "name": "t:names.text",
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
               "settings": {
-                "text": "<h3>Shop by medium</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
+                "image_ratio": "square",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0
+              },
+              "blocks": {}
+            },
+            "title": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -323,46 +338,38 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "read_only": false,
+                "alignment": "left",
+                "show_alignment": false,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_GmiRjK"
-          ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "name": "t:names.collection_card",
-          "static": true,
-          "settings": {
-            "placement": "below_image",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "center",
-            "collection_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_iynxpR": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
+            },
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
               "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
                 "alignment": "left",
-                "type_preset": "h4",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "name": "t:names.excerpt",
+              "static": true,
+              "settings": {
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -370,59 +377,26 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "name": "t:names.collection_card_image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
+                "padding-block-start": 8,
+                "padding-block-end": 0
               },
               "blocks": {}
             }
           },
-          "block_order": [
-            "collection_title_iynxpR"
-          ]
+          "block_order": []
         }
       },
-      "block_order": [
-        "group_hyUjUk"
-      ],
-      "name": "t:names.collections_editorial",
+      "name": "t:names.blog_posts_editorial",
       "settings": {
-        "collection_list": [
-          "oil-paintings",
-          "watercolours",
-          "ceramics",
-          "mixed-media"
-        ],
+        "blog": "exhibitions",
         "layout_type": "editorial",
         "carousel_on_mobile": false,
+        "post_limit": 3,
         "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "bento_gap": 8,
-        "rows_gap": 8,
-        "max_collections": 4,
+        "columns_gap": 16,
+        "rows_gap": 16,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
@@ -432,10 +406,10 @@
         "padding-block-end": 48
       }
     },
-    "collection_list_PyJpPr": {
+    "collection_list_rMwzkw": {
       "type": "collection-list",
       "blocks": {
-        "group_ed9DJT": {
+        "group_TCMxJr": {
           "type": "group",
           "name": "t:names.header",
           "settings": {
@@ -475,11 +449,11 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_DRhpKe": {
+            "text_KHmytQ": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Check artworks by series</h3>",
+                "text": "<h3>Check artworks by medium</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -503,7 +477,7 @@
             }
           },
           "block_order": [
-            "text_DRhpKe"
+            "text_KHmytQ"
           ]
         },
         "static-collection-card": {
@@ -523,7 +497,7 @@
             "border_radius": 0
           },
           "blocks": {
-            "collection_title_Hm7UyN": {
+            "collection_title_wzTeUh": {
               "type": "collection-title",
               "name": "t:names.collection_title",
               "settings": {
@@ -555,7 +529,7 @@
               "settings": {
                 "image_ratio": "square",
                 "toggle_overlay": true,
-                "overlay_color": "#00000054",
+                "overlay_color": "#0000006e",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "border": "none",
@@ -567,27 +541,20 @@
             }
           },
           "block_order": [
-            "collection_title_Hm7UyN"
+            "collection_title_wzTeUh"
           ]
         }
       },
       "block_order": [
-        "group_ed9DJT"
+        "group_TCMxJr"
       ],
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
-          "abstract-moments",
-          "andalusian-spirit",
-          "balanced-art",
+          "oil-paintings",
+          "watercolours",
           "ceramics",
-          "gemstones",
-          "savannah-vibes",
-          "serenity-in-bloom",
-          "timeless-elegance",
-          "toulouse-spirit",
-          "vibrant-impressions",
-          "wild-at-heart"
+          "mixed-media"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -611,7 +578,7 @@
   "order": [
     "main",
     "hero_Q7mhQg",
-    "collection_list_LJLNgC",
-    "collection_list_PyJpPr"
+    "featured_blog_posts_hNrVPj",
+    "collection_list_rMwzkw"
   ]
 }

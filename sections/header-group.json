@@ -33,7 +33,7 @@
           "static": true,
           "settings": {
             "menu": "hero-links",
-            "menu_style": "featured_products",
+            "menu_style": "text",
             "featured_products_aspect_ratio": "4 / 5",
             "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
@@ -41,7 +41,7 @@
             "collection_title_case": "default",
             "color_scheme": "",
             "menu_font_style": "inverse",
-            "type_font_primary_link": "primary",
+            "type_font_primary_link": "body",
             "type_font_primary_size": "var(--font-size--body-sm)",
             "type_case_primary_link": "uppercase",
             "type_font_secondary_link": "primary",

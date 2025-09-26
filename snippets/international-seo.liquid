@@ -1,0 +1,213 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - INTERNATIONAL SEO
+  Multi-Country & Multi-Currency Optimization
+  Spain-Based with Global Reach
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  comment
+    International SEO configuration for Spain-based art gallery
+  endcomment
+  assign home_country = 'ES'
+  assign home_currency = 'EUR'
+  assign home_language = 'es'
+  assign home_region = 'Spain'
+
+  comment
+    Target countries for art sales
+  endcomment
+  assign target_countries = 'US,GB,DE,FR,IT,NL,BE,CH,AT,SE,NO,DK,FI,IE,PT,AU,CA,NZ,JP,KR,SG,HK,AE,SA'
+  assign target_currencies = 'EUR,USD,GBP,CHF,CAD,AUD,JPY,SEK,NOK,DKK'
+  assign target_languages = 'es,en,de,fr,it,nl,pt,ja,ko,zh'
+-%}
+
+{% comment %} Hreflang Implementation for International SEO {% endcomment %}
+<link rel="alternate" hreflang="es" href="{{ shop.url }}">
+<link rel="alternate" hreflang="es-ES" href="{{ shop.url }}">
+<link rel="alternate" hreflang="en" href="{{ shop.url }}">
+<link rel="alternate" hreflang="en-US" href="{{ shop.url }}">
+<link rel="alternate" hreflang="en-GB" href="{{ shop.url }}">
+<link rel="alternate" hreflang="x-default" href="{{ shop.url }}">
+
+{% comment %} International Business Schema {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ArtGallery",
+    "name": "{{ shop.name }}",
+    "description": "Premium art gallery based in Spain, specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Worldwide shipping available.",
+    "url": "{{ shop.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "{{ home_country }}",
+      "addressRegion": "{{ home_region }}"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.4168",
+      "longitude": "-3.7038"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Spain",
+        "name": "United States",
+        "name": "United Kingdom",
+        "name": "Germany",
+        "name": "France",
+        "name": "Italy",
+        "name": "Netherlands",
+        "name": "Belgium",
+        "name": "Switzerland",
+        "name": "Austria",
+        "name": "Sweden",
+        "name": "Norway",
+        "name": "Denmark",
+        "name": "Finland",
+        "name": "Ireland",
+        "name": "Portugal",
+        "name": "Australia",
+        "name": "Canada",
+        "name": "New Zealand",
+        "name": "Japan",
+        "name": "South Korea",
+        "name": "Singapore",
+        "name": "Hong Kong",
+        "name": "United Arab Emirates",
+        "name": "Saudi Arabia"
+      }
+    ],
+    "availableLanguage": [
+      "Spanish",
+      "English",
+      "German",
+      "French",
+      "Italian",
+      "Dutch",
+      "Portuguese",
+      "Japanese",
+      "Korean",
+      "Chinese"
+    ],
+    "priceRange": "€€",
+    "paymentAccepted": ["Credit Card", "PayPal", "Shopify Pay", "Apple Pay", "Google Pay"],
+    "currenciesAccepted": "EUR,USD,GBP,CHF,CAD,AUD,JPY,SEK,NOK,DKK"
+  }
+</script>
+
+{% comment %} Currency Conversion Information {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MonetaryAmount",
+    "currency": "{{ home_currency }}",
+    "value": "varies",
+    "description": "Artwork prices in EUR with automatic currency conversion for international customers"
+  }
+</script>
+
+{% comment %} International Shipping Information {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ShippingDeliveryTime",
+    "name": "International Shipping",
+    "description": "Worldwide shipping from Spain",
+    "transitTime": {
+      "@type": "QuantitativeValue",
+      "minValue": 3,
+      "maxValue": 14,
+      "unitCode": "DAY"
+    },
+    "shippingDestination": {
+      "@type": "DefinedRegion",
+      "addressCountry": "*"
+    },
+    "shippingOrigin": {
+      "@type": "DefinedRegion",
+      "addressCountry": "ES"
+    }
+  }
+</script>
+
+{% comment %} Multi-Language FAQ for International Customers {% endcomment %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you ship internationally?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we ship worldwide from Spain. Shipping times vary by destination: EU countries 3-5 days, US/Canada 7-10 days, other countries 10-14 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What currencies do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept payments in EUR, USD, GBP, and other major currencies. Prices are displayed in EUR with automatic currency conversion at checkout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there additional taxes for international orders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "International orders may be subject to customs duties and taxes depending on your country. These are the responsibility of the customer and are not included in the purchase price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know the price in my currency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our checkout system automatically converts prices to your local currency. You can also use online currency converters for approximate prices before purchase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer customer support in multiple languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide customer support in Spanish, English, French, German, and Italian. Please contact us in your preferred language."
+        }
+      }
+    ]
+  }
+</script>
+
+{% comment %} International Meta Tags {% endcomment %}
+<meta name="geo.region" content="{{ home_country }}">
+<meta name="geo.placename" content="{{ home_region }}">
+<meta name="language" content="{{ home_language }}">
+<meta name="currency" content="{{ home_currency }}">
+<meta name="target-countries" content="{{ target_countries }}">
+<meta name="target-currencies" content="{{ target_currencies }}">
+
+{% comment %} Currency Display Information {% endcomment %}
+<div class="currency-info" style="display: none;">
+  <div class="base-currency">EUR</div>
+  <div class="supported-currencies">USD,GBP,CHF,CAD,AUD,JPY,SEK,NOK,DKK</div>
+  <div class="currency-conversion">Automatic conversion at checkout</div>
+</div>
+
+{% comment %} International Shipping Information {% endcomment %}
+<div class="shipping-info" style="display: none;">
+  <div class="shipping-origin">Spain</div>
+  <div class="shipping-destinations">Worldwide</div>
+  <div class="shipping-times">EU: 3-5 days, US/CA: 7-10 days, Other: 10-14 days</div>
+  <div class="shipping-costs">Calculated at checkout based on destination</div>
+</div>
+
+{% comment %} Multi-Language Support Information {% endcomment %}
+<div class="language-support" style="display: none;">
+  <div class="primary-language">Spanish (Español)</div>
+  <div class="supported-languages">English, French, German, Italian, Dutch, Portuguese, Japanese, Korean, Chinese</div>
+  <div class="customer-support-languages">Spanish, English, French, German, Italian</div>
+</div>

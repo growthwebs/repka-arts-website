@@ -1,0 +1,365 @@
+{% comment %}
+  Template for exhibitions listing page
+  Displays all exhibition metaobjects with hero banner and alternating card layout
+{% endcomment %}
+
+<div class="exhibitions-listing-page">
+  <!-- Hero Banner Section -->
+  <section class="exhibitions-hero-banner">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://cdn.shopify.com/videos/c/o/v/a98489b640004d479a36164c94417cae.mov" type="video/mp4">
+      </video>
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ page.title | default: 'My Exhibitions' }}</h1>
+          <p class="hero-subtitle">
+            {{ page.content | default: 'Explore my artistic journey through exhibitions around the world.' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exhibitions Gallery -->
+  <section class="exhibitions-gallery">
+    <div class="container">
+      {% for exhibition in shop.metaobjects.exhibition.values %}
+        {% assign is_even = forloop.index | modulo: 2 %}
+        <div class="exhibition-card {% if is_even == 0 %}exhibition-card-reverse{% endif %}">
+          <div class="exhibition-image-container">
+            {% if exhibition.banner.value %}
+              <a href="/pages/{{ exhibition.exhibition_name.value | handle }}" class="exhibition-image-link">
+                <img
+                  src="{{ exhibition.banner.value | img_url: '1200x800' }}"
+                  alt="{{ exhibition.exhibition_name.value }}"
+                  loading="lazy"
+                  class="exhibition-banner-image"
+                >
+              </a>
+            {% endif %}
+          </div>
+
+          <div class="exhibition-content-container">
+            <div class="exhibition-content">
+              <h2 class="exhibition-title">{{ exhibition.exhibition_name.value }}</h2>
+
+              {% if exhibition.exhibition_subtitle.value %}
+                <p class="exhibition-subtitle">{{ exhibition.exhibition_subtitle.value }}</p>
+              {% endif %}
+
+              <div class="exhibition-details">
+                {% if exhibition.venue_name.value %}
+                  <p class="exhibition-venue"><strong>Venue:</strong> {{ exhibition.venue_name.value }}</p>
+                {% endif %}
+
+                {% if exhibition.venue_location.value %}
+                  <p class="exhibition-location">
+                    <strong>Location:</strong>
+                    {% if exhibition.venue_website.value %}
+                      <a href="{{ exhibition.venue_website.value }}" target="_blank" class="location-link">
+                        {{ exhibition.venue_location.value }}
+                      </a>
+                    {% else %}
+                      {{ exhibition.venue_location.value }}
+                    {% endif %}
+                  </p>
+                {% endif %}
+
+                {% if exhibition.start_date.value and exhibition.end_date.value %}
+                  <p class="exhibition-dates">
+                    <strong>Dates:</strong>
+                    {{ exhibition.start_date.value | date: '%B %d, %Y' }} -
+                    {{ exhibition.end_date.value | date: '%B %d, %Y' }}
+                  </p>
+                {% endif %}
+              </div>
+
+              <a
+                href="/pages/{{ exhibition.exhibition_name.value | handle }}"
+                class="exhibition-button"
+              >
+                Open exhibition
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<style>
+  /* Hero Banner Styles */
+  .exhibitions-hero-banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+    z-index: 3;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-body--family);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Exhibitions Gallery Styles */
+  .exhibitions-gallery {
+    padding: 4rem 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .exhibition-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    min-height: 400px;
+  }
+
+  .exhibition-card-reverse {
+    direction: rtl;
+  }
+
+  .exhibition-card-reverse > * {
+    direction: ltr;
+  }
+
+  .exhibition-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .exhibition-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .exhibition-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  .exhibition-banner-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .exhibition-image-link:hover .exhibition-banner-image {
+    transform: scale(1.05);
+  }
+
+  .exhibition-content-container {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .exhibition-content {
+    width: 100%;
+  }
+
+  .exhibition-title {
+    font-family: var(--font-heading--family);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.2;
+  }
+
+  .exhibition-subtitle {
+    font-family: var(--font-body--family);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .exhibition-details {
+    margin-bottom: 2rem;
+  }
+
+  .exhibition-details p {
+    font-family: var(--font-body--family);
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .location-link {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .location-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  .exhibition-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #19398a;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: var(--font-body--family);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  .exhibition-button:hover {
+    background-color: #142f6b;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .exhibitions-hero-banner {
+      height: 70vh;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+    }
+
+    .exhibition-card {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .exhibition-card-reverse {
+      direction: ltr;
+    }
+
+    .exhibition-content-container {
+      padding: 1.5rem;
+    }
+
+    .exhibition-banner-image {
+      height: 300px;
+    }
+
+    .exhibition-title {
+      font-size: 1.8rem;
+    }
+
+    .container {
+      padding: 0 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .exhibitions-hero-banner {
+      height: 60vh;
+    }
+
+    .hero-content {
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 5vw, 1.2rem);
+    }
+
+    .exhibition-content-container {
+      padding: 1rem;
+    }
+
+    .exhibition-banner-image {
+      height: 250px;
+    }
+
+    .exhibition-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>

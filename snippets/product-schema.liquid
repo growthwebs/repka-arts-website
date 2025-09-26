@@ -1,0 +1,216 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - PRODUCT SCHEMA MARKUP
+  AI & LLM Optimized for Art Products
+  Enhanced for Watercolors, Ceramics, Commissions
+  ========================================
+{% endcomment %}
+
+{% if product %}
+  {%- liquid
+    assign current_time = 'now' | date: '%Y-%m-%dT%H:%M:%S%z'
+    assign shop_domain = shop.permanent_domain
+    assign shop_url = 'https://' | append: shop_domain
+    assign product_url = shop_url | append: product.url
+
+    comment
+      Determine artwork type based on product tags and title
+    endcomment
+    assign artwork_type = 'Artwork'
+    assign medium = 'Mixed Media'
+
+    if product.tags contains 'watercolor' or product.title contains 'watercolor' or product.title contains 'Watercolor'
+      assign artwork_type = 'Painting'
+      assign medium = 'Watercolor'
+    elsif product.tags contains 'ceramic' or product.title contains 'ceramic' or product.title contains 'Ceramic'
+      assign artwork_type = 'Sculpture'
+      assign medium = 'Ceramic'
+    elsif product.tags contains 'print' or product.title contains 'print' or product.title contains 'Print'
+      assign artwork_type = 'Print'
+      assign medium = 'Fine Art Print'
+    elsif product.tags contains 'commission' or product.title contains 'commission' or product.title contains 'Commission'
+      assign artwork_type = 'Commission'
+      assign medium = 'Custom Artwork'
+    endif
+
+    comment
+      Extract dimensions and other artwork details
+    endcomment
+    assign dimensions = ''
+    assign year_created = ''
+    assign artist_name = shop.name
+
+    for tag in product.tags
+      if tag contains 'x' and tag contains 'cm'
+        assign dimensions = tag
+      elsif tag contains '20' and tag.size == 4
+        assign year_created = tag
+      endif
+    endfor
+
+    comment
+      Get product images
+    endcomment
+    assign featured_image = product.featured_image
+    assign image_urls = ''
+    for image in product.images limit: 5
+      if image_urls == ''
+        assign image_urls = image | image_url: width: 1200 | prepend: 'https:'
+      else
+        assign image_urls = image_urls | append: '","' | append: image | image_url: width: 1200 | prepend: 'https:'
+      endif
+    endfor
+  -%}
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ product.description | strip_html | truncate: 160 | escape }}",
+      "image": [
+        {% if featured_image %}"{{ featured_image | image_url: width: 1200 | prepend: 'https:' }}"{% if product.images.size > 1 %},{% endif %}{% endif %}
+        {% if product.images.size > 1 %}
+          {% for image in product.images limit: 4 offset: 1 %}
+            "{{ image | image_url: width: 1200 | prepend: 'https:' }}"{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        {% endif %}
+      ],
+      "sku": "{{ product.selected_or_first_available_variant.sku | default: product.id }}",
+      "mpn": "{{ product.selected_or_first_available_variant.sku | default: product.id }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ shop.name }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ product_url }}",
+        "priceCurrency": "{{ cart.currency.iso_code }}",
+        "price": "{{ product.price | money_without_currency | remove: ',' }}",
+        "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' }}",
+        "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ shop.name }}",
+          "url": "{{ shop_url }}"
+        },
+        "itemCondition": "https://schema.org/NewCondition"
+      },
+      "category": "Art & Collectibles",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Artwork Type",
+          "value": "{{ artwork_type }}"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Medium",
+          "value": "{{ medium }}"
+        }
+        {% if dimensions != blank %}
+        ,{
+          "@type": "PropertyValue",
+          "name": "Dimensions",
+          "value": "{{ dimensions }}"
+        }
+        {% endif %}
+        {% if year_created != blank %}
+        ,{
+          "@type": "PropertyValue",
+          "name": "Year Created",
+          "value": "{{ year_created }}"
+        }
+        {% endif %}
+        {% for tag in product.tags limit: 5 %}
+        ,{
+          "@type": "PropertyValue",
+          "name": "Tag",
+          "value": "{{ tag }}"
+        }
+        {% endfor %}
+      ]
+    }
+  </script>
+
+  {% comment %} Artwork-specific schema for better AI understanding {% endcomment %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "@id": "{{ product_url }}#artwork",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ product.description | strip_html | escape }}",
+      "creator": {
+        "@type": "Person",
+        "name": "{{ artist_name }}"
+      },
+      "dateCreated": "{{ year_created | default: '2024' }}",
+      "artform": "{{ medium }}",
+      "artworkSurface": "{% if medium == 'Watercolor' %}Paper{% elsif medium == 'Ceramic' %}Clay{% else %}Various{% endif %}",
+      "artEdition": "{% if artwork_type == 'Print' %}Limited Edition{% else %}Original{% endif %}",
+      "width": "{% if dimensions contains 'x' %}{{ dimensions | split: 'x' | first | strip }}{% endif %}",
+      "height": "{% if dimensions contains 'x' %}{{ dimensions | split: 'x' | last | split: ' ' | first | strip }}{% endif %}",
+      "image": "{{ featured_image | image_url: width: 1200 | prepend: 'https:' }}",
+      "url": "{{ product_url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ product_url }}"
+      }
+    }
+  </script>
+
+  {% comment %} Review Schema if reviews exist {% endcomment %}
+  {% if product.metafields.reviews.rating_count and product.metafields.reviews.rating_count > 0 %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "@id": "{{ product_url }}#reviews",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+          "reviewCount": "{{ product.metafields.reviews.rating_count }}",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    </script>
+  {% endif %}
+
+  {% comment %} FAQ Schema for product-specific questions {% endcomment %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this artwork original or a print?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% if artwork_type == 'Print' %}This is a fine art print, available in limited edition with certificate of authenticity.{% else %}This is an original artwork created by hand.{% endif %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What medium is this artwork created in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This artwork is created in {{ medium | downcase }}."
+          }
+        }
+        {% if artwork_type == 'Commission' %}
+        ,{
+          "@type": "Question",
+          "name": "Can I request a custom commission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer custom commissions in various mediums. Contact us to discuss your specific requirements and vision."
+          }
+        }
+        {% endif %}
+      ]
+    }
+  </script>
+{% endif %}
