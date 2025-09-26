@@ -330,7 +330,7 @@
             "background_color": "#00000026",
             "corner_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -433,7 +433,7 @@
         "blog": "news",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "post_limit": 5,
+        "post_limit": 10,
         "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
