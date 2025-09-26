@@ -267,7 +267,7 @@
               "type": "_featured-blog-posts-image",
               "static": true,
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "landscape",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -339,9 +339,9 @@
       "name": "t:names.blog_posts_editorial",
       "settings": {
         "blog": "exhibitions",
-        "layout_type": "carousel",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
-        "post_limit": 6,
+        "post_limit": 10,
         "columns": 2,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -350,7 +350,7 @@
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
-        "gap": 64,
+        "gap": 0,
         "color_scheme": "",
         "padding-block-start": 48,
         "padding-block-end": 48
