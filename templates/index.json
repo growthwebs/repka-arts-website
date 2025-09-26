@@ -150,7 +150,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>New this season</h3>",
+                "text": "<h3><a href=\"/collections/season-highlights\" title=\"Season highlights\">New this season</a></h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
