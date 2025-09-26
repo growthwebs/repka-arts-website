@@ -1,0 +1,341 @@
+{% doc %}
+  @prompt
+    a text field that can be chosen from the exhibition metaobject, choose the press_links field, format it as link, ok?
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-exhibition-press-link-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-exhibition-press-link__heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    margin: 0 0 {{ block.settings.spacing }}px 0;
+    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-weight: {{ block.settings.heading_font.weight }};
+  }
+
+  .ai-exhibition-press-link__link-{{ ai_gen_id }} {
+    display: inline-block;
+    color: {{ block.settings.link_color }};
+    text-decoration: {{ block.settings.link_decoration }};
+    font-size: {{ block.settings.link_size }}px;
+    font-family: {{ block.settings.link_font.family }}, {{ block.settings.link_font.fallback_families }};
+    font-weight: {{ block.settings.link_font.weight }};
+    padding: {{ block.settings.link_padding }}px {{ block.settings.link_padding | times: 1.5 }}px;
+    border: {{ block.settings.link_border_width }}px solid {{ block.settings.link_border_color }};
+    border-radius: {{ block.settings.link_border_radius }}px;
+    background-color: {{ block.settings.link_background_color }};
+    transition: all 0.3s ease;
+  }
+
+  .ai-exhibition-press-link__link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+    background-color: {{ block.settings.link_hover_background_color }};
+    border-color: {{ block.settings.link_hover_border_color }};
+    text-decoration: {{ block.settings.link_hover_decoration }};
+    transform: translateY(-2px);
+  }
+
+  .ai-exhibition-press-link__empty-state-{{ ai_gen_id }} {
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: {{ block.settings.border_radius }}px;
+    border: 2px dashed #ddd;
+  }
+{% endstyle %}
+
+<div
+  class="ai-exhibition-press-link-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.heading != blank %}
+    <h3 class="ai-exhibition-press-link__heading-{{ ai_gen_id }}">
+      {{ block.settings.heading }}
+    </h3>
+  {% endif %}
+
+  {% if block.settings.exhibition_metaobject != blank and metaobjects[block.settings.exhibition_metaobject].press_links != blank %}
+    <a
+      href="{{ metaobjects[block.settings.exhibition_metaobject].press_links }}"
+      class="ai-exhibition-press-link__link-{{ ai_gen_id }}"
+      {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+    >
+      {% if block.settings.link_text != blank %}
+        {{ block.settings.link_text }}
+      {% else %}
+        {{ metaobjects[block.settings.exhibition_metaobject].press_links }}
+      {% endif %}
+    </a>
+  {% else %}
+    <div class="ai-exhibition-press-link__empty-state-{{ ai_gen_id }}">
+      {% if block.settings.exhibition_metaobject == blank %}
+        Select an exhibition to display press links
+      {% else %}
+        No press links available for this exhibition
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Exhibition press link",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Exhibition"
+    },
+    {
+      "type": "metaobject",
+      "id": "exhibition_metaobject",
+      "label": "Exhibition",
+      "metaobject_type": "exhibition"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Press Coverage"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "info": "Leave empty to show the URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "Open link in new tab",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Spacing between heading and link",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Heading style"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "newsreader_n2"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#212121"
+    },
+    {
+      "type": "header",
+      "content": "Link style"
+    },
+    {
+      "type": "font_picker",
+      "id": "link_font",
+      "label": "Link font",
+      "default": "red_hat_text_n4"
+    },
+    {
+      "type": "range",
+      "id": "link_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Link size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "link_padding",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Link padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "link_border_width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Link border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "link_border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Link border radius",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "link_decoration",
+      "label": "Link decoration",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "underline",
+          "label": "Underline"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#13308c"
+    },
+    {
+      "type": "color",
+      "id": "link_background_color",
+      "label": "Link background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_border_color",
+      "label": "Link border color",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "header",
+      "content": "Link hover style"
+    },
+    {
+      "type": "select",
+      "id": "link_hover_decoration",
+      "label": "Link hover decoration",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "underline",
+          "label": "Underline"
+        }
+      ],
+      "default": "underline"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_background_color",
+      "label": "Link hover background color",
+      "default": "#4e81cc"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_border_color",
+      "label": "Link hover border color",
+      "default": "#4e81cc"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Exhibition press link"
+    }
+  ]
+}
+{% endschema %}
