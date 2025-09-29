@@ -303,5 +303,80 @@
       "success_moderated": "Commentaire publié, en attente de modération",
       "success": "Commentaire publié"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "remote_merchandise_only": {
+        "title": "Finalisez votre achat",
+        "remote_only_notice": "Ces articles sont vendus et expédiés par d'autres magasins. Veuillez régler votre achat auprès de chaque magasin.",
+        "return_to_store_label": "Retourner au magasin",
+        "detail_item_label": {
+          "one": "{{count}} article",
+          "other": "{{count}} articles"
+        },
+        "checkout_on_shop_label": "Consultez %{shop_name}",
+        "single_shop_transition": "Redirection vers %{shop_name} pour finaliser votre achat"
+      },
+      "thank_you": {
+        "items_fulfilled_by_store": {
+          "one": "Les articles que vous avez achetés proviendront de %{remote_shop_name}.",
+          "other": "Les articles que vous avez achetés proviendront d'autres magasins."
+        },
+        "thank_you_confirmed_orders_with_email_description": {
+          "one": "Vous recevrez bientôt un email de confirmation",
+          "other": "Vous recevrez bientôt des e-mails de confirmation distincts de chaque magasin."
+        },
+        "thank_you_confirmed_orders_with_phone_description": {
+          "one": "Vous recevrez bientôt un SMS de confirmation",
+          "other": "Vous recevrez bientôt des SMS de confirmation distincts de chaque magasin."
+        },
+        "thank_you_confirmed_orders_with_email_and_phone_description": {
+          "one": "Vous recevrez bientôt un email de confirmation",
+          "other": "Vous recevrez bientôt des e-mails de confirmation distincts de chaque magasin."
+        }
+      }
+    }
+  },
+  "customer_accounts": {
+    "account_information": {
+      "profile_card": {
+        "editable_email_help_text": "Cet e-mail est utilisé pour la connexion et les mises à jour de commande."
+      },
+      "verify_new_email_modal": {
+        "email_resend_button_error_banner_message": "Impossible d'envoyer le code de vérification"
+      }
+    },
+    "payment_methods": {
+      "generic_error": "Une erreur s'est produite. Veuillez réessayer.",
+      "bank_account": {
+        "display_name": "Compte bancaire"
+      }
+    },
+    "subscriptions": {
+      "subscription_contracts": {
+        "title": "Utiliser le mode de paiement pour les commandes récurrentes",
+        "more_items": {
+          "one": "et {{count}} autres produits",
+          "other": "et {{count}} autres produits"
+        },
+        "product_count": {
+          "one": "{{count}} produit",
+          "other": "{{count}} produits"
+        },
+        "contracts_update_failed": "Échec de la mise à jour de certains contrats d'abonnement",
+        "subscription_contracts_updated": "Mise à jour {{succeeded}} sur {{total}} abonnements",
+        "product_details": "Détails du produit",
+        "load_more": "Charger plus"
+      },
+      "updating_contracts": {
+        "one": "Mise à jour du contrat d'abonnement {{count}} ...",
+        "other": "Mise à jour de {{count}} contrats d'abonnement..."
+      },
+      "contracts_updated": {
+        "one": "Contrat d'abonnement {{count}} mis à jour avec succès",
+        "other": "{{count}} contrats d'abonnement ont été mis à jour avec succès"
+      },
+      "contracts_update_failed": "Échec de la mise à jour de certains contrats d'abonnement"
+    }
   }
 }
