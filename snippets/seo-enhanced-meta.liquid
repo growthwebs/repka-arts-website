@@ -1,43 +1,54 @@
 {% comment %}
   ========================================
   REPKA ARTS - ENHANCED SEO META TAGS
+  Multilingual SEO Optimized (EN, FR, ES)
+  Strict Character Limits: Titles 55-60, Descriptions 150-160
   AI & LLM Optimized Meta Information
-  Keyword-Rich for Art Gallery SEO
   ========================================
 {% endcomment %}
 
 {%- liquid
   comment
-    Enhanced page title with keyword optimization
+    Enhanced page title with keyword optimization and multilingual support
   endcomment
   assign seo_title = page_title
 
   if template contains 'product' and product
     assign seo_title = product.title
     if product.tags contains 'watercolor' or product.title contains 'watercolor'
-      assign seo_title = seo_title | append: ' | Original Watercolor Painting'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.original_watercolour_painting' | t
+    elsif product.tags contains 'oil' or product.title contains 'oil'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.original_oil_painting' | t
     elsif product.tags contains 'ceramic' or product.title contains 'ceramic'
-      assign seo_title = seo_title | append: ' | Handmade Ceramic Art'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.handmade_ceramic_art' | t
     elsif product.tags contains 'commission' or product.title contains 'commission'
-      assign seo_title = seo_title | append: ' | Custom Art Commission'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.custom_art_commission' | t
     elsif product.tags contains 'print' or product.title contains 'print'
-      assign seo_title = seo_title | append: ' | Fine Art Print'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.fine_art_print' | t
     endif
     assign seo_title = seo_title | append: ' | ' | append: shop.name
   elsif template contains 'collection' and collection
     assign seo_title = collection.title
     if collection.title contains 'watercolor' or collection.title contains 'Watercolor'
-      assign seo_title = seo_title | append: ' | Watercolor Paintings Collection'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.watercolour_paintings_collection' | t
+    elsif collection.title contains 'oil' or collection.title contains 'Oil'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.oil_paintings_collection' | t
     elsif collection.title contains 'ceramic' or collection.title contains 'Ceramic'
-      assign seo_title = seo_title | append: ' | Ceramic Art Collection'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.ceramic_art_collection' | t
     elsif collection.title contains 'commission' or collection.title contains 'Commission'
-      assign seo_title = seo_title | append: ' | Custom Art Commissions'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.custom_art_commissions' | t
     elsif collection.title contains 'print' or collection.title contains 'Print'
-      assign seo_title = seo_title | append: ' | Art Prints Collection'
+      assign seo_title = seo_title | append: ' | ' | append: 'seo.art_prints_collection' | t
     endif
     assign seo_title = seo_title | append: ' | ' | append: shop.name
   elsif template == 'index'
-    assign seo_title = shop.name | append: ' | Premium Art Gallery - Watercolor Paintings, Ceramic Art & Custom Commissions'
+    assign seo_title = shop.name | append: ' | ' | append: 'seo.homepage_title' | t
+  elsif template contains 'page'
+    assign seo_title = page.title | append: ' | ' | append: shop.name
+  elsif template contains 'article'
+    assign seo_title = article.title | append: ' | ' | append: shop.name
+  elsif template contains 'blog'
+    assign seo_title = blog.title | append: ' | ' | append: shop.name
   else
     unless seo_title contains shop.name
       assign seo_title = seo_title | append: ' | ' | append: shop.name
@@ -45,56 +56,188 @@
   endif
 
   comment
-    Enhanced meta description with keywords
+    Truncate title to 55-60 characters (using 58 as optimal)
+  endcomment
+  assign seo_title = seo_title | truncate: 58, '...'
+
+  comment
+    Enhanced meta description with keywords and multilingual support
   endcomment
   assign seo_description = page_description | default: shop.description
 
   if template contains 'product' and product
-    assign seo_description = product.description | strip_html | truncate: 155
+    comment
+      For products, build description with prefix and truncate to 150-160 chars
+    endcomment
+    assign base_description = product.description | strip_html
+    assign prefix = ''
+
     if product.tags contains 'watercolor'
-      assign seo_description = 'Original watercolor painting by ' | append: shop.name | append: '. ' | append: seo_description
+      assign prefix = 'seo.product_description_prefix_watercolour' | t
+    elsif product.tags contains 'oil'
+      assign prefix = 'seo.product_description_prefix_oil' | t
     elsif product.tags contains 'ceramic'
-      assign seo_description = 'Handmade ceramic art by ' | append: shop.name | append: '. ' | append: seo_description
+      assign prefix = 'seo.product_description_prefix_ceramic' | t
     elsif product.tags contains 'commission'
-      assign seo_description = 'Custom art commission by ' | append: shop.name | append: '. ' | append: seo_description
+      assign prefix = 'seo.product_description_prefix_commission' | t
     elsif product.tags contains 'print'
-      assign seo_description = 'Fine art print by ' | append: shop.name | append: '. ' | append: seo_description
+      assign prefix = 'seo.product_description_prefix_print' | t
     endif
+
+    comment
+      Calculate available space for base description after prefix
+    endcomment
+    assign prefix_length = prefix | size
+    assign available_space = 155 | minus: prefix_length
+
+    if available_space > 0
+      assign base_description = base_description | truncate: available_space, '...'
+      assign seo_description = prefix | append: base_description
+    else
+      assign seo_description = base_description | truncate: 155, '...'
+    endif
+
   elsif template contains 'collection' and collection
-    assign seo_description = 'Browse our ' | append: collection.title | downcase | append: ' collection. ' | append: collection.description | default: 'Discover unique artworks in our curated collection.'
+    comment
+      For collections, build description based on language
+    endcomment
+    if request.locale.iso_code == 'fr'
+      if collection.description != blank
+        assign seo_description = 'Parcourez notre collection ' | append: collection.title | downcase | append: '. ' | append: collection.description | strip_html
+      else
+        assign seo_description = 'Parcourez notre collection ' | append: collection.title | downcase | append: '. Découvrez des œuvres d\'art uniques par Maryna Riepnova.'
+      endif
+    elsif request.locale.iso_code == 'es'
+      if collection.description != blank
+        assign seo_description = 'Explora nuestra colección ' | append: collection.title | downcase | append: '. ' | append: collection.description | strip_html
+      else
+        assign seo_description = 'Explora nuestra colección ' | append: collection.title | downcase | append: '. Descubre obras de arte únicas por Maryna Riepnova.'
+      endif
+    else
+      if collection.description != blank
+        assign seo_description = 'Browse our ' | append: collection.title | downcase | append: ' collection. ' | append: collection.description | strip_html
+      else
+        assign seo_description = 'Browse our ' | append: collection.title | downcase | append: ' collection. Discover unique artworks by Maryna Riepnova.'
+      endif
+    endif
+
   elsif template == 'index'
-    assign seo_description = 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Discover original artworks by talented artists. Worldwide shipping available.'
+    assign seo_description = 'seo.homepage_description' | t
+
+  elsif template contains 'page' and page
+    if page.content != blank
+      assign seo_description = page.content | strip_html | truncate: 155, '...'
+    else
+      assign seo_description = page.title | append: '. Discover original artwork by Maryna Riepnova.'
+    endif
+
+  elsif template contains 'article' and article
+    if article.excerpt != blank
+      assign seo_description = article.excerpt | strip_html
+    elsif article.content != blank
+      assign seo_description = article.content | strip_html | truncate: 155, '...'
+    else
+      assign seo_description = article.title | append: '. Read more on Repka Arts blog.'
+    endif
+
+  elsif template contains 'blog' and blog
+    assign seo_description = 'Explore our blog featuring art insights, behind-the-scenes, and creative inspiration from artist Maryna Riepnova.'
   endif
 
   comment
-    Determine keywords based on template and content
+    Truncate description to 150-160 characters (using 155 as optimal to avoid cut-off)
+  endcomment
+  assign seo_description = seo_description | truncate: 155, '...'
+
+  comment
+    Multilingual keywords based on current locale
   endcomment
   assign seo_keywords = 'art gallery, original artwork, fine art'
 
   if template contains 'product' and product
-    if product.tags contains 'watercolor'
-      assign seo_keywords = 'watercolor painting, original watercolor, watercolor art, custom watercolor'
-    elsif product.tags contains 'ceramic'
-      assign seo_keywords = 'ceramic art, handmade ceramic, ceramic sculpture, pottery art'
-    elsif product.tags contains 'commission'
-      assign seo_keywords = 'art commission, custom artwork, personalized art, commissioned painting'
-    elsif product.tags contains 'print'
-      assign seo_keywords = 'art print, fine art print, limited edition print, artwork reproduction'
+    if request.locale.iso_code == 'fr'
+      if product.tags contains 'watercolor'
+        assign seo_keywords = 'peinture aquarelle, aquarelle originale, art aquarelle, aquarelle personnalisée'
+      elsif product.tags contains 'oil'
+        assign seo_keywords = 'peinture huile, peinture huile originale, art huile, peinture huile personnalisée'
+      elsif product.tags contains 'ceramic'
+        assign seo_keywords = 'art céramique, céramique fait main, sculpture céramique, art poterie'
+      elsif product.tags contains 'commission'
+        assign seo_keywords = 'commande art, œuvre personnalisée, art sur mesure, peinture sur commande'
+      elsif product.tags contains 'print'
+        assign seo_keywords = 'impression art, impression beaux-arts, édition limitée, reproduction œuvre'
+      endif
+      assign seo_keywords = seo_keywords | append: ', galerie art, œuvre originale, Maryna Riepnova'
+    elsif request.locale.iso_code == 'es'
+      if product.tags contains 'watercolor'
+        assign seo_keywords = 'pintura acuarela, acuarela original, arte acuarela, acuarela personalizada'
+      elsif product.tags contains 'oil'
+        assign seo_keywords = 'pintura óleo, pintura óleo original, arte óleo, pintura óleo personalizada'
+      elsif product.tags contains 'ceramic'
+        assign seo_keywords = 'arte cerámico, cerámica hecha a mano, escultura cerámica, arte alfarería'
+      elsif product.tags contains 'commission'
+        assign seo_keywords = 'encargo arte, obra personalizada, arte a medida, pintura por encargo'
+      elsif product.tags contains 'print'
+        assign seo_keywords = 'impresión arte, impresión bellas artes, edición limitada, reproducción obra'
+      endif
+      assign seo_keywords = seo_keywords | append: ', galería arte, obra original, Maryna Riepnova'
+    else
+      if product.tags contains 'watercolor'
+        assign seo_keywords = 'watercolour painting, original watercolour, watercolour art, custom watercolour'
+      elsif product.tags contains 'oil'
+        assign seo_keywords = 'oil painting, original oil painting, oil art, custom oil painting'
+      elsif product.tags contains 'ceramic'
+        assign seo_keywords = 'ceramic art, handmade ceramic, ceramic sculpture, pottery art'
+      elsif product.tags contains 'commission'
+        assign seo_keywords = 'art commission, custom artwork, personalized art, commissioned painting'
+      elsif product.tags contains 'print'
+        assign seo_keywords = 'art print, fine art print, limited edition print, artwork reproduction'
+      endif
+      assign seo_keywords = seo_keywords | append: ', art gallery, original artwork, Maryna Riepnova'
     endif
-    assign seo_keywords = seo_keywords | append: ', art gallery, original artwork'
   elsif template contains 'collection' and collection
-    if collection.title contains 'watercolor'
-      assign seo_keywords = 'watercolor paintings, watercolor collection, original watercolors'
-    elsif collection.title contains 'ceramic'
-      assign seo_keywords = 'ceramic art, ceramic collection, handmade ceramics'
-    elsif collection.title contains 'commission'
-      assign seo_keywords = 'art commissions, custom artwork, commissioned art'
-    elsif collection.title contains 'print'
-      assign seo_keywords = 'art prints, fine art prints, print collection'
+    if request.locale.iso_code == 'fr'
+      if collection.title contains 'watercolor'
+        assign seo_keywords = 'peintures aquarelle, collection aquarelle, aquarelles originales'
+      elsif collection.title contains 'oil'
+        assign seo_keywords = 'peintures huile, collection peintures huile, peintures huile originales'
+      elsif collection.title contains 'ceramic'
+        assign seo_keywords = 'art céramique, collection céramique, céramiques fait main'
+      elsif collection.title contains 'commission'
+        assign seo_keywords = 'commandes art, œuvres personnalisées, art sur commande'
+      elsif collection.title contains 'print'
+        assign seo_keywords = 'impressions art, impressions beaux-arts, collection impressions'
+      endif
+      assign seo_keywords = seo_keywords | append: ', galerie art, œuvre originale, Maryna Riepnova'
+    elsif request.locale.iso_code == 'es'
+      if collection.title contains 'watercolor'
+        assign seo_keywords = 'pinturas acuarela, colección acuarela, acuarelas originales'
+      elsif collection.title contains 'oil'
+        assign seo_keywords = 'pinturas óleo, colección pinturas óleo, pinturas óleo originales'
+      elsif collection.title contains 'ceramic'
+        assign seo_keywords = 'arte cerámico, colección cerámica, cerámicas hechas a mano'
+      elsif collection.title contains 'commission'
+        assign seo_keywords = 'encargos arte, obras personalizadas, arte por encargo'
+      elsif collection.title contains 'print'
+        assign seo_keywords = 'impresiones arte, impresiones bellas artes, colección impresiones'
+      endif
+      assign seo_keywords = seo_keywords | append: ', galería arte, obra original, Maryna Riepnova'
+    else
+      if collection.title contains 'watercolor'
+        assign seo_keywords = 'watercolour paintings, watercolour collection, original watercolours'
+      elsif collection.title contains 'oil'
+        assign seo_keywords = 'oil paintings, oil painting collection, original oil paintings'
+      elsif collection.title contains 'ceramic'
+        assign seo_keywords = 'ceramic art, ceramic collection, handmade ceramics'
+      elsif collection.title contains 'commission'
+        assign seo_keywords = 'art commissions, custom artwork, commissioned art'
+      elsif collection.title contains 'print'
+        assign seo_keywords = 'art prints, fine art prints, print collection'
+      endif
+      assign seo_keywords = seo_keywords | append: ', art gallery, original artwork, Maryna Riepnova'
     endif
-    assign seo_keywords = seo_keywords | append: ', art gallery, original artwork'
   elsif template == 'index'
-    assign seo_keywords = 'art gallery, watercolor paintings, ceramic art, custom commissions, art prints, original artwork, fine art, handmade art, art collection'
+    assign seo_keywords = 'seo.homepage_keywords' | t
   endif
 -%}
 
@@ -107,12 +250,36 @@
 {% comment %} Enhanced Meta Keywords {% endcomment %}
 <meta name="keywords" content="{{ seo_keywords | escape }}">
 
+{% comment %} Language and Content Type {% endcomment %}
+<meta http-equiv="content-language" content="{{ request.locale.iso_code }}">
+<meta name="language" content="{{ request.locale.iso_code }}">
+
+{% comment %} Hreflang Tags for Multilingual SEO {% endcomment %}
+{%- if localization.available_languages.size > 1 -%}
+  {%- for language in localization.available_languages -%}
+    {%- if language.iso_code == 'en' or language.iso_code == 'fr' or language.iso_code == 'es' -%}
+      <link
+        rel="alternate"
+        hreflang="{{ language.iso_code }}"
+        href="{{ request.path | within: language | prepend: request.origin }}"
+      >
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} x-default for international/unknown locales {%- endcomment -%}
+  <link
+    rel="alternate"
+    hreflang="x-default"
+    href="{{ canonical_url }}"
+  >
+{%- endif -%}
+
 {% comment %} AI and Search Engine Optimization Meta Tags {% endcomment %}
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-{% comment %} Enhanced Open Graph Tags {% endcomment %}
+{% comment %} Enhanced Open Graph Tags with Multilingual Support {% endcomment %}
 <meta property="og:title" content="{{ seo_title | escape }}">
 <meta property="og:description" content="{{ seo_description | escape }}">
 <meta
@@ -121,7 +288,25 @@
 >
 <meta property="og:url" content="{{ canonical_url }}">
 <meta property="og:site_name" content="{{ shop.name }}">
-<meta property="og:locale" content="{{ request.locale.iso_code }}">
+<meta
+  property="og:locale"
+  content="{% if request.locale.iso_code == 'fr' %}fr_FR{% elsif request.locale.iso_code == 'es' %}es_ES{% else %}en_GB{% endif %}"
+>
+
+{%- comment -%} Alternate locales for Open Graph {%- endcomment -%}
+{%- if localization.available_languages.size > 1 -%}
+  {%- for language in localization.available_languages -%}
+    {%- unless language.iso_code == request.locale.iso_code -%}
+      {%- if language.iso_code == 'en' -%}
+        <meta property="og:locale:alternate" content="en_GB">
+      {%- elsif language.iso_code == 'fr' -%}
+        <meta property="og:locale:alternate" content="fr_FR">
+      {%- elsif language.iso_code == 'es' -%}
+        <meta property="og:locale:alternate" content="es_ES">
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
 
 {% comment %} Enhanced Twitter Card Tags {% endcomment %}
 <meta name="twitter:title" content="{{ seo_title | escape }}">
@@ -129,7 +314,7 @@
 <meta name="twitter:card" content="summary_large_image">
 
 {% comment %} Additional SEO Meta Tags {% endcomment %}
-<meta name="author" content="{{ shop.name }}">
+<meta name="author" content="Maryna Riepnova">
 <meta name="publisher" content="{{ shop.name }}">
 <meta name="copyright" content="{{ shop.name }}">
 
@@ -148,10 +333,9 @@
 {% comment %} Enhanced Canonical URL {% endcomment %}
 <link rel="canonical" href="{{ canonical_url }}">
 
-{% comment %} Language and Geo Tags {% endcomment %}
-<meta name="language" content="{{ request.locale.iso_code }}">
-<meta name="geo.region" content="US">
-<meta name="geo.placename" content="United States">
+{% comment %} Geo Tags - International {% endcomment %}
+<meta name="geo.region" content="WORLDWIDE">
+<meta name="geo.placename" content="International">
 
 {% comment %} Mobile and App Meta Tags {% endcomment %}
 <meta name="mobile-web-app-capable" content="yes">
