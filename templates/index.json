@@ -948,7 +948,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -1284,7 +1284,7 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground-heading)",
                 "background": false,
-                "background_color": "#ffffff5b",
+                "background_color": "#ffffff5c",
                 "corner_radius": 16,
                 "padding-block-start": 8,
                 "padding-block-end": 8,
@@ -2128,7 +2128,7 @@
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 16,
+            "border_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -2143,7 +2143,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0
+                "border_radius": 16
               },
               "blocks": {}
             },
