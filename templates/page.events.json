@@ -156,7 +156,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#0000009b",
+        "overlay_color": "#0000009c",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -270,11 +270,11 @@
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "adapt",
+                "image_ratio": "landscape",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -382,7 +382,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 64,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
@@ -496,7 +496,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0,
+                "border_radius": 16,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -576,7 +576,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
@@ -658,7 +658,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
