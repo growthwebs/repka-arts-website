@@ -287,7 +287,7 @@
           "settings": {
             "divider_thickness": 1,
             "padding-block-start": 12,
-            "padding-block-end": 12
+            "padding-block-end": 36
           },
           "blocks": {
             "copyright": {
