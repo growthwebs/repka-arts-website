@@ -315,5 +315,25 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable"
     }
+  },
+  "seo": {
+    "original_watercolour_painting": "Original Watercolour Painting",
+    "original_oil_painting": "Original Oil Painting",
+    "handmade_ceramic_art": "Handmade Ceramic Art",
+    "custom_art_commission": "Custom Art Commission",
+    "fine_art_print": "Fine Art Print",
+    "watercolour_paintings_collection": "Watercolour Paintings Collection",
+    "oil_paintings_collection": "Oil Paintings Collection",
+    "ceramic_art_collection": "Ceramic Art Collection",
+    "custom_art_commissions": "Custom Art Commissions",
+    "art_prints_collection": "Art Prints Collection",
+    "homepage_title": "Original Artwork by Maryna Riepnova",
+    "homepage_description": "Original oil and watercolour paintings and handmade ceramics by artist Maryna Riepnova. Custom art commissions and fine art prints available. Worldwide shipping.",
+    "product_description_prefix_watercolour": "Original watercolour painting by Maryna Riepnova. ",
+    "product_description_prefix_oil": "Original oil painting by Maryna Riepnova. ",
+    "product_description_prefix_ceramic": "Handmade ceramic art by Maryna Riepnova. ",
+    "product_description_prefix_commission": "Custom art commission by Maryna Riepnova. ",
+    "product_description_prefix_print": "Fine art print by Maryna Riepnova. ",
+    "homepage_keywords": "Maryna Riepnova, oil paintings, watercolour paintings, ceramic art, custom commissions, art prints, original artwork, fine art, handmade art, art collection"
   }
 }

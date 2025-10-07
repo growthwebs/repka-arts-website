@@ -378,5 +378,25 @@
       },
       "contracts_update_failed": "Échec de la mise à jour de certains contrats d'abonnement"
     }
+  },
+  "seo": {
+    "original_watercolour_painting": "Peinture à l'Aquarelle Originale",
+    "original_oil_painting": "Peinture à l'Huile Originale",
+    "handmade_ceramic_art": "Art Céramique Fait Main",
+    "custom_art_commission": "Commande d'Art Personnalisée",
+    "fine_art_print": "Impression d'Art de Qualité",
+    "watercolour_paintings_collection": "Collection de Peintures à l'Aquarelle",
+    "oil_paintings_collection": "Collection de Peintures à l'Huile",
+    "ceramic_art_collection": "Collection d'Art Céramique",
+    "custom_art_commissions": "Commandes d'Art Personnalisées",
+    "art_prints_collection": "Collection d'Impressions d'Art",
+    "homepage_title": "Œuvres Originales par Maryna Riepnova",
+    "homepage_description": "Peintures originales à l'huile et à l'aquarelle et céramiques faites main par l'artiste Maryna Riepnova. Commandes d'art personnalisées et impressions d'art de qualité disponibles. Expédition mondiale.",
+    "product_description_prefix_watercolour": "Peinture à l'aquarelle originale par Maryna Riepnova. ",
+    "product_description_prefix_oil": "Peinture à l'huile originale par Maryna Riepnova. ",
+    "product_description_prefix_ceramic": "Art céramique fait main par Maryna Riepnova. ",
+    "product_description_prefix_commission": "Commande d'art personnalisée par Maryna Riepnova. ",
+    "product_description_prefix_print": "Impression d'art de qualité par Maryna Riepnova. ",
+    "homepage_keywords": "Maryna Riepnova, peintures à l'huile, peintures à l'aquarelle, art céramique, commandes d'art personnalisées, impressions d'art, œuvres originales, beaux-arts, art fait main, collection d'art"
   }
 }
