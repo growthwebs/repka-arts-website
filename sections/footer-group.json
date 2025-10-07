@@ -251,6 +251,7 @@
             "divider_8Gz3Mw": {
               "type": "_divider",
               "name": "t:names.divider",
+              "disabled": true,
               "settings": {
                 "thickness": 1,
                 "corner_radius": "square",
@@ -269,6 +270,7 @@
         "payment_icons_6qXNdW": {
           "type": "payment-icons",
           "name": "t:names.payment_icons",
+          "disabled": true,
           "settings": {
             "horizontal_alignment": "center",
             "gap": 10,
