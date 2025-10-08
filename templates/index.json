@@ -654,8 +654,8 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Latest events",
-                    "link": "shopify://collections/events",
+                    "label": "Learn more",
+                    "link": "shopify://pages/about",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "width": "fit-content",
