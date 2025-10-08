@@ -1553,6 +1553,66 @@
     "product_list_NLVbT8": {
       "type": "product-list",
       "blocks": {
+        "group_EADGrq": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 16,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "button_eB8wTK": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "All events",
+                "link": "shopify://collections/events",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "button_eB8wTK"
+          ]
+        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
@@ -1591,7 +1651,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3><a href=\"/pages/events\" title=\"Events\">Check out my events</a></h3>",
+                "text": "<h3>Check out my events</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -1616,12 +1676,13 @@
             "product_list_button_LHxffi": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
+                "style_class": "button-secondary",
+                "width": "custom",
+                "custom_width": 10,
                 "width_mobile": "fit-content",
                 "custom_width_mobile": 100
               },
@@ -1723,12 +1784,15 @@
           ]
         }
       },
+      "block_order": [
+        "group_EADGrq"
+      ],
       "name": "Featured collection: Events",
       "settings": {
         "collection": "events",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 8,
+        "max_products": 4,
         "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -1881,7 +1945,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 24,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 64,
         "padding-block-end": 64
       }
@@ -2170,7 +2234,7 @@
         "border_width": 1,
         "border_opacity": 100,
         "border_radius": 0,
-        "toggle_overlay": true,
+        "toggle_overlay": false,
         "overlay_color": "#fafafa",
         "overlay_style": "solid",
         "gradient_direction": "to top",
