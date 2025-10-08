@@ -362,8 +362,8 @@
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "padding-block-start": 32,
-            "padding-block-end": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -622,8 +622,8 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     }
   },

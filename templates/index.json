@@ -167,7 +167,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 24,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -354,8 +354,8 @@
         "alignment": "left",
         "image_position": "right",
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 82,
-        "padding-block-end": 82
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "hero_MVUtj6": {
@@ -784,7 +784,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 24,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -848,7 +848,7 @@
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "h5",
@@ -958,7 +958,7 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
-            "padding-block-start": 32,
+            "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -983,7 +983,7 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 16,
+                "padding-block-start": 26,
                 "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -1092,7 +1092,7 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 32,
+        "padding-block-start": 64,
         "padding-block-end": 64
       }
     },
@@ -1565,7 +1565,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1629,7 +1629,7 @@
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "custom",
@@ -1867,7 +1867,7 @@
             "background_color": "#00000026",
             "corner_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
