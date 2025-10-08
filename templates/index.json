@@ -373,7 +373,7 @@
               "static": true,
               "settings": {
                 "height": "medium",
-                "ratio": "portrait",
+                "ratio": "square",
                 "border_radius": 16
               },
               "blocks": {}
@@ -538,7 +538,7 @@
               "settings": {
                 "image": "shopify://shop_images/IMG_5759.heic",
                 "link": "",
-                "image_ratio": "adapt",
+                "image_ratio": "square",
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
