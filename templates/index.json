@@ -110,6 +110,48 @@
         "padding-block-end": 0
       }
     },
+    "marquee_kdzReW": {
+      "type": "marquee",
+      "blocks": {
+        "text_EFNJpa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy 10% discount on originals this autumn on Repka Arts,</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "none",
+            "wrap": "nowrap",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_EFNJpa"
+      ],
+      "disabled": true,
+      "name": "t:names.marquee_section",
+      "settings": {
+        "movement_direction": "normal",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "padding-block-start": 24,
+        "padding-block-end": 24,
+        "gap_between_elements": 24
+      }
+    },
     "product_list_LnatzF": {
       "type": "product-list",
       "blocks": {
@@ -2139,6 +2181,7 @@
   },
   "order": [
     "hero_iyt6zg",
+    "marquee_kdzReW",
     "product_list_LnatzF",
     "collection_links_Ut4aMz",
     "hero_MVUtj6",
