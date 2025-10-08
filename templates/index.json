@@ -1948,7 +1948,7 @@
                   "settings": {
                     "text": "<p>Yes, we securely ship original art, ceramics, and prints to collectors all over the world from our studio in Málaga, Spain.</p>",
                     "width": "100%",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -1962,7 +1962,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 16,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -1987,7 +1987,7 @@
                   "settings": {
                     "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
                     "width": "100%",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -2001,7 +2001,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 16,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -2028,7 +2028,7 @@
                   "settings": {
                     "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
                     "width": "100%",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -2042,7 +2042,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 16,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -2069,7 +2069,7 @@
                   "settings": {
                     "text": "<p>Yes, we host public plein-air sessions and also design private art workshops for groups, hotels, and corporate team-building events.</p>",
                     "width": "100%",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -2083,7 +2083,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 16,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -2110,7 +2110,7 @@
                   "settings": {
                     "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
                     "width": "100%",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -2124,7 +2124,7 @@
                     "background_color": "#00000026",
                     "corner_radius": 0,
                     "padding-block-start": 0,
-                    "padding-block-end": 0,
+                    "padding-block-end": 16,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
