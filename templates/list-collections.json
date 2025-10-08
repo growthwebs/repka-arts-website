@@ -144,7 +144,7 @@
               "static": true,
               "settings": {
                 "image_ratio": "portrait",
-                "toggle_overlay": true,
+                "toggle_overlay": false,
                 "overlay_color": "#00000070",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
