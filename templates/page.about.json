@@ -624,8 +624,8 @@
             "gradient_direction": "to top",
             "padding-block-start": 16,
             "padding-block-end": 16,
-            "padding-inline-start": 16,
-            "padding-inline-end": 16
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "group_Jf6Xit": {
@@ -659,7 +659,7 @@
                 "border_radius": 16,
                 "placeholder": "",
                 "toggle_overlay": true,
-                "overlay_color": "#00000026",
+                "overlay_color": "#0000000a",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "padding-block-start": 48,
@@ -1225,7 +1225,7 @@
                 "border_radius": 16,
                 "placeholder": "",
                 "toggle_overlay": true,
-                "overlay_color": "#00000026",
+                "overlay_color": "#0000000a",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "padding-block-start": 48,
@@ -2036,8 +2036,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 32,
+        "padding-block-end": 32
       }
     },
     "product_list_xrMgcp": {
