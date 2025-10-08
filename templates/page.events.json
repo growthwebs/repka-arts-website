@@ -88,7 +88,7 @@
             "text_7BXq6t": {
               "type": "text",
               "settings": {
-                "text": "<p>Explore our latest events.</p>",
+                "text": "<p>Explore our latest events ·</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
