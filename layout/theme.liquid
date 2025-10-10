@@ -22,27 +22,18 @@
       id="view-transition-render-blocker"
     >
 
-    {%- render 'meta-tags' -%}
-    {%- render 'seo-enhanced-meta' -%}
-    {%- render 'seo-product-descriptions' -%}
-    {%- render 'seo-collection-descriptions' -%}
-    {%- render 'seo-blog-content' -%}
-    {%- render 'simple-image-seo' -%}
-    {%- render 'simple-image-schema' -%}
-    {%- render 'social-media-og' -%}
-    {%- render 'pinterest-rich-pins' -%}
-    {%- render 'tiktok-optimization' -%}
-    {% comment %} Advanced performance optimization removed {% endcomment %}
-    {%- render 'enhanced-sitemap' -%}
-    {%- render 'enhanced-robots' -%}
-    {% comment %} Internal linking strategy removed {% endcomment %}
-    {%- render 'url-structure-optimization' -%}
-    {%- render 'art-gallery-schema' -%}
-    {%- render 'seo-sitemap' -%}
-    {%- render 'ai-content-optimization' -%}
-    {%- render 'keyword-strategy' -%}
-    {%- render 'performance-optimization' -%}
+    {% comment %} ========== REPKA ARTS - MASTER SEO SYSTEM ========== {% endcomment %}
+    {%- render 'repka-seo-master' -%}
+    {%- render 'repka-schema-master' -%}
+    {%- render 'repka-review-schema' -%}
+    {%- render 'repka-image-seo' -%}
     {%- render 'local-seo' -%}
+
+    {% comment %} Legacy SEO snippets - Disabled to prevent duplicates {% endcomment %}
+    {% comment %} {%- render 'meta-tags' -%} {% endcomment %}
+    {% comment %} {%- render 'seo-enhanced-meta' -%} {% endcomment %}
+    {% comment %} {%- render 'art-gallery-schema' -%} {% endcomment %}
+
     {%- render 'international-seo' -%}
     {%- render 'analytics-tracking' -%}
     {%- render 'fonts' -%}

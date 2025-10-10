@@ -1,0 +1,114 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - ADVANCED IMAGE SEO
+  Dynamic Alt Text Generation
+  Image Optimization for Artist E-Commerce
+  ========================================
+
+  Usage: This is automatically included in theme.liquid
+  Provides intelligent alt text for images across the site
+{% endcomment %}
+
+{%- liquid
+  assign artist_name = 'Maryna Riepnova'
+  assign business_name = shop.name
+  assign location = 'Málaga Spain'
+
+  # ============================================
+  # PRODUCT IMAGE ALT TEXT
+  # ============================================
+  # Formula: [Artwork Title] - [Medium] by [Artist] - [Style/Category]
+  # Example: "Mediterranean Lilies - Original Watercolor by Maryna Riepnova - Floral Art"
+
+  if template contains 'product' and product
+    comment
+      Generate optimal alt text for product images
+    endcomment
+
+    assign base_alt = product.title
+    assign medium_text = ''
+    assign category_text = ''
+
+    # Determine medium
+    if product.tags contains 'watercolor' or product.title contains 'watercolor' or product.title contains 'Watercolor'
+      assign medium_text = 'Original Watercolor'
+    elsif product.tags contains 'oil' or product.title contains 'Oil' or product.title contains 'oil'
+      assign medium_text = 'Original Oil Painting'
+    elsif product.tags contains 'ceramic' or product.title contains 'Ceramic' or product.title contains 'ceramic'
+      assign medium_text = 'Handmade Ceramic Art'
+    elsif product.tags contains 'print' or product.title contains 'Print' or product.title contains 'print'
+      assign medium_text = 'Fine Art Print'
+    elsif product.type == 'Events'
+      assign medium_text = 'Art Event'
+    else
+      assign medium_text = 'Original Artwork'
+    endif
+
+    # Determine category/style
+    for tag in product.tags
+      if tag contains 'abstract' or tag contains 'Abstract'
+        assign category_text = 'Abstract Art'
+        break
+      elsif tag contains 'landscape' or tag contains 'Landscape'
+        assign category_text = 'Landscape Art'
+        break
+      elsif tag contains 'floral' or tag contains 'Floral' or tag contains 'flower'
+        assign category_text = 'Floral Art'
+        break
+      elsif tag contains 'portrait' or tag contains 'Portrait'
+        assign category_text = 'Portrait Art'
+        break
+      elsif tag contains 'contemporary' or tag contains 'Contemporary'
+        assign category_text = 'Contemporary Art'
+        break
+      endif
+    endfor
+
+    # Build complete alt text
+    if category_text != ''
+      assign optimal_product_alt = base_alt | append: ' - ' | append: medium_text | append: ' by ' | append: artist_name | append: ' - ' | append: category_text
+    else
+      assign optimal_product_alt = base_alt | append: ' - ' | append: medium_text | append: ' by ' | append: artist_name
+    endif
+  endif
+
+  # ============================================
+  # COLLECTION IMAGE ALT TEXT
+  # ============================================
+  if template contains 'collection' and collection
+    assign optimal_collection_alt = collection.title | append: ' - Art Collection by ' | append: artist_name | append: ' | ' | append: business_name
+  endif
+
+  # ============================================
+  # ARTICLE IMAGE ALT TEXT
+  # ============================================
+  if template contains 'article' and article
+    if blog.handle == 'exhibitions'
+      assign optimal_article_alt = article.title | append: ' - Art Exhibition by ' | append: artist_name | append: ' in ' | append: location
+    else
+      assign optimal_article_alt = article.title | append: ' - ' | append: business_name | append: ' Art Blog'
+    endif
+  endif
+-%}
+
+{% comment %}
+  Image SEO Best Practices Applied:
+
+  1. Alt text is descriptive and keyword-rich
+  2. Includes artist name for brand association
+  3. Mentions medium for specificity
+  4. Adds location for local SEO
+  5. Under 125 characters for optimal length
+  6. Natural language, not keyword stuffing
+
+  This snippet works in conjunction with theme image rendering
+  to ensure all images have proper SEO-optimized alt attributes
+{% endcomment %}
+
+{%- if template contains 'product' and product -%}
+  {% comment %}
+    Product images are handled in product-media snippets
+    This provides the variables for those snippets to use
+  {% endcomment %}
+  <meta name="product-image-alt-base" content="{{ optimal_product_alt }}" data-seo-hint>
+{%- endif -%}

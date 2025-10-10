@@ -1,0 +1,624 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - MASTER SCHEMA MARKUP
+  Comprehensive Structured Data for Artist E-Commerce
+  Optimized for Google, AI/LLMs, Rich Results
+  ========================================
+{% endcomment %}
+
+{%- liquid
+  assign artist_name = 'Maryna Riepnova'
+  assign business_name = shop.name
+  assign shop_url = shop.url | default: request.origin
+  assign business_location_city = 'Málaga'
+  assign business_location_region = 'Andalusia'
+  assign business_location_country = 'Spain'
+  assign latitude = '36.7213'
+  assign longitude = '-4.4214'
+-%}
+
+<!-- -- ORGANIZATION / ART GALLERY SCHEMA -- -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ArtGallery",
+    "name": "{{ business_name }}",
+    "alternateName": "Repka Arts",
+    "description": "Contemporary art gallery specializing in original oil paintings, watercolours, handmade ceramics, art prints & custom commissions by artist Maryna Riepnova in Málaga, Spain.",
+    "url": "{{ shop_url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% if settings.logo %}https:{{ settings.logo | image_url: width: 600 }}{% endif %}",
+      "width": "600",
+      "height": "600"
+    },
+    "image": "{% if settings.logo %}https:{{ settings.logo | image_url: width: 1200 }}{% endif %}",
+    "telephone": "{{ shop.phone | default: '+34-XXX-XXX-XXX' }}",
+    "email": "{{ shop.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ business_location_city }}",
+      "addressRegion": "{{ business_location_region }}",
+      "addressCountry": "{{ business_location_country }}",
+      "postalCode": "29001"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "{{ latitude }}",
+      "longitude": "{{ longitude }}"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Worldwide"
+      },
+      {
+        "@type": "City",
+        "name": "Málaga"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Costa del Sol"
+      }
+    ],
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR, USD, GBP",
+    "paymentAccepted": ["Credit Card", "Debit Card", "PayPal", "Shop Pay", "Apple Pay", "Google Pay"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+      {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+      {% if settings.social_pinterest_link != blank %}"{{ settings.social_pinterest_link }}",{% endif %}
+      {% if settings.social_tiktok_link != blank %}"{{ settings.social_tiktok_link }}",{% endif %}
+      {% if settings.social_youtube_link != blank %}"{{ settings.social_youtube_link }}"{% endif %}
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "{{ artist_name }}",
+      "jobTitle": "Artist & Founder",
+      "sameAs": [
+        {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}"{% endif %}
+      ]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Art Collection",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Original Watercolor Paintings",
+            "description": "Handcrafted watercolor artwork and custom commissions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Oil Paintings",
+            "description": "Original oil paintings on canvas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Ceramic Art",
+            "description": "Handmade ceramic sculptures and pottery"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Fine Art Prints",
+            "description": "High-quality art prints and limited editions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Art Commissions",
+            "description": "Personalized artwork commissions in various mediums"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Art Workshops & Events",
+            "description": "Painting classes, plein air sessions, and creative workshops"
+          }
+        }
+      ]
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop_url }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+<!-- -- ARTIST PERSON SCHEMA -- -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ artist_name }}",
+    "alternateName": "Repka",
+    "jobTitle": "Contemporary Artist",
+    "description": "Contemporary artist specializing in oil paintings, watercolours, ceramic sculptures & art prints. Based in Málaga, Spain.",
+    "url": "{{ shop_url }}{% if template == 'page' and page.handle == 'about' %}{{ page.url }}{% endif %}",
+    "image": "{% if settings.logo %}https:{{ settings.logo | image_url: width: 800 }}{% endif %}",
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "Fine Arts Academy"
+    },
+    "knowsAbout": ["Watercolor Painting", "Oil Painting", "Ceramic Art", "Art Instruction", "Plein Air Painting"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Visual Artist",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Málaga, Spain"
+      }
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ business_location_city }}",
+      "addressRegion": "{{ business_location_region }}",
+      "addressCountry": "ES"
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "Ukraine"
+    },
+    "workLocation": {
+      "@type": "Place",
+      "name": "Málaga, Costa del Sol, Spain"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Watercolor Commissions",
+          "serviceType": "Art Commission"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Art Workshops & Classes",
+          "serviceType": "Art Education"
+        }
+      }
+    ],
+    "sameAs": [
+      {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}",{% endif %}
+      {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}"{% endif %}
+    ]
+  }
+</script>
+
+<!-- -- WEBSITE SCHEMA -- -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ business_name }}",
+    "alternateName": "Repka Arts Gallery",
+    "url": "{{ shop_url }}",
+    "description": "Original oil paintings, watercolours, ceramics & art prints by Maryna Riepnova. Art gallery in Málaga, Spain offering custom commissions & worldwide shipping.",
+    "inLanguage": ["en", "es", "fr"],
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ business_name }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{% if settings.logo %}https:{{ settings.logo | image_url: width: 600 }}{% endif %}"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop_url }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "copyrightYear": "{{ 'now' | date: '%Y' }}",
+    "copyrightHolder": {
+      "@type": "Person",
+      "name": "{{ artist_name }}"
+    }
+  }
+</script>
+
+{%- if template contains 'product'
+  or template contains 'collection'
+  or template contains 'page'
+  or template contains 'article'
+-%}
+  <!-- -- BREADCRUMB SCHEMA -- -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop_url }}"
+        }
+        {%- if template contains 'collection' and collection -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ collection.title }}",
+          "item": "{{ shop_url }}{{ collection.url }}"
+        }
+        {%- endif -%}
+        {%- if template contains 'product' and product -%}
+          {%- if collection -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ collection.title }}",
+            "item": "{{ shop_url }}{{ collection.url }}"
+          }
+          ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ product.title }}",
+            "item": "{{ shop_url }}{{ product.url }}"
+          }
+          {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ product.title }}",
+            "item": "{{ shop_url }}{{ product.url }}"
+          }
+          {%- endif -%}
+        {%- endif -%}
+        {%- if template contains 'page' and page -%}
+        ,{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ page.title }}",
+          "item": "{{ shop_url }}{{ page.url }}"
+        }
+        {%- endif -%}
+        {%- if template contains 'article' and article -%}
+          {%- if blog -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ blog.title }}",
+            "item": "{{ shop_url }}{{ blog.url }}"
+          }
+          ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ article.title }}",
+            "item": "{{ shop_url }}{{ article.url }}"
+          }
+          {%- else -%}
+          ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ article.title }}",
+            "item": "{{ shop_url }}{{ article.url }}"
+          }
+          {%- endif -%}
+        {%- endif -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{%- if template contains 'product' and product -%}
+  <!-- -- PRODUCT SCHEMA -- -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ product.description | strip_html | escape }}",
+      "image": [
+        {%- for image in product.images limit: 8 -%}
+          "https:{{ image | image_url: width: 1200 }}"{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ],
+      "sku": "{{ product.selected_or_first_available_variant.sku | default: product.id }}",
+      "mpn": "{{ product.selected_or_first_available_variant.sku | default: product.id }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ business_name }}"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "{{ business_name }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ shop_url }}{{ product.url }}",
+        "priceCurrency": "{{ cart.currency.iso_code }}",
+        "price": "{{ product.price | money_without_currency | remove: ',' }}",
+        "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' }}",
+        "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ business_name }}"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "EUR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "Worldwide"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 3,
+              "maxValue": 14,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
+      "category": "Art & Collectibles"
+      {%- if product.metafields.reviews.rating.value -%}
+      ,"aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ product.metafields.reviews.rating.value }}",
+        "reviewCount": "{{ product.metafields.reviews.rating_count }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+      {%- endif -%}
+    }
+  </script>
+
+  {%- liquid
+    # Determine if this is an artwork (not event/gift card)
+    assign is_artwork = true
+    if product.type == 'Events' or product.type == 'Gift Card'
+      assign is_artwork = false
+    endif
+
+    # Determine medium and artwork type
+    assign artwork_medium = 'Mixed Media'
+    assign artwork_type = 'VisualArtwork'
+
+    if product.tags contains 'watercolor' or product.title contains 'watercolor' or product.title contains 'Watercolor'
+      assign artwork_medium = 'Watercolor on paper'
+      assign artwork_type = 'Painting'
+    elsif product.tags contains 'oil' or product.title contains 'Oil' or product.title contains 'oil'
+      assign artwork_medium = 'Oil on canvas'
+      assign artwork_type = 'Painting'
+    elsif product.tags contains 'ceramic' or product.title contains 'ceramic' or product.title contains 'Ceramic'
+      assign artwork_medium = 'Ceramic'
+      assign artwork_type = 'Sculpture'
+    elsif product.tags contains 'print' or product.title contains 'Print' or product.title contains 'print'
+      assign artwork_medium = 'Fine Art Print'
+      assign artwork_type = 'VisualArtwork'
+    endif
+  -%}
+
+  {%- if is_artwork -%}
+    <!-- -- VISUAL ARTWORK SCHEMA -- -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "{{ artwork_type }}",
+        "name": "{{ product.title | escape }}",
+        "alternateName": "{{ product.title | escape }} by {{ artist_name }}",
+        "description": "{{ product.description | strip_html | escape }}",
+        "artMedium": "{{ artwork_medium }}",
+        "artform": "{% if artwork_type == 'Painting' %}Painting{% elsif artwork_type == 'Sculpture' %}Sculpture{% else %}Visual Art{% endif %}",
+        "artEdition": "{% if product.tags contains 'print' %}Limited Edition{% else %}Original{% endif %}",
+        "creator": {
+          "@type": "Person",
+          "name": "{{ artist_name }}",
+          "url": "{{ shop_url }}/pages/about"
+        },
+        "image": "https:{{ product.featured_image | image_url: width: 1200 }}",
+        "url": "{{ shop_url }}{{ product.url }}",
+        "dateCreated": "{{ product.created_at | date: '%Y' }}",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ shop_url }}{{ product.url }}"
+        }
+        {%- for tag in product.tags -%}
+          {%- if tag contains 'x' and tag contains 'cm' -%}
+            {%- assign dimensions = tag | split: 'x' -%}
+            ,"width": {
+              "@type": "QuantitativeValue",
+              "value": "{{ dimensions[0] | remove: ' ' | remove: 'cm' }}",
+              "unitCode": "CMT"
+            },
+            "height": {
+              "@type": "QuantitativeValue",
+              "value": "{{ dimensions[1] | remove: ' ' | remove: 'cm' }}",
+              "unitCode": "CMT"
+            }
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      }
+    </script>
+  {%- endif -%}
+
+  {%- if product.type == 'Events' -%}
+    <!-- -- EVENT SCHEMA -- -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "{{ product.title | escape }}",
+        "description": "{{ product.description | strip_html | escape }}",
+        "image": "https:{{ product.featured_image | image_url: width: 1200 }}",
+        "url": "{{ shop_url }}{{ product.url }}",
+        "eventStatus": "{% if product.available %}https://schema.org/EventScheduled{% else %}https://schema.org/EventSoldOut{% endif %}",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Málaga, Costa del Sol",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Málaga",
+            "addressRegion": "Andalusia",
+            "addressCountry": "ES"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "{{ latitude }}",
+            "longitude": "{{ longitude }}"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "{{ artist_name }}",
+          "url": "{{ shop_url }}"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "{{ shop_url }}{{ product.url }}",
+          "price": "{{ product.price | money_without_currency | remove: ',' }}",
+          "priceCurrency": "{{ cart.currency.iso_code }}",
+          "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/SoldOut{% endif %}",
+          "validFrom": "{{ product.created_at | date: '%Y-%m-%d' }}"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "{{ artist_name }}"
+        }
+      }
+    </script>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if template contains 'article' and article -%}
+  <!-- -- ARTICLE SCHEMA -- -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{% if blog.handle == 'exhibitions' %}ExhibitionEvent{% else %}BlogPosting{% endif %}",
+      "headline": "{{ article.title | escape }}",
+      "description": "{{ article.excerpt_or_content | strip_html | truncatewords: 30 | escape }}",
+      "image": "{% if article.image %}https:{{ article.image | image_url: width: 1200 }}{% endif %}",
+      "url": "{{ shop_url }}{{ article.url }}",
+      "datePublished": "{{ article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+      "dateModified": "{{ article.updated_at | default: article.published_at | date: '%Y-%m-%dT%H:%M:%S%z' }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ article.author | default: artist_name }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ business_name }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{% if settings.logo %}https:{{ settings.logo | image_url: width: 600 }}{% endif %}"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ shop_url }}{{ article.url }}"
+      }
+      {%- if blog.handle == 'exhibitions' -%}
+      ,"location": {
+        "@type": "Place",
+        "name": "Málaga, Costa del Sol",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Málaga",
+          "addressCountry": "ES"
+        }
+      }
+      {%- endif -%}
+    }
+  </script>
+{%- endif -%}
+
+{%- if template == 'index' -%}
+  <!-- -- HOMEPAGE FAQ SCHEMA -- -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of artwork does Repka Arts offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repka Arts specializes in original watercolor paintings, oil art, handmade ceramics, custom art commissions, and fine art prints. All artwork is created by artist Maryna Riepnova in Málaga, Spain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer custom art commissions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer custom art commissions in watercolor, oil, ceramics, and mixed media. Perfect for collectors, hotels, offices, and interior designers. Contact us to discuss your vision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you ship artwork internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we ship original artwork, ceramics, and art prints worldwide from our studio in Málaga, Spain. All pieces are securely packaged to arrive in perfect condition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are you located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Repka Arts is based in Málaga, Costa del Sol, Spain. We offer local art events, workshops, and exhibitions in the Málaga region, plus worldwide online sales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer art workshops or classes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we host painting workshops, plein air sessions, and Paint & Sip events in Málaga and Costa del Sol. Check our Events page for upcoming workshops. All skill levels welcome."
+          }
+        }
+      ]
+    }
+  </script>
+{%- endif -%}

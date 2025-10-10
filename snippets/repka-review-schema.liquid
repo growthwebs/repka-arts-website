@@ -1,0 +1,155 @@
+{% comment %}
+  ========================================
+  REPKA ARTS - REVIEW SCHEMA MARKUP
+  Aggregate Ratings & Customer Reviews
+  For Homepage & About Page
+  ========================================
+{% endcomment %}
+
+{%- if template == 'index' or page.handle == 'about' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ shop.name }}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10",
+        "bestRating": "5",
+        "worstRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Anna Deouve"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "We have collaborated with Repka Arts on 2 projects: custom made ceramics for the photoshoot of the menu of our coffee shop and the poster for our grand opening that was designed on the basis of one of Maryna's paintings. Both projects were very important for our business and we are 100% happy with the result.",
+          "datePublished": "2024-08-15",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marina Mnatsakanian"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Maryna es una gran profesional, estoy encantada con el cuadro que me ha hecho y seguramente pediré más, se nota la dedicación a su trabajo. La comunicación ha sido muy fácil también. Recomiendo para quienes buscan arte auténtico y único!",
+          "datePublished": "2024-07-20",
+          "inLanguage": "es",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Yana Serbul"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Это не просто картина, а настоящее произведение искусства. Для меня картины этой художницы - настоящая находка. В них прекрасно все: качество исполнения, стиль, энергетика. Не могу налюбоваться.",
+          "datePublished": "2024-06-10",
+          "inLanguage": "ru",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Isis Fancello"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "J'étais à la recherche d'un truc pour donner un peu de peps à mon salon, et après avoir fouillé partout, j'ai enfin trouvé la perle rare. La livraison, c'était top aussi, je suis en France et tout est arrivé nickel.",
+          "datePublished": "2024-09-05",
+          "inLanguage": "fr",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Vladyslav Apukhtin"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "We recently got a stunning painting, and we couldn't be happier! Maryna is an incredibly talented artist who creates such breathtaking work. Her attention to detail and creativity are truly remarkable. Highly recommend!",
+          "datePublished": "2024-08-28",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Tiffany Cámara"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Maryna is a great professional! We worked with her as a supplier artist for our Stay Salty Málaga store, and we decided to commission a painting to display in our small establishment. The result was much better than expected! We're delighted!",
+          "datePublished": "2024-07-12",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Andres Uribe"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I was looking for something to change up my living room, and after a lot of searching, I finally found the perfect piece of art. Every morning, I walk in, and it just grabs my attention. I love it! Shipping was super easy too.",
+          "datePublished": "2024-09-18",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google"
+          }
+        }
+      ]
+    }
+  </script>
+{%- endif -%}

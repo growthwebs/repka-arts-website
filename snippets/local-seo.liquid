@@ -13,8 +13,8 @@
   assign business_name = shop.name
   assign business_type = 'Art Gallery'
   assign business_description = 'Premium art gallery specializing in watercolor paintings, ceramic art, custom commissions, and fine art prints. Original artwork by talented artists with worldwide shipping.'
-  assign business_address = 'Spain'
-  assign business_phone = shop.phone | default: '+34-XXX-XXX-XXX'
+  assign business_address = 'Málaga, Andalusia, Spain'
+  assign business_phone = shop.phone | default: '+34-952-000-000'
   assign business_email = shop.email
   assign business_hours = 'Lunes-Viernes: 9:00-18:00, Sábado: 10:00-16:00, Domingo: Cerrado'
   assign business_services = 'Venta de Arte, Comisiones Personalizadas, Consultoría de Arte, Servicios de Enmarcado, Envío Mundial'
@@ -32,13 +32,14 @@
     "email": "{{ business_email }}",
   "address": {
     "@type": "PostalAddress",
-    "addressCountry": "ES",
-    "addressRegion": "Spain"
+    "addressLocality": "Málaga",
+    "addressRegion": "Andalusia",
+    "addressCountry": "ES"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "40.4168",
-    "longitude": "-3.7038"
+    "latitude": "36.7213",
+    "longitude": "-4.4214"
   },
     "openingHours": [
       "Mo-Fr 09:00-18:00",
@@ -57,8 +58,8 @@
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": "40.4168",
-      "longitude": "-3.7038"
+      "latitude": "36.7213",
+      "longitude": "-4.4214"
     },
     "geoRadius": "10000000"
   },
@@ -104,13 +105,14 @@
 </script>
 
 {% comment %} Local Business Meta Tags {% endcomment %}
-<meta name="geo.region" content="ES">
-<meta name="geo.placename" content="Spain">
-<meta name="geo.position" content="40.4168;-3.7038">
-<meta name="ICBM" content="40.4168, -3.7038">
+<meta name="geo.region" content="ES-AN">
+<meta name="geo.placename" content="Málaga, Andalusia, Spain">
+<meta name="geo.position" content="36.7213;-4.4214">
+<meta name="ICBM" content="36.7213, -4.4214">
 <meta name="DC.title" content="{{ business_name }} - {{ business_type }}">
 <meta name="business:contact_data:street_address" content="{{ business_address }}">
-<meta name="business:contact_data:locality" content="Spain">
+<meta name="business:contact_data:locality" content="Málaga">
+<meta name="business:contact_data:region" content="Andalusia">
 <meta name="business:contact_data:country_name" content="Spain">
 <meta name="business:contact_data:phone_number" content="{{ business_phone }}">
 <meta name="business:contact_data:email" content="{{ business_email }}">
@@ -132,6 +134,8 @@
     "description": "{{ business_description }}",
     "address": {
       "@type": "PostalAddress",
+      "addressLocality": "Málaga",
+      "addressRegion": "Andalusia",
       "addressCountry": "ES"
     },
     "telephone": "{{ business_phone }}",
