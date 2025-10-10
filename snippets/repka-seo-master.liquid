@@ -114,23 +114,39 @@
           assign seo_title = 'Maryna Riepnova | Oil Watercolor Ceramic Artist Málaga'
         when 'contact'
           assign seo_title = 'Contact Repka Arts | Art Commissions Málaga Spain'
-        when 'commission-an-artwork'
+        when 'commission-an-artwork', 'commission', 'commissions'
           assign seo_title = 'Custom Art Commissions | Oil Watercolor Ceramic Prints'
         when 'events'
           assign seo_title = 'Art Events Málaga | Paint & Sip Costa del Sol'
-        when 'exhibitions'
+        when 'exhibitions', 'exhibitions-shopify'
           assign seo_title = 'Art Exhibitions Málaga | Repka Arts Gallery Shows'
-        when 'exhibitions-shopify'
-          assign seo_title = 'Art Exhibitions Málaga | Repka Arts Gallery Shows'
-        when 'artwork-by-medium'
+        when 'artwork-by-medium', 'by-medium', 'medium'
           assign seo_title = 'Art by Medium | Oil Watercolor Ceramic Prints Málaga'
-        when 'artwork-by-series'
+        when 'artwork-by-series', 'by-series', 'series', 'collections'
           assign seo_title = 'Art Collections | Contemporary Paintings Málaga'
+        when 'shop', 'store', 'all-products'
+          assign seo_title = 'Shop Original Art | Oil Watercolor Ceramic Málaga'
+        when 'gallery', 'portfolio'
+          assign seo_title = 'Art Gallery Málaga | Original Paintings & Ceramics'
+        when 'workshops', 'classes', 'courses'
+          assign seo_title = 'Art Workshops Málaga | Painting Classes Costa del Sol'
+        when 'faq', 'faqs', 'help'
+          assign seo_title = 'FAQ | Art Questions & Shipping Info Málaga'
+        when 'privacy-policy', 'privacy'
+          assign seo_title = 'Privacy Policy | Repka Arts Málaga'
+        when 'terms', 'terms-of-service', 'terms-and-conditions'
+          assign seo_title = 'Terms & Conditions | Repka Arts Málaga'
+        when 'shipping', 'delivery', 'shipping-policy'
+          assign seo_title = 'Shipping & Delivery | Worldwide Art Shipping Málaga'
+        when 'refund-policy', 'returns'
+          assign seo_title = 'Returns & Refunds | Repka Arts Policy'
         else
-          # Generic page fallback
-          assign seo_title = page.title | append: ' | ' | append: business_name
+          # Generic page fallback with better SEO
+          assign seo_title = page.title | append: ' | Repka Arts Málaga'
           if seo_title.size < 50
-            assign seo_title = page.title | append: ' - ' | append: business_name | append: ' Málaga'
+            assign seo_title = page.title | append: ' - Original Art Málaga Spain'
+          elsif seo_title.size > 60
+            assign seo_title = page.title | append: ' | Málaga Artist'
           endif
       endcase
     endif
@@ -250,22 +266,38 @@
           assign seo_description = 'Meet Maryna Riepnova, contemporary artist in Málaga, Spain. Oil paintings, watercolours, ceramics & art prints. Custom commissions & workshops Costa del Sol.'
         when 'contact'
           assign seo_description = 'Contact Maryna Riepnova for custom art commissions, exhibition inquiries, or painting workshops in Málaga, Spain. Worldwide shipping. Costa del Sol artist.'
-        when 'commission-an-artwork'
+        when 'commission-an-artwork', 'commission', 'commissions'
           assign seo_description = 'Commission custom oil, watercolor, ceramic art or prints by Maryna Riepnova. Personalized artwork for collectors, hotels, and designers. Málaga, Spain.'
         when 'events'
           assign seo_description = 'Join art events and painting workshops in Málaga and Costa del Sol. Plein air sessions, Paint & Sip, creative classes by Maryna Riepnova. All levels welcome.'
         when 'exhibitions', 'exhibitions-shopify'
           assign seo_description = 'View current and past art exhibitions by Maryna Riepnova in Málaga and Costa del Sol. Contemporary watercolor, oil, and ceramic art gallery shows and events.'
-        when 'artwork-by-medium'
+        when 'artwork-by-medium', 'by-medium', 'medium'
           assign seo_description = 'Browse original art by medium: oil paintings, watercolours, ceramics & art prints by Maryna Riepnova. Málaga artist. Custom commissions. Worldwide shipping.'
-        when 'artwork-by-series'
+        when 'artwork-by-series', 'by-series', 'series', 'collections'
           assign seo_description = 'Explore art collections and series by Maryna Riepnova. Contemporary paintings and ceramics from Málaga, Spain. Original artwork for collectors worldwide.'
+        when 'shop', 'store', 'all-products'
+          assign seo_description = 'Shop original oil paintings, watercolours, ceramics & art prints by Maryna Riepnova. Contemporary art from Málaga, Spain. Custom commissions. Worldwide shipping.'
+        when 'gallery', 'portfolio'
+          assign seo_description = 'Explore the art gallery of Maryna Riepnova in Málaga. Contemporary oil paintings, watercolours & ceramic artworks. Visit our Costa del Sol gallery. Shop online.'
+        when 'workshops', 'classes', 'courses'
+          assign seo_description = 'Art workshops and painting classes in Málaga by Maryna Riepnova. Learn watercolor, oil painting techniques. Beginner to advanced. Costa del Sol art courses.'
+        when 'faq', 'faqs', 'help'
+          assign seo_description = 'Frequently asked questions about Repka Arts. Shipping info, custom commissions, art care, framing & delivery. Málaga artist answers. Worldwide shipping available.'
+        when 'privacy-policy', 'privacy'
+          assign seo_description = 'Privacy policy for Repka Arts online store. How we protect your personal data when purchasing original art from Málaga. Secure checkout. GDPR compliant.'
+        when 'terms', 'terms-of-service', 'terms-and-conditions'
+          assign seo_description = 'Terms and conditions for Repka Arts. Purchase terms, shipping policies, returns & refunds for original artwork. Málaga artist. Read before ordering art online.'
+        when 'shipping', 'delivery', 'shipping-policy'
+          assign seo_description = 'Shipping and delivery information for Repka Arts. Worldwide art shipping from Málaga, Spain. Secure packaging, tracking, insurance. Delivery times & costs.'
+        when 'refund-policy', 'returns'
+          assign seo_description = 'Returns and refund policy for Repka Arts. How to return artwork, refund process, conditions. Original art from Málaga. Customer satisfaction guaranteed.'
         else
-          # Use page content or generic
+          # Use page content or generate with better SEO
           if page.content != blank
             assign seo_description = page.content | strip_html | truncatewords: 22, '...'
           else
-            assign seo_description = page.title | append: ' - Repka Arts, original artwork by Maryna Riepnova in Málaga, Spain. Watercolor paintings, ceramics, custom commissions.'
+            assign seo_description = page.title | append: ' by Repka Arts. Original oil paintings, watercolours & ceramics from Málaga, Spain. Contemporary artist Maryna Riepnova. Worldwide shipping.'
           endif
       endcase
     endif
