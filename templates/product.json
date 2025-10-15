@@ -117,6 +117,7 @@
             "product_inventory_Jz3T7H": {
               "type": "product-inventory",
               "name": "t:names.product_inventory",
+              "disabled": true,
               "settings": {
                 "inventory_threshold": 10,
                 "show_inventory_quantity": true,
