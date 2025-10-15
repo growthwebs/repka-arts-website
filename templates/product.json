@@ -96,7 +96,7 @@
               "type": "price",
               "settings": {
                 "show_sale_price_first": true,
-                "show_installments": true,
+                "show_installments": false,
                 "show_tax_info": true,
                 "type_preset": "h5",
                 "width": "100%",
@@ -109,6 +109,19 @@
                 "color": "var(--color-foreground)",
                 "padding-block-start": 0,
                 "padding-block-end": 50,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_inventory_Jz3T7H": {
+              "type": "product-inventory",
+              "name": "t:names.product_inventory",
+              "settings": {
+                "inventory_threshold": 10,
+                "show_inventory_quantity": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -447,6 +460,7 @@
           "block_order": [
             "product_title_9WaLn7",
             "price_a7krng",
+            "product_inventory_Jz3T7H",
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
