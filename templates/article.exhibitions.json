@@ -1648,7 +1648,7 @@
       "name": "Series",
       "settings": {
         "collection_list": [
-          "signature-paintings",
+          "oil-paintings",
           "watercolours",
           "ceramics",
           "mixed-media"
