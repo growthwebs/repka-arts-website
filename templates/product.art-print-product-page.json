@@ -340,7 +340,7 @@
                     "text_wy48ym": {
                       "type": "text",
                       "settings": {
-                        "text": "",
+                        "text": "<p>{{ closest.product.metafields.custom.art_print_premium_framing | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
