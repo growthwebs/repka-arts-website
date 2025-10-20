@@ -22,7 +22,7 @@
             "open_in_new_tab": false,
             "content_direction": "row",
             "vertical_on_mobile": true,
-            "horizontal_alignment": "space-between",
+            "horizontal_alignment": "center",
             "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
@@ -185,8 +185,8 @@
                 "button_type_preset": "paragraph",
                 "padding-block-start": 0,
                 "padding-block-end": 24,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-start": 12,
+                "padding-inline-end": 12
               },
               "blocks": {}
             }
