@@ -397,7 +397,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Framing",
+                    "heading": "A note on 'Handmade'",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -406,7 +406,7 @@
                     "text_kf46N9": {
                       "type": "text",
                       "settings": {
-                        "text": "{{ closest.product.metafields.shopify[\"frame-style\"] | metafield_tag: field: 'label' }}",
+                        "text": "<p>This piece is 100% handmade and one-of-a-kind. Please expect slight, beautiful variations in glaze and form that are the celebrated mark of a truly handcrafted item.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
