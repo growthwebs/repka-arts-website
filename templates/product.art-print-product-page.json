@@ -292,7 +292,7 @@
                   "name": "t:names.accordion_row",
                   "settings": {
                     "heading": "Sizing & Borders",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
@@ -366,13 +366,95 @@
                   "block_order": [
                     "text_wy48ym"
                   ]
+                },
+                "accordion_row_MJLjMe": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "About this print",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_rUNzV7": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>This is an official, open-edition fine art print of the original painting.</p><p>It has been professionally reproduced to faithfully capture every detail and colour of Maryna's original artwork. Please note that the artist's signature on the print is a high-quality reproduction of the original signature.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_rUNzV7"
+                  ]
+                },
+                "accordion_row_yR8PDm": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Secure Shipping & Packaging",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_Pm7n8M": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>We take extreme care in getting your framed art to you safely.</p><p>Your framed print is sealed and placed in a robust, reinforced cardboard box, with protective padding to ensure it arrives in perfect, ready-to-hang condition.</p><p>This item is produced and shipped by our global partner, Gelato, ensuring it is created closer to you for faster, smarter, and more sustainable delivery.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_Pm7n8M"
+                  ]
                 }
               },
               "block_order": [
                 "accordion_row_NdBezV",
                 "accordion_row_HzqJxU",
                 "accordion_row_nyPPaV",
-                "accordion_row_Vkgpdm"
+                "accordion_row_Vkgpdm",
+                "accordion_row_MJLjMe",
+                "accordion_row_yR8PDm"
               ]
             }
           },
