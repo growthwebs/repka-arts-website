@@ -252,7 +252,7 @@
                   "name": "t:names.accordion_row",
                   "settings": {
                     "heading": "Print & Material Quality",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
