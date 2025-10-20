@@ -290,9 +290,8 @@
                 "accordion_row_nyPPaV": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
-                  "disabled": true,
                   "settings": {
-                    "heading": "Medium",
+                    "heading": "Sizing & Borders",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -301,7 +300,7 @@
                     "text_Xi7X4A": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.medium.value }}</p>",
+                        "text": "<p>{{ closest.product.metafields.custom.sizing_borders | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -331,9 +330,8 @@
                 "accordion_row_Vkgpdm": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
-                  "disabled": true,
                   "settings": {
-                    "heading": "Place and date",
+                    "heading": "Premium framing",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
@@ -342,7 +340,7 @@
                     "text_wy48ym": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.place_and_date.value }}</p>",
+                        "text": "",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
