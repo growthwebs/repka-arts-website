@@ -116,7 +116,7 @@
         "text_EFNJpa": {
           "type": "text",
           "settings": {
-            "text": "<p>Enjoy 10% discount on originals this autumn on Repka Arts,</p>",
+            "text": "<p>Enjoy 10% discount on originals and ceramics this autumn on Repka Arts,</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -142,7 +142,6 @@
       "block_order": [
         "text_EFNJpa"
       ],
-      "disabled": true,
       "name": "t:names.marquee_section",
       "settings": {
         "movement_direction": "normal",
