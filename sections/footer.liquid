@@ -33,13 +33,20 @@
 {% stylesheet %}
   /* Mobile Footer Centering - Only on mobile devices */
   @media screen and (max-width: 749px) {
-    /* Center all footer content horizontally */
-    .section-wrapper[tag='footer'] .section-content-wrapper {
+    /* Center the Links group specifically on mobile */
+    .section-wrapper[tag='footer'] .layout-panel-flex--column {
+      align-items: center !important;
+    }
+
+    /* Target the Links group container */
+    .section-wrapper[tag='footer'] .layout-panel-flex--column > *:first-child {
+      align-self: center !important;
       text-align: center !important;
     }
 
-    /* Center all groups/blocks within footer */
-    .section-wrapper[tag='footer'] .layout-panel-flex {
+    /* Center the Menus sub-group within Links */
+    .section-wrapper[tag='footer'] .layout-panel-flex--column > *:first-child .layout-panel-flex {
+      justify-content: center !important;
       align-items: center !important;
     }
 
@@ -116,16 +123,6 @@
     }
 
     .section-wrapper[tag='footer'] .menu--accordion .menu__item {
-      text-align: center !important;
-    }
-
-    /* Center any group content */
-    .section-wrapper[tag='footer'] .group {
-      text-align: center !important;
-    }
-
-    /* Override any existing left alignment */
-    .section-wrapper[tag='footer'] * {
       text-align: center !important;
     }
 
