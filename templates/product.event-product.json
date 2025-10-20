@@ -301,7 +301,7 @@
                 "accordion_row_NdBezV": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Description",
+                    "heading": "The experience",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -336,10 +336,130 @@
                   "block_order": [
                     "text_n7A9da"
                   ]
+                },
+                "accordion_row_RnT4pH": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Skill level",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_HNJGab": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p><strong>Perfect for everyone!</strong> This workshop is designed for all skill levels. Whether you haven't picked up a brush since school or you're a seasoned painter, Maryna will guide you.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-secondary--family)",
+                        "font_size": "var(--font-size--body-lg)",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 12,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_HNJGab"
+                  ]
+                },
+                "accordion_row_kqD7tP": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "What to bring",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_d4RzXj": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>{{ closest.product.metafields.custom.event_what_to_bring | metafield_tag }}</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-secondary--family)",
+                        "font_size": "var(--font-size--body-lg)",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 12,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_d4RzXj"
+                  ]
+                },
+                "accordion_row_gBxBBA": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Booking & Cancellation Policy",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_X7w7aM": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Spaces are limited and this ticket secures your spot for the specified date.</p><ul><li><strong>How to book:</strong> Add this event to your cart and check out. You will receive a full confirmation email with all the details within 24 hours.</li><li><strong>Cancellations:</strong> Tickets are non-refundable. However, we understand plans change. If you give us at least 48 hours' notice, we will happily credit your ticket towards a future workshop date.</li></ul>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-secondary--family)",
+                        "font_size": "var(--font-size--body-lg)",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 12,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_X7w7aM"
+                  ]
                 }
               },
               "block_order": [
-                "accordion_row_NdBezV"
+                "accordion_row_NdBezV",
+                "accordion_row_RnT4pH",
+                "accordion_row_kqD7tP",
+                "accordion_row_gBxBBA"
               ]
             }
           },
