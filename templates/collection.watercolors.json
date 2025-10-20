@@ -532,7 +532,7 @@
       },
       "name": "Featured collection: Season highlights",
       "settings": {
-        "collection": "wild-at-heart-prints",
+        "collection": "balanced-prints",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 8,
