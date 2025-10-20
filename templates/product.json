@@ -446,7 +446,7 @@
                     "text_qrwVHA": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Includes a <strong>Certificate of Authenticity</strong> hand-signed by the artist, Maryna Riepnova. The painting is also hand-signed on the front/back.</p>",
+                        "text": "<p>Includes a <em>Certificate of Authenticity</em> hand-signed by the artist, Maryna Riepnova. The painting is also hand-signed on the front/back.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -486,7 +486,7 @@
                     "text_nny9HM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Each original painting is professionally packaged with extreme care to ensure safe transit. We offer Free Shipping on all originals.</p>",
+                        "text": "<p>Each original painting is professionally packaged with extreme care to ensure safe transit. We offer <em>Free Shipping</em> on all originals.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
