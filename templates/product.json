@@ -367,6 +367,46 @@
                     "text_wy48ym"
                   ]
                 },
+                "accordion_row_cMrmYx": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Framing",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "text_kf46N9": {
+                      "type": "text",
+                      "settings": {
+                        "text": "{{ closest.product.metafields.shopify[\"frame-style\"] | metafield_tag: field: 'label' }}",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_kf46N9"
+                  ]
+                },
                 "accordion_row_iJM37V": {
                   "type": "_accordion-row",
                   "disabled": true,
@@ -453,6 +493,7 @@
                 "accordion_row_HzqJxU",
                 "accordion_row_nyPPaV",
                 "accordion_row_Vkgpdm",
+                "accordion_row_cMrmYx",
                 "accordion_row_iJM37V",
                 "accordion_row_pLFDcD"
               ]
