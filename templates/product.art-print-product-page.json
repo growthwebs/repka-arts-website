@@ -251,7 +251,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Print & Paper Quality",
+                    "heading": "Print & Material Quality",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
