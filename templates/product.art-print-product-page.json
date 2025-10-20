@@ -250,9 +250,8 @@
                 "accordion_row_HzqJxU": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
-                  "disabled": true,
                   "settings": {
-                    "heading": "Dimensions",
+                    "heading": "Print & Paper Quality",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
@@ -261,7 +260,7 @@
                     "text_RU37zW": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.dimensions.value }}</p>",
+                        "text": "<p>This is a premium fine art 'giclée' print, created to museum-quality standards.</p><p>It is printed on a thick, 200 gsm (5.9 oz/yd²) archival, acid-free matte paper. This heavyweight paper has a smooth, uncoated finish that feels luxurious and ensures the print will not yellow or fade over time.</p><p>We use archival-quality inks to capture the full vibrant colour and subtle detail of Maryna's original <strong>artwork</strong>. The result is a stunning, fade-resistant print that will last a lifetime.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
