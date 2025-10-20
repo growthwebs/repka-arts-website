@@ -170,7 +170,7 @@
               "type": "text",
               "name": "Date",
               "settings": {
-                "text": "<p><strong>Time: </strong> </p>",
+                "text": "<p><strong>Time: </strong> {{ closest.product.metafields.custom.event_time_of_start | metafield_tag }} – {{ closest.product.metafields.custom.event_time_of_end | metafield_tag }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
