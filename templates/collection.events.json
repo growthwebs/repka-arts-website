@@ -602,8 +602,8 @@
             "form_alignment": "center",
             "padding_top": 0,
             "padding_bottom": 24,
-            "padding_right": 0,
-            "padding_left": 0
+            "padding_right": 12,
+            "padding_left": 12
           }
         }
       },
@@ -868,9 +868,9 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
