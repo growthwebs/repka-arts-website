@@ -427,7 +427,7 @@
                     "text_X7w7aM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Spaces are limited and this ticket secures your spot for the specified date.</p><ul><li><strong>How to book:</strong> Add this event to your cart and check out. You will receive a full confirmation email with all the details within 24 hours.</li><li><strong>Cancellations:</strong> Tickets are non-refundable. However, we understand plans change. If you give us at least 48 hours' notice, we will happily credit your ticket towards a future workshop date.</li><li>Depending on the case, we can make an exception and return your investment.</li></ul>",
+                        "text": "<p>Spaces are limited and this ticket secures your spot for the specified date.</p><ul><li><strong>How to book:</strong> Add this event to your cart and check out. You will receive a full confirmation email with all the details within 24 hours.</li><li><strong>Cancellations:</strong> Tickets are non-refundable. However, we understand plans change. If you give us at least 48 hours' notice, we will happily credit your ticket towards a future workshop date.</li><li>Depending on the case, we can make an exception and return your investment.</li><li>Write us an email to: <a href=\"mailto:classes@repkaarts.com\" target=\"_blank\" title=\"mailto:classes@repkaarts.com\">classes@repkaarts.com</a> explaining your case for any cancellation.</li></ul>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
