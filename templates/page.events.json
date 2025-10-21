@@ -409,7 +409,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-end": 64
       }
     },
     "product_list_XRMWYc": {
@@ -656,7 +656,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-end": 64
       }
     }
   },
