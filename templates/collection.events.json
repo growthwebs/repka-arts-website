@@ -618,7 +618,7 @@
         "text_QprRVQ": {
           "type": "text",
           "settings": {
-            "text": "<p>Sign up for our local events newsletter. You'll get exclusive updates on new workshop dates, plein-air meetups, and private exhibitions here in Málaga & Costa del Sol.</p>",
+            "text": "<p>Sign up for exclusive updates on new workshop dates, plein air meetups, and local exhibitions here in Málaga & Costa del Sol.</p>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
