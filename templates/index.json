@@ -1555,7 +1555,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "All events",
-                "link": "shopify://collections/events",
+                "link": "shopify://pages/events",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
