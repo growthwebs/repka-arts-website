@@ -567,7 +567,7 @@
       },
       "name": "t:names.products_editorial",
       "settings": {
-        "collection": "events",
+        "collection": "art-events",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 16,
