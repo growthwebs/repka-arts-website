@@ -93,7 +93,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#0000008e",
+        "overlay_color": "#0000008f",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": false,
@@ -149,6 +149,7 @@
         "text_tqQTNE",
         "divider_agfR7J"
       ],
+      "disabled": true,
       "name": "Collection heading",
       "settings": {
         "content_direction": "column",
@@ -447,7 +448,7 @@
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "color_scheme": "scheme-1",
-        "padding-block-start": 0,
+        "padding-block-start": 64,
         "padding-block-end": 64
       }
     },
