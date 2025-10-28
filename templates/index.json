@@ -116,7 +116,7 @@
         "text_EFNJpa": {
           "type": "text",
           "settings": {
-            "text": "<p>Enjoy 10% discount on originals and ceramics this autumn on Repka Arts,</p>",
+            "text": "<p>Don't miss out our November SALE · Enjoy 30% discount on selected products ·</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -137,10 +137,22 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "icon_h8RBye": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "width": 24,
+            "link": "shopify://collections/buy-art-on-sale",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_EFNJpa"
+        "text_EFNJpa",
+        "icon_h8RBye"
       ],
       "name": "t:names.marquee_section",
       "settings": {
