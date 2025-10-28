@@ -1192,7 +1192,7 @@
       "block_order": [
         "button_tAVPhT"
       ],
-      "name": "t:names.custom_section",
+      "name": "Reviews button",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -1929,7 +1929,7 @@
       "block_order": [
         "button_UH3GnN"
       ],
-      "name": "t:names.custom_section",
+      "name": "Exhibitions button",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
