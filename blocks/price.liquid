@@ -55,7 +55,7 @@
     %}
   {% endif %}
 
-  {% if block_settings.show_tax_info %}
+  {% if block_settings.show_tax_info and product_resource.available %}
     <div class="tax-note">
       {%- if cart.duties_included and cart.taxes_included -%}
         {{ 'content.duties_and_taxes_included' | t }}
