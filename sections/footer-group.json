@@ -269,9 +269,9 @@
                     "text_alignment": "left",
                     "form_alignment": "flex-start",
                     "padding_top": 8,
-                    "padding_bottom": 24,
-                    "padding_right": 0,
-                    "padding_left": 0
+                    "padding_bottom": 8,
+                    "padding_right": 8,
+                    "padding_left": 8
                   }
                 }
               },
