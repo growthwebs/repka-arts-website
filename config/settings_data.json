@@ -41,6 +41,7 @@
     "type_case_h6": "uppercase",
     "page_width": "normal",
     "badge_corner_radius": 16,
+    "badge_sale_color_scheme": "scheme-3",
     "badge_sold_out_color_scheme": "scheme-5",
     "badge_font_family": "body",
     "badge_text_transform": "none",
