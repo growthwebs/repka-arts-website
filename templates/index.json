@@ -720,7 +720,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Cannot decide? Check out my art prints!</h2>",
+                "text": "<h2>Check out my art prints!</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
