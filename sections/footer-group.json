@@ -235,7 +235,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Sign up for our newsletter</h2>",
+                    "text": "<h2>Sign up</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
