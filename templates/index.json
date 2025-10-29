@@ -65,7 +65,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Don' miss out our November SALE. Enjoy 30% discount on selected products.</p>",
+            "text": "<p>Enjoy 30% discount on selected products.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
