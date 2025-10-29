@@ -417,7 +417,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>{{ closest.collection.title }}</h2>",
+                "text": "<h2>Don't miss out the Sale</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -551,7 +551,7 @@
       },
       "name": "Featured collection: Season highlights",
       "settings": {
-        "collection": "season-highlights",
+        "collection": "buy-art-on-sale",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 8,
