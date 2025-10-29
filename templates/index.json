@@ -91,7 +91,7 @@
           "type": "button",
           "name": "hero-button",
           "settings": {
-            "label": "Shop now",
+            "label": "Go to Sale now",
             "link": "shopify://collections/buy-art-on-sale",
             "open_in_new_tab": false,
             "style_class": "button",
