@@ -2,7 +2,7 @@
   ========================================
   REPKA ARTS - MASTER SEO SYSTEM
   God-Level SEO for Artist E-Commerce
-  Optimized for Málaga, Costa del Sol
+  Global Presence Optimization
   ========================================
 
   This snippet handles ALL SEO meta tags, titles, descriptions
@@ -15,6 +15,7 @@
   # ============================================
   assign artist_name = 'Maryna Riepnova'
   assign business_name = shop.name
+  assign shop_url = shop.url | default: request.origin
 
   # ============================================
   # PAGE TITLE OPTIMIZATION (50-60 chars)
@@ -25,64 +26,117 @@
   if template == 'index'
     assign seo_title = 'seo.homepage_title' | t
     if seo_title == 'seo.homepage_title'
-      assign seo_title = 'Art by Maryna Riepnova | Oil Watercolor Ceramic Málaga'
+      assign seo_title = 'Art by Maryna Riepnova | Oil Watercolor Ceramic Art'
     endif
 
-    # Product Pages
+    # Product Pages - God-Level SEO Optimization
   elsif template contains 'product' and product
     assign seo_title = product.title
+    assign product_medium_detected = false
 
-    # Add medium-specific keywords
+    # Add medium-specific keywords (global focus, not location-specific)
     if product.tags contains 'watercolor' or product.title contains 'watercolor' or product.title contains 'Watercolor'
-      assign seo_title = seo_title | append: ' - Watercolor Art'
+      assign seo_title = seo_title | append: ' - Original Watercolor Art'
+      assign product_medium_detected = true
     elsif product.tags contains 'oil' or product.title contains 'Oil' or product.title contains 'oil'
-      assign seo_title = seo_title | append: ' - Oil Painting'
-    elsif product.tags contains 'ceramic' or product.title contains 'Ceramic' or product.title contains 'ceramic'
-      assign seo_title = seo_title | append: ' - Ceramic Art'
+      assign seo_title = seo_title | append: ' - Original Oil Painting'
+      assign product_medium_detected = true
+    elsif product.tags contains 'ceramic' or product.title contains 'ceramic' or product.title contains 'Ceramic'
+      assign seo_title = seo_title | append: ' - Handmade Ceramic Art'
+      assign product_medium_detected = true
     elsif product.tags contains 'print' or product.title contains 'Print' or product.title contains 'print'
-      assign seo_title = seo_title | append: ' - Art Print'
+      assign seo_title = seo_title | append: ' - Fine Art Print'
+      assign product_medium_detected = true
     elsif product.type == 'Events'
-      assign seo_title = seo_title | append: ' - Málaga Event'
+      assign seo_title = seo_title | append: ' - Art Workshop'
+      assign product_medium_detected = true
     else
+      assign seo_title = seo_title | append: ' - Original Artwork'
+    endif
+
+    # Add brand for global recognition (not location-specific)
+    if seo_title.size < 50
+      assign seo_title = seo_title | append: ' | Repka Arts'
+    elsif seo_title.size < 55 and not seo_title contains 'Repka Arts'
       assign seo_title = seo_title | append: ' | Repka Arts'
     endif
 
-    # Ensure 50-60 chars
+    # Ensure 50-60 chars (final check)
     if seo_title.size > 60
-      assign seo_title = product.title | truncate: 45, '...' | append: ' | Repka Arts'
-    endif
-
-    # Collection Pages
-  elsif template contains 'collection' and collection
-    assign collection_lower = collection.title | downcase
-
-    if collection.handle == 'events'
-      assign seo_title = 'Art Events Málaga | Paint & Sip Costa del Sol'
-    elsif collection_lower contains 'watercolor' or collection_lower contains 'watercolour'
-      assign seo_title = collection.title | append: ' - Watercolor Art Málaga'
-    elsif collection_lower contains 'oil'
-      assign seo_title = collection.title | append: ' - Oil Paintings Málaga'
-    elsif collection_lower contains 'ceramic'
-      assign seo_title = collection.title | append: ' - Ceramic Art Spain'
-    elsif collection_lower contains 'print'
-      assign seo_title = collection.title | append: ' - Art Prints Online'
-    else
-      assign seo_title = collection.title | append: ' | Repka Arts'
-    endif
-
-    # Ensure 50-60 chars
-    if seo_title.size > 60
-      assign seo_title = collection.title | truncate: 38, '...' | append: ' | Repka Arts'
+      assign seo_title = product.title | truncate: 40, '...' | append: ' | Original Art'
+      if seo_title.size > 60
+        assign seo_title = product.title | truncate: 45, '...' | append: ' | Repka Arts'
+      endif
     elsif seo_title.size < 50
       unless seo_title contains 'Repka Arts'
         assign seo_title = seo_title | append: ' | Repka Arts'
       endunless
     endif
 
-    # Blog/Article Pages
+    # Collection Pages - God-Level SEO Optimization (Global Focus)
+  elsif template contains 'collection' and collection
+    assign collection_lower = collection.title | downcase
+    assign collection_medium_detected = false
+
+    # Enhanced medium-specific keywords (events are location-specific: Málaga, Costa del Sol)
+    if collection.handle == 'events'
+      assign seo_title = 'Art Events Málaga | Paint and Sip Costa del Sol | Repka Arts'
+      assign collection_medium_detected = true
+    elsif collection_lower contains 'watercolor' or collection_lower contains 'watercolour'
+      assign seo_title = collection.title | append: ' - Original Watercolors'
+      assign collection_medium_detected = true
+    elsif collection_lower contains 'oil'
+      assign seo_title = collection.title | append: ' - Original Oil Paintings'
+      assign collection_medium_detected = true
+    elsif collection_lower contains 'ceramic'
+      assign seo_title = collection.title | append: ' - Handmade Ceramics'
+      assign collection_medium_detected = true
+    elsif collection_lower contains 'print'
+      assign seo_title = collection.title | append: ' - Fine Art Prints'
+      assign collection_medium_detected = true
+    else
+      assign seo_title = collection.title | append: ' - Original Art Collection'
+    endif
+
+    # Add brand for global recognition (skip for events as location is already included)
+    if collection.handle != 'events'
+      if seo_title.size < 50
+        assign seo_title = seo_title | append: ' | Repka Arts'
+      elsif seo_title.size < 55 and not seo_title contains 'Repka Arts'
+        assign seo_title = seo_title | append: ' | Repka Arts'
+      endif
+    endif
+
+    # Final length validation (50-60 chars)
+    if collection.handle == 'events'
+      # Events title already includes location, ensure optimal length
+      if seo_title.size > 60
+        assign seo_title = 'Art Events Málaga | Paint and Sip Costa del Sol'
+        if seo_title.size > 60
+          assign seo_title = 'Art Events Málaga | Costa del Sol'
+        endif
+      elsif seo_title.size < 50
+        # If too short, add brand
+        assign seo_title = seo_title | append: ' | Repka Arts'
+      endif
+    else
+      # Other collections
+      if seo_title.size > 60
+        assign seo_title = collection.title | truncate: 35, '...' | append: ' | Original Art'
+        if seo_title.size > 60
+          assign seo_title = collection.title | truncate: 38, '...' | append: ' | Repka Arts'
+        endif
+      elsif seo_title.size < 50
+        unless seo_title contains 'Repka Arts'
+          assign seo_title = seo_title | append: ' | Repka Arts'
+        endunless
+      endif
+    endif
+
+    # Blog/Article Pages (Global Focus)
   elsif template contains 'article' and article
     if blog.handle == 'exhibitions'
-      assign seo_title = article.title | append: ' - Exhibition Málaga'
+      assign seo_title = article.title | append: ' - Art Exhibition'
     else
       assign seo_title = article.title | append: ' | Art Blog'
     endif
@@ -91,10 +145,10 @@
       assign seo_title = article.title | truncate: 45, '...' | append: ' | Blog'
     endif
 
-    # Blog List Pages
+    # Blog List Pages (Global Focus)
   elsif template contains 'blog' and blog
     if blog.handle == 'exhibitions'
-      assign seo_title = 'Art Exhibitions Málaga | Repka Arts Gallery Shows'
+      assign seo_title = 'Art Exhibitions Málaga | Costa del Sol Shows'
     else
       assign seo_title = blog.title | append: ' | Repka Arts Blog'
     endif
@@ -111,42 +165,42 @@
       # Hardcoded optimized titles for each page
       case page.handle
         when 'about'
-          assign seo_title = 'Maryna Riepnova | Oil Watercolor Ceramic Artist Málaga'
+          assign seo_title = 'Maryna Riepnova | Oil Watercolor Ceramic Artist'
         when 'contact'
-          assign seo_title = 'Contact Repka Arts | Art Commissions Málaga Spain'
+          assign seo_title = 'Contact Repka Arts | Art Commissions Worldwide'
         when 'commission-an-artwork', 'commission', 'commissions'
           assign seo_title = 'Custom Art Commissions | Oil Watercolor Ceramic Prints'
         when 'events'
-          assign seo_title = 'Art Events Málaga | Paint & Sip Costa del Sol'
+          assign seo_title = 'Art Events and Workshops | Paint and Sip Classes'
         when 'exhibitions', 'exhibitions-shopify'
-          assign seo_title = 'Art Exhibitions Málaga | Repka Arts Gallery Shows'
+          assign seo_title = 'Art Exhibitions | Repka Arts Gallery Shows'
         when 'artwork-by-medium', 'by-medium', 'medium'
-          assign seo_title = 'Art by Medium | Oil Watercolor Ceramic Prints Málaga'
+          assign seo_title = 'Art by Medium | Oil Watercolor Ceramic Prints'
         when 'artwork-by-series', 'by-series', 'series', 'collections'
-          assign seo_title = 'Art Collections | Contemporary Paintings Málaga'
+          assign seo_title = 'Art Collections | Contemporary Paintings'
         when 'shop', 'store', 'all-products'
-          assign seo_title = 'Shop Original Art | Oil Watercolor Ceramic Málaga'
+          assign seo_title = 'Shop Original Art | Oil Watercolor Ceramic'
         when 'gallery', 'portfolio'
-          assign seo_title = 'Art Gallery Málaga | Original Paintings & Ceramics'
+          assign seo_title = 'Art Gallery | Original Paintings and Ceramics'
         when 'workshops', 'classes', 'courses'
-          assign seo_title = 'Art Workshops Málaga | Painting Classes Costa del Sol'
+          assign seo_title = 'Art Workshops | Painting Classes Online'
         when 'faq', 'faqs', 'help'
-          assign seo_title = 'FAQ | Art Questions & Shipping Info Málaga'
+          assign seo_title = 'FAQ | Art Questions and Shipping Info'
         when 'privacy-policy', 'privacy'
-          assign seo_title = 'Privacy Policy | Repka Arts Málaga'
+          assign seo_title = 'Privacy Policy | Repka Arts'
         when 'terms', 'terms-of-service', 'terms-and-conditions'
-          assign seo_title = 'Terms & Conditions | Repka Arts Málaga'
+          assign seo_title = 'Terms and Conditions | Repka Arts'
         when 'shipping', 'delivery', 'shipping-policy'
-          assign seo_title = 'Shipping & Delivery | Worldwide Art Shipping Málaga'
+          assign seo_title = 'Shipping and Delivery | Worldwide Art Shipping'
         when 'refund-policy', 'returns'
-          assign seo_title = 'Returns & Refunds | Repka Arts Policy'
+          assign seo_title = 'Returns and Refunds | Repka Arts Policy'
         else
-          # Generic page fallback with better SEO
-          assign seo_title = page.title | append: ' | Repka Arts Málaga'
+          # Generic page fallback with better SEO (Global Focus)
+          assign seo_title = page.title | append: ' | Repka Arts'
           if seo_title.size < 50
-            assign seo_title = page.title | append: ' - Original Art Málaga Spain'
+            assign seo_title = page.title | append: ' - Original Art'
           elsif seo_title.size > 60
-            assign seo_title = page.title | append: ' | Málaga Artist'
+            assign seo_title = page.title | append: ' | Repka Arts'
           endif
       endcase
     endif
@@ -156,12 +210,15 @@
       assign seo_title = page.title | truncate: 40, '...' | append: ' | Repka Arts'
     endif
 
-    # Cart, Search, 404, etc.
+    # Cart, Search, 404, etc. (handled in description section now)
   else
-    assign seo_title = page_title
-    unless seo_title contains business_name
-      assign seo_title = seo_title | append: ' | ' | append: business_name
-    endunless
+    # Only set title if not already set in description section
+    if seo_title == blank
+      assign seo_title = page_title
+      unless seo_title contains business_name
+        assign seo_title = seo_title | append: ' | ' | append: business_name
+      endunless
+    endif
   endif
 
   # Add pagination info
@@ -179,65 +236,149 @@
   # ============================================
   assign seo_description = ''
 
-  # Homepage
+  # Homepage (Global Focus)
   if template == 'index'
     assign seo_description = 'seo.homepage_description' | t
     if seo_description == 'seo.homepage_description'
-      assign seo_description = 'Original oil paintings, watercolours, ceramics & art prints by Maryna Riepnova in Málaga, Spain. Custom commissions & painting workshops. Worldwide shipping.'
+      assign seo_description = 'Original oil paintings, watercolours, ceramics and art prints by Maryna Riepnova. Custom commissions and workshops available. Contemporary art for collectors worldwide. Worldwide shipping.'
     endif
 
-    # Product Pages
+    # Product Pages - God-Level Description Optimization (Global Focus)
   elsif template contains 'product' and product
+    assign product_medium_desc = ''
+    assign product_type_desc = 'original artwork'
+    
+    # Detect medium for better description
+    if product.tags contains 'watercolor' or product.title contains 'watercolor' or product.title contains 'Watercolor'
+      assign product_medium_desc = 'original watercolor painting'
+      assign product_type_desc = 'watercolor painting'
+    elsif product.tags contains 'oil' or product.title contains 'Oil' or product.title contains 'oil'
+      assign product_medium_desc = 'original oil painting'
+      assign product_type_desc = 'oil painting'
+    elsif product.tags contains 'ceramic' or product.title contains 'ceramic' or product.title contains 'Ceramic'
+      assign product_medium_desc = 'handmade ceramic artwork'
+      assign product_type_desc = 'ceramic art'
+    elsif product.tags contains 'print' or product.title contains 'Print' or product.title contains 'print'
+      assign product_medium_desc = 'fine art print'
+      assign product_type_desc = 'art print'
+    endif
+    
     if product.description != blank
-      assign seo_description = product.description | strip_html | truncatewords: 25, '...'
+      assign seo_description = product.description | strip_html | truncate: 155, '...'
     else
-      # Generate description from product info
+      # Generate enhanced description with global focus (location mentioned but not primary)
       if product.type == 'Events'
-        assign seo_description = 'Join ' | append: product.title | append: ' in Málaga. Art workshop and painting event by Maryna Riepnova. Book your spot for this creative experience.'
+        assign seo_description = 'Join ' | append: product.title | append: ' art workshop by Maryna Riepnova. Creative painting events and classes. All levels welcome. Book your spot.'
+      elsif product_medium_desc != blank
+        assign seo_description = 'Original ' | append: product_medium_desc | append: ' ' | append: product.title | append: ' by Maryna Riepnova. Unique art for collectors worldwide. Handcrafted in Spain. Worldwide shipping available.'
       else
-        assign seo_description = 'Original ' | append: product.title | append: ' by Maryna Riepnova. Handcrafted in Málaga, Spain. Worldwide shipping available. Unique art for collectors.'
+        assign seo_description = 'Original ' | append: product.title | append: ' by Maryna Riepnova. Unique artwork for collectors worldwide. Handcrafted original art. Worldwide shipping available.'
       endif
     endif
 
-    # Ensure length is 150-160 chars
+    # Enhance description with global appeal if missing and under length
+    if seo_description.size < 150 and product_medium_desc != blank
+      unless seo_description contains product_type_desc
+        assign seo_description = seo_description | append: ' Discover unique ' | append: product_type_desc | append: ' for art collectors worldwide.'
+      else
+        assign seo_description = seo_description | append: ' Original art by contemporary artist. Worldwide shipping available.'
+      endunless
+    elsif seo_description.size < 150
+      assign seo_description = seo_description | append: ' Discover unique original art by Maryna Riepnova. Worldwide shipping available.'
+    endif
+
+    # Final length check - ensure 150-160 chars
     if seo_description.size > 160
       assign seo_description = seo_description | truncate: 158, '...'
     elsif seo_description.size < 150
-      assign seo_description = seo_description | append: ' Discover unique art by Maryna Riepnova in Málaga. Worldwide shipping available.'
+      assign seo_description = seo_description | append: ' Worldwide shipping.'
       if seo_description.size > 160
         assign seo_description = seo_description | truncate: 158, '...'
       endif
     endif
 
-    # Collection Pages
+    # Collection Pages - God-Level Description Optimization (Global Focus)
   elsif template contains 'collection' and collection
-    if collection.description != blank
-      assign seo_description = collection.description | strip_html | truncatewords: 22, '...'
-    else
-      assign seo_description = 'Explore ' | append: collection.title | append: ' by Maryna Riepnova. Original artworks, handmade in Málaga, Spain. Contemporary art for collectors and enthusiasts. Worldwide shipping.'
+    assign collection_medium_desc = ''
+    assign collection_type_desc = 'original artworks'
+    assign collection_lower = collection.title | downcase
+    
+    # Detect medium for better description
+    if collection.handle == 'events'
+      assign collection_medium_desc = 'art events and workshops'
+      assign collection_type_desc = 'art events'
+    elsif collection_lower contains 'watercolor' or collection_lower contains 'watercolour'
+      assign collection_medium_desc = 'original watercolor paintings'
+      assign collection_type_desc = 'watercolor paintings'
+    elsif collection_lower contains 'oil'
+      assign collection_medium_desc = 'original oil paintings'
+      assign collection_type_desc = 'oil paintings'
+    elsif collection_lower contains 'ceramic'
+      assign collection_medium_desc = 'handmade ceramic artworks'
+      assign collection_type_desc = 'ceramic art'
+    elsif collection_lower contains 'print'
+      assign collection_medium_desc = 'fine art prints'
+      assign collection_type_desc = 'art prints'
     endif
-
-    # Ensure 150-160 chars for collections
-    if seo_description.size > 160
-      assign seo_description = seo_description | truncate: 158, '...'
-    elsif seo_description.size < 150
-      assign seo_description = seo_description | append: ' Browse original art from Málaga, Spain. Shop now.'
-      if seo_description.size > 160
-        assign seo_description = seo_description | truncate: 158, '...'
+    
+    if collection.description != blank
+      assign seo_description = collection.description | strip_html | truncate: 155, '...'
+    else
+      # Generate enhanced description (events are location-specific: Málaga, Costa del Sol)
+      if collection.handle == 'events'
+        assign seo_description = 'Join art events and painting workshops in Málaga and Costa del Sol by Maryna Riepnova. Paint and Sip sessions, plein air painting classes. All levels welcome.'
+      elsif collection_medium_desc != blank
+        assign seo_description = 'Browse ' | append: collection_medium_desc | append: ' from ' | append: collection.title | append: ' by Maryna Riepnova. Contemporary art for collectors worldwide. Handcrafted original artwork. Worldwide shipping.'
+      else
+        assign seo_description = 'Explore ' | append: collection.title | append: ' collection by Maryna Riepnova. Original artworks for collectors worldwide. Contemporary art and handmade pieces. Worldwide shipping available.'
       endif
     endif
+
+    # Enhance description (special handling for events - location-specific: Málaga, Costa del Sol)
+    if collection.handle == 'events'
+      # Events are location-specific, ensure proper length with location emphasis
+      if seo_description.size < 150
+        assign seo_description = seo_description | append: ' Book your spot in Málaga or Costa del Sol.'
+        if seo_description.size > 160
+          assign seo_description = seo_description | truncate: 158, '...'
+        endif
+      elsif seo_description.size > 160
+        assign seo_description = seo_description | truncate: 158, '...'
+      endif
+    elsif seo_description.size < 150 and collection_medium_desc != blank
+      # Other collections - global appeal
+      unless seo_description contains collection_type_desc
+        assign seo_description = seo_description | append: ' Discover unique ' | append: collection_type_desc | append: ' for art collectors worldwide.'
+      else
+        assign seo_description = seo_description | append: ' Original art by contemporary artist. Worldwide shipping.'
+      endunless
+    elsif seo_description.size < 150
+      assign seo_description = seo_description | append: ' Browse original art collections. Worldwide shipping available.'
+    endif
+
+    # Final length check - ensure 150-160 chars (skip for events as already handled above)
+    unless collection.handle == 'events'
+      if seo_description.size > 160
+        assign seo_description = seo_description | truncate: 158, '...'
+      elsif seo_description.size < 150
+        assign seo_description = seo_description | append: ' Worldwide shipping.'
+        if seo_description.size > 160
+          assign seo_description = seo_description | truncate: 158, '...'
+        endif
+      endif
+    endunless
 
     # Blog/Article Pages (150-160 chars)
   elsif template contains 'article' and article
     if article.excerpt != blank
-      assign seo_description = article.excerpt | strip_html | truncatewords: 22, '...'
+      assign seo_description = article.excerpt | strip_html | truncate: 155, '...'
     elsif article.content != blank
-      assign seo_description = article.content | strip_html | truncatewords: 22, '...'
+      assign seo_description = article.content | strip_html | truncate: 155, '...'
     else
       if blog.handle == 'exhibitions'
-        assign seo_description = 'Art exhibition: ' | append: article.title | append: ' by Maryna Riepnova in Málaga, Spain. Contemporary watercolor, oil & ceramic art gallery show. Visit Costa del Sol.'
+        assign seo_description = 'Art exhibition: ' | append: article.title | append: ' by Maryna Riepnova. Contemporary watercolor, oil and ceramic art gallery show. View exhibition details and artworks.'
       else
-        assign seo_description = article.title | append: ' - Art insights, stories & techniques from Repka Arts. Original artwork, painting inspiration and artist updates from Málaga, Spain.'
+        assign seo_description = article.title | append: ' - Art insights, stories and techniques from Repka Arts. Original artwork, painting inspiration and artist updates. Read more art stories.'
       endif
     endif
 
@@ -245,7 +386,7 @@
     if seo_description.size > 160
       assign seo_description = seo_description | truncate: 158, '...'
     elsif seo_description.size < 150
-      assign seo_description = seo_description | append: ' Read more art stories from Maryna Riepnova in Málaga, Spain.'
+      assign seo_description = seo_description | append: ' Discover more art stories and inspiration from Maryna Riepnova.'
       if seo_description.size > 160
         assign seo_description = seo_description | truncate: 158, '...'
       endif
@@ -263,41 +404,41 @@
       # Hardcoded optimized descriptions (150-160 chars)
       case page.handle
         when 'about'
-          assign seo_description = 'Meet Maryna Riepnova, contemporary artist in Málaga, Spain. Oil paintings, watercolours, ceramics & art prints. Custom commissions & workshops Costa del Sol.'
+          assign seo_description = 'Meet Maryna Riepnova, contemporary artist. Oil paintings, watercolours, ceramics and art prints. Custom commissions and workshops available. Original art worldwide.'
         when 'contact'
-          assign seo_description = 'Contact Maryna Riepnova for custom art commissions, exhibition inquiries, or painting workshops in Málaga, Spain. Worldwide shipping. Costa del Sol artist.'
+          assign seo_description = 'Contact Maryna Riepnova for custom art commissions, exhibition inquiries, or painting workshops. Worldwide shipping available. Get in touch today.'
         when 'commission-an-artwork', 'commission', 'commissions'
-          assign seo_description = 'Commission custom oil, watercolor, ceramic art or prints by Maryna Riepnova. Personalized artwork for collectors, hotels, and designers. Málaga, Spain.'
+          assign seo_description = 'Commission custom oil, watercolor, ceramic art or prints by Maryna Riepnova. Personalized artwork for collectors, hotels, and designers worldwide. Order today.'
         when 'events'
-          assign seo_description = 'Join art events and painting workshops in Málaga and Costa del Sol. Plein air sessions, Paint & Sip, creative classes by Maryna Riepnova. All levels welcome.'
+          assign seo_description = 'Join art events and painting workshops by Maryna Riepnova. Plein air sessions, Paint and Sip, creative classes. All levels welcome. Book your spot.'
         when 'exhibitions', 'exhibitions-shopify'
-          assign seo_description = 'View current and past art exhibitions by Maryna Riepnova in Málaga and Costa del Sol. Contemporary watercolor, oil, and ceramic art gallery shows and events.'
+          assign seo_description = 'View current and past art exhibitions by Maryna Riepnova. Contemporary watercolor, oil, and ceramic art gallery shows and events. Explore exhibitions.'
         when 'artwork-by-medium', 'by-medium', 'medium'
-          assign seo_description = 'Browse original art by medium: oil paintings, watercolours, ceramics & art prints by Maryna Riepnova. Málaga artist. Custom commissions. Worldwide shipping.'
+          assign seo_description = 'Browse original art by medium: oil paintings, watercolours, ceramics and art prints by Maryna Riepnova. Custom commissions available. Worldwide shipping.'
         when 'artwork-by-series', 'by-series', 'series', 'collections'
-          assign seo_description = 'Explore art collections and series by Maryna Riepnova. Contemporary paintings and ceramics from Málaga, Spain. Original artwork for collectors worldwide.'
+          assign seo_description = 'Explore art collections and series by Maryna Riepnova. Contemporary paintings and ceramics. Original artwork for collectors worldwide. Browse collections.'
         when 'shop', 'store', 'all-products'
-          assign seo_description = 'Shop original oil paintings, watercolours, ceramics & art prints by Maryna Riepnova. Contemporary art from Málaga, Spain. Custom commissions. Worldwide shipping.'
+          assign seo_description = 'Shop original oil paintings, watercolours, ceramics and art prints by Maryna Riepnova. Contemporary art for collectors. Custom commissions available.'
         when 'gallery', 'portfolio'
-          assign seo_description = 'Explore the art gallery of Maryna Riepnova in Málaga. Contemporary oil paintings, watercolours & ceramic artworks. Visit our Costa del Sol gallery. Shop online.'
+          assign seo_description = 'Explore the art gallery of Maryna Riepnova. Contemporary oil paintings, watercolours and ceramic artworks. Browse original art collection. Shop online.'
         when 'workshops', 'classes', 'courses'
-          assign seo_description = 'Art workshops and painting classes in Málaga by Maryna Riepnova. Learn watercolor, oil painting techniques. Beginner to advanced. Costa del Sol art courses.'
+          assign seo_description = 'Art workshops and painting classes by Maryna Riepnova. Learn watercolor, oil painting techniques. Beginner to advanced. Book your creative experience today.'
         when 'faq', 'faqs', 'help'
-          assign seo_description = 'Frequently asked questions about Repka Arts. Shipping info, custom commissions, art care, framing & delivery. Málaga artist answers. Worldwide shipping available.'
+          assign seo_description = 'Frequently asked questions about Repka Arts. Shipping info, custom commissions, art care, framing and delivery. Get answers. Worldwide shipping available.'
         when 'privacy-policy', 'privacy'
-          assign seo_description = 'Privacy policy for Repka Arts online store. How we protect your personal data when purchasing original art from Málaga. Secure checkout. GDPR compliant.'
+          assign seo_description = 'Privacy policy for Repka Arts online store. How we protect your personal data when purchasing original art. Secure checkout. GDPR compliant.'
         when 'terms', 'terms-of-service', 'terms-and-conditions'
-          assign seo_description = 'Terms and conditions for Repka Arts. Purchase terms, shipping policies, returns & refunds for original artwork. Málaga artist. Read before ordering art online.'
+          assign seo_description = 'Terms and conditions for Repka Arts. Purchase terms, shipping policies, returns and refunds for original artwork. Read before ordering art online.'
         when 'shipping', 'delivery', 'shipping-policy'
-          assign seo_description = 'Shipping and delivery information for Repka Arts. Worldwide art shipping from Málaga, Spain. Secure packaging, tracking, insurance. Delivery times & costs.'
+          assign seo_description = 'Shipping and delivery information for Repka Arts. Worldwide art shipping available. Secure packaging, tracking, insurance. Delivery times and costs.'
         when 'refund-policy', 'returns'
-          assign seo_description = 'Returns and refund policy for Repka Arts. How to return artwork, refund process, conditions. Original art from Málaga. Customer satisfaction guaranteed.'
+          assign seo_description = 'Returns and refund policy for Repka Arts. How to return artwork, refund process, conditions. Original art purchase. Customer satisfaction guaranteed.'
         else
           # Use page content or generate with better SEO
           if page.content != blank
-            assign seo_description = page.content | strip_html | truncatewords: 22, '...'
+            assign seo_description = page.content | strip_html | truncate: 155, '...'
           else
-            assign seo_description = page.title | append: ' by Repka Arts. Original oil paintings, watercolours & ceramics from Málaga, Spain. Contemporary artist Maryna Riepnova. Worldwide shipping.'
+            assign seo_description = page.title | append: ' by Repka Arts. Original oil paintings, watercolours and ceramics by Maryna Riepnova. Contemporary artist. Worldwide shipping.'
           endif
       endcase
     endif
@@ -306,18 +447,93 @@
     if seo_description.size > 160
       assign seo_description = seo_description | truncate: 158, '...'
     elsif seo_description.size < 150 and page.content != blank
-      assign seo_description = seo_description | append: ' Visit Repka Arts gallery in Málaga, Spain.'
+      assign seo_description = seo_description | append: ' Explore original art by Maryna Riepnova.'
     elsif seo_description.size < 150
-      assign seo_description = seo_description | append: ' Original artwork from Málaga, Spain.'
+      assign seo_description = seo_description | append: ' Original artwork available worldwide.'
     endif
 
     # Blog List Pages (150-160 chars)
   elsif template contains 'blog' and blog
     if blog.handle == 'exhibitions'
-      assign seo_description = 'Explore art exhibitions by Maryna Riepnova in Málaga & Costa del Sol. Contemporary watercolor, oil & ceramic gallery shows. View current and past exhibitions.'
+      assign seo_description = 'Explore art exhibitions by Maryna Riepnova in Málaga and Costa del Sol. Solo and group gallery shows. Visit exhibitions at Coeo Hostel, Botanical Garden, and more. Free entry.'
     else
-      assign seo_description = 'Discover art stories, painting techniques & creative inspiration from Maryna Riepnova. Original artwork insights, artist updates & events from Málaga, Spain.'
+      assign seo_description = 'Discover art stories, painting techniques and creative inspiration from Maryna Riepnova. Original artwork insights, artist updates and events worldwide.'
     endif
+
+    # 404 Not Found Page
+  elsif template == '404'
+    assign seo_title = 'Page Not Found | Repka Arts'
+    assign seo_description = 'Page not found. Visit Repka Arts to explore original oil paintings, watercolours and ceramics by Maryna Riepnova. Browse our collection worldwide.'
+
+    # Search Page
+  elsif template == 'search'
+    if search.terms != blank
+      assign search_terms = search.terms | truncate: 30
+      assign seo_title = search_terms | append: ' - Search Results | Repka Arts'
+      if seo_title.size > 60
+        assign seo_title = search_terms | truncate: 35 | append: ' - Search | Repka Arts'
+      endif
+      assign seo_description = 'Search results for ' | append: search_terms | append: ' - Original art by Maryna Riepnova. Oil paintings, watercolours, ceramics and prints. Browse our collection.'
+    else
+      assign seo_title = 'Search Art Collection | Repka Arts'
+      assign seo_description = 'Search our collection of original oil paintings, watercolours, ceramics and art prints by Maryna Riepnova. Find unique artwork worldwide.'
+    endif
+    if seo_description.size > 160
+      assign seo_description = seo_description | truncate: 158, '...'
+    elsif seo_description.size < 150
+      assign seo_description = seo_description | append: ' Worldwide shipping available.'
+      if seo_description.size > 160
+        assign seo_description = seo_description | truncate: 158, '...'
+      endif
+    endif
+
+    # Cart Page
+  elsif template == 'cart'
+    assign seo_title = 'Shopping Cart | Repka Arts'
+    assign seo_description = 'Your art shopping cart. Complete your purchase of original paintings, ceramics and prints by Maryna Riepnova. Secure checkout. Worldwide shipping available.'
+
+    # Customer Account Pages (Login, Register, Account, etc.)
+  elsif template contains 'customer' or request.page_type == 'customers_login' or request.page_type == 'customers_register' or request.page_type == 'customers_account' or request.page_type == 'customers_order' or request.page_type == 'customers_addresses' or request.page_type == 'customers_activate_account' or request.page_type == 'customers_reset_password'
+    if template == 'customers/login' or request.page_type == 'customers_login'
+      assign seo_title = 'Login | Repka Arts Account'
+      assign seo_description = 'Sign in to your Repka Arts account to view order history, manage addresses and track your art purchases. Customer portal for original artwork collectors.'
+    elsif template == 'customers/register' or request.page_type == 'customers_register'
+      assign seo_title = 'Create Account | Repka Arts'
+      assign seo_description = 'Create a Repka Arts account to track orders, save favorite artworks and enjoy exclusive benefits. Join our community of art collectors.'
+    elsif template == 'customers/account' or request.page_type == 'customers_account'
+      assign seo_title = 'My Account | Repka Arts'
+      assign seo_description = 'Manage your Repka Arts account. View order history, update shipping addresses and track your art purchases. Customer dashboard for collectors.'
+    elsif template == 'customers/order' or request.page_type == 'customers_order'
+      assign seo_title = 'Order Details | Repka Arts'
+      assign seo_description = 'View your art order details, tracking information and shipping status. Repka Arts customer order management portal.'
+    elsif template == 'customers/addresses' or request.page_type == 'customers_addresses'
+      assign seo_title = 'Shipping Addresses | Repka Arts'
+      assign seo_description = 'Manage your shipping addresses for art purchases. Add, edit or remove delivery addresses for your Repka Arts orders.'
+    elsif template == 'customers/activate_account' or request.page_type == 'customers_activate_account'
+      assign seo_title = 'Activate Account | Repka Arts'
+      assign seo_description = 'Activate your Repka Arts account to start shopping for original artwork. Complete your registration and access exclusive features.'
+    elsif template == 'customers/reset_password' or request.page_type == 'customers_reset_password'
+      assign seo_title = 'Reset Password | Repka Arts'
+      assign seo_description = 'Reset your Repka Arts account password. Recover access to your customer account and continue shopping for original artwork.'
+    else
+      assign seo_title = 'Account | Repka Arts'
+      assign seo_description = 'Manage your Repka Arts account settings, orders and preferences. Customer portal for original artwork collectors.'
+    endif
+
+    # Collections List Page
+  elsif template == 'list-collections'
+    assign seo_title = 'Art Collections | Repka Arts'
+    assign seo_description = 'Browse all art collections: oil paintings, watercolours, ceramics and art prints by Maryna Riepnova. Contemporary art for collectors worldwide. Worldwide shipping.'
+
+    # Gift Card Page
+  elsif template == 'gift_card'
+    assign seo_title = 'Gift Card | Repka Arts'
+    assign seo_description = 'Purchase a Repka Arts gift card. Perfect gift for art lovers. Redeemable for original oil paintings, watercolours, ceramics and art prints worldwide.'
+
+    # Password Page
+  elsif template == 'password'
+    assign seo_title = business_name
+    assign seo_description = 'This store is password protected. Enter the password to access original artwork by Maryna Riepnova. Browse art collections worldwide.'
 
     # Default fallback
   else
@@ -325,11 +541,21 @@
     if seo_description.size > 160
       assign seo_description = seo_description | truncate: 158, '...'
     elsif seo_description.size < 150
-      assign seo_description = seo_description | append: ' Discover original art by Maryna Riepnova in Málaga, Spain. Worldwide shipping available.'
+      assign seo_description = seo_description | append: ' Discover original art by Maryna Riepnova. Worldwide shipping available.'
       if seo_description.size > 160
         assign seo_description = seo_description | truncate: 158, '...'
       endif
     endif
+  endif
+
+  # Clean up any remaining ampersands to prevent &amp; encoding in meta tags
+  # Replace & with "and" BEFORE escaping to ensure clean display
+  # Handle multiple patterns: ' & ', '& ', ' &', '&amp;', and standalone &
+  if seo_description != blank
+    assign seo_description = seo_description | replace: ' &amp; ', ' and ' | replace: ' &amp;', ' and' | replace: '&amp; ', 'and ' | replace: '&amp;', 'and' | replace: ' & ', ' and ' | replace: ' &', ' and' | replace: '& ', 'and '
+  endif
+  if seo_title != blank
+    assign seo_title = seo_title | replace: ' &amp; ', ' and ' | replace: ' &amp;', ' and' | replace: '&amp; ', 'and ' | replace: '&amp;', 'and' | replace: ' & ', ' and ' | replace: ' &', ' and' | replace: '& ', 'and '
   endif
 
   # ============================================
@@ -367,8 +593,20 @@
 <link rel="canonical" href="{{ canonical }}">
 
 <!-- -- ROBOTS META -- -->
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{%- liquid
+  # Determine robots directive based on page type
+  assign robots_content = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  
+  # Pages that should NOT be indexed
+  if template == '404' or template == 'cart' or template == 'password' or template contains 'customer' or request.page_type contains 'customers_'
+    assign robots_content = 'noindex, follow'
+  elsif template == 'search'
+    # Search pages can be indexed but with limited content
+    assign robots_content = 'index, follow, max-snippet:160'
+  endif
+-%}
+<meta name="robots" content="{{ robots_content }}">
+<meta name="googlebot" content="{{ robots_content }}">
 
 <!-- -- OPEN GRAPH TAGS -- -->
 <meta property="og:site_name" content="{{ business_name }}">
@@ -387,17 +625,41 @@
 {%- endif -%}
 
 {%- if template contains 'product' and product -%}
+  {%- liquid
+    # Get product medium for OG tags
+    assign og_product_category = 'Original Artwork'
+    if product.tags contains 'watercolor'
+      assign og_product_category = 'Original Watercolor Painting'
+    elsif product.tags contains 'oil'
+      assign og_product_category = 'Original Oil Painting'
+    elsif product.tags contains 'ceramic'
+      assign og_product_category = 'Handmade Ceramic Art'
+    elsif product.tags contains 'print'
+      assign og_product_category = 'Fine Art Print'
+    elsif product.type == 'Events'
+      assign og_product_category = 'Art Workshop Event'
+    endif
+  -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html | remove: ',' }}">
   <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
-  <meta
-    property="product:price:amount"
-    content="{{ product.price | money_without_currency | strip_html | remove: ',' }}"
-  >
+  <meta property="product:price:amount" content="{{ product.price | money_without_currency | strip_html | remove: ',' }}">
   <meta property="product:price:currency" content="{{ cart.currency.iso_code }}">
+  <meta property="product:category" content="{{ og_product_category }}">
+  <meta property="product:retailer" content="{{ business_name }}">
+  <meta property="product:retailer_item_id" content="{{ product.id }}">
+  {%- if product.vendor != blank -%}
+  <meta property="product:brand" content="{{ product.vendor }}">
+  {%- else -%}
+  <meta property="product:brand" content="{{ business_name }}">
+  {%- endif -%}
   {%- if product.available -%}
     <meta property="product:availability" content="in stock">
+    <meta property="product:condition" content="new">
   {%- else -%}
     <meta property="product:availability" content="out of stock">
+  {%- endif -%}
+  {%- if product.selected_or_first_available_variant.sku != blank -%}
+  <meta property="product:sku" content="{{ product.selected_or_first_available_variant.sku }}">
   {%- endif -%}
 {%- endif -%}
 
@@ -435,9 +697,80 @@
 <meta name="publisher" content="{{ business_name }}">
 <meta name="copyright" content="© {{ 'now' | date: '%Y' }} {{ business_name }}">
 <meta name="revisit-after" content="7 days">
-<meta name="classification" content="Art & Collectibles">
+<meta name="classification" content="Art and Collectibles">
 <meta name="rating" content="General">
 <meta name="distribution" content="Global">
+
+<!-- -- AI/LLM OPTIMIZATION META TAGS -- -->
+{%- liquid
+  # Generate AI-friendly content summary
+  assign ai_content_type = 'website'
+  assign ai_content_category = 'Art Gallery'
+  assign ai_content_subject = 'Original Artwork'
+  
+  if template contains 'product' and product
+    assign ai_content_type = 'product'
+    assign ai_content_category = 'Artwork'
+    if product.tags contains 'watercolor'
+      assign ai_content_subject = 'Watercolor Painting'
+    elsif product.tags contains 'oil'
+      assign ai_content_subject = 'Oil Painting'
+    elsif product.tags contains 'ceramic'
+      assign ai_content_subject = 'Ceramic Art'
+    elsif product.tags contains 'print'
+      assign ai_content_subject = 'Art Print'
+    endif
+  elsif template contains 'collection'
+    assign ai_content_category = 'Art Collection'
+    assign ai_content_subject = 'Art Collection'
+  elsif template contains 'article'
+    assign ai_content_type = 'article'
+    assign ai_content_category = 'Art Blog'
+  endif
+-%}
+<meta name="format-detection" content="telephone=yes">
+<meta name="content-type" content="{{ ai_content_type }}">
+<meta name="subject" content="{{ ai_content_subject }} - {{ business_name }}">
+<meta name="topic" content="{{ ai_content_category }}">
+<meta name="summary" content="{{ seo_description }}">
+<meta name="abstract" content="{{ seo_description }}">
+
+<!-- AI Crawler Hints -->
+<meta name="AI-model-friendly" content="yes">
+<meta name="LLM-readable" content="yes">
+<meta name="chatbot-accessible" content="yes">
+
+<!-- Content Classification for AI -->
+<meta property="content:category" content="{{ ai_content_category }}">
+<meta property="content:type" content="{{ ai_content_type }}">
+{%- if template contains 'collection' and collection -%}
+  {%- liquid
+    assign collection_medium_ai = 'Art Collection'
+    assign collection_lower_ai = collection.title | downcase
+    if collection_lower_ai contains 'watercolor' or collection_lower_ai contains 'watercolour'
+      assign collection_medium_ai = 'Watercolor Paintings Collection'
+    elsif collection_lower_ai contains 'oil'
+      assign collection_medium_ai = 'Oil Paintings Collection'
+    elsif collection_lower_ai contains 'ceramic'
+      assign collection_medium_ai = 'Ceramic Art Collection'
+    elsif collection_lower_ai contains 'print'
+      assign collection_medium_ai = 'Art Prints Collection'
+    elsif collection.handle == 'events'
+      assign collection_medium_ai = 'Art Events Collection'
+    endif
+  -%}
+  <meta property="collection:medium" content="{{ collection_medium_ai }}">
+  <meta property="collection:artist" content="{{ artist_name }}">
+  {% if collection.handle == 'events' -%}
+  <meta property="collection:location" content="Málaga, Costa del Sol, Spain">
+  {%- endif -%}
+  <meta property="collection:item-count" content="{{ collection.products_count }}">
+{%- endif -%}
+{%- if template contains 'product' and product -%}
+<meta property="product:category" content="Art and Collectibles">
+<meta property="product:type" content="Original Artwork">
+<meta property="product:artist" content="{{ artist_name }}">
+{%- endif -%}
 
 <!-- -- MOBILE META TAGS -- -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -447,7 +780,7 @@
 
 <!-- -- PINTEREST META -- -->
 {%- if template contains 'product' and product and product.featured_image -%}
-  <meta property="og:see_also" content="{{ product.url | prepend: shop.url }}">
+  <meta property="og:see_also" content="{{ shop_url }}{{ product.url }}">
   <meta name="pinterest:description" content="{{ seo_description | escape }}">
 {%- endif -%}
 
@@ -455,3 +788,281 @@
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 <link rel="dns-prefetch" href="https://cdn.shopify.com">
 <link rel="dns-prefetch" href="https://monorail-edge.shopifysvc.com">
+
+<!-- -- PRODUCT BREADCRUMB SCHEMA (God-Level SEO) -- -->
+{%- if template contains 'product' and product -%}
+  {%- liquid
+    # Get collection for breadcrumb
+    assign primary_collection = product.collections.first
+    assign breadcrumb_collection_name = 'Art Collections'
+    if primary_collection
+      assign breadcrumb_collection_name = primary_collection.title
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ shop_url }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ breadcrumb_collection_name }}",
+          "item": "{% if primary_collection %}{{ shop_url }}{{ primary_collection.url }}{% else %}{{ shop_url }}/collections{% endif %}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{ product.title | escape }}",
+          "item": "{{ shop_url }}{{ product.url }}"
+        }
+      ]
+    }
+  </script>
+{%- endif -%}
+
+<!-- -- AI/LLM STRUCTURED DATA ENHANCEMENT -- -->
+{%- if template contains 'product' and product -%}
+  {%- liquid
+    # Get product medium for AI and collection info
+    assign product_medium = 'Original Artwork'
+    assign primary_collection = product.collections.first
+    if product.tags contains 'watercolor'
+      assign product_medium = 'Watercolor Painting'
+    elsif product.tags contains 'oil'
+      assign product_medium = 'Oil Painting'
+    elsif product.tags contains 'ceramic'
+      assign product_medium = 'Ceramic Art'
+    elsif product.tags contains 'print'
+      assign product_medium = 'Art Print'
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": "{{ product.title | escape }}",
+      "description": "{{ seo_description | escape }}",
+      "image": [
+        {%- for image in product.images limit: 5 -%}
+          "https:{{ image | image_url: width: 1200 }}"{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ],
+      "artMedium": "{{ product_medium }}",
+      "artworkSurface": "{% if product_medium contains 'Watercolor' %}Paper{% elsif product_medium contains 'Ceramic' %}Clay{% else %}Canvas{% endif %}",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "{{ artist_name }}",
+          "jobTitle": "Artist",
+          "url": "{{ shop_url }}"
+        },
+        {
+          "@type": "Organization",
+          "name": "{{ business_name }}",
+          "url": "{{ shop_url }}"
+        }
+      ],
+      "dateCreated": "{{ product.created_at | date: '%Y-%m-%d' }}",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "{{ artist_name }}"
+      },
+      "copyrightYear": "{{ 'now' | date: '%Y' }}",
+      "url": "{{ shop_url }}{{ product.url }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ shop_url }}{{ product.url }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ shop_url }}{{ product.url }}",
+        "priceCurrency": "{{ cart.currency.iso_code }}",
+        "price": "{{ product.price | money_without_currency | remove: ',' }}",
+        "availability": "{% if product.available %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ business_name }}"
+        }
+      },
+      "keywords": "{{ product.tags | join: ', ' }}, {{ product_medium }}, original artwork, {{ artist_name }}, contemporary art, handmade art, art collector",
+      "inLanguage": "{{ request.locale.iso_code }}",
+      "isAccessibleForFree": false,
+      "usageInfo": "Original artwork for personal or commercial use with permission",
+      "copyrightYear": "{{ 'now' | date: '%Y' }}",
+      "copyrightHolder": {
+        "@type": "Person",
+        "name": "{{ artist_name }}"
+      },
+      "material": "{% if product_medium contains 'Watercolor' %}Watercolor paint on paper{% elsif product_medium contains 'Oil' %}Oil paint on canvas{% elsif product_medium contains 'Ceramic' %}Ceramic clay{% else %}Various art materials{% endif %}",
+      "artworkSurface": "{% if product_medium contains 'Watercolor' %}Paper{% elsif product_medium contains 'Oil' %}Canvas{% elsif product_medium contains 'Ceramic' %}Clay{% else %}Various{% endif %}",
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Málaga, Spain",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Málaga",
+          "addressRegion": "Andalusia",
+          "addressCountry": "ES"
+        }
+      }
+    }
+  </script>
+  
+  <!-- Additional AI-friendly metadata -->
+  <meta name="artwork:medium" content="{{ product_medium }}">
+  <meta name="artwork:artist" content="{{ artist_name }}">
+  <meta name="artwork:type" content="Original">
+  <meta name="keywords" content="{{ product.tags | join: ', ' }}, {{ product_medium }}, original artwork, {{ artist_name }}, contemporary art, handmade art, art collector, worldwide shipping">
+  {%- if product.vendor != blank -%}
+  <meta name="product:vendor" content="{{ product.vendor }}">
+  {%- endif -%}
+  <meta name="product:collection" content="{% if primary_collection %}{{ primary_collection.title }}{% else %}Art Collection{% endif %}">
+{%- endif -%}
+
+<!-- -- COLLECTION SCHEMA (God-Level SEO) -- -->
+{%- if template contains 'collection' and collection -%}
+  {%- liquid
+    # Detect collection medium for schema
+    assign collection_medium_schema = 'Art Collection'
+    assign collection_type_schema = 'ItemList'
+    assign collection_lower = collection.title | downcase
+    
+    if collection.handle == 'events'
+      assign collection_medium_schema = 'Art Events'
+      assign collection_type_schema = 'EventSeries'
+    elsif collection_lower contains 'watercolor' or collection_lower contains 'watercolour'
+      assign collection_medium_schema = 'Watercolor Paintings'
+    elsif collection_lower contains 'oil'
+      assign collection_medium_schema = 'Oil Paintings'
+    elsif collection_lower contains 'ceramic'
+      assign collection_medium_schema = 'Ceramic Art'
+    elsif collection_lower contains 'print'
+      assign collection_medium_schema = 'Art Prints'
+    endif
+    
+    # Get collection image
+    assign collection_image = collection.featured_image | default: collection.products.first.featured_image
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "{{ collection.title | escape }}",
+      "description": "{{ seo_description | escape }}",
+      "url": "{{ shop_url }}{{ collection.url }}",
+      {%- if collection_image -%}
+      "image": "https:{{ collection_image | image_url: width: 1200 }}",
+      {%- endif -%}
+      "mainEntity": {
+        "@type": "{{ collection_type_schema }}",
+        "name": "{{ collection.title | escape }} Collection",
+        "description": "{{ collection.description | default: seo_description | strip_html | escape }}",
+        "numberOfItems": "{{ collection.products_count }}",
+        "itemListElement": [
+          {%- for product in collection.products limit: 20 -%}
+          {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "item": {
+              "@type": "Product",
+              "name": "{{ product.title | escape }}",
+              "url": "{{ shop_url }}{{ product.url }}",
+              "image": "https:{{ product.featured_image | image_url: width: 600 }}"
+            }
+          }{% unless forloop.last %},{% endunless %}
+          {%- endfor -%}
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ shop_url }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Collections",
+            "item": "{{ shop_url }}/collections"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ collection.title | escape }}",
+            "item": "{{ shop_url }}{{ collection.url }}"
+          }
+        ]
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "{{ artist_name }}",
+        "url": "{{ shop_url }}/pages/about"
+      },
+      "publisher": {
+        "@type": "ArtGallery",
+        "name": "{{ business_name }}",
+        "location": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Málaga",
+            "addressRegion": "Andalusia",
+            "addressCountry": "ES"
+          }
+        }
+      },
+      "keywords": "{% if collection.handle == 'events' %}{{ collection.title }}, {{ collection_medium_schema }}, art events Málaga, Costa del Sol, painting workshops, {{ artist_name }}, art classes Málaga, Paint and Sip Costa del Sol{% else %}{{ collection.title }}, {{ collection_medium_schema }}, original artwork, {{ artist_name }}, contemporary art, art collection, worldwide shipping{% endif %}",
+      "inLanguage": "{{ request.locale.iso_code }}",
+      "datePublished": "{{ collection.published_at | date: '%Y-%m-%d' }}",
+      "dateModified": "{{ collection.updated_at | date: '%Y-%m-%d' }}"
+    }
+  </script>
+  
+  <!-- Additional collection meta tags -->
+  <meta name="collection:type" content="{{ collection_medium_schema }}">
+  <meta name="collection:artist" content="{{ artist_name }}">
+  <meta name="collection:item-count" content="{{ collection.products_count }}">
+  <meta name="keywords" content="{% if collection.handle == 'events' %}{{ collection.title }}, {{ collection_medium_schema }}, art events Málaga, Costa del Sol, painting workshops, {{ artist_name }}, art classes Málaga, Paint and Sip Costa del Sol, plein air painting Málaga{% else %}{{ collection.title }}, {{ collection_medium_schema }}, original artwork, {{ artist_name }}, contemporary art, art collection, worldwide shipping{% endif %}">
+{%- endif -%}
+
+<!-- Website-level AI discovery schema -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ business_name }}",
+    "url": "{{ shop_url }}",
+    "description": "{{ seo_description | default: shop.description }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ shop_url }}/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "ArtGallery",
+      "name": "{{ business_name }}",
+      "location": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Málaga",
+          "addressRegion": "Andalusia",
+          "addressCountry": "Spain"
+        }
+      }
+    }
+  }
+</script>
