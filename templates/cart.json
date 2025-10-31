@@ -383,7 +383,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "buy-art-on-sale",
         "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 8,
@@ -392,34 +392,19 @@
         "mobile_card_size": "60cqw",
         "columns_gap": 26,
         "rows_gap": 36,
-        "icons_style": "arrow",
+        "icons_style": "arrows_large",
         "icons_shape": "none",
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
-    "divider_aaknnG": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "",
-        "section_width": "page-width",
-        "thickness": 1,
-        "corner_radius": "square",
-        "width_percent": 100,
-        "alignment_horizontal": "center",
-        "padding-block-start": 84,
-        "padding-block-end": 16
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     }
   },
   "order": [
     "cart-section",
-    "product_list_MxPXQq",
-    "divider_aaknnG"
+    "product_list_MxPXQq"
   ]
 }

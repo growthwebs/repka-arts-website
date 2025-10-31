@@ -178,7 +178,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>{{ metaobjects.exhibition[\"wild-at-heart\"].exhibition_name.value }}</h1>",
+                    "text": "<p>{{ article.metafields.custom.exhibition_name.value }}</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -209,7 +209,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>{{ metaobjects.exhibition[\"wild-at-heart\"].exhibition_subtitle.value }}</p>",
+                "text": "<p>{{ article.metafields.custom.exhibition_subtitle.value }}</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -243,8 +243,9 @@
       ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
-        "media_type_1": "image",
-        "image_1": "shopify://shop_images/Mountain_shimmer.jpg",
+        "media_type_1": "video",
+        "image_1": "{{ article.metafields.custom.exhibition_media.value }}",
+        "video_1": "{{ article.metafields.custom.exhibition_media.value }}",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -924,7 +925,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "{{ closest.article.metafields.custom.exhibition_venue_location | metafield_tag }}",
+                        "text": "<p>{{ closest.article.metafields.custom.exhibition_location | metafield_tag }}</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1251,7 +1252,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "{{ metaobjects.exhibition[\"wild-at-heart\"].banner.value }}",
+                "image": "{{ closest.article.metafields.custom.exhibition_banner.value }}",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
