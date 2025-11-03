@@ -261,6 +261,7 @@
       <a
         href="{{ section.settings.link }}"
         class="hero__link"
+        aria-label="{% if section.settings.link_text != blank %}{{ section.settings.link_text | escape }}{% else %}View {{ section.settings.link | split: '/' | last | replace: '-', ' ' }}{% endif %}"
         {% if section.settings.open_in_new_tab %}
           target="_blank" rel="noopener"
         {% endif %}

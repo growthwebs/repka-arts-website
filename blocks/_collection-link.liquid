@@ -49,6 +49,7 @@
     href="{{ closest.collection.url }}"
     class="collection-links__image"
     size="{{ section.settings.image_height }}"
+    aria-label="{{ closest.collection.title | default: 'Collection' | escape }}"
     {% if onboarding %}
       data-placeholder="true"
     {% endif %}
