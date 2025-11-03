@@ -3433,7 +3433,7 @@
           "block_order": []
         }
       },
-      "name": "t:names.blog_posts_carousel",
+      "name": "Exhibitions: Carousel",
       "settings": {
         "blog": "exhibitions",
         "layout_type": "carousel",
