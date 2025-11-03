@@ -184,7 +184,7 @@
       "name": "t:names.marquee_section",
       "settings": {
         "movement_direction": "normal",
-        "color_scheme": "",
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 24,
         "padding-block-end": 24,
         "gap_between_elements": 24
@@ -1087,74 +1087,6 @@
     "section_c9iUYd": {
       "type": "section",
       "blocks": {
-        "group_UX7ekH": {
-          "type": "group",
-          "name": "t:names.group",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image_x89QG6": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/IMG_5674.heic",
-                "link": "",
-                "image_ratio": "square",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "image_x89QG6"
-          ]
-        },
         "group_YnNqG3": {
           "type": "group",
           "name": "t:names.group",
@@ -1195,11 +1127,11 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_FpcrJc": {
+            "text_U4aDJN": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>About me</h2>",
+                "text": "<h2>Give the gift of art</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1221,14 +1153,14 @@
               },
               "blocks": {}
             },
-            "text_YwmzUF": {
+            "text_rQEJPg": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Hi, I’m Maryna Riepnova, I'm the founder of Repka Arts. From my studio in Málaga, I create original oil paintings, watercolours, and handmade ceramics designed to bring beauty and calm to your space. As a Fine Arts graduate, I also host plein airs, art events and classes to share the joy of creativity on La Costa del Sol.</p>",
-                "width": "100%",
+                "text": "<p>Surprise your loved ones with a Repka Arts Creative Pass. It's the perfect way to gift original paintings, handmade ceramics, or an inspiring spot in one of our art classes.</p>",
+                "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "center",
+                "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1287,29 +1219,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "button_t4iB9F": {
+                "button_nwtFw8": {
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Learn more about me",
-                    "link": "shopify://pages/about",
+                    "label": "Buy now",
+                    "link": "shopify://products/repka-arts-gift-cards",
                     "open_in_new_tab": false,
                     "style_class": "button",
-                    "width": "fit-content",
-                    "custom_width": 100,
-                    "width_mobile": "fit-content",
-                    "custom_width_mobile": 100
-                  },
-                  "blocks": {}
-                },
-                "button_4gdQTe": {
-                  "type": "button",
-                  "name": "t:names.button",
-                  "settings": {
-                    "label": "My exhibitions",
-                    "link": "shopify://blogs/exhibitions",
-                    "open_in_new_tab": false,
-                    "style_class": "button-secondary",
                     "width": "fit-content",
                     "custom_width": 100,
                     "width_mobile": "fit-content",
@@ -1319,21 +1236,88 @@
                 }
               },
               "block_order": [
-                "button_t4iB9F",
-                "button_4gdQTe"
+                "button_nwtFw8"
               ]
             }
           },
           "block_order": [
-            "text_FpcrJc",
-            "text_YwmzUF",
+            "text_U4aDJN",
+            "text_rQEJPg",
             "group_mXJEXM"
+          ]
+        },
+        "group_UX7ekH": {
+          "type": "group",
+          "name": "t:names.group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_x89QG6": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/giftcard.avif",
+                "link": "",
+                "image_ratio": "square",
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_x89QG6"
           ]
         }
       },
       "block_order": [
-        "group_UX7ekH",
-        "group_YnNqG3"
+        "group_YnNqG3",
+        "group_UX7ekH"
       ],
       "name": "Gift card",
       "settings": {
@@ -1348,7 +1332,200 @@
         "section_width": "page-width",
         "section_height": "small",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": true,
+        "overlay_color": "#fafafa",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "featured_blog_posts_VXrTRJ": {
+      "type": "featured-blog-posts",
+      "blocks": {
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "name": "t:names.title",
+          "static": true,
+          "settings": {
+            "text": "<h2>My latest exhibitions</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "name": "t:names.blog_card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "landscape",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16
+              },
+              "blocks": {}
+            },
+            "title": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "read_only": false,
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
+              "settings": {
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "name": "t:names.excerpt",
+              "static": true,
+              "settings": {
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 8,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "name": "t:names.blog_posts_carousel",
+      "settings": {
+        "blog": "exhibitions",
+        "layout_type": "carousel",
+        "carousel_on_mobile": true,
+        "post_limit": 6,
+        "columns": 2,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 16,
+        "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
+        "padding-block-start": 64,
+        "padding-block-end": 32
+      }
+    },
+    "section_x3VTYi": {
+      "type": "section",
+      "blocks": {
+        "button_4Njcq9": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "All exhibitions",
+            "link": "shopify://blogs/exhibitions",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "button_4Njcq9"
+      ],
+      "name": "Exhibitions button",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1360,8 +1537,300 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-start": 16,
+        "padding-block-end": 64
+      }
+    },
+    "section_XpQThE": {
+      "type": "section",
+      "blocks": {
+        "text_JjKbpT": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Frequently asked questions</h2>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "clamp(1.5rem, 3vw, 2rem)",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_Be6GMU": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": false,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
+          },
+          "blocks": {
+            "accordion_row_medTNY": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Do you ship internationally?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_RpxCn6": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Yes, we securely ship original art, ceramics, and prints to collectors all over the world from our studio in Málaga, Spain.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_RpxCn6"
+              ]
+            },
+            "accordion_row_nUphJF": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What kind of art do you create?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_THkPC4": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_THkPC4"
+              ]
+            },
+            "accordion_row_aeynTB": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Can I request a custom piece or collaboration?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_a6GQqx": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_a6GQqx"
+              ]
+            },
+            "accordion_row_AQAYLh": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Do you offer art workshops or events?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_FBVjXX": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Yes, we host public plein-air sessions and also design private art workshops for groups, hotels, and corporate team-building events.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_FBVjXX"
+              ]
+            },
+            "accordion_row_NzTGKt": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "How do I join a painting session?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_YGUxCa": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_YGUxCa"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_medTNY",
+            "accordion_row_nUphJF",
+            "accordion_row_aeynTB",
+            "accordion_row_AQAYLh",
+            "accordion_row_NzTGKt"
+          ]
+        }
+      },
+      "block_order": [
+        "text_JjKbpT",
+        "accordion_Be6GMU"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#fafafa",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     }
   },
@@ -1373,6 +1842,9 @@
     "section_DTGVAe",
     "product_list_enxNR3",
     "collection_list_NhWAJT",
-    "section_c9iUYd"
+    "section_c9iUYd",
+    "featured_blog_posts_VXrTRJ",
+    "section_x3VTYi",
+    "section_XpQThE"
   ]
 }
