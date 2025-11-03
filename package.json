@@ -15,9 +15,16 @@
   },
   "devDependencies": {
     "@shopify/cli": "^3.0.0",
-    "@shopify/theme": "^3.0.0"
+    "@shopify/theme": "^3.0.0",
+    "lighthouse": "^13.0.1"
   },
-  "keywords": ["shopify", "theme", "art", "gallery", "ecommerce"],
+  "keywords": [
+    "shopify",
+    "theme",
+    "art",
+    "gallery",
+    "ecommerce"
+  ],
   "author": "Repka Arts",
   "license": "MIT"
 }
