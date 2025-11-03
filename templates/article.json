@@ -90,148 +90,6 @@
         "padding-block-end": 80
       }
     },
-    "featured_blog_posts_DpxNrE": {
-      "type": "featured-blog-posts",
-      "blocks": {
-        "static-blog-title": {
-          "type": "_featured-blog-posts-title",
-          "name": "t:names.title",
-          "static": true,
-          "settings": {
-            "text": "<h2>My latest exhibitions</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 16,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "static-blog-post-card": {
-          "type": "_featured-blog-posts-card",
-          "name": "t:names.blog_card",
-          "static": true,
-          "settings": {
-            "alignment": "left",
-            "gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image": {
-              "type": "_featured-blog-posts-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "landscape",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16
-              },
-              "blocks": {}
-            },
-            "title": {
-              "type": "_heading",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "text": "<h4>{{ closest.article.title }}</h4>",
-                "read_only": false,
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 16,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-info-text": {
-              "type": "_blog-post-info-text",
-              "name": "t:names.details",
-              "static": true,
-              "settings": {
-                "show_date": true,
-                "show_author": false,
-                "type_preset": "",
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-description": {
-              "type": "_blog-post-description",
-              "name": "t:names.excerpt",
-              "static": true,
-              "settings": {
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.875rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "name": "Exhibitions",
-      "settings": {
-        "blog": "exhibitions",
-        "layout_type": "carousel",
-        "carousel_on_mobile": false,
-        "post_limit": 6,
-        "columns": 3,
-        "mobile_columns": "1",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 24,
-        "rows_gap": 8,
-        "icons_style": "arrow",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "gap": 24,
-        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
-        "padding-block-end": 64
-      }
-    },
     "featured_blog_posts_MxzxkT": {
       "type": "featured-blog-posts",
       "blocks": {
@@ -367,6 +225,148 @@
         "columns_gap": 24,
         "rows_gap": 16,
         "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "featured_blog_posts_DpxNrE": {
+      "type": "featured-blog-posts",
+      "blocks": {
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "name": "t:names.title",
+          "static": true,
+          "settings": {
+            "text": "<h2>My latest exhibitions</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "name": "t:names.blog_card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 0,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "landscape",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16
+              },
+              "blocks": {}
+            },
+            "title": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "read_only": false,
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
+              "settings": {
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "name": "t:names.excerpt",
+              "static": true,
+              "settings": {
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 8,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "name": "Exhibitions",
+      "settings": {
+        "blog": "exhibitions",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "post_limit": 6,
+        "columns": 3,
+        "mobile_columns": "1",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 8,
+        "icons_style": "arrow",
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 24,
@@ -572,8 +572,8 @@
   },
   "order": [
     "section",
-    "featured_blog_posts_DpxNrE",
     "featured_blog_posts_MxzxkT",
+    "featured_blog_posts_DpxNrE",
     "product_list_FVieGf"
   ]
 }
