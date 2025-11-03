@@ -3447,7 +3447,7 @@
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "gap": 12,
+        "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 48,
         "padding-block-end": 48
@@ -3640,7 +3640,7 @@
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "gap": 12,
+        "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 48,
         "padding-block-end": 48
