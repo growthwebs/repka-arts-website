@@ -1348,7 +1348,7 @@
         "padding-block-end": 0
       }
     },
-    "featured_blog_posts_VXrTRJ": {
+    "featured_blog_posts_LDjH93": {
       "type": "featured-blog-posts",
       "blocks": {
         "static-blog-title": {
@@ -1356,10 +1356,10 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h2>My exhibitions</h2>",
-            "width": "fit-content",
+            "text": "<h3>My exhibitions</h3>",
+            "width": "100%",
             "max_width": "normal",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "h2",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
@@ -1384,7 +1384,7 @@
           "static": true,
           "settings": {
             "alignment": "left",
-            "gap": 8,
+            "gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -1392,7 +1392,7 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -1426,7 +1426,7 @@
                 "read_only": false,
                 "alignment": "left",
                 "show_alignment": false,
-                "padding-block-start": 16,
+                "padding-block-start": 8,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -1470,7 +1470,7 @@
           "block_order": []
         }
       },
-      "name": "t:names.blog_posts_carousel",
+      "name": "Exhibitions: Carousel",
       "settings": {
         "blog": "exhibitions",
         "layout_type": "carousel",
@@ -2036,7 +2036,7 @@
     "product_list_enxNR3",
     "collection_list_NhWAJT",
     "section_c9iUYd",
-    "featured_blog_posts_VXrTRJ",
+    "featured_blog_posts_LDjH93",
     "section_x3VTYi",
     "featured_blog_posts_kAQWr4",
     "section_iTHHyw",
