@@ -1720,7 +1720,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "All events",
-                "link": "shopify://pages/events",
+                "link": "shopify://collections/art-events",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
