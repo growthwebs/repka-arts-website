@@ -645,7 +645,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Learn more",
+                    "label": "Learn more about the artist",
                     "link": "shopify://pages/about",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -1788,7 +1788,7 @@
         "collection": "art-events",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
-        "max_products": 6,
+        "max_products": 4,
         "columns": 3,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",

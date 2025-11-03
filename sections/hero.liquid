@@ -63,6 +63,12 @@
 {% capture media %}
   {%- if has_image_1 -%}
     {% assign media_count = media_count | plus: 1 %}
+    {% liquid
+      assign image_1_alt = section.settings.image_1.alt
+      if image_1_alt == blank
+        assign image_1_alt = 'Hero image showcasing artwork by Maryna Riepnova'
+      endif
+    %}
     {{
       section.settings.image_1
       | image_url: width: 3840
@@ -70,7 +76,7 @@
         width: section.settings.image_1.width,
         widths: widths,
         height: section.settings.image_1.height,
-        alt: section.settings.image_1.alt,
+        alt: image_1_alt,
         class: 'hero__image',
         sizes: sizes,
         fetchpriority: fetch_priority
@@ -86,6 +92,10 @@
           if section.index == 1
             assign fetch_priority_poster = 'high'
           endif
+          assign video_1_alt = section.settings.video_1.preview_image.alt
+          if video_1_alt == blank
+            assign video_1_alt = 'Hero video preview showcasing artwork by Maryna Riepnova'
+          endif
         %}
         {{
           section.settings.video_1.preview_image
@@ -94,7 +104,7 @@
             width: section.settings.video_1.preview_image.width,
             widths: widths,
             height: section.settings.video_1.preview_image.height,
-            alt: section.settings.video_1.alt,
+            alt: video_1_alt,
             class: 'hero__video-poster',
             sizes: sizes,
             fetchpriority: fetch_priority_poster
@@ -115,6 +125,12 @@
 
   {%- if has_image_2 -%}
     {% assign media_count = media_count | plus: 1 %}
+    {% liquid
+      assign image_2_alt = section.settings.image_2.alt
+      if image_2_alt == blank
+        assign image_2_alt = 'Hero image showcasing artwork by Maryna Riepnova'
+      endif
+    %}
     {{
       section.settings.image_2
       | image_url: width: 3840
@@ -122,7 +138,7 @@
         width: section.settings.image_2.width,
         widths: widths,
         height: section.settings.image_2.height,
-        alt: section.settings.image_2.alt,
+        alt: image_2_alt,
         class: 'hero__image',
         sizes: sizes,
         fetchpriority: fetch_priority
@@ -133,6 +149,12 @@
     {% assign media_count = media_count | plus: 1 %}
     <div class="hero__video-wrapper">
       {%- if section.settings.video_2.preview_image -%}
+        {% liquid
+          assign video_2_alt = section.settings.video_2.preview_image.alt
+          if video_2_alt == blank
+            assign video_2_alt = 'Hero video preview showcasing artwork by Maryna Riepnova'
+          endif
+        %}
         {{
           section.settings.video_2.preview_image
           | image_url: width: 3840
@@ -140,7 +162,7 @@
             width: section.settings.video_2.preview_image.width,
             widths: widths,
             height: section.settings.video_2.preview_image.height,
-            alt: section.settings.video_2.alt,
+            alt: video_2_alt,
             class: 'hero__video-poster',
             sizes: sizes
         }}
