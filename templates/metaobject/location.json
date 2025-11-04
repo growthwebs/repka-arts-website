@@ -1359,7 +1359,7 @@
         "padding-block-end": 64
       }
     },
-    "collection_links_QFifpg": {
+    "collection_links_CNDx3p": {
       "type": "collection-links",
       "blocks": {
         "link": {
@@ -1396,7 +1396,7 @@
           "block_order": []
         }
       },
-      "name": "Mediums",
+      "name": "Series",
       "settings": {
         "collection_list": [
           "toulouse-spirit",
@@ -2068,7 +2068,65 @@
     },
     "section_yGWYjX": {
       "type": "section",
-      "name": "Blog posts button",
+      "blocks": {
+        "text_gcNKCh": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Also available in</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_jwfNCx": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Shop original art in other cities in {{ closest.metaobject.location.location_country.value }}:</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_gcNKCh",
+        "text_jwfNCx"
+      ],
+      "name": "Available in",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -2093,18 +2151,18 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 16,
-        "padding-block-end": 64
+        "padding-block-start": 64,
+        "padding-block-end": 16
       }
     },
-    "collection_links_BXnEcQ": {
+    "collection_links_QFifpg": {
       "type": "collection-links",
       "blocks": {
         "link": {
           "type": "_collection-link",
           "static": true,
           "settings": {
-            "show_count": false
+            "show_count": true
           },
           "blocks": {
             "title": {
@@ -2125,8 +2183,8 @@
               "static": true,
               "settings": {
                 "height": "medium",
-                "ratio": "portrait",
-                "border_radius": 0
+                "ratio": "square",
+                "border_radius": 16
               },
               "blocks": {}
             }
@@ -2134,16 +2192,24 @@
           "block_order": []
         }
       },
-      "name": "Related locations links: Text",
+      "name": "Related cities",
       "settings": {
-        "collection_list": [],
-        "layout": "text",
+        "collection_list": [
+          "toulouse-spirit",
+          "abstract-moments",
+          "timeless-elegance",
+          "andalusian-spirit",
+          "wild-at-heart",
+          "balanced-art",
+          "ceramics"
+        ],
+        "layout": "spotlight",
         "section_width": "page-width",
-        "alignment": "center",
+        "alignment": "left",
         "image_position": "right",
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "section_XpQThE": {
@@ -2451,14 +2517,14 @@
     "section_dreDeY",
     "section_DTGVAe",
     "product_list_enxNR3",
-    "collection_links_QFifpg",
+    "collection_links_CNDx3p",
     "section_c9iUYd",
     "featured_blog_posts_LDjH93",
     "section_x3VTYi",
     "featured_blog_posts_kAQWr4",
     "section_iTHHyw",
     "section_yGWYjX",
-    "collection_links_BXnEcQ",
+    "collection_links_QFifpg",
     "section_XpQThE"
   ]
 }
