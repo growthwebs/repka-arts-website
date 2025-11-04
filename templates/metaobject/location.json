@@ -422,7 +422,7 @@
           "settings": {
             "text": "<p>{{ closest.metaobject.location.value_proposition_content | metafield_tag }}</p>",
             "width": "100%",
-            "max_width": "normal",
+            "max_width": "none",
             "alignment": "center",
             "type_preset": "h4",
             "font": "var(--font-body--family)",
@@ -437,8 +437,8 @@
             "corner_radius": 0,
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 64,
+            "padding-inline-end": 64
           },
           "blocks": {}
         },
