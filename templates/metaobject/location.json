@@ -1788,8 +1788,8 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 64,
+        "padding-block-end": 16
       }
     },
     "section_x3VTYi": {
@@ -1981,8 +1981,8 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 64,
+        "padding-block-end": 16
       }
     },
     "section_iTHHyw": {
