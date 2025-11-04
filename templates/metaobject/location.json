@@ -1369,11 +1369,13 @@
       "name": "Mediums",
       "settings": {
         "collection_list": [
-          "oil-paintings",
-          "watercolors",
-          "abstractions",
-          "ceramics",
-          "art-prints"
+          "toulouse-spirit",
+          "abstract-moments",
+          "timeless-elegance",
+          "andalusian-spirit",
+          "wild-at-heart",
+          "balanced-art",
+          "ceramics"
         ],
         "layout": "spotlight",
         "section_width": "page-width",
