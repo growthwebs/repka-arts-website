@@ -261,7 +261,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>New this season</h2>",
+                "text": "<h2>New this season in {{ metaobject.location_name.value }}</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
