@@ -504,7 +504,7 @@
         "gap": 0,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 32
       }
     },
     "product_recommendations_qnzPkn": {
@@ -789,7 +789,7 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
+        "padding-block-start": 96,
         "padding-block-end": 64
       }
     }
