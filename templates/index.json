@@ -380,8 +380,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "collection_links_Ut4aMz": {
@@ -434,8 +434,8 @@
         "alignment": "left",
         "image_position": "right",
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_m8MrRy": {
@@ -595,7 +595,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 48,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -608,7 +608,7 @@
                 "link": "",
                 "open_in_new_tab": false,
                 "content_direction": "row",
-                "vertical_on_mobile": false,
+                "vertical_on_mobile": true,
                 "horizontal_alignment": "center",
                 "vertical_alignment": "center",
                 "align_baseline": false,
@@ -714,8 +714,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_VmgBVT": {
@@ -908,8 +908,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "collection_list_dnRNYQ": {
@@ -974,8 +974,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 26,
-                "padding-block-end": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1077,10 +1077,10 @@
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
-        "gap": 12,
+        "gap": 16,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "reviews_carousel": {
@@ -1205,7 +1205,7 @@
         "heading_size": "h2",
         "card_background_color": "#ffffff",
         "card_border_color": "#0000001a",
-        "padding_top": 64,
+        "padding_top": 96,
         "padding_bottom": 0
       }
     },
@@ -1257,7 +1257,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 0,
-        "padding-block-end": 64
+        "padding-block-end": 96
       }
     },
     "section_xTkmQm": {
@@ -1542,8 +1542,8 @@
         "overlay_color": "#fafafa",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_NLVbT8": {
@@ -1800,8 +1800,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "featured_blog_posts_PWX7fF": {
@@ -1942,7 +1942,7 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
+        "padding-block-start": 96,
         "padding-block-end": 32
       }
     },
@@ -1994,7 +1994,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 16,
-        "padding-block-end": 64
+        "padding-block-end": 96
       }
     },
     "section_9CzpAF": {
@@ -2040,7 +2040,7 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 32,
             "padding-inline-end": 32
           },
@@ -2285,8 +2285,8 @@
         "overlay_color": "#fafafa",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     }
   },
