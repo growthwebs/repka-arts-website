@@ -428,8 +428,8 @@
         "section_width": "page-width",
         "gap": 64,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_dfyaYh": {
@@ -622,8 +622,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "collection_list_PyJpPr": {
@@ -793,8 +793,8 @@
         "section_width": "page-width",
         "gap": 12,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 32
       }
     },
     "section_fdPDJR": {
@@ -844,8 +844,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 64
+        "padding-block-start": 16,
+        "padding-block-end": 96
       }
     }
   },
