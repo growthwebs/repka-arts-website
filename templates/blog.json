@@ -384,7 +384,7 @@
                 "read_only": false,
                 "alignment": "left",
                 "show_alignment": false,
-                "padding-block-start": 0,
+                "padding-block-start": 24,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -444,8 +444,8 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_7pRNxR": {
@@ -638,8 +638,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "featured_blog_posts_tqHNUy": {
@@ -720,7 +720,7 @@
                 "read_only": false,
                 "alignment": "left",
                 "show_alignment": false,
-                "padding-block-start": 8,
+                "padding-block-start": 24,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -780,8 +780,8 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "padding-block-start": 96,
+        "padding-block-end": 16
       }
     },
     "section_4VrVYT": {
@@ -832,7 +832,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 16,
-        "padding-block-end": 64
+        "padding-block-end": 96
       }
     }
   },
