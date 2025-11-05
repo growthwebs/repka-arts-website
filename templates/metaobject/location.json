@@ -393,7 +393,7 @@
           ]
         }
       },
-      "name": "Featured collection: Season highlights",
+      "name": "New this season",
       "settings": {
         "collection": "season-highlights",
         "layout_type": "carousel",
@@ -441,26 +441,10 @@
             "padding-inline-end": 32
           },
           "blocks": {}
-        },
-        "button_NAWwYz": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "label": "Shop now",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "link",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "text_pTDVRx",
-        "button_NAWwYz"
+        "text_pTDVRx"
       ],
       "name": "t:names.pull_quote",
       "settings": {
@@ -692,7 +676,7 @@
           ]
         }
       },
-      "name": "Featured collection: Season highlights",
+      "name": "Oil paintings",
       "settings": {
         "collection": "oil-paintings",
         "layout_type": "carousel",
@@ -914,7 +898,7 @@
           ]
         }
       },
-      "name": "Featured collection: Season highlights",
+      "name": "Watercolor paintings",
       "settings": {
         "collection": "watercolors",
         "layout_type": "carousel",
@@ -1136,7 +1120,7 @@
           ]
         }
       },
-      "name": "Featured collection: Season highlights",
+      "name": "Ceramic art",
       "settings": {
         "collection": "ceramics",
         "layout_type": "carousel",
@@ -1783,7 +1767,7 @@
           ]
         }
       },
-      "name": "Featured collection: Season highlights",
+      "name": "Art prints",
       "settings": {
         "collection": "art-prints",
         "layout_type": "carousel",
