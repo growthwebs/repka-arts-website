@@ -206,10 +206,10 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>{{ closest.collection.title }}</h2>",
-                "width": "fit-content",
+                "text": "<h2>Upcoming events</h2>",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -552,8 +552,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_XRMWYc": {
@@ -746,8 +746,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_nyLckW": {
@@ -944,8 +944,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     }
   },
