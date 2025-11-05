@@ -410,8 +410,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_QnfihD": {
@@ -487,8 +487,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_WLP87i": {
@@ -573,8 +573,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -709,8 +709,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_JDNgq3": {
@@ -795,8 +795,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -931,8 +931,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_hCNhGh": {
@@ -1017,8 +1017,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1153,8 +1153,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_dreDeY": {
@@ -1314,8 +1314,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_DTGVAe": {
@@ -1578,8 +1578,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "product_list_qddUYi": {
@@ -1664,8 +1664,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-start": 16,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1800,8 +1800,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "collection_links_CNDx3p": {
@@ -1857,8 +1857,8 @@
         "alignment": "left",
         "image_position": "right",
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "section_c9iUYd": {
@@ -2121,8 +2121,8 @@
         "overlay_color": "#fafafa",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     },
     "featured_blog_posts_LDjH93": {
@@ -2263,7 +2263,7 @@
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
+        "padding-block-start": 96,
         "padding-block-end": 16
       }
     },
@@ -2315,7 +2315,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 16,
-        "padding-block-end": 64
+        "padding-block-end": 96
       }
     },
     "featured_blog_posts_kAQWr4": {
@@ -2508,7 +2508,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 16,
-        "padding-block-end": 64
+        "padding-block-end": 96
       }
     },
     "section_XpQThE": {
