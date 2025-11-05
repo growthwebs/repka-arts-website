@@ -51,7 +51,7 @@
       "settings": {
         "alignment": "center",
         "color_scheme": "scheme-1",
-        "padding-block-start": 36,
+        "padding-block-start": 64,
         "padding-block-end": 0
       }
     },
@@ -324,8 +324,8 @@
         "padding-inline-start": 0,
         "padding-inline-end": 0,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     }
   },
