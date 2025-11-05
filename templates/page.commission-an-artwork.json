@@ -73,7 +73,7 @@
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 40,
+        "padding-block-start": 64,
         "padding-block-end": 0
       }
     },
@@ -84,7 +84,7 @@
           "type": "contact-form",
           "settings": {
             "width": "custom",
-            "custom_width": 75,
+            "custom_width": 50,
             "width_mobile": "custom",
             "custom_width_mobile": 100,
             "inherit_color_scheme": true,
@@ -141,7 +141,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "padding-block-start": 32,
-        "padding-block-end": 32
+        "padding-block-end": 64
       }
     },
     "product_list_38RehY": {
@@ -334,8 +334,8 @@
         "horizontal_alignment": "flex-start",
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     }
   },
