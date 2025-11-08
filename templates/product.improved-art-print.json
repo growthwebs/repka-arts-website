@@ -918,62 +918,21 @@
                     "text_jYDbK3"
                   ]
                 },
-                "accordion_row_HzqJxU": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Dimensions",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/ruler-dimension-line.svg",
-                    "width": 16
-                  },
-                  "blocks": {
-                    "text_RU37zW": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.dimensions.value }}</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_RU37zW"
-                  ]
-                },
                 "accordion_row_nyPPaV": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Medium",
+                    "heading": "Print materials & quality",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/brush.svg",
+                    "image_upload": "shopify://shop_images/stamp.svg",
                     "width": 16
                   },
                   "blocks": {
                     "text_Xi7X4A": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.medium.value }}</p>",
+                        "text": "<p>This is a premium fine art 'giclée' print, created to museum-quality standards.</p><p>It is printed on a thick, 200 gsm (5.9 oz/yd²) archival, acid-free matte paper. This heavyweight paper has a smooth, uncoated finish that feels luxurious and ensures the print will not yellow or fade over time.</p><p>We use archival-quality inks to capture the full vibrant colour and subtle detail of Maryna's original <strong>artwork</strong>. The result is a stunning, fade-resistant print that will last a lifetime.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1000,21 +959,21 @@
                     "text_Xi7X4A"
                   ]
                 },
-                "accordion_row_Vkgpdm": {
+                "accordion_row_HzqJxU": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Place and date",
+                    "heading": "Sizing & borders",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/map-pinned.svg",
+                    "image_upload": "shopify://shop_images/ruler-dimension-line.svg",
                     "width": 16
                   },
                   "blocks": {
-                    "text_wy48ym": {
+                    "text_RU37zW": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.place_and_date.value }}</p>",
+                        "text": "<p>{{ closest.product.metafields.custom.sizing_borders | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1038,14 +997,14 @@
                     }
                   },
                   "block_order": [
-                    "text_wy48ym"
+                    "text_RU37zW"
                   ]
                 },
                 "accordion_row_cMrmYx": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Framing",
+                    "heading": "Premium framing",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/frame.svg",
@@ -1055,7 +1014,7 @@
                     "text_kf46N9": {
                       "type": "text",
                       "settings": {
-                        "text": "{{ closest.product.metafields.shopify[\"frame-style\"] | metafield_tag: field: 'label' }}",
+                        "text": "<p>{{ closest.product.metafields.custom.art_print_premium_framing | metafield_tag }}</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1086,7 +1045,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Provenance & Signature",
+                    "heading": "About this print",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/file-pen.svg",
@@ -1096,7 +1055,7 @@
                     "text_qrwVHA": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Includes a <em>Certificate of Authenticity</em> hand-signed by the artist, Maryna Riepnova. The painting is also hand-signed on the front/back.</p>",
+                        "text": "<p>This is an official, open-edition fine art print of the original painting.</p><p>It has been professionally reproduced to faithfully capture every detail and colour of Maryna's original artwork. Please note that the artist's signature on the print is a high-quality reproduction of the original signature.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1127,7 +1086,7 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Shipping & Returns",
+                    "heading": "Secure shipping & packaging",
                     "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/forklift.svg",
@@ -1137,7 +1096,7 @@
                     "text_nny9HM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Each original painting is professionally packaged with extreme care to ensure safe transit. We offer <em>Free Shipping</em> on all originals.</p>",
+                        "text": "<p>We take extreme care in getting your framed art to you safely.</p><p>Your framed print is sealed and placed in a robust, reinforced cardboard box, with protective padding to ensure it arrives in perfect, ready-to-hang condition.</p><p>This item is produced and shipped by our global partner, Gelato, ensuring it is created closer to you for faster, smarter, and more sustainable delivery.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1167,9 +1126,8 @@
               },
               "block_order": [
                 "accordion_row_AeyREy",
-                "accordion_row_HzqJxU",
                 "accordion_row_nyPPaV",
-                "accordion_row_Vkgpdm",
+                "accordion_row_HzqJxU",
                 "accordion_row_cMrmYx",
                 "accordion_row_RANmfz",
                 "accordion_row_PNHt8h"
