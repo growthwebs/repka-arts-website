@@ -8,6 +8,7 @@
     payment-icons
     spacing-style
   "
+  data-columns="{{ block_settings.horizontal_alignment }}"
   style="
     {% render 'spacing-padding', settings: block_settings %}
     --icon-gap: {{ block_settings.gap }}px;
@@ -34,18 +35,51 @@
   }
 
   .payment-icons__list {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
     justify-content: var(--alignment);
-    flex-wrap: wrap;
+    align-items: stretch;
     gap: var(--icon-gap);
     margin: 0;
     padding: 0;
+    list-style: none;
+  }
+
+  .payment-icons[data-columns='left'] .payment-icons__list {
+    justify-items: start;
+  }
+
+  .payment-icons[data-columns='center'] .payment-icons__list {
+    justify-items: center;
+  }
+
+  .payment-icons[data-columns='right'] .payment-icons__list {
+    justify-items: end;
+  }
+
+  .payment-icons[data-columns='space-between'] .payment-icons__list {
+    justify-items: stretch;
   }
 
   .payment-icons__item {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: calc(var(--icon-gap) / 1.5);
+    background: color-mix(in srgb, var(--color-foreground, #000) 4%, transparent);
+    border-radius: 8px;
+  }
+
+  .payment-icons__item .icon {
+    width: clamp(40px, 6vw, 64px);
+    height: auto;
+    max-height: 32px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .payment-icons__list {
+      grid-template-columns: repeat(auto-fit, minmax(88px, min(10vw, 120px)));
+    }
   }
 {% endstylesheet %}
 
