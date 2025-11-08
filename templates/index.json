@@ -140,10 +140,22 @@
     "marquee_kdzReW": {
       "type": "marquee",
       "blocks": {
+        "icon_H4DawV": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/gift.svg",
+            "width": 20,
+            "link": "shopify://collections/buy-art-on-sale",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
         "text_EFNJpa": {
           "type": "text",
           "settings": {
-            "text": "<p>Don't miss out our November SALE · Enjoy 30% discount on selected products · Click here -&gt;</p>",
+            "text": "<p><a href=\"/collections/buy-art-on-sale\" title=\"Sale\">Don't miss out our November SALE · Enjoy 30% discount on selected products</a></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -170,7 +182,8 @@
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "width": 24,
+            "image_upload": "shopify://shop_images/gift.svg",
+            "width": 20,
             "link": "shopify://collections/buy-art-on-sale",
             "open_in_new_tab": false
           },
@@ -178,6 +191,7 @@
         }
       },
       "block_order": [
+        "icon_H4DawV",
         "text_EFNJpa",
         "icon_h8RBye"
       ],
