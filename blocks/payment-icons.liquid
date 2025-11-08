@@ -11,7 +11,12 @@
   style="
     {% render 'spacing-padding', settings: block_settings %}
     --icon-gap: {{ block_settings.gap }}px;
-    --alignment: {{ block_settings.horizontal_alignment }};
+    --alignment:
+      {%- case block_settings.horizontal_alignment -%}
+        {%- when 'flex-start' -%} start
+        {%- when 'flex-end' -%} end
+        {%- else -%} {{ block_settings.horizontal_alignment }}
+      {%- endcase -%};
   "
   {{ block.shopify_attributes }}
 >
@@ -36,7 +41,7 @@
   .payment-icons__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(64px, max-content));
-    justify-content: var(--alignment, center);
+    justify-content: center;
     justify-items: center;
     gap: var(--icon-gap);
     margin: 0;
@@ -60,6 +65,7 @@
   @media screen and (min-width: 750px) {
     .payment-icons__list {
       grid-template-columns: repeat(auto-fit, minmax(72px, max-content));
+      justify-content: var(--alignment, center);
     }
   }
 {% endstylesheet %}
