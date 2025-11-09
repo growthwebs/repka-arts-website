@@ -1208,7 +1208,7 @@
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h2>You may also like</h2>",
+            "text": "<h2>Pair it with</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1471,7 +1471,7 @@
       "settings": {
         "product": "{{ closest.product }}",
         "recommendation_type": "related",
-        "layout_type": "grid",
+        "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 8,
         "columns": 4,
