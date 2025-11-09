@@ -1586,7 +1586,7 @@
                 "text_E4fdar": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Yes, we securely ship original art, ceramics, and prints to collectors all over the world from our studio in Málaga, Spain.</p>",
+                    "text": "<p>Yes, we ship to a variety of countries, such as Argentina, Austria, Belgium, Brazil, Canada, China, Czech Republic, Denmark, Egypt, Finland, France, Germany, Greece, Hong Kong, Hungary, Ireland, Israel, Italy, Japan, Kuwait, Lebanon, Mexico, Morocco, Norway, Poland, Portugal, Qatar, Saudi Arabia, Singapore, South Korea, Spain (mainland and Balearic Islands), Sweden, Switzerland, Taiwan, The Netherlands, United Arab Emirates, United Kingdom, United States, and Uruguay. In case you have a different country to ship and want a piece of my art, just ask me at hello@repkaarts.com</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1611,6 +1611,46 @@
               },
               "block_order": [
                 "text_E4fdar"
+              ]
+            },
+            "accordion_row_JnCrBN": {
+              "type": "_accordion-row",
+              "disabled": true,
+              "settings": {
+                "heading": "Is there an option to prepare the order as a gift?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_99JfLz": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>You have the option of including a wrapping bag in your order. The package will not arrive wrapped, but you will receive the box along with a special bag so you can prepare it as you wish.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_99JfLz"
               ]
             },
             "accordion_row_xjiBei": {
@@ -1697,7 +1737,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "Do you offer art workshops or events?",
+                "heading": "How to know the status of my order?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -1707,7 +1747,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Yes, we host public plein-air sessions and also design private art workshops for groups, hotels, and corporate team-building events.</p>",
+                    "text": "<p>When your order has been sent to the courier you will receive a link, through that link you will be able to see the status of your updated shipment<br/><br/>The link will reach you and will be activated approximately 24 business hours after placing the order.<br/><br/>If you have any questions, you can contact us at info@repkaarts.com</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1734,21 +1774,21 @@
                 "text_cGCXhD"
               ]
             },
-            "accordion_row_dNDtxr": {
+            "accordion_row_W4bWkU": {
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "How do I join a painting session?",
+                "heading": "What payment methods do you have?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
               "blocks": {
-                "text_NzH9Lw": {
+                "text_gH7qfA": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
+                    "text": "<p>Payments at Repka Arts are 100% safe and secure. We accept debit or credit cards (Visa, Maestro, Mastercard & American Express), PayPal, Shop Pay, Google Pay, Apple pay. All our transactions are secure.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -1772,17 +1812,18 @@
                 }
               },
               "block_order": [
-                "text_NzH9Lw"
+                "text_gH7qfA"
               ]
             }
           },
           "block_order": [
             "accordion_row_bxXCFh",
             "accordion_row_yLHYB3",
+            "accordion_row_JnCrBN",
             "accordion_row_xjiBei",
             "accordion_row_kRecJR",
             "accordion_row_dcX3ke",
-            "accordion_row_dNDtxr"
+            "accordion_row_W4bWkU"
           ]
         }
       },
