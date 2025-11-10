@@ -40,12 +40,12 @@
                   {% if product.featured_image %}
                     {{
                       product.featured_image
-                      | image_url: width: 160, height: 160, crop: 'center'
+                      | image_url: width: 120, height: 120, crop: 'center'
                       | image_tag:
                         loading: 'lazy',
                         class: 'cart-drawer-upsell__image',
-                        widths: '120, 140, 160',
-                        sizes: '(min-width: 750px) 120px, 40vw',
+                        widths: '80, 100, 120',
+                        sizes: '(min-width: 750px) 90px, 32vw',
                         alt: product.featured_image.alt
                       | default: product.title
                     }}
@@ -126,7 +126,7 @@
       }
 
       .cart-drawer-upsell__item {
-        flex: 0 0 clamp(220px, 70vw, 260px);
+        flex: 0 0 clamp(200px, 65vw, 230px);
         display: grid;
         grid-template-columns: auto 1fr;
         gap: var(--padding-sm);
@@ -146,9 +146,9 @@
 
       .cart-drawer-upsell__image-wrapper {
         display: block;
-        border-radius: 16px;
+        border-radius: 12px;
         overflow: hidden;
-        width: 100px;
+        width: 60px;
         aspect-ratio: 1 / 1;
       }
 
