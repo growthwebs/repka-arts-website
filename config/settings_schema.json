@@ -1805,6 +1805,18 @@
       },
       {
         "type": "checkbox",
+        "id": "cart_drawer_show_recommendations",
+        "label": "Show cart drawer recommendations",
+        "default": true
+      },
+      {
+        "type": "collection",
+        "id": "cart_drawer_fallback_collection",
+        "label": "Fallback collection for cart drawer recommendations",
+        "info": "Shown when Shopify recommendations are unavailable."
+      },
+      {
+        "type": "checkbox",
         "id": "show_accelerated_checkout_buttons",
         "label": "t:settings.checkout_buttons",
         "info": "t:info.checkout_buttons",
