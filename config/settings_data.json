@@ -62,6 +62,7 @@
     "show_installments": false,
     "show_accelerated_checkout_buttons": false,
     "cart_thumbnail_border": "none",
+    "cart_thumbnail_border_radius": 16,
     "drawer_color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
     "drawer_border": "none",
     "icon_stroke": "thin",
