@@ -60,6 +60,7 @@
     "cart_note_open_by_default": false,
     "show_add_discount_code": true,
     "show_installments": false,
+    "show_accelerated_checkout_buttons": false,
     "cart_thumbnail_border": "none",
     "drawer_color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
     "drawer_border": "none",
