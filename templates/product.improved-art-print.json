@@ -1204,14 +1204,14 @@
         "padding-block-end": 32
       }
     },
-    "product_recommendations_qnzPkn": {
+    "product_recommendations_cxNETn": {
       "type": "product-recommendations",
       "blocks": {
-        "text_GbxcYC": {
+        "text_LkX4Ex": {
           "type": "text",
           "name": "t:names.header",
           "settings": {
-            "text": "<h2>You may also like</h2>",
+            "text": "<h2>Pair it with</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -1251,7 +1251,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_YYPH6q": {
+            "product_card_gallery_dWN6UV": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -1267,7 +1267,7 @@
               },
               "blocks": {}
             },
-            "group_396y6r": {
+            "product_card_group_mBfYEr": {
               "type": "_product-card-group",
               "settings": {
                 "link": "",
@@ -1305,7 +1305,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_tEHPmM": {
+                "product_card_group_qGwtrf": {
                   "type": "_product-card-group",
                   "name": "t:names.group",
                   "settings": {
@@ -1344,7 +1344,7 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "text_CayfE3": {
+                    "text_n7nbQH": {
                       "type": "text",
                       "settings": {
                         "text": "<h4>{{ closest.product.title }}</h4>",
@@ -1369,7 +1369,7 @@
                       },
                       "blocks": {}
                     },
-                    "price_ahRCgD": {
+                    "price_xjnwRP": {
                       "type": "price",
                       "settings": {
                         "show_sale_price_first": true,
@@ -1393,11 +1393,11 @@
                     }
                   },
                   "block_order": [
-                    "text_CayfE3",
-                    "price_ahRCgD"
+                    "text_n7nbQH",
+                    "price_xjnwRP"
                   ]
                 },
-                "group_PihxwT": {
+                "product_card_group_AT8DNM": {
                   "type": "_product-card-group",
                   "name": "t:names.group",
                   "settings": {
@@ -1436,7 +1436,7 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "swatches_EdNBpW": {
+                    "swatches_gChEgK": {
                       "type": "swatches",
                       "settings": {
                         "product_swatches_alignment": "flex-end",
@@ -1451,30 +1451,30 @@
                     }
                   },
                   "block_order": [
-                    "swatches_EdNBpW"
+                    "swatches_gChEgK"
                   ]
                 }
               },
               "block_order": [
-                "group_tEHPmM",
-                "group_PihxwT"
+                "product_card_group_qGwtrf",
+                "product_card_group_AT8DNM"
               ]
             }
           },
           "block_order": [
-            "product_card_gallery_YYPH6q",
-            "group_396y6r"
+            "product_card_gallery_dWN6UV",
+            "product_card_group_mBfYEr"
           ]
         }
       },
       "block_order": [
-        "text_GbxcYC"
+        "text_LkX4Ex"
       ],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
         "recommendation_type": "related",
-        "layout_type": "grid",
+        "layout_type": "carousel",
         "carousel_on_mobile": true,
         "max_products": 8,
         "columns": 4,
@@ -1489,10 +1489,611 @@
         "padding-block-start": 96,
         "padding-block-end": 96
       }
+    },
+    "product_list_LCEiNd": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_ENkczi": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>You might be interested</h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_qfqhqc": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "disabled": true,
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_ENkczi",
+            "product_list_button_qfqhqc"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_AqfkpQ": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_yxbU3a": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_QU6H9U": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": true,
+                "type_preset": "custom",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_AqfkpQ",
+            "product_title_yxbU3a",
+            "price_QU6H9U"
+          ]
+        }
+      },
+      "name": "Featured collection: Season highlights",
+      "settings": {
+        "collection": "season-highlights",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 24,
+        "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 24,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "padding-block-start": 96,
+        "padding-block-end": 96
+      }
+    },
+    "reviews_carousel_new_B3icd6": {
+      "type": "reviews-carousel-new",
+      "blocks": {
+        "review_93Pa9F": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "J'ai commandé un art print sur leur site (je suis à Lille). Reçu rapidement. Le papier est bien épais et les couleurs sont belles. Facile à commander, et ça rend super bien sur mon mur.",
+            "customer_name": "Sophie D.",
+            "customer_location": "Lille, France",
+            "review_source": "via Website"
+          }
+        },
+        "review_caWRen": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Bought a painting online, which felt like a bit of a gamble. But it got to me in Bristol just fine. You can really see the brush strokes and paint texture up close, way better than the photo. Looks great.",
+            "customer_name": "Tom H.",
+            "customer_location": "Bristol, UK",
+            "review_source": "via Website"
+          }
+        },
+        "review_zP4RAz": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Pedí unas tazas de cerámica por la web, vivo en Valencia. Tenía un poco de miedo por el envío, pero llegaron de una pieza. Están súper chulas, la verdad. Me molan mucho.",
+            "customer_name": "Javier G.",
+            "customer_location": "Valencia, Spain",
+            "review_source": "via Website"
+          }
+        },
+        "review_hfHDbt": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Замовив принт онлайн, з доставкою в Дубай. Все приїхало ціле, добре запакували. Друк класний, кольори яскраві. Сайт теж нормальний, розібрався швидко.",
+            "customer_name": "Andriy M.",
+            "customer_location": "Dubai, UAE",
+            "review_source": "via Website"
+          }
+        },
+        "review_nEzLk4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "I ordered a vase from their website to my place in Lausanne. Ordering was easy and it got here pretty fast. It’s got a nice, solid feel to it, and the colour is lovely. Really happy with it.",
+            "customer_name": "Elena S.",
+            "customer_location": "Lausanne, Switzerland",
+            "review_source": "via Website"
+          }
+        }
+      },
+      "block_order": [
+        "review_93Pa9F",
+        "review_caWRen",
+        "review_zP4RAz",
+        "review_hfHDbt",
+        "review_nEzLk4"
+      ],
+      "name": "Reviews Carousel",
+      "settings": {
+        "heading": "Join our happy customers",
+        "heading_size": "h2",
+        "card_background_color": "#FFFFFF",
+        "card_border_color": "rgba(0, 0, 0, 0.1)",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "section_nVz3b8": {
+      "type": "section",
+      "blocks": {
+        "text_MnhKzR": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Frequently asked questions</h2>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "clamp(1.5rem, 3vw, 2rem)",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_mFQJhX": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "plus",
+            "dividers": false,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
+          },
+          "blocks": {
+            "accordion_row_6rrADD": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What is the term of changes and returns?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_d4PjUy": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>The deadline for any exchange or return is 3 days.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_d4PjUy"
+              ]
+            },
+            "accordion_row_jLLAGE": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Do you ship internationally?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_YmaqTE": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Yes, we ship to a variety of countries, such as Argentina, Austria, Belgium, Brazil, Canada, China, Czech Republic, Denmark, Egypt, Finland, France, Germany, Greece, Hong Kong, Hungary, Ireland, Israel, Italy, Japan, Kuwait, Lebanon, Mexico, Morocco, Norway, Poland, Portugal, Qatar, Saudi Arabia, Singapore, South Korea, Spain (mainland and Balearic Islands), Sweden, Switzerland, Taiwan, The Netherlands, United Arab Emirates, United Kingdom, United States, and Uruguay. In case you have a different country to ship and want a piece of my art, just ask me at hello@repkaarts.com</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_YmaqTE"
+              ]
+            },
+            "accordion_row_LUHJkn": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What kind of art do you create?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_dyKNVM": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_dyKNVM"
+              ]
+            },
+            "accordion_row_xc9Hew": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Can I request a custom piece or collaboration?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_AVH9z3": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_AVH9z3"
+              ]
+            },
+            "accordion_row_tw97XP": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "How to know the status of my order?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_AQQPHq": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>When your order has been sent to the courier you will receive a link, through that link you will be able to see the status of your updated shipment<br/><br/>The link will reach you and will be activated approximately 24 business hours after placing the order.<br/><br/>If you have any questions, you can contact us at info@repkaarts.com</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_AQQPHq"
+              ]
+            },
+            "accordion_row_4eQF78": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "What payment methods do you have?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_nxpcMz": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Payments at Repka Arts are 100% safe and secure. We accept debit or credit cards (Visa, Maestro, Mastercard & American Express), PayPal, Shop Pay, Google Pay, Apple pay. All our transactions are secure.</p>",
+                    "width": "100%",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 16,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_nxpcMz"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_6rrADD",
+            "accordion_row_jLLAGE",
+            "accordion_row_LUHJkn",
+            "accordion_row_xc9Hew",
+            "accordion_row_tw97XP",
+            "accordion_row_4eQF78"
+          ]
+        }
+      },
+      "block_order": [
+        "text_MnhKzR",
+        "accordion_mFQJhX"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#fafafa",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 96,
+        "padding-block-end": 96
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qnzPkn"
+    "product_recommendations_cxNETn",
+    "product_list_LCEiNd",
+    "reviews_carousel_new_B3icd6",
+    "section_nVz3b8"
   ]
 }
