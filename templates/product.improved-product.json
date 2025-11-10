@@ -1211,7 +1211,7 @@
             "text": "<h2>Pair it with</h2>",
             "width": "100%",
             "max_width": "normal",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "h2",
             "font": "var(--font-primary--family)",
             "font_size": "",
@@ -1529,9 +1529,9 @@
               "name": "t:names.collection_title",
               "settings": {
                 "text": "<h2>You might be interested</h2>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1553,6 +1553,7 @@
             "product_list_button_AYKbVL": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -1681,6 +1682,77 @@
         "padding-block-end": 96
       }
     },
+    "reviews_carousel_new_7iMYbJ": {
+      "type": "reviews-carousel-new",
+      "blocks": {
+        "review_nhPbED": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "J'ai commandé un art print sur leur site (je suis à Lille). Reçu rapidement. Le papier est bien épais et les couleurs sont belles. Facile à commander, et ça rend super bien sur mon mur.",
+            "customer_name": "Sophie D.",
+            "customer_location": "Lille, France",
+            "review_source": "via Website"
+          }
+        },
+        "review_RLzxnF": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Bought a painting online, which felt like a bit of a gamble. But it got to me in Bristol just fine. You can really see the brush strokes and paint texture up close, way better than the photo. Looks great.",
+            "customer_name": "Tom H.",
+            "customer_location": "Bristol, UK",
+            "review_source": "via Website"
+          }
+        },
+        "review_mdHRTm": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Pedí unas tazas de cerámica por la web, vivo en Valencia. Tenía un poco de miedo por el envío, pero llegaron de una pieza. Están súper chulas, la verdad. Me molan mucho.",
+            "customer_name": "Javier G.",
+            "customer_location": "Valencia, Spain",
+            "review_source": "via Website"
+          }
+        },
+        "review_QQAane": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Замовив принт онлайн, з доставкою в Дубай. Все приїхало ціле, добре запакували. Друк класний, кольори яскраві. Сайт теж нормальний, розібрався швидко.",
+            "customer_name": "Andriy M.",
+            "customer_location": "Dubai, UAE",
+            "review_source": "via Website"
+          }
+        },
+        "review_UMABQ4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "I ordered a vase from their website to my place in Lausanne. Ordering was easy and it got here pretty fast. It’s got a nice, solid feel to it, and the colour is lovely. Really happy with it.",
+            "customer_name": "Elena S.",
+            "customer_location": "Lausanne, Switzerland",
+            "review_source": "via Website"
+          }
+        }
+      },
+      "block_order": [
+        "review_nhPbED",
+        "review_RLzxnF",
+        "review_mdHRTm",
+        "review_QQAane",
+        "review_UMABQ4"
+      ],
+      "name": "Reviews Carousel",
+      "settings": {
+        "heading": "Join our happy customers",
+        "heading_size": "h2",
+        "card_background_color": "#FFFFFF",
+        "card_border_color": "rgba(0, 0, 0, 0.1)",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "section_wkdff8": {
       "type": "section",
       "blocks": {
@@ -1691,7 +1763,7 @@
             "text": "<h2>Frequently asked questions</h2>",
             "width": "100%",
             "max_width": "narrow",
-            "alignment": "left",
+            "alignment": "center",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
             "font_size": "clamp(1.5rem, 3vw, 2rem)",
@@ -2018,6 +2090,7 @@
     "main",
     "product_recommendations_qnzPkn",
     "product_list_L7Rce6",
+    "reviews_carousel_new_7iMYbJ",
     "section_wkdff8"
   ]
 }
