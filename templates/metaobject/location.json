@@ -167,13 +167,25 @@
         "padding-block-end": 0
       }
     },
-    "marquee_GyaQBJ": {
+    "marquee_KmrnPJ": {
       "type": "marquee",
       "blocks": {
-        "text_GJnWLJ": {
+        "icon_qqbpjc": {
+          "type": "icon",
+          "name": "t:names.icon",
+          "settings": {
+            "icon": "price_tag",
+            "image_upload": "shopify://shop_images/gift.svg",
+            "width": 20,
+            "link": "shopify://collections/buy-art-on-sale",
+            "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "text_ky4GG9": {
           "type": "text",
           "settings": {
-            "text": "<p>Don't miss out our November SALE · Enjoy 30% discount on selected products · Click here -&gt;</p>",
+            "text": "<p><a href=\"/collections/buy-art-on-sale\" title=\"Sale\">Don't miss out our November SALE</a></p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -195,21 +207,49 @@
           },
           "blocks": {}
         },
-        "icon_h8DdYi": {
+        "icon_7nMqDP": {
           "type": "icon",
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "width": 24,
+            "image_upload": "shopify://shop_images/gift.svg",
+            "width": 20,
             "link": "shopify://collections/buy-art-on-sale",
             "open_in_new_tab": false
+          },
+          "blocks": {}
+        },
+        "text_rz7JyB": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/collections/buy-art-on-sale\" title=\"Sale\">Enjoy 30% discount on selected products</a></p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "none",
+            "wrap": "nowrap",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "text_GJnWLJ",
-        "icon_h8DdYi"
+        "icon_qqbpjc",
+        "text_ky4GG9",
+        "icon_7nMqDP",
+        "text_rz7JyB"
       ],
       "name": "t:names.marquee_section",
       "settings": {
@@ -2870,7 +2910,7 @@
   "order": [
     "17622700811c2247ea",
     "hero_iLCgph",
-    "marquee_GyaQBJ",
+    "marquee_KmrnPJ",
     "product_list_Q8nhpR",
     "section_QnfihD",
     "product_list_WLP87i",
