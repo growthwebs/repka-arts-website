@@ -775,7 +775,7 @@
             },
             "group_whHAWK": {
               "type": "group",
-              "name": "Direct refunds",
+              "name": "Gift",
               "settings": {
                 "link": "",
                 "open_in_new_tab": false,
