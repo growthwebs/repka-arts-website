@@ -184,7 +184,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Original one-of-a-kind painting</p>",
+                    "text": "<p>Handmade one-of-a-kind ceramic piece</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -257,7 +257,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "plane",
-                    "image_upload": "shopify://shop_images/signature.svg",
+                    "image_upload": "shopify://shop_images/stamp.svg",
                     "width": 16,
                     "link": "",
                     "open_in_new_tab": false
@@ -268,7 +268,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Signed by the artist</p>",
+                    "text": "<p>Crafted and stamped by the artist</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -386,90 +386,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_PettrF": {
-                  "type": "group",
-                  "name": "Free shipping",
-                  "settings": {
-                    "link": "",
-                    "open_in_new_tab": false,
-                    "content_direction": "row",
-                    "vertical_on_mobile": true,
-                    "horizontal_alignment": "flex-start",
-                    "vertical_alignment": "center",
-                    "align_baseline": false,
-                    "horizontal_alignment_flex_direction_column": "flex-start",
-                    "vertical_alignment_flex_direction_column": "center",
-                    "gap": 12,
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "custom_height": 100,
-                    "inherit_color_scheme": true,
-                    "color_scheme": "",
-                    "background_media": "none",
-                    "video_position": "cover",
-                    "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
-                    "placeholder": "",
-                    "toggle_overlay": false,
-                    "overlay_color": "#00000026",
-                    "overlay_style": "solid",
-                    "gradient_direction": "to top",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {
-                    "icon_CMFKHC": {
-                      "type": "icon",
-                      "name": "t:names.icon",
-                      "settings": {
-                        "icon": "plane",
-                        "image_upload": "shopify://shop_images/party-popper.svg",
-                        "width": 16,
-                        "link": "",
-                        "open_in_new_tab": false
-                      },
-                      "blocks": {}
-                    },
-                    "text_xgHk6L": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<p>Available for free shipping</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "custom",
-                        "font": "var(--font-body--family)",
-                        "font_size": "0.875rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "icon_CMFKHC",
-                    "text_xgHk6L"
-                  ]
-                },
                 "group_7GCe6J": {
                   "type": "group",
                   "name": "Worldwide shipping",
@@ -526,7 +442,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Worldwide shipping</p>",
+                        "text": "<p>Packaged and shipped with care</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -556,7 +472,6 @@
                 }
               },
               "block_order": [
-                "group_PettrF",
                 "group_7GCe6J"
               ]
             },
@@ -858,6 +773,90 @@
                 "text_jtMkkt"
               ]
             },
+            "group_whHAWK": {
+              "type": "group",
+              "name": "Direct refunds",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "icon_UTEY3G": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "return",
+                    "image_upload": "shopify://shop_images/gift.svg",
+                    "width": 16,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                },
+                "text_6H6JWR": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Ideal for gift</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "0.875rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "icon_UTEY3G",
+                "text_6H6JWR"
+              ]
+            },
             "accordion_NKWPiW": {
               "type": "accordion",
               "name": "Product information",
@@ -962,10 +961,10 @@
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Medium",
+                    "heading": "Materials and technique",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/brush.svg",
+                    "image_upload": "shopify://shop_images/gavel.svg",
                     "width": 16
                   },
                   "blocks": {
@@ -1040,62 +1039,21 @@
                     "text_wy48ym"
                   ]
                 },
-                "accordion_row_cMrmYx": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Framing",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "image_upload": "shopify://shop_images/frame.svg",
-                    "width": 16
-                  },
-                  "blocks": {
-                    "text_kf46N9": {
-                      "type": "text",
-                      "settings": {
-                        "text": "{{ closest.product.metafields.shopify[\"frame-style\"] | metafield_tag: field: 'label' }}",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_kf46N9"
-                  ]
-                },
                 "accordion_row_RANmfz": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
                   "settings": {
-                    "heading": "Provenance & Signature",
+                    "heading": "Craftmanship",
                     "open_by_default": false,
                     "icon": "none",
-                    "image_upload": "shopify://shop_images/file-pen.svg",
+                    "image_upload": "shopify://shop_images/handshake.svg",
                     "width": 16
                   },
                   "blocks": {
                     "text_qrwVHA": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Includes a <em>Certificate of Authenticity</em> hand-signed by the artist, Maryna Riepnova. The painting is also hand-signed on the front/back.</p>",
+                        "text": "<p>Each piece is hand-thrown in our Málaga studio and features the artist's mark/stamp on the bottom.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1136,7 +1094,7 @@
                     "text_nny9HM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Each original painting is professionally packaged with extreme care to ensure safe transit. We offer <em>Free Shipping</em> on all originals.</p>",
+                        "text": "<p>We are experts at shipping ceramics. Your piece will be <em>expertly packaged </em>with multiple layers of eco-friendly, protective wrapping to ensure it arrives perfectly.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1169,7 +1127,6 @@
                 "accordion_row_HzqJxU",
                 "accordion_row_nyPPaV",
                 "accordion_row_Vkgpdm",
-                "accordion_row_cMrmYx",
                 "accordion_row_RANmfz",
                 "accordion_row_PNHt8h"
               ]
@@ -1186,6 +1143,7 @@
             "group_ECyXij",
             "group_UhJYfj",
             "group_U4FA7q",
+            "group_whHAWK",
             "accordion_NKWPiW"
           ]
         }
@@ -1747,8 +1705,8 @@
       "settings": {
         "heading": "Join our happy customers",
         "heading_size": "h2",
-        "card_background_color": "#FFFFFF",
-        "card_border_color": "rgba(0, 0, 0, 0.1)",
+        "card_background_color": "#ffffff",
+        "card_border_color": "#0000001a",
         "padding_top": 80,
         "padding_bottom": 80
       }
