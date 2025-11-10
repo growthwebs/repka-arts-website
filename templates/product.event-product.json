@@ -1745,6 +1745,26 @@
             "customer_location": "Málaga, Spain",
             "review_source": "Yoga, Pilates & Painting"
           }
+        },
+        "review_w4bAcQ": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "I was at my best friend's wedding in Benahavís last month, and they had the most magical idea. Maryna was there doing a live painting during the reception. She captured the bride and groom's first dance perfectly, and it was amazing to watch the canvas come to life throughout the night. It was such a unique, beautiful touch. Honestly, it was incredible.",
+            "customer_name": "Jessica P.",
+            "customer_location": "Benahavís, Spain",
+            "review_source": "Wedding in Spain"
+          }
+        },
+        "review_e8XDbL": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "review_text": "Я була на концерті в Марбельї, і це було щось! Окрім чудової музики, Марина малювала наживо прямо на сцені. Це була абстракція, але вона ідеально передавала настрій... кольори, енергія, все це було в унісон з музикою. Це створило якусь неймовірну, магічну атмосферу. Дуже талановито!",
+            "customer_name": "Iryna L.",
+            "customer_location": "Marbella, Spain",
+            "review_source": "Sonce music concert"
+          }
         }
       },
       "block_order": [
@@ -1752,7 +1772,9 @@
         "review_TGazbm",
         "review_aKc6qd",
         "review_9jEB7j",
-        "review_Ucc9Cy"
+        "review_Ucc9Cy",
+        "review_w4bAcQ",
+        "review_e8XDbL"
       ],
       "name": "Reviews Carousel",
       "settings": {
