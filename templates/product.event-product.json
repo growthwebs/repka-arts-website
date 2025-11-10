@@ -639,6 +639,7 @@
                 "group_xUPU43": {
                   "type": "group",
                   "name": "Direct refunds",
+                  "disabled": true,
                   "settings": {
                     "link": "",
                     "open_in_new_tab": false,
