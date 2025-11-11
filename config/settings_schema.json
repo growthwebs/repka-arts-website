@@ -1816,6 +1816,253 @@
         "info": "Shown when Shopify recommendations are unavailable."
       },
       {
+        "type": "header",
+        "content": "Cart drawer marquee"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_show_marquee",
+        "label": "Show cart drawer marquee",
+        "default": false
+      },
+      {
+        "type": "color_scheme",
+        "id": "cart_drawer_marquee_color_scheme",
+        "label": "Marquee color scheme",
+        "default": "scheme-1",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "select",
+        "id": "cart_drawer_marquee_direction",
+        "label": "Marquee direction",
+        "options": [
+          {
+            "value": "normal",
+            "label": "t:options.forward"
+          },
+          {
+            "value": "reverse",
+            "label": "t:options.reverse"
+          }
+        ],
+        "default": "normal",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_marquee_gap",
+        "label": "Item gap",
+        "min": 8,
+        "max": 48,
+        "step": 1,
+        "unit": "px",
+        "default": 20,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_marquee_font_size",
+        "label": "Font size",
+        "min": 12,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 13,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "range",
+        "id": "cart_drawer_marquee_icon_size",
+        "label": "Icon size",
+        "min": 12,
+        "max": 48,
+        "step": 1,
+        "unit": "px",
+        "default": 20,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_marquee_item_1_text",
+        "label": "Item 1 text",
+        "default": "Don't miss out our November SALE",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "select",
+        "id": "cart_drawer_marquee_item_1_icon",
+        "label": "Item 1 icon",
+        "options": [
+          { "value": "none", "label": "t:options.none" },
+          { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+          { "value": "price_tag", "label": "t:options.price_tag" },
+          { "value": "star", "label": "t:options.star" },
+          { "value": "truck", "label": "t:options.truck" },
+          { "value": "stopwatch", "label": "t:options.stopwatch" },
+          { "value": "heart", "label": "t:options.heart" },
+          { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+          { "value": "leaf", "label": "t:options.leaf" },
+          { "value": "question_mark", "label": "t:options.question_mark" }
+        ],
+        "default": "price_tag",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_drawer_marquee_item_1_image",
+        "label": "Item 1 custom icon",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "url",
+        "id": "cart_drawer_marquee_item_1_link",
+        "label": "Item 1 link",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_marquee_item_1_open_in_new_tab",
+        "label": "Open item 1 link in new tab",
+        "default": false,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_marquee_item_2_text",
+        "label": "Item 2 text",
+        "default": "Enjoy 10% off your first purchase",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "select",
+        "id": "cart_drawer_marquee_item_2_icon",
+        "label": "Item 2 icon",
+        "options": [
+          { "value": "none", "label": "t:options.none" },
+          { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+          { "value": "price_tag", "label": "t:options.price_tag" },
+          { "value": "star", "label": "t:options.star" },
+          { "value": "truck", "label": "t:options.truck" },
+          { "value": "stopwatch", "label": "t:options.stopwatch" },
+          { "value": "heart", "label": "t:options.heart" },
+          { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+          { "value": "leaf", "label": "t:options.leaf" },
+          { "value": "question_mark", "label": "t:options.question_mark" }
+        ],
+        "default": "chat_bubble",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_drawer_marquee_item_2_image",
+        "label": "Item 2 custom icon",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "url",
+        "id": "cart_drawer_marquee_item_2_link",
+        "label": "Item 2 link",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_marquee_item_2_open_in_new_tab",
+        "label": "Open item 2 link in new tab",
+        "default": false,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_marquee_item_3_text",
+        "label": "Item 3 text",
+        "default": "Free EU shipping on orders over €150",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "select",
+        "id": "cart_drawer_marquee_item_3_icon",
+        "label": "Item 3 icon",
+        "options": [
+          { "value": "none", "label": "t:options.none" },
+          { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+          { "value": "price_tag", "label": "t:options.price_tag" },
+          { "value": "star", "label": "t:options.star" },
+          { "value": "truck", "label": "t:options.truck" },
+          { "value": "stopwatch", "label": "t:options.stopwatch" },
+          { "value": "heart", "label": "t:options.heart" },
+          { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+          { "value": "leaf", "label": "t:options.leaf" },
+          { "value": "question_mark", "label": "t:options.question_mark" }
+        ],
+        "default": "truck",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_drawer_marquee_item_3_image",
+        "label": "Item 3 custom icon",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "url",
+        "id": "cart_drawer_marquee_item_3_link",
+        "label": "Item 3 link",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_marquee_item_3_open_in_new_tab",
+        "label": "Open item 3 link in new tab",
+        "default": false,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "text",
+        "id": "cart_drawer_marquee_item_4_text",
+        "label": "Item 4 text",
+        "default": "Need help? Chat with our art advisors",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "select",
+        "id": "cart_drawer_marquee_item_4_icon",
+        "label": "Item 4 icon",
+        "options": [
+          { "value": "none", "label": "t:options.none" },
+          { "value": "chat_bubble", "label": "t:options.chat_bubble" },
+          { "value": "price_tag", "label": "t:options.price_tag" },
+          { "value": "star", "label": "t:options.star" },
+          { "value": "truck", "label": "t:options.truck" },
+          { "value": "stopwatch", "label": "t:options.stopwatch" },
+          { "value": "heart", "label": "t:options.heart" },
+          { "value": "lightning_bolt", "label": "t:options.lightning_bolt" },
+          { "value": "leaf", "label": "t:options.leaf" },
+          { "value": "question_mark", "label": "t:options.question_mark" }
+        ],
+        "default": "none",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "image_picker",
+        "id": "cart_drawer_marquee_item_4_image",
+        "label": "Item 4 custom icon",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "url",
+        "id": "cart_drawer_marquee_item_4_link",
+        "label": "Item 4 link",
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_drawer_marquee_item_4_open_in_new_tab",
+        "label": "Open item 4 link in new tab",
+        "default": false,
+        "visible_if": "{{ settings.cart_drawer_show_marquee == true }}"
+      },
+      {
         "type": "checkbox",
         "id": "show_accelerated_checkout_buttons",
         "label": "t:settings.checkout_buttons",

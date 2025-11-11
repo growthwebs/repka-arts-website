@@ -1,0 +1,167 @@
+{% if settings.cart_drawer_show_marquee %}
+  {% assign has_items = '' %}
+  {% for index in (1..4) %}
+    {% capture text_key %}cart_drawer_marquee_item_{{ index }}_text{% endcapture %}
+    {% capture icon_key %}cart_drawer_marquee_item_{{ index }}_icon{% endcapture %}
+    {% capture image_key %}cart_drawer_marquee_item_{{ index }}_image{% endcapture %}
+    {% assign item_text = settings[text_key] %}
+    {% assign item_icon = settings[icon_key] | default: 'none' %}
+    {% assign item_image = settings[image_key] %}
+    {% if item_text != blank or item_icon != 'none' or item_image != blank %}
+      {% assign has_items = 'true' %}
+    {% endif %}
+  {% endfor %}
+
+  {% if has_items %}
+    <script
+      src="{{ 'marquee.js' | asset_url }}"
+      type="module"
+      fetchpriority="low"
+    ></script>
+
+    {% assign marquee_gap = settings.cart_drawer_marquee_gap | default: 16 %}
+    {% assign marquee_direction = settings.cart_drawer_marquee_direction | default: 'normal' %}
+    {% assign marquee_font_size = settings.cart_drawer_marquee_font_size | default: 13 %}
+    {% assign marquee_icon_size = settings.cart_drawer_marquee_icon_size | default: 20 %}
+
+    <div
+      class="cart-drawer-marquee color-{{ settings.cart_drawer_marquee_color_scheme | default: 'scheme-1' }}"
+      style="--cart-drawer-marquee-font-size: {{ marquee_font_size }}px; --cart-drawer-marquee-icon-size: {{ marquee_icon_size }}px;"
+    >
+      <marquee-component
+        class="cart-drawer-marquee__component"
+        style="--marquee-gap: {{ marquee_gap }}px; --marquee-direction: {{ marquee_direction }};"
+        data-speed-factor="20"
+        data-movement-direction="{{ marquee_direction }}"
+      >
+        <div
+          class="marquee__wrapper"
+          ref="wrapper"
+        >
+          <div
+            class="marquee__content"
+            ref="content"
+          >
+            <div class="marquee__repeated-items">
+              {% for index in (1..4) %}
+                {% capture text_key %}cart_drawer_marquee_item_{{ index }}_text{% endcapture %}
+                {% capture icon_key %}cart_drawer_marquee_item_{{ index }}_icon{% endcapture %}
+              {% capture image_key %}cart_drawer_marquee_item_{{ index }}_image{% endcapture %}
+                {% capture link_key %}cart_drawer_marquee_item_{{ index }}_link{% endcapture %}
+                {% capture new_tab_key %}cart_drawer_marquee_item_{{ index }}_open_in_new_tab{% endcapture %}
+                {% assign item_text = settings[text_key] %}
+                {% assign item_icon = settings[icon_key] | default: 'none' %}
+                {% assign item_link = settings[link_key] %}
+                {% assign item_new_tab = settings[new_tab_key] %}
+              {% assign item_image = settings[image_key] %}
+
+              {% if item_text != blank or item_icon != 'none' or item_image != blank %}
+                  <div class="cart-drawer-marquee__item">
+                  {% if item_icon != 'none' or item_image != blank %}
+                      <span class="cart-drawer-marquee__icon">
+                        {% render 'icon-or-image',
+                        icon: item_icon,
+                        image_upload: item_image,
+                        width: marquee_icon_size,
+                          class_name: 'cart-drawer-marquee__icon-svg'
+                        %}
+                      </span>
+                    {% endif %}
+
+                    {% if item_link != blank %}
+                      <a
+                        href="{{ item_link }}"
+                        class="cart-drawer-marquee__text link--no-underline"
+                        {% if item_new_tab %}
+                          target="_blank" rel="noopener"
+                        {% endif %}
+                      >
+                        {{ item_text }}
+                      </a>
+                    {% else %}
+                      <span class="cart-drawer-marquee__text">
+                        {{ item_text }}
+                      </span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </marquee-component>
+    </div>
+
+    <style>
+      .cart-drawer-marquee {
+        border-bottom: var(--style-border-width) solid rgb(var(--color-border) / 0.16);
+        padding-inline: var(--cart-drawer-padding);
+        padding-block: var(--padding-xs);
+        margin-bottom: 8px;
+      }
+
+      .cart-drawer-marquee__component {
+        display: block;
+        width: 100%;
+      }
+
+      .cart-drawer-marquee .marquee__wrapper {
+        display: flex;
+        gap: var(--marquee-gap);
+        white-space: nowrap;
+        width: fit-content;
+      }
+
+      .cart-drawer-marquee .marquee__content {
+        display: flex;
+        gap: var(--marquee-gap);
+        min-width: max-content;
+      }
+
+      .cart-drawer-marquee .marquee__repeated-items {
+        display: flex;
+        align-items: center;
+        gap: var(--marquee-gap);
+        min-width: max-content;
+      }
+
+      .cart-drawer-marquee .marquee__repeated-items > * {
+        align-content: center;
+      }
+
+      .cart-drawer-marquee__item {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--padding-2xs);
+        font-size: var(--cart-drawer-marquee-font-size);
+        line-height: 1.4;
+      }
+
+      .cart-drawer-marquee__icon {
+        display: inline-flex;
+        width: var(--cart-drawer-marquee-icon-size);
+        height: var(--cart-drawer-marquee-icon-size);
+        align-items: center;
+        justify-content: center;
+        color: currentColor;
+      }
+
+      .cart-drawer-marquee__icon-svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cart-drawer-marquee__text {
+        display: inline-block;
+        color: currentColor;
+        text-decoration: none;
+      }
+
+      .cart-drawer-marquee__text:hover,
+      .cart-drawer-marquee__text:focus-visible {
+        text-decoration: underline;
+      }
+    </style>
+  {% endif %}
+{% endif %}
+
