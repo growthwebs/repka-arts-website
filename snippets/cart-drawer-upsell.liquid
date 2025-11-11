@@ -45,12 +45,12 @@
                   {% if product.featured_image %}
                     {{
                       product.featured_image
-                      | image_url: width: 110, height: 110, crop: 'center'
+                      | image_url: width: 95, height: 95, crop: 'center'
                       | image_tag:
                         loading: 'lazy',
                         class: 'cart-drawer-upsell__image',
-                        widths: '70, 90, 110',
-                        sizes: '(min-width: 750px) 72px, 24vw',
+                        widths: '60, 75, 95',
+                        sizes: '(min-width: 750px) 64px, 22vw',
                         alt: product.featured_image.alt
                       | default: product.title
                     }}
@@ -192,7 +192,7 @@
         display: block;
         border-radius: 12px;
         overflow: hidden;
-        width: 90px;
+        width: 75px;
         aspect-ratio: 1 / 1;
         grid-column: 1;
         grid-row: 1;
@@ -273,7 +273,7 @@
       }
 
       .cart-drawer-upsell__price {
-        font-size: var(--font-size--sm);
+        font-size: clamp(0.75rem, 0.72rem + 0.4vw, 0.8125rem);
         color: rgb(var(--color-foreground));
       }
     </style>
