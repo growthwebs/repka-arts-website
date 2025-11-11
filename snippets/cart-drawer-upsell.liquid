@@ -140,7 +140,6 @@
         gap: var(--padding-xs);
         margin-top: auto;
         width: 100%;
-        overflow: hidden;
       }
 
       .cart-drawer-upsell__details {
@@ -190,7 +189,6 @@
       .cart-drawer-upsell__content {
         padding-bottom: var(--padding-sm);
         display: block;
-        overflow: hidden;
         width: 100%;
       }
 
@@ -203,6 +201,8 @@
         margin-bottom: 0;
         width: 100%;
         max-width: 100%;
+        overscroll-behavior-inline: contain;
+        -webkit-overflow-scrolling: touch;
       }
 
       .cart-drawer-upsell__items::-webkit-scrollbar {
