@@ -161,6 +161,18 @@
       .cart-drawer-marquee__text:focus-visible {
         text-decoration: underline;
       }
+
+      @media (prefers-reduced-motion: no-preference) {
+        marquee-component:not([data-disabled]) .marquee__wrapper {
+          animation: marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
+        }
+      }
+
+      @keyframes marquee-motion {
+        to {
+          transform: translate3d(calc(-50% - (var(--marquee-gap) / 2)), 0, 0);
+        }
+      }
     </style>
   {% endif %}
 {% endif %}
