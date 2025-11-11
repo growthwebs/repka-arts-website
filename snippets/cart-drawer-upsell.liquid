@@ -26,9 +26,6 @@
       <details class="cart-drawer-upsell__details" open>
         <summary class="cart-drawer-upsell__summary">
           <h3 class="cart-drawer-upsell__title h4">Complete your purchase</h3>
-          <span class="svg-wrapper icon-plus" aria-hidden="true">
-            {{- 'icon-plus.svg' | inline_asset_content -}}
-          </span>
         </summary>
 
         <div class="cart-drawer-upsell__content">
@@ -142,12 +139,15 @@
         display: grid;
         gap: var(--padding-xs);
         margin-top: auto;
+        width: 100%;
+        overflow: hidden;
       }
 
       .cart-drawer-upsell__details {
         border: none;
         padding: 0;
         margin: 0;
+        width: 100%;
       }
 
       .cart-drawer-upsell__summary {
@@ -159,14 +159,17 @@
         align-items: center;
         justify-content: space-between;
         gap: var(--gap-sm, 12px);
+        width: 100%;
       }
 
-      .cart-drawer-upsell__summary .svg-wrapper {
-        width: var(--icon-size-sm);
-        height: var(--icon-size-sm);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+      .cart-drawer-upsell__summary::after {
+        content: '+';
+        font-size: var(--font-size--lg);
+        line-height: 1;
+      }
+
+      .cart-drawer-upsell__details[open] .cart-drawer-upsell__summary::after {
+        content: '−';
       }
 
       .cart-drawer-upsell__summary::-webkit-details-marker {
@@ -188,6 +191,7 @@
         padding-bottom: var(--padding-sm);
         display: block;
         overflow: hidden;
+        width: 100%;
       }
 
       .cart-drawer-upsell__items {
@@ -198,6 +202,7 @@
         padding-bottom: var(--padding-sm);
         margin-bottom: 0;
         width: 100%;
+        max-width: 100%;
       }
 
       .cart-drawer-upsell__items::-webkit-scrollbar {
