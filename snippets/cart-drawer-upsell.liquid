@@ -26,7 +26,9 @@
       <details class="cart-drawer-upsell__details" open>
         <summary class="cart-drawer-upsell__summary">
           <h3 class="cart-drawer-upsell__title h4">Complete your purchase</h3>
-          <span class="cart-drawer-upsell__summary-icon" aria-hidden="true"></span>
+          <span class="svg-wrapper icon-plus" aria-hidden="true">
+            {{- 'icon-plus.svg' | inline_asset_content -}}
+          </span>
         </summary>
 
         <div class="cart-drawer-upsell__content">
@@ -159,6 +161,14 @@
         gap: var(--gap-sm, 12px);
       }
 
+      .cart-drawer-upsell__summary .svg-wrapper {
+        width: var(--icon-size-sm);
+        height: var(--icon-size-sm);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       .cart-drawer-upsell__summary::-webkit-details-marker {
         display: none;
       }
@@ -169,43 +179,15 @@
         background-color: rgb(var(--color-border) / 0.25);
       }
 
-      .cart-drawer-upsell__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
       .cart-drawer-upsell__title {
         margin: 0;
         flex: 1;
       }
 
-      .cart-drawer-upsell__summary-icon {
-        position: relative;
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-      }
-
-      .cart-drawer-upsell__summary-icon::before {
-        content: '';
-        position: absolute;
-        inset: 50% auto auto 50%;
-        width: 9px;
-        height: 9px;
-        border-left: 1.5px solid currentColor;
-        border-bottom: 1.5px solid currentColor;
-        transform: translate(-50%, -45%) rotate(-45deg);
-        transition: transform var(--animation-speed) var(--animation-easing);
-      }
-
-      .cart-drawer-upsell__details[open] .cart-drawer-upsell__summary-icon::before {
-        transform: translate(-50%, -55%) rotate(135deg);
-      }
-
       .cart-drawer-upsell__content {
         padding-bottom: var(--padding-sm);
         display: block;
+        overflow: hidden;
       }
 
       .cart-drawer-upsell__items {
@@ -213,8 +195,9 @@
         gap: var(--padding-xs);
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-bottom: 0;
+        padding-bottom: var(--padding-sm);
         margin-bottom: 0;
+        width: 100%;
       }
 
       .cart-drawer-upsell__items::-webkit-scrollbar {
