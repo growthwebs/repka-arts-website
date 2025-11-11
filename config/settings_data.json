@@ -70,6 +70,7 @@
     "cart_drawer_marquee_item_1_image": "shopify://shop_images/party-popper_8a8f847e-dd9e-4bba-ae92-4771ea2ceac6.svg",
     "cart_drawer_marquee_item_2_image": "shopify://shop_images/circle-percent.svg",
     "cart_drawer_marquee_item_3_text": "",
+    "cart_drawer_marquee_item_3_icon": "none",
     "cart_drawer_marquee_item_4_text": "",
     "show_accelerated_checkout_buttons": false,
     "cart_thumbnail_border": "none",
