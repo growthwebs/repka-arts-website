@@ -63,7 +63,7 @@
     "cart_drawer_fallback_collection": "buy-art-on-sale",
     "cart_drawer_show_marquee": true,
     "cart_drawer_marquee_color_scheme": "scheme-3",
-    "cart_drawer_marquee_direction": "reverse",
+    "cart_drawer_marquee_direction": "normal",
     "cart_drawer_marquee_gap": 24,
     "cart_drawer_marquee_font_size": 12,
     "cart_drawer_marquee_icon_size": 12,
