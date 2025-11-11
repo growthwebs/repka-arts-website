@@ -1,177 +1,137 @@
-{% if settings.cart_drawer_show_marquee %}
-  {% assign has_items = '' %}
-  {% for index in (1..4) %}
-    {% capture text_key %}cart_drawer_marquee_item_{{ index }}_text{% endcapture %}
-    {% capture icon_key %}cart_drawer_marquee_item_{{ index }}_icon{% endcapture %}
-    {% capture image_key %}cart_drawer_marquee_item_{{ index }}_image{% endcapture %}
-    {% assign item_text = settings[text_key] %}
-    {% assign item_icon = settings[icon_key] | default: 'none' %}
-    {% assign item_image = settings[image_key] %}
-    {% if item_text != blank or item_icon != 'none' or item_image != blank %}
-      {% assign has_items = 'true' %}
-    {% endif %}
-  {% endfor %}
+{% if settings.cart_drawer_show_banner %}
+  {% assign banner_text = settings.cart_drawer_banner_text %}
+  {% assign banner_link = settings.cart_drawer_banner_link %}
+  {% assign banner_new_tab = settings.cart_drawer_banner_open_in_new_tab %}
+  {% assign left_icon = settings.cart_drawer_banner_left_icon | default: 'none' %}
+  {% assign left_image = settings.cart_drawer_banner_left_image %}
+  {% assign right_icon = settings.cart_drawer_banner_right_icon | default: 'none' %}
+  {% assign right_image = settings.cart_drawer_banner_right_image %}
+  {% assign banner_font_size = settings.cart_drawer_banner_font_size | default: 14 %}
+  {% assign banner_icon_size = settings.cart_drawer_banner_icon_size | default: 24 %}
 
-  {% if has_items %}
-    <script
-      src="{{ 'marquee.js' | asset_url }}"
-      type="module"
-      fetchpriority="low"
-    ></script>
+  {% assign has_left_icon = false %}
+  {% assign has_right_icon = false %}
+  {% assign has_text = false %}
 
-    {% assign marquee_gap = settings.cart_drawer_marquee_gap | default: 16 %}
-    {% assign marquee_direction = settings.cart_drawer_marquee_direction | default: 'normal' %}
-    {% assign marquee_font_size = settings.cart_drawer_marquee_font_size | default: 13 %}
-    {% assign marquee_icon_size = settings.cart_drawer_marquee_icon_size | default: 20 %}
+  {% if left_icon != 'none' or left_image != blank %}
+    {% assign has_left_icon = true %}
+  {% endif %}
 
+  {% if right_icon != 'none' or right_image != blank %}
+    {% assign has_right_icon = true %}
+  {% endif %}
+
+  {% if banner_text != blank %}
+    {% assign has_text = true %}
+  {% endif %}
+
+  {% if has_left_icon or has_right_icon or has_text %}
     <div
-      class="cart-drawer-marquee color-{{ settings.cart_drawer_marquee_color_scheme | default: 'scheme-1' }}"
-      style="--cart-drawer-marquee-font-size: {{ marquee_font_size }}px; --cart-drawer-marquee-icon-size: {{ marquee_icon_size }}px;"
+      class="cart-drawer-banner color-{{ settings.cart_drawer_banner_color_scheme | default: 'scheme-1' }}"
+      style="--cart-drawer-banner-font-size: {{ banner_font_size }}px; --cart-drawer-banner-icon-size: {{ banner_icon_size }}px;"
     >
-      <marquee-component
-        class="cart-drawer-marquee__component"
-        style="--marquee-gap: {{ marquee_gap }}px; --marquee-direction: {{ marquee_direction }};"
-        data-speed-factor="20"
-        data-movement-direction="{{ marquee_direction }}"
-      >
-        <div
-          class="marquee__wrapper"
-          ref="wrapper"
-        >
-          <div
-            class="marquee__content"
-            ref="content"
-          >
-            <div class="marquee__repeated-items">
-              {% for index in (1..4) %}
-                {% capture text_key %}cart_drawer_marquee_item_{{ index }}_text{% endcapture %}
-                {% capture icon_key %}cart_drawer_marquee_item_{{ index }}_icon{% endcapture %}
-              {% capture image_key %}cart_drawer_marquee_item_{{ index }}_image{% endcapture %}
-                {% capture link_key %}cart_drawer_marquee_item_{{ index }}_link{% endcapture %}
-                {% capture new_tab_key %}cart_drawer_marquee_item_{{ index }}_open_in_new_tab{% endcapture %}
-                {% assign item_text = settings[text_key] %}
-                {% assign item_icon = settings[icon_key] | default: 'none' %}
-                {% assign item_link = settings[link_key] %}
-                {% assign item_new_tab = settings[new_tab_key] %}
-              {% assign item_image = settings[image_key] %}
+      <div class="cart-drawer-banner__inner">
+        <span class="cart-drawer-banner__icon{% unless has_left_icon %} cart-drawer-banner__icon--placeholder{% endunless %}">
+          {% if has_left_icon %}
+            {% render 'icon-or-image',
+              icon: left_icon,
+              image_upload: left_image,
+              width: banner_icon_size,
+              height: banner_icon_size,
+              class_name: 'cart-drawer-banner__icon-svg'
+            %}
+          {% endif %}
+        </span>
 
-              {% if item_text != blank or item_icon != 'none' or item_image != blank %}
-                  <div class="cart-drawer-marquee__item">
-                  {% if item_icon != 'none' or item_image != blank %}
-                      <span class="cart-drawer-marquee__icon">
-                        {% render 'icon-or-image',
-                        icon: item_icon,
-                        image_upload: item_image,
-                        width: marquee_icon_size,
-                          class_name: 'cart-drawer-marquee__icon-svg'
-                        %}
-                      </span>
-                    {% endif %}
+        {% if has_text %}
+          {% if banner_link != blank %}
+            <a
+              href="{{ banner_link }}"
+              class="cart-drawer-banner__text link--no-underline"
+              {% if banner_new_tab %}
+                target="_blank"
+                rel="noopener"
+              {% endif %}
+            >
+              {{ banner_text }}
+            </a>
+          {% else %}
+            <span class="cart-drawer-banner__text">
+              {{ banner_text }}
+            </span>
+          {% endif %}
+        {% else %}
+          <span class="cart-drawer-banner__text cart-drawer-banner__text--placeholder" aria-hidden="true"></span>
+        {% endif %}
 
-                    {% if item_link != blank %}
-                      <a
-                        href="{{ item_link }}"
-                        class="cart-drawer-marquee__text link--no-underline"
-                        {% if item_new_tab %}
-                          target="_blank" rel="noopener"
-                        {% endif %}
-                      >
-                        {{ item_text }}
-                      </a>
-                    {% else %}
-                      <span class="cart-drawer-marquee__text">
-                        {{ item_text }}
-                      </span>
-                    {% endif %}
-                  </div>
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </marquee-component>
+        <span class="cart-drawer-banner__icon{% unless has_right_icon %} cart-drawer-banner__icon--placeholder{% endunless %}">
+          {% if has_right_icon %}
+            {% render 'icon-or-image',
+              icon: right_icon,
+              image_upload: right_image,
+              width: banner_icon_size,
+              height: banner_icon_size,
+              class_name: 'cart-drawer-banner__icon-svg'
+            %}
+          {% endif %}
+        </span>
+      </div>
     </div>
 
     <style>
-      .cart-drawer-marquee {
+      .cart-drawer-banner {
         border-bottom: var(--style-border-width) solid rgb(var(--color-border) / 0.16);
         padding-inline: var(--cart-drawer-padding);
         padding-block: var(--padding-xs);
         margin-bottom: 8px;
       }
 
-      .cart-drawer-marquee__component {
-        display: block;
-        width: 100%;
-      }
-
-      .cart-drawer-marquee .marquee__wrapper {
-        display: flex;
-        gap: var(--marquee-gap);
-        white-space: nowrap;
-        width: fit-content;
-      }
-
-      .cart-drawer-marquee .marquee__content {
-        display: flex;
-        gap: var(--marquee-gap);
-        min-width: max-content;
-      }
-
-      .cart-drawer-marquee .marquee__repeated-items {
-        display: flex;
+      .cart-drawer-banner__inner {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
-        gap: var(--marquee-gap);
-        min-width: max-content;
+        gap: var(--padding-sm);
+        font-size: var(--cart-drawer-banner-font-size);
+        line-height: 1.3;
+        text-align: center;
       }
 
-      .cart-drawer-marquee .marquee__repeated-items > * {
-        align-content: center;
-      }
-
-      .cart-drawer-marquee__item {
+      .cart-drawer-banner__icon {
         display: inline-flex;
-        align-items: center;
-        gap: var(--padding-2xs);
-        font-size: var(--cart-drawer-marquee-font-size);
-        line-height: 1.4;
-      }
-
-      .cart-drawer-marquee__icon {
-        display: inline-flex;
-        width: var(--cart-drawer-marquee-icon-size);
-        height: var(--cart-drawer-marquee-icon-size);
         align-items: center;
         justify-content: center;
+        width: var(--cart-drawer-banner-icon-size);
+        height: var(--cart-drawer-banner-icon-size);
         color: currentColor;
       }
 
-      .cart-drawer-marquee__icon-svg {
+      .cart-drawer-banner__icon--placeholder {
+        visibility: hidden;
+      }
+
+      .cart-drawer-banner__icon-svg {
         width: 100%;
         height: 100%;
       }
 
-      .cart-drawer-marquee__text {
-        display: inline-block;
+      .cart-drawer-banner__text {
         color: currentColor;
-        text-decoration: none;
+        font-size: inherit;
+        line-height: inherit;
+        justify-self: center;
       }
 
-      .cart-drawer-marquee__text:hover,
-      .cart-drawer-marquee__text:focus-visible {
+      .cart-drawer-banner__text:hover,
+      .cart-drawer-banner__text:focus-visible {
         text-decoration: underline;
       }
 
-      @media (prefers-reduced-motion: no-preference) {
-        marquee-component:not([data-disabled]) .marquee__wrapper {
-          animation: marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
-        }
+      .cart-drawer-banner__text--placeholder {
+        visibility: hidden;
       }
 
-      @keyframes marquee-motion {
-        to {
-          transform: translate3d(calc(-50% - (var(--marquee-gap) / 2)), 0, 0);
-        }
+      .cart-drawer-banner__text.link--no-underline {
+        text-decoration: none;
       }
     </style>
   {% endif %}
