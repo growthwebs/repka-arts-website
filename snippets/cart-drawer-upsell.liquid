@@ -22,16 +22,15 @@
 
   {% if products_to_show and products_to_show.size > 0 %}
     <section class="cart-drawer-upsell" aria-label="You might also like">
+      <div class="cart-drawer-upsell__divider" aria-hidden="true"></div>
       <details class="cart-drawer-upsell__details" open>
         <summary class="cart-drawer-upsell__summary">
-          <div class="cart-drawer-upsell__divider" aria-hidden="true"></div>
-          <div class="cart-drawer-upsell__header">
-            <h3 class="cart-drawer-upsell__title h4">Complete your purchase</h3>
-            <span class="cart-drawer-upsell__summary-icon" aria-hidden="true"></span>
-          </div>
+          <h3 class="cart-drawer-upsell__title h4">Complete your purchase</h3>
+          <span class="cart-drawer-upsell__summary-icon" aria-hidden="true"></span>
         </summary>
 
-        <div class="cart-drawer-upsell__items">
+        <div class="cart-drawer-upsell__content">
+          <div class="cart-drawer-upsell__items">
         {%- for product in products_to_show limit: 9 -%}
           {% if product.available %}
             {% liquid
@@ -128,6 +127,7 @@
             </article>
           {% endif %}
         {%- endfor -%}
+          </div>
         </div>
       </details>
     </section>
@@ -145,13 +145,18 @@
       .cart-drawer-upsell__details {
         border: none;
         padding: 0;
+        margin: 0;
       }
 
       .cart-drawer-upsell__summary {
         list-style: none;
-        padding: 0;
+        padding: var(--padding-sm) 0;
         margin: 0;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--gap-sm, 12px);
       }
 
       .cart-drawer-upsell__summary::-webkit-details-marker {
@@ -168,8 +173,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: var(--gap-sm, 12px);
-        padding-block: var(--padding-sm);
       }
 
       .cart-drawer-upsell__title {
@@ -192,12 +195,17 @@
         height: 9px;
         border-left: 1.5px solid currentColor;
         border-bottom: 1.5px solid currentColor;
-        transform: translate(-50%, -65%) rotate(-45deg);
+        transform: translate(-50%, -45%) rotate(-45deg);
         transition: transform var(--animation-speed) var(--animation-easing);
       }
 
       .cart-drawer-upsell__details[open] .cart-drawer-upsell__summary-icon::before {
-        transform: translate(-50%, -35%) rotate(135deg);
+        transform: translate(-50%, -55%) rotate(135deg);
+      }
+
+      .cart-drawer-upsell__content {
+        padding-bottom: var(--padding-sm);
+        display: block;
       }
 
       .cart-drawer-upsell__items {
