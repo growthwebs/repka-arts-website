@@ -2298,7 +2298,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our \"Events\" page. All skill levels are welcome!</p>",
+                    "text": "<p>You can see the full schedule and book your spot for all upcoming plein-air sessions on our <a href=\"/pages/events\" title=\"Events\">Events</a> page, or if you prefer, send me an email to <a href=\"mailto:classes@repkaarts.com\" target=\"_blank\" title=\"mailto:classes@repkaarts.com\">classes@repkaarts.com</a> All skill levels are welcome!</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
