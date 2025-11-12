@@ -2216,7 +2216,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
+                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms. <a href=\"/pages/commission-an-artwork\" title=\"Commission an artwork\">Click here</a> to send me your needs or write to me at <a href=\"mailto:hello@repkaarts.com\" target=\"_blank\" title=\"mailto:hello@repkaarts.com\">hello@repkaarts.com</a></p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
