@@ -1,0 +1,790 @@
+{% comment %}
+  Image Carousel Section
+  Displays a customizable carousel of images with titles and navigation
+{% endcomment %}
+
+<div class="image-carousel-section {% if section.settings.section_width == 'full' %}section--full-width{% elsif section.settings.section_width == 'narrow' %}section--narrow-width{% else %}page-width{% endif %} color-{{ section.settings.color_scheme }}" 
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;
+  {% if section.settings.section_height == 'custom' %}
+    --image-carousel-min-height: {{ section.settings.section_height_custom }}svh;
+  {% elsif section.settings.section_height == 'full-screen' %}
+    --image-carousel-min-height: 100svh;
+  {% elsif section.settings.section_height != 'auto' %}
+    --image-carousel-min-height: var(--section-height-{{ section.settings.section_height }});
+  {% endif %}
+  --image-carousel-columns: {{ section.settings.columns | default: 3 }};
+  --image-carousel-mobile-columns: {{ section.settings.mobile_columns | default: 1 }};
+          --image-carousel-gap: {{ section.settings.columns_gap | default: 24 }}px;
+          --image-carousel-vertical-gap: {{ section.settings.vertical_gap | default: 0 }}px;">
+  {% if section.settings.title != blank %}
+    <div class="image-carousel__header">
+      <h2 class="image-carousel__title {{ section.settings.title_size }}">
+        {{ section.settings.title }}
+      </h2>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    {% assign max_items = section.settings.picture_count | default: 6 %}
+    {% assign image_count = 0 %}
+    
+    {% for block in section.blocks %}
+      {% if block.type == 'image' and block.settings.image != blank %}
+        {% assign image_count = image_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if image_count > 0 %}
+      <div class="image-carousel__container">
+        <div class="image-carousel__inner-container">
+          <div class="image-carousel__wrapper" id="image-carousel-{{ section.id }}">
+            {% assign current_count = 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == 'image' and block.settings.image != blank %}
+                {% if current_count < max_items %}
+                  <div class="image-carousel__slide" {{ block.shopify_attributes }}>
+                    <div class="image-carousel__item">
+                      <div class="image-carousel__image-wrapper{% if section.settings.corner_radius %} image-carousel__image-wrapper--rounded{% endif %}">
+                        {{
+                          block.settings.image
+                          | image_url: width: 1200
+                          | image_tag:
+                            loading: 'lazy',
+                            class: 'image-carousel__image',
+                            alt: block.settings.image.alt | default: block.settings.title
+                        }}
+                      </div>
+                      {% if block.settings.title != blank %}
+                        <div class="image-carousel__item-title">
+                          {{ block.settings.title }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% assign current_count = current_count | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if image_count > 1 %}
+            {%- liquid
+              assign nav_icon_setting = section.settings.nav_icon | default: 'large_arrows'
+              assign icon_shape = section.settings.nav_icon_background | default: 'none'
+              
+              # Map nav_icon values to slideshow-arrow icon_style values
+              if nav_icon_setting == 'large_arrows'
+                assign icon_style = 'arrows_large'
+              elsif nav_icon_setting == 'small_arrows'
+                assign icon_style = 'arrow'
+              elsif nav_icon_setting == 'chevrons'
+                assign icon_style = 'chevron'
+              else
+                assign icon_style = nav_icon_setting
+              endif
+            -%}
+            {%- liquid
+              assign nav_color = section.settings.nav_color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
+            -%}
+            {% render 'slideshow-arrows',
+              icon_style: icon_style,
+              icon_shape: icon_shape,
+              arrows_position: 'center',
+              class: 'image-carousel__navigation color-' | append: nav_color
+            %}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+    {% assign button_alignment = section.settings.button_alignment | default: 'center' %}
+    {% assign button_style = section.settings.button_style | default: 'primary' %}
+    <div class="image-carousel__button-wrapper" style="text-align: {{ button_alignment }} !important;">
+      <a
+        href="{{ section.settings.button_link }}"
+        class="button{% if button_style == 'secondary' %} button-secondary{% endif %}"
+        {% if section.settings.button_open_new_tab %}
+          target="_blank"
+          rel="noopener"
+        {% endif %}
+      >
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+
+<style>
+  .image-carousel-section {
+    /* Padding controlled via inline styles */
+    {% if section.settings.section_height != 'auto' %}
+      min-height: var(--image-carousel-min-height);
+    {% endif %}
+  }
+
+  .image-carousel-section.section--full-width {
+    max-width: 100%;
+  }
+
+  .image-carousel-section.section--narrow-width {
+    max-width: min(100vw, 800px);
+    margin: 0 auto;
+  }
+
+  .image-carousel__header {
+    text-align: {{ section.settings.title_alignment }};
+    margin-bottom: clamp(2rem, 6vw, 4rem);
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+
+  .image-carousel__title {
+    margin: 0;
+    color: var(--color-foreground);
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    font-size: {{ section.settings.title_font_size | default: 'clamp(1.8rem, 3.5vw, 2.5rem)' }};
+    line-height: 1.2;
+  }
+
+  .image-carousel__container {
+    position: relative;
+    width: 100%;
+    {% if section.settings.section_width == 'full' %}
+      max-width: 100%;
+    {% elsif section.settings.section_width == 'narrow' %}
+      max-width: min(100vw, 800px);
+    {% else %}
+      max-width: min(100vw, 1400px);
+    {% endif %}
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
+
+  .image-carousel__inner-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .image-carousel__wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    gap: var(--image-carousel-gap);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image-carousel__wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .image-carousel__slide {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - ((var(--image-carousel-columns) - 1) * var(--image-carousel-gap))) / var(--image-carousel-columns));
+    scroll-snap-align: start;
+  }
+
+  @media screen and (max-width: 749px) {
+    .image-carousel__slide {
+      width: calc((100% - ((var(--image-carousel-mobile-columns) - 1) * var(--image-carousel-gap))) / var(--image-carousel-mobile-columns));
+    }
+  }
+
+  .image-carousel__navigation {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+  }
+
+  /* Make arrows visible by default (they're hidden by default in slideshow-arrows) */
+  .image-carousel__navigation .slideshow-control {
+    opacity: 1 !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .image-carousel__navigation {
+      display: flex;
+    }
+  }
+
+  .image-carousel__item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-carousel__image-wrapper {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    {% if section.settings.image_aspect_ratio != 'auto' %}
+      aspect-ratio: {{ section.settings.image_aspect_ratio }};
+    {% endif %}
+  }
+
+  .image-carousel__image-wrapper--rounded {
+    border-radius: {{ section.settings.corner_radius_value | default: 16 }}px;
+    overflow: hidden;
+  }
+
+  .image-carousel__image {
+    width: 100%;
+    {% if section.settings.image_aspect_ratio != 'auto' %}
+      height: 100%;
+      object-fit: cover;
+    {% else %}
+      height: auto;
+    {% endif %}
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .image-carousel__item-title {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--color-foreground);
+    font-family: var(--font-body--family);
+    font-weight: var(--font-body--weight);
+    margin-top: 1rem;
+  }
+
+
+  .image-carousel__button-wrapper {
+    margin-top: clamp(2rem, 6vw, 4rem);
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    text-align: inherit;
+  }
+  
+  .image-carousel__button-wrapper .button {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 749px) {
+    .image-carousel__container {
+      padding: 0 1rem;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const carouselId = 'image-carousel-{{ section.id }}';
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const slides = Array.from(carousel.children);
+    if (slides.length <= 1) return;
+
+    {% assign columns = section.settings.columns | default: 3 %}
+    {% assign mobile_columns = section.settings.mobile_columns | default: 1 %}
+    let visibleItems = {{ columns }};
+    const gap = {{ section.settings.columns_gap | default: 24 }};
+    
+    function updateVisibleItems() {
+      if (window.innerWidth <= 749) {
+        visibleItems = {{ mobile_columns }};
+      } else {
+        visibleItems = {{ columns }};
+      }
+    }
+    
+    updateVisibleItems();
+
+    function getSlideWidth() {
+      if (slides.length === 0) return 0;
+      const firstSlide = slides[0];
+      const rect = firstSlide.getBoundingClientRect();
+      return rect.width + gap;
+    }
+
+    function scrollToSlide(index) {
+      const slideWidth = getSlideWidth();
+      const scrollPosition = index * slideWidth;
+      carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    function nextSlide() {
+      const slideWidth = getSlideWidth();
+      const currentScroll = carousel.scrollLeft;
+      const nextIndex = Math.round((currentScroll + slideWidth) / slideWidth);
+      const maxIndex = Math.max(0, slides.length - visibleItems);
+      scrollToSlide(Math.min(nextIndex, maxIndex));
+    }
+
+    function prevSlide() {
+      const slideWidth = getSlideWidth();
+      const currentScroll = carousel.scrollLeft;
+      const prevIndex = Math.max(0, Math.round((currentScroll - slideWidth) / slideWidth));
+      scrollToSlide(prevIndex);
+    }
+
+    const navigation = carousel.closest('.image-carousel__inner-container')?.querySelector('.image-carousel__navigation');
+    if (navigation) {
+      const prevBtn = navigation.querySelector('[ref="previous"]');
+      const nextBtn = navigation.querySelector('[ref="next"]');
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          prevSlide();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          nextSlide();
+        });
+      }
+    }
+
+    // Auto-play (optional)
+    {% if section.settings.auto_play %}
+      let autoPlayInterval = setInterval(nextSlide, {{ section.settings.auto_play_interval | default: 5000 }});
+      const container = carousel.closest('.image-carousel__container');
+      if (container) {
+        container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+        container.addEventListener('mouseleave', () => {
+          autoPlayInterval = setInterval(nextSlide, {{ section.settings.auto_play_interval | default: 5000 }});
+        });
+      }
+    {% endif %}
+    
+    // Recalculate on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateVisibleItems();
+      }, 150);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image Carousel",
+  "tag": "section",
+  "class": "image-carousel-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Gallery"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title size",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "title_alignment",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "title_font_size",
+      "label": "Title font size (CSS)",
+      "default": "clamp(1.8rem, 3.5vw, 2.5rem)",
+      "info": "Use CSS values like '2rem' or 'clamp(1.5rem, 3vw, 2rem)'"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Section width",
+      "options": [
+        {
+          "value": "page",
+          "label": "Page width"
+        },
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        }
+      ],
+      "default": "page"
+    },
+    {
+      "type": "range",
+      "id": "picture_count",
+      "label": "Picture count",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "mobile_columns",
+      "label": "Mobile columns",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "columns_gap",
+      "label": "Horizontal gap (spacing between images)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "vertical_gap",
+      "label": "Vertical gap (spacing below images)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Auto (original)"
+        },
+        {
+          "value": "1 / 1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4 / 3",
+          "label": "Standard (4:3)"
+        },
+        {
+          "value": "16 / 9",
+          "label": "Widescreen (16:9)"
+        },
+        {
+          "value": "3 / 2",
+          "label": "Photo (3:2)"
+        },
+        {
+          "value": "2 / 3",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Portrait (3:4)"
+        }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "checkbox",
+      "id": "corner_radius",
+      "label": "Enable corner radius",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "corner_radius_value",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 16,
+      "visible_if": "{{ section.settings.corner_radius == true }}"
+    },
+    {
+      "type": "header",
+      "content": "Carousel navigation"
+    },
+    {
+      "type": "select",
+      "id": "nav_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "large_arrows",
+          "label": "Large arrows"
+        },
+        {
+          "value": "small_arrows",
+          "label": "Small arrows"
+        },
+        {
+          "value": "chevrons",
+          "label": "Chevrons"
+        }
+      ],
+      "default": "large_arrows"
+    },
+    {
+      "type": "select",
+      "id": "nav_icon_background",
+      "label": "Icon background",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "color_scheme",
+      "id": "nav_color_scheme",
+      "label": "Navigation color scheme",
+      "default": "scheme-1",
+      "info": "Color scheme for the navigation arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_play",
+      "label": "Auto-play carousel",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "auto_play_interval",
+      "label": "Auto-play interval",
+      "min": 2000,
+      "max": 9000,
+      "step": 1000,
+      "unit": "ms",
+      "default": 5000,
+      "visible_if": "{{ section.settings.auto_play == true }}"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment",
+      "label": "Button alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "Open button link in new tab",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "section_height",
+      "label": "Section height",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Auto"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "full-screen",
+          "label": "Full screen"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "range",
+      "id": "section_height_custom",
+      "label": "Custom height",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50,
+      "unit": "%",
+      "visible_if": "{{ section.settings.section_height == 'custom' }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Image title",
+          "info": "Optional title/caption for the image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Carousel",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
