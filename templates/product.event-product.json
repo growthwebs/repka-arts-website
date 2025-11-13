@@ -1271,7 +1271,9 @@
             "caption_9": "",
             "image_10": "shopify://shop_images/EF03449B-DBEC-4705-94FA-2481BED1E8DE_1_105_c.jpg",
             "caption_10": "",
+            "image_11": "shopify://shop_images/7127489B-DFCF-49C5-9131-6AC215B3F7FC_1_105_c.jpg",
             "caption_11": "",
+            "image_12": "shopify://shop_images/95280E03-AF0A-4C28-BE7B-F6FD3C8B10AF_1_105_c.jpg",
             "caption_12": "",
             "image_aspect_ratio": "square",
             "image_border_radius": 16,
@@ -1295,6 +1297,7 @@
       "block_order": [
         "ai_gen_block_ee550cb_Gdk7yr"
       ],
+      "name": "Photo gallery",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
