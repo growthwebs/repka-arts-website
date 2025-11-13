@@ -1240,6 +1240,116 @@
         "padding-block-end": 32
       }
     },
+    "image_carousel_TJREp4": {
+      "type": "image-carousel",
+      "blocks": {
+        "image_3eh6JW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/EF03449B-DBEC-4705-94FA-2481BED1E8DE_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_3B9qQf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/5B246406-BCF1-4F6C-8A0C-EF10D8C658A0_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_qc8emX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/95280E03-AF0A-4C28-BE7B-F6FD3C8B10AF_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_RcR9yY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/BD6DD331-7B8B-4FCE-B8B5-5FA8CA90AB26_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_PRrCda": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/53C3A784-5595-4EEE-9CF1-44AF4BCC48F3_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_DPyc9h": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/E6F6C681-B70D-4DD1-844A-47864BACAC71_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_FiiEpf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/7127489B-DFCF-49C5-9131-6AC215B3F7FC_1_105_c.jpg",
+            "title": ""
+          }
+        },
+        "image_wLC9jL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CBC8CC10-23B8-42FE-A763-99203C24A845_1_102_o.jpg",
+            "title": ""
+          }
+        },
+        "image_fUxHeF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/37343921-49E4-4395-84F4-A71651A68535_1_105_c.jpg",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_3eh6JW",
+        "image_3B9qQf",
+        "image_qc8emX",
+        "image_RcR9yY",
+        "image_PRrCda",
+        "image_DPyc9h",
+        "image_FiiEpf",
+        "image_wLC9jL",
+        "image_fUxHeF"
+      ],
+      "name": "Image Carousel",
+      "settings": {
+        "title": "Some recent memories",
+        "title_size": "h2",
+        "title_alignment": "center",
+        "title_font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
+        "section_width": "page",
+        "picture_count": 9,
+        "columns": 3,
+        "mobile_columns": "2",
+        "columns_gap": 24,
+        "vertical_gap": 0,
+        "image_aspect_ratio": "3 / 4",
+        "corner_radius": true,
+        "corner_radius_value": 16,
+        "nav_icon": "large_arrows",
+        "nav_icon_background": "circle",
+        "nav_color_scheme": "",
+        "auto_play": false,
+        "auto_play_interval": 5000,
+        "button_label": "I want to be fixtured",
+        "button_link": "mailto:classes@repkaarts.com",
+        "button_style": "secondary",
+        "button_alignment": "center",
+        "button_open_new_tab": false,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "section_height": "auto",
+        "section_height_custom": 50
+      }
+    },
     "product_list_BwXbNm": {
       "type": "product-list",
       "blocks": {
@@ -2207,6 +2317,7 @@
   },
   "order": [
     "main",
+    "image_carousel_TJREp4",
     "product_list_BwXbNm",
     "product_list_RmCzYK",
     "reviews_carousel_new_pPXRhY",
