@@ -688,7 +688,7 @@
         "button_link": "mailto:classes@repkaarts.com",
         "button_style": "secondary",
         "button_alignment": "center",
-        "button_open_new_tab": false,
+        "button_open_new_tab": true,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding_top": 96,
         "padding_bottom": 96,
