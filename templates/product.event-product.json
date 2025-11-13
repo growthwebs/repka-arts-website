@@ -1049,7 +1049,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "The experience",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "image_upload": "shopify://shop_images/info.svg",
                     "width": 20
