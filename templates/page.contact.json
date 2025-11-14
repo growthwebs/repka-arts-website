@@ -115,6 +115,7 @@
       "block_order": [
         "contact_form_UwiCkQ"
       ],
+      "disabled": true,
       "name": "t:names.contact_form",
       "settings": {
         "content_direction": "column",
@@ -313,7 +314,6 @@
         "group_wDCxzr",
         "group_EVhpRw"
       ],
-      "disabled": true,
       "name": "Commissions",
       "settings": {
         "content_direction": "column",
