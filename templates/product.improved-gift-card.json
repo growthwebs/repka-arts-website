@@ -975,7 +975,7 @@
                     "text_nny9HM": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Each gift card with be sent to the recipient almost instantly, worldwide. Elegible for refund, send us an email to info@repkaarts.com and we'll see what we can do.</p>",
+                        "text": "<p>Each gift card with be sent to the recipient almost instantly, worldwide. Elegible for refund, send us an email to <a href=\"mailto:sales@repkaarts.com\" target=\"_blank\" title=\"mailto:sales@repkaarts.com\">sales@repkaarts.com</a> and we'll see what we can do.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
