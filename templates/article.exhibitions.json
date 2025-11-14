@@ -1509,6 +1509,7 @@
       "blocks": {
         "image_B3wVdN": {
           "type": "image",
+          "name": "pic-01",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_01.value }}",
             "title": ""
@@ -1516,55 +1517,63 @@
         },
         "image_V6yKMW": {
           "type": "image",
+          "name": "pic-02",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_02.value }}",
             "title": ""
           }
         },
-        "image_T9x7K6": {
+        "image_CjH77W": {
           "type": "image",
+          "name": "pic-03",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic.value }}",
             "title": ""
           }
         },
-        "image_qgmzdE": {
+        "image_T9x7K6": {
           "type": "image",
+          "name": "pic-04",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_04.value }}",
             "title": ""
           }
         },
-        "image_eVEWDV": {
+        "image_qgmzdE": {
           "type": "image",
+          "name": "pic-05",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_05.value }}",
             "title": ""
           }
         },
-        "image_btW7Wb": {
+        "image_eVEWDV": {
           "type": "image",
+          "name": "pic-06",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_06.value }}",
             "title": ""
           }
         },
-        "image_jTdPQb": {
+        "image_btW7Wb": {
           "type": "image",
+          "name": "pic-07",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_07.value }}",
             "title": ""
           }
         },
-        "image_737XUw": {
+        "image_jTdPQb": {
           "type": "image",
+          "name": "pic-08",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_08.value }}",
             "title": ""
           }
         },
-        "image_tct6d9": {
+        "image_737XUw": {
           "type": "image",
+          "name": "pic-09",
           "settings": {
             "image": "{{ article.metafields.custom.exhibition_pic_09.value }}",
             "title": ""
@@ -1574,13 +1583,13 @@
       "block_order": [
         "image_B3wVdN",
         "image_V6yKMW",
+        "image_CjH77W",
         "image_T9x7K6",
         "image_qgmzdE",
         "image_eVEWDV",
         "image_btW7Wb",
         "image_jTdPQb",
-        "image_737XUw",
-        "image_tct6d9"
+        "image_737XUw"
       ],
       "name": "Image Carousel",
       "settings": {
