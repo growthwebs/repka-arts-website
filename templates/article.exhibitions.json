@@ -1504,6 +1504,116 @@
         "padding-block-end": 96
       }
     },
+    "image_carousel_dawBwL": {
+      "type": "image-carousel",
+      "blocks": {
+        "image_B3wVdN": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_01.value }}",
+            "title": ""
+          }
+        },
+        "image_V6yKMW": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_02.value }}",
+            "title": ""
+          }
+        },
+        "image_T9x7K6": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic.value }}",
+            "title": ""
+          }
+        },
+        "image_qgmzdE": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_04.value }}",
+            "title": ""
+          }
+        },
+        "image_eVEWDV": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_05.value }}",
+            "title": ""
+          }
+        },
+        "image_btW7Wb": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_06.value }}",
+            "title": ""
+          }
+        },
+        "image_jTdPQb": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_07.value }}",
+            "title": ""
+          }
+        },
+        "image_737XUw": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_08.value }}",
+            "title": ""
+          }
+        },
+        "image_tct6d9": {
+          "type": "image",
+          "settings": {
+            "image": "{{ article.metafields.custom.exhibition_pic_09.value }}",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_B3wVdN",
+        "image_V6yKMW",
+        "image_T9x7K6",
+        "image_qgmzdE",
+        "image_eVEWDV",
+        "image_btW7Wb",
+        "image_jTdPQb",
+        "image_737XUw",
+        "image_tct6d9"
+      ],
+      "name": "Image Carousel",
+      "settings": {
+        "title": "Some recent memories",
+        "title_size": "h2",
+        "title_alignment": "center",
+        "title_font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
+        "section_width": "page",
+        "picture_count": 9,
+        "columns": 3,
+        "mobile_columns": "2",
+        "columns_gap": 24,
+        "vertical_gap": 0,
+        "image_aspect_ratio": "3 / 4",
+        "corner_radius": true,
+        "corner_radius_value": 16,
+        "nav_icon": "large_arrows",
+        "nav_icon_background": "circle",
+        "nav_color_scheme": "",
+        "auto_play": false,
+        "auto_play_interval": 5000,
+        "button_label": "I want to be fixtured",
+        "button_link": "mailto:classes@repkaarts.com",
+        "button_style": "secondary",
+        "button_alignment": "center",
+        "button_open_new_tab": true,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "padding_top": 96,
+        "padding_bottom": 96,
+        "section_height": "auto",
+        "section_height_custom": 50
+      }
+    },
     "collection_list_hp9kYt": {
       "type": "collection-list",
       "blocks": {
@@ -1937,6 +2047,7 @@
     "section_qK9tHe",
     "section_3R8FrX",
     "product_list_mMwNVQ",
+    "image_carousel_dawBwL",
     "collection_list_hp9kYt",
     "product_list_mizcFA"
   ]
