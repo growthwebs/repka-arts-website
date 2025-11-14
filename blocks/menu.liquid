@@ -6,6 +6,8 @@
   assign heading = block_settings.heading
   assign color_scheme = block_settings.color_scheme
   assign show_as_accordion = block_settings.show_as_accordion
+  assign text_alignment = block_settings.text_alignment | default: 'left'
+  assign heading_alignment = block_settings.heading_alignment | default: 'left'
   if show_as_accordion == true and block_settings.accordion_dividers == true
     assign dividers_enabled = true
   endif
@@ -38,7 +40,7 @@
       "
       {{ block.shopify_attributes }}
     >
-      <summary class="menu__heading{% if heading == blank %} menu__heading--empty{% endif %} {{ block_settings.heading_preset }}">
+      <summary class="menu__heading{% if heading == blank %} menu__heading--empty{% endif %} {{ block_settings.heading_preset }} menu__heading--align-{{ heading_alignment }}">
         <span class="menu__heading__default">{{ heading }}</span>
         <span class="menu__heading__accordion">
           {{ heading | default: menu.title }}
@@ -53,7 +55,7 @@
 
       <div class="details-content">
         {% if menu %}
-          <ul class="list-unstyled">
+          <ul class="list-unstyled menu__items--align-{{ text_alignment }}">
             {% for link in menu.links %}
               <li class="menu__item {{ block_settings.link_preset }}">
                 <a href="{{ link.url }}">
@@ -127,6 +129,75 @@
   .menu--caret .icon-plus,
   .menu--plus .icon-caret {
     display: none;
+  }
+
+  .menu__items--align-left {
+    text-align: left !important;
+  }
+
+  .menu__items--align-left .menu__item {
+    text-align: left !important;
+  }
+
+  .menu__items--align-left .menu__item a {
+    text-align: left !important;
+    display: block;
+  }
+
+  .menu__items--align-center {
+    text-align: center !important;
+  }
+
+  .menu__items--align-center .menu__item {
+    text-align: center !important;
+  }
+
+  .menu__items--align-center .menu__item a {
+    text-align: center !important;
+    display: block;
+  }
+
+  .menu__items--align-right {
+    text-align: right !important;
+  }
+
+  .menu__items--align-right .menu__item {
+    text-align: right !important;
+  }
+
+  .menu__items--align-right .menu__item a {
+    text-align: right !important;
+    display: block;
+  }
+
+  .menu__heading--align-left {
+    justify-content: flex-start !important;
+  }
+
+  .menu__heading--align-left .menu__heading__default,
+  .menu__heading--align-left .menu__heading__accordion {
+    text-align: left !important;
+    width: 100%;
+  }
+
+  .menu__heading--align-center {
+    justify-content: center !important;
+  }
+
+  .menu__heading--align-center .menu__heading__default,
+  .menu__heading--align-center .menu__heading__accordion {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .menu__heading--align-right {
+    justify-content: flex-end !important;
+  }
+
+  .menu__heading--align-right .menu__heading__default,
+  .menu__heading--align-right .menu__heading__accordion {
+    text-align: right !important;
+    width: 100%;
   }
 {% endstylesheet %}
 
@@ -202,6 +273,48 @@
       "label": "t:settings.color_scheme",
       "default": "scheme-1",
       "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "info": "Alignment for the menu heading/title",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Items alignment",
+      "info": "Alignment for the menu items/links",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "right",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "header",
