@@ -14,7 +14,7 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "group_NMLrEc": {
+        "group_PHKM8p": {
           "type": "group",
           "name": "Links",
           "settings": {
@@ -22,7 +22,7 @@
             "open_in_new_tab": false,
             "content_direction": "row",
             "vertical_on_mobile": true,
-            "horizontal_alignment": "center",
+            "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-start",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
@@ -54,16 +54,73 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_CPh9EU": {
+            "group_4YqfGy": {
               "type": "group",
-              "name": "Menus",
+              "name": "Logo",
               "settings": {
                 "link": "",
                 "open_in_new_tab": false,
-                "content_direction": "row",
+                "content_direction": "column",
                 "vertical_on_mobile": true,
-                "horizontal_alignment": "center",
-                "vertical_alignment": "flex-start",
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 24,
+                "padding-block-end": 24,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "icon_a3Grbn": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/Repka_arts_logo-09.svg",
+                    "width": 120,
+                    "link": "https://repkaarts.com",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "icon_a3Grbn"
+              ]
+            },
+            "group_TCNj69": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
@@ -71,7 +128,7 @@
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
-                "custom_width_mobile": 52,
+                "custom_width_mobile": 100,
                 "height": "fit",
                 "custom_height": 100,
                 "inherit_color_scheme": true,
@@ -94,7 +151,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "menu_yiQQfm": {
+                "menu_m79gRx": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
@@ -116,8 +173,53 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "menu_MYcwzY": {
+                }
+              },
+              "block_order": [
+                "menu_m79gRx"
+              ]
+            },
+            "group_A7jQky": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "menu_GX6A6t": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
@@ -139,8 +241,53 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "menu_7KHG7D": {
+                }
+              },
+              "block_order": [
+                "menu_GX6A6t"
+              ]
+            },
+            "group_kQnU9n": {
+              "type": "group",
+              "name": "t:names.group",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "menu_3rWRea": {
                   "type": "menu",
                   "name": "t:names.menu",
                   "settings": {
@@ -165,85 +312,15 @@
                 }
               },
               "block_order": [
-                "menu_yiQQfm",
-                "menu_MYcwzY",
-                "menu_7KHG7D"
+                "menu_3rWRea"
               ]
             }
           },
           "block_order": [
-            "group_CPh9EU"
-          ]
-        },
-        "group_KNFc4y": {
-          "type": "group",
-          "name": "Logo",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 16,
-            "padding-block-end": 16,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "icon_xtEqJx": {
-              "type": "icon",
-              "name": "t:names.icon",
-              "settings": {
-                "icon": "none",
-                "image_upload": "shopify://shop_images/Repka_arts_logo-09.svg",
-                "width": 120,
-                "link": "https://repkaarts.com",
-                "open_in_new_tab": false
-              },
-              "blocks": {}
-            },
-            "divider_8Gz3Mw": {
-              "type": "_divider",
-              "name": "t:names.divider",
-              "disabled": true,
-              "settings": {
-                "thickness": 1,
-                "corner_radius": "square",
-                "width_percent": 100,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "icon_xtEqJx",
-            "divider_8Gz3Mw"
+            "group_4YqfGy",
+            "group_TCNj69",
+            "group_A7jQky",
+            "group_kQnU9n"
           ]
         },
         "footer_utilities_zVWazC": {
@@ -476,8 +553,7 @@
         }
       },
       "block_order": [
-        "group_NMLrEc",
-        "group_KNFc4y",
+        "group_PHKM8p",
         "footer_utilities_zVWazC",
         "group_8jKQj7"
       ],
