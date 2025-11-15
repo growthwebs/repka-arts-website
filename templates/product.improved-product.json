@@ -880,6 +880,46 @@
                 "accordion_row_AeyREy": {
                   "type": "_accordion-row",
                   "settings": {
+                    "heading": "Story",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "image_upload": "shopify://shop_images/speech.svg",
+                    "width": 16
+                  },
+                  "blocks": {
+                    "text_jYDbK3": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>{{ closest.product.metafields.custom.original_product_story | metafield_tag }}</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "custom",
+                        "font": "var(--font-secondary--family)",
+                        "font_size": "var(--font-size--body-lg)",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 12,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "text_jYDbK3"
+                  ]
+                },
+                "accordion_row_PczizD": {
+                  "type": "_accordion-row",
+                  "settings": {
                     "heading": "Description",
                     "open_by_default": false,
                     "icon": "none",
@@ -887,7 +927,7 @@
                     "width": 16
                   },
                   "blocks": {
-                    "text_jYDbK3": {
+                    "text_x6hBhf": {
                       "type": "text",
                       "settings": {
                         "text": "{{ closest.product.description }}",
@@ -914,7 +954,7 @@
                     }
                   },
                   "block_order": [
-                    "text_jYDbK3"
+                    "text_x6hBhf"
                   ]
                 },
                 "accordion_row_HzqJxU": {
@@ -1166,6 +1206,7 @@
               },
               "block_order": [
                 "accordion_row_AeyREy",
+                "accordion_row_PczizD",
                 "accordion_row_HzqJxU",
                 "accordion_row_nyPPaV",
                 "accordion_row_Vkgpdm",
