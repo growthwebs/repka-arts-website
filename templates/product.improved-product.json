@@ -890,7 +890,7 @@
                     "text_jYDbK3": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>{{ closest.product.metafields.custom.original_product_story | metafield_tag }}</p>",
+                        "text": "{{ closest.product.metafields.custom.original_product_story | metafield_tag }}",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
