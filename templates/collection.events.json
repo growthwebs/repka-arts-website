@@ -592,7 +592,7 @@
         "image_BUYEda": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/28A1CE64-E0BE-40EE-8D3B-E3704BCE6180_1_102_o.jpg",
+            "image": "shopify://shop_images/EF03449B-DBEC-4705-94FA-2481BED1E8DE_1_105_c.jpg",
             "title": ""
           }
         },
@@ -651,48 +651,6 @@
             "image": "shopify://shop_images/37343921-49E4-4395-84F4-A71651A68535_1_105_c.jpg",
             "title": ""
           }
-        },
-        "image_FAdQzD": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/2857052E-2413-4C30-BE8B-5A38F1D6754A_1_102_o.jpg",
-            "title": ""
-          }
-        },
-        "image_VdLNJE": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/1CBD2AAB-B1B1-4282-A9C1-FD28FA3C1C75_1_102_o.jpg",
-            "title": ""
-          }
-        },
-        "image_BUEEVY": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/E4431A8F-33DB-4490-99A8-9C5C9984F4C5_1_102_o.jpg",
-            "title": ""
-          }
-        },
-        "image_Kzt6yh": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/BB9CABA0-FF06-4A3A-AEB9-38879DCE7483_1_102_a.jpg",
-            "title": ""
-          }
-        },
-        "image_xdGgG4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AEB7AD53-6B64-4779-BE73-45FCC53398BD_1_102_a.jpg",
-            "title": ""
-          }
-        },
-        "image_JRV8LA": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/9F7DEC16-EBB5-4FCF-9028-925420B82E1D_1_102_a.jpg",
-            "title": ""
-          }
         }
       },
       "block_order": [
@@ -704,13 +662,7 @@
         "image_JP48mU",
         "image_hjbn7p",
         "image_tfBM7C",
-        "image_rghcqP",
-        "image_FAdQzD",
-        "image_VdLNJE",
-        "image_BUEEVY",
-        "image_Kzt6yh",
-        "image_xdGgG4",
-        "image_JRV8LA"
+        "image_rghcqP"
       ],
       "name": "Image Carousel",
       "settings": {
@@ -719,7 +671,7 @@
         "title_alignment": "center",
         "title_font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
         "section_width": "page",
-        "picture_count": 15,
+        "picture_count": 9,
         "columns": 3,
         "mobile_columns": "2",
         "columns_gap": 24,
