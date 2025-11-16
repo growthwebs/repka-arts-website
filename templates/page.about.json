@@ -223,10 +223,10 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>Meet Maryna Riepnova</h1>",
+                "text": "<p>Capturing the Soul of Andalusia</p>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -249,7 +249,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Founder & Artist of Repka Arts</p>",
+                "text": "<p>Fine Art & Ceramics - Málaga Studio</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -274,7 +274,7 @@
             "text_nRAmQ3": {
               "type": "text",
               "settings": {
-                "text": "<p>Hello and welcome 👋🏻.<br/><br/>I'm Maryna, a Ukrainian artist who fell in love with the light and colour of Andalusia. I founded Repka Arts to share that passion with you. Through my original paintings, handmade ceramics, and creative workshops, I aim to bring more beauty and connection into the world.<br/><br/>This is my artistic journey, and I'm so glad to share it with you.</p>",
+                "text": "<p>My work is a dialogue between the vibrant energy of the Mediterranean and the quiet magic of the natural world.</p><p>Originally from Ukraine, I fell in love with the unique light of the Costa del Sol. Today, I founded Repka Arts to translate that light into something tangible. Through original oil paintings, handmade ceramics, and immersive workshops, my mission is to bring a piece of that beauty and calm into your home.</p><p>Art rooted in passion. Crafted in Spain.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -456,7 +456,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>My artistic journey</h1>",
+                "text": "<h1>The discipline behind the art</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -481,7 +481,7 @@
             "text_iLcADg": {
               "type": "text",
               "settings": {
-                "text": "<p>My journey as an artist began at the age of five, leading me to study environmental decoration and eventually earn a Master's degree in Fine Arts. My education in Ukraine gave me a deep appreciation for form and texture, especially in ceramics. Here in Spain, my focus has evolved to capture the incredible light and colour of the coast through watercolour and oil painting. This fusion of Ukrainian warmth and Spanish light is the creative vision behind every piece I create.</p>",
+                "text": "<p>I combine the rigor of a Fine Arts Master's degree with the vibrant light of the Mediterranean. My academic background ensures technical excellence while the landscapes of Spain provide the soul. Every piece is a balance of structure and emotion designed to bring calm to your space.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -506,8 +506,8 @@
             "button_heBQre": {
               "type": "button",
               "settings": {
-                "label": "See my artworks",
-                "link": "shopify://collections/all",
+                "label": "See the collections",
+                "link": "shopify://collections",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
