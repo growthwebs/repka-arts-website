@@ -681,5 +681,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "shopify-payment-terms {display: none !important;}"
+    ]
   }
 }
