@@ -1397,7 +1397,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "All events",
+                "label": "View all events",
                 "link": "shopify://collections/art-events",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -1451,7 +1451,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Check out other events</h3>",
+                "text": "<h3>Join other events</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
