@@ -1296,7 +1296,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Find your art piece",
-            "link": "shopify://collections/oil-paintings",
+            "link": "shopify://collections",
             "open_in_new_tab": true,
             "style_class": "button-secondary",
             "width": "fit-content",
