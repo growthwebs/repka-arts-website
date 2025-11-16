@@ -838,7 +838,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>The Prints collection</h2>",
+                "text": "<h2>Fine prints collection</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
