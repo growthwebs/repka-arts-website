@@ -1480,6 +1480,18 @@
         "default": "scheme-2"
       },
       {
+        "type": "color_scheme",
+        "id": "badge_upcoming_color_scheme",
+        "label": "Upcoming badge color scheme",
+        "default": "scheme-4"
+      },
+      {
+        "type": "color_scheme",
+        "id": "badge_finished_color_scheme",
+        "label": "Finished badge color scheme",
+        "default": "scheme-5"
+      },
+      {
         "type": "header",
         "content": "Labels"
       },
@@ -1506,6 +1518,18 @@
         "id": "badge_art_print_label",
         "label": "Art print badge label",
         "default": "Art print"
+      },
+      {
+        "type": "text",
+        "id": "badge_upcoming_label",
+        "label": "Upcoming badge label",
+        "default": "Upcoming"
+      },
+      {
+        "type": "text",
+        "id": "badge_finished_label",
+        "label": "Finished badge label",
+        "default": "Finished"
       },
       {
         "type": "header",
