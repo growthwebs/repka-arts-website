@@ -1038,7 +1038,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h2>Check out my series</h2>",
+                "text": "<h2>Explore the series</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
