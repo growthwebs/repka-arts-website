@@ -28,6 +28,34 @@
         {{ 'content.product_badge_sale' | t }}
       {%- endif -%}
     </div>
+  {%- else -%}
+    {%- liquid
+      assign custom_badge = product.metafields.custom.badge_type | default: '' | downcase
+      if custom_badge == 'exclusive'
+        assign custom_badge = 'signature'
+      endif
+
+      assign badge_label = ''
+      assign badge_scheme = ''
+      case custom_badge
+        when 'new'
+          assign badge_label = settings.badge_new_label | default: 'New'
+          assign badge_scheme = settings.badge_new_color_scheme | default: 'scheme-3'
+        when 'signature'
+          assign badge_label = settings.badge_signature_label | default: 'Signature'
+          assign badge_scheme = settings.badge_signature_color_scheme | default: 'scheme-6'
+        when 'collector'
+          assign badge_label = settings.badge_collector_label | default: 'Collector'
+          assign badge_scheme = settings.badge_collector_color_scheme | default: 'scheme-1'
+      endcase
+    -%}
+    {%- if badge_label != '' -%}
+      <div
+        class="product-badges__badge product-badges__badge--rectangle color-{{ badge_scheme }}"
+      >
+        {{ badge_label }}
+      </div>
+    {%- endif -%}
   {%- endif -%}
 </div>
 
