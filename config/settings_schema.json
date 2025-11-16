@@ -1474,6 +1474,12 @@
         "default": "scheme-1"
       },
       {
+        "type": "color_scheme",
+        "id": "badge_art_print_color_scheme",
+        "label": "Art print badge color scheme",
+        "default": "scheme-2"
+      },
+      {
         "type": "header",
         "content": "Labels"
       },
@@ -1494,6 +1500,12 @@
         "id": "badge_collector_label",
         "label": "Collector badge label",
         "default": "Collector"
+      },
+      {
+        "type": "text",
+        "id": "badge_art_print_label",
+        "label": "Art print badge label",
+        "default": "Art print"
       },
       {
         "type": "header",

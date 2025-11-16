@@ -47,6 +47,9 @@
         when 'collector'
           assign badge_label = settings.badge_collector_label | default: 'Collector'
           assign badge_scheme = settings.badge_collector_color_scheme | default: 'scheme-1'
+        when 'art_print'
+          assign badge_label = settings.badge_art_print_label | default: 'Art print'
+          assign badge_scheme = settings.badge_art_print_color_scheme | default: 'scheme-2'
       endcase
     -%}
     {%- if badge_label != '' -%}
