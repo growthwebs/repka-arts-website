@@ -65,7 +65,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Enjoy 30% discount on selected products.</p>",
+            "text": "<p>Capturing the vibrant soul of the Mediterranean. Unique pieces designed to bring calm and light to your space.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -91,8 +91,8 @@
           "type": "button",
           "name": "hero-button",
           "settings": {
-            "label": "Go to Sale now",
-            "link": "shopify://collections/buy-art-on-sale",
+            "label": "View Signature collection",
+            "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",
@@ -145,7 +145,7 @@
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "image_upload": "shopify://shop_images/gift.svg",
+            "image_upload": "shopify://shop_images/earth.svg",
             "width": 20,
             "link": "shopify://collections/buy-art-on-sale",
             "open_in_new_tab": false
@@ -155,7 +155,7 @@
         "text_EFNJpa": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"/collections/buy-art-on-sale\" title=\"Sale\">Don't miss out our November SALE</a></p>",
+            "text": "<p>Complimentary worldwide shipping</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -182,9 +182,9 @@
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "image_upload": "shopify://shop_images/circle-percent.svg",
+            "image_upload": "shopify://shop_images/brush.svg",
             "width": 20,
-            "link": "shopify://collections/buy-art-on-sale",
+            "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": false
           },
           "blocks": {}
@@ -192,7 +192,7 @@
         "text_inM6Jq": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"/collections/buy-art-on-sale\" title=\"Sale\">Enjoy 30% discount on selected products</a></p>",
+            "text": "<p>Handcrafted in the Málaga studio</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -219,7 +219,7 @@
           "name": "t:names.icon",
           "settings": {
             "icon": "price_tag",
-            "image_upload": "shopify://shop_images/heart-handshake.svg",
+            "image_upload": "shopify://shop_images/award.svg",
             "width": 20,
             "link": "shopify://collections/buy-art-on-sale",
             "open_in_new_tab": false
@@ -229,7 +229,7 @@
         "text_cPDpXA": {
           "type": "text",
           "settings": {
-            "text": "<p>Enjoy 10% off your first purchase</p>",
+            "text": "<p>Join the inner circle for early access & 10% off</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -310,7 +310,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>New this season</h2>",
+                "text": "<h2>Latest studio releases</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -632,7 +632,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>About me</h2>",
+                "text": "<h2>The art of Maryna Riepnova</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -658,7 +658,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Hi, I’m Maryna Riepnova, I'm the founder of Repka Arts. From my studio in Málaga, I create original oil paintings, watercolours, and handmade ceramics designed to bring beauty and calm to your space. As a Fine Arts graduate, I also host plein airs, art events and classes to share the joy of creativity on La Costa del Sol.</p>",
+                "text": "<p>I do not just paint landscapes. I paint the feeling of being alive in them.</p><p>As the founder of Repka Arts in Málaga, I blend the technical discipline of a Fine Arts degree with the vibrant light of the Mediterranean. My goal is to create original pieces on canvas and ceramics that serve as a window into a brighter reality for your home.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -724,7 +724,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Learn more about the artist",
+                    "label": "Read the full story",
                     "link": "shopify://pages/about",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -739,8 +739,8 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Exhibitions",
-                    "link": "shopify://collections/all",
+                    "label": "View exhibitions",
+                    "link": "shopify://blogs/exhibitions",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
                     "width": "fit-content",
@@ -768,7 +768,7 @@
         "group_x3HRPL",
         "group_jaN7VK"
       ],
-      "name": "Gift card",
+      "name": "About me",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -2129,7 +2129,7 @@
               "type": "_featured-blog-posts-image",
               "static": true,
               "settings": {
-                "image_ratio": "landscape",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
