@@ -1295,8 +1295,8 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Leave a review",
-            "link": "https://g.page/r/CayzyjuKe2f6EBE/review",
+            "label": "Find your art piece",
+            "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": true,
             "style_class": "button-secondary",
             "width": "fit-content",
