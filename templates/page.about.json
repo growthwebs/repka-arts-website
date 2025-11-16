@@ -223,7 +223,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Capturing the Soul of Andalusia</p>",
+                "text": "<p>Capturing the soul of Andalusia</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -5402,7 +5402,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "All exhibitions",
+            "label": "View all exhibitions",
             "link": "shopify://blogs/exhibitions",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
@@ -5454,7 +5454,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h3>Check my blog</h3>",
+            "text": "<h3>The artist's journal</h3>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -5595,7 +5595,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "All blog posts",
+            "label": "Read all stories",
             "link": "shopify://blogs/news",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
