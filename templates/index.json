@@ -65,7 +65,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Enjoy 30% discount on selected products.</p>",
+            "text": "<p>Capturing the vibrant soul of the Mediterranean. Unique pieces designed to bring calm and light to your space.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -91,8 +91,8 @@
           "type": "button",
           "name": "hero-button",
           "settings": {
-            "label": "Go to Sale now",
-            "link": "shopify://collections/buy-art-on-sale",
+            "label": "View Signature collection",
+            "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": false,
             "style_class": "button",
             "width": "fit-content",
