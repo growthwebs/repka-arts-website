@@ -1726,7 +1726,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Check out my events</h3>",
+                "text": "<p>Join an art workshop</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
