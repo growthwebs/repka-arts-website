@@ -40,7 +40,7 @@
             "text_rLxpQB": {
               "type": "text",
               "settings": {
-                "text": "<p>Don't miss our November SALE · Enjoy 30% discount ·</p>",
+                "text": "<p>Don't miss the collection's renovation. Enjoy our discounts.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -416,7 +416,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Check related prints</h2>",
+                "text": "<h2>Related fine prints</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
