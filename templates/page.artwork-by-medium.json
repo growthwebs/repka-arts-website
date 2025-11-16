@@ -473,7 +473,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Check out my art prints!</h2>",
+                "text": "<h2>Fine prints collection</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -673,7 +673,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Check artworks by series</h3>",
+                "text": "<h3>Explore artworks by series</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -804,7 +804,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "All series",
+            "label": "View all series",
             "link": "shopify://pages/artworks-by-series",
             "open_in_new_tab": false,
             "style_class": "button",
