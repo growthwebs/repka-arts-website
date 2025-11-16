@@ -632,7 +632,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>About me</h2>",
+                "text": "<h2>The art of Maryna Riepnova</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -658,7 +658,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Hi, I’m Maryna Riepnova, I'm the founder of Repka Arts. From my studio in Málaga, I create original oil paintings, watercolours, and handmade ceramics designed to bring beauty and calm to your space. As a Fine Arts graduate, I also host plein airs, art events and classes to share the joy of creativity on La Costa del Sol.</p>",
+                "text": "<p>I do not just paint landscapes. I paint the feeling of being alive in them.</p><p>As the founder of Repka Arts in Málaga, I blend the technical discipline of a Fine Arts degree with the vibrant light of the Mediterranean. My goal is to create original pieces on canvas and ceramics that serve as a window into a brighter reality for your home.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -724,7 +724,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Learn more about the artist",
+                    "label": "Read the full story",
                     "link": "shopify://pages/about",
                     "open_in_new_tab": false,
                     "style_class": "button",
@@ -739,8 +739,8 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Exhibitions",
-                    "link": "shopify://collections/all",
+                    "label": "View exhibitions",
+                    "link": "shopify://blogs/exhibitions",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
                     "width": "fit-content",
