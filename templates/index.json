@@ -838,7 +838,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>The Prints collection</h2>",
+                "text": "<h2>Fine prints collection</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1280,7 +1280,7 @@
       ],
       "name": "Reviews",
       "settings": {
-        "heading": "Trusted by art lovers & businesses",
+        "heading": "Loved by collectors worldwide",
         "heading_size": "h2",
         "card_background_color": "#ffffff",
         "card_border_color": "#0000001a",
@@ -1295,7 +1295,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "Give a review",
+            "label": "Leave a review",
             "link": "https://g.page/r/CayzyjuKe2f6EBE/review",
             "open_in_new_tab": true,
             "style_class": "button-secondary",
