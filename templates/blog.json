@@ -550,7 +550,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Be the first to know</h2>",
+                    "text": "<h2>Get the latest updates</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -576,7 +576,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Get exclusive updates for new workshop dates and local art exhibitions in Málaga & Costa del Sol.</p>",
+                    "text": "<p>Simple stories delivered straight to your inbox every week</p>",
                     "width": "fit-content",
                     "max_width": "narrow",
                     "alignment": "left",
