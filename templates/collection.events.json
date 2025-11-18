@@ -746,7 +746,7 @@
               "settings": {
                 "size": "pixel",
                 "percent_size": 100,
-                "pixel_size": 192,
+                "pixel_size": 240,
                 "custom_mobile_size": true,
                 "size_mobile": "percent",
                 "percent_size_mobile": 100,
@@ -826,7 +826,7 @@
                   "settings": {
                     "text": "<p>Get exclusive updates for new workshop dates and local art exhibitions in Málaga & Costa del Sol.</p>",
                     "width": "fit-content",
-                    "max_width": "normal",
+                    "max_width": "narrow",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
