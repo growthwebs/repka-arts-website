@@ -37,112 +37,18 @@
             "padding-inline-end": 0
           },
           "blocks": {}
-        },
-        "content": {
-          "type": "text",
-          "name": "t:names.content",
-          "settings": {
-            "text": "{{ closest.page.content }}",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "title",
-        "content"
+        "title"
       ],
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
         "padding-block-start": 64,
         "padding-block-end": 0
-      }
-    },
-    "form": {
-      "type": "section",
-      "blocks": {
-        "contact_form_UwiCkQ": {
-          "type": "contact-form",
-          "settings": {
-            "width": "custom",
-            "custom_width": 50,
-            "width_mobile": "custom",
-            "custom_width_mobile": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "submit-button": {
-              "type": "contact-form-submit-button",
-              "static": true,
-              "settings": {
-                "label": "Submit",
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "block_order": [
-        "contact_form_UwiCkQ"
-      ],
-      "disabled": true,
-      "name": "t:names.contact_form",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 64
       }
     },
     "section_jixhFe": {
@@ -159,35 +65,50 @@
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
-            "width_mobile": "fill",
+            "width_mobile": "fit-content",
             "custom_width_mobile": 100,
             "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "background_media": "none",
+            "background_media": "image",
             "video_position": "cover",
+            "background_image": "shopify://shop_images/38A5CE22-0D89-4CE9-9D2A-ED174C7A5131_1_102_a.jpg",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 16,
             "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
+            "toggle_overlay": true,
+            "overlay_color": "#000000da",
+            "overlay_style": "gradient",
             "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-block-start": 32,
+            "padding-block-end": 32,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
           },
           "blocks": {
+            "spacer_rpTyTp": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 196,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "group_kwC8RH": {
               "type": "group",
               "name": "t:names.group",
@@ -202,9 +123,9 @@
                 "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
-                "width": "fill",
+                "width": "fit-content",
                 "custom_width": 100,
-                "width_mobile": "fill",
+                "width_mobile": "fit-content",
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "custom_height": 100,
@@ -232,7 +153,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Want something special?</h2>",
+                    "text": "<h2>Contact us</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -258,7 +179,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Explain in detail what you would like for your place</p>",
+                    "text": "<p>Anything you would like to know or say, we're here for you.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -350,6 +271,7 @@
             }
           },
           "block_order": [
+            "spacer_rpTyTp",
             "group_kwC8RH",
             "group_LRkFTd"
           ]
@@ -358,7 +280,7 @@
       "block_order": [
         "group_YnLq9V"
       ],
-      "name": "Commissions",
+      "name": "Contact us",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -371,7 +293,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-6",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -584,7 +506,6 @@
   },
   "order": [
     "main",
-    "form",
     "section_jixhFe",
     "product_list_ftUGw3"
   ]
