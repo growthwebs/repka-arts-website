@@ -836,17 +836,18 @@
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "background_media": "none",
+            "background_media": "image",
             "video_position": "cover",
+            "background_image": "shopify://shop_images/EF03449B-DBEC-4705-94FA-2481BED1E8DE_1_105_c.jpg",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 16,
             "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
+            "toggle_overlay": true,
+            "overlay_color": "#00000095",
+            "overlay_style": "gradient",
             "gradient_direction": "to top",
             "padding-block-start": 32,
             "padding-block-end": 32,
@@ -854,6 +855,20 @@
             "padding-inline-end": 32
           },
           "blocks": {
+            "spacer_d9zM7a": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 240,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "group_XDDBw9": {
               "type": "group",
               "name": "t:names.group",
@@ -898,9 +913,9 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Want an event with me?</h2>",
+                    "text": "<h2>Thinking of an event?</h2>",
                     "width": "fit-content",
-                    "max_width": "normal",
+                    "max_width": "narrow",
                     "alignment": "left",
                     "type_preset": "h2",
                     "font": "var(--font-body--family)",
@@ -923,11 +938,10 @@
                 "text_YQtecE": {
                   "type": "text",
                   "name": "t:names.text",
-                  "disabled": true,
                   "settings": {
-                    "text": "<p>Get exclusive updates for new workshop dates and local art exhibitions in Málaga & Costa del Sol.</p>",
+                    "text": "<p>Let's create different workshops & local art exhibitions in Málaga & Costa del Sol.</p>",
                     "width": "fit-content",
-                    "max_width": "normal",
+                    "max_width": "narrow",
                     "alignment": "left",
                     "type_preset": "rte",
                     "font": "var(--font-body--family)",
@@ -1017,6 +1031,7 @@
             }
           },
           "block_order": [
+            "spacer_d9zM7a",
             "group_XDDBw9",
             "group_MtaXki"
           ]
@@ -1038,7 +1053,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-6",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
