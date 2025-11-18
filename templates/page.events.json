@@ -545,7 +545,7 @@
                   "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
                   "settings": {
                     "form_id": "709386",
-                    "text_color": "#22232e",
+                    "text_color": "#ffffff",
                     "button_background_color": "#ffffff",
                     "button_label_color": "#13308c",
                     "links_color": "#4e81cc",
