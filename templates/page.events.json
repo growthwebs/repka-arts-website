@@ -851,8 +851,8 @@
             "gradient_direction": "to top",
             "padding-block-start": 32,
             "padding-block-end": 32,
-            "padding-inline-start": 32,
-            "padding-inline-end": 32
+            "padding-inline-start": 64,
+            "padding-inline-end": 64
           },
           "blocks": {
             "spacer_d9zM7a": {
