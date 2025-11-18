@@ -222,7 +222,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h3>My exhibitions</h3>",
+            "text": "<h3>Selected exhibitions</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -558,7 +558,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h3>Check my blog</h3>",
+            "text": "<h3>The artist's journal</h3>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
@@ -699,7 +699,7 @@
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "All blog posts",
+            "label": "Read all stories",
             "link": "shopify://blogs/news",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
