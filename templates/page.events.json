@@ -362,7 +362,7 @@
     "section_iUWbQK": {
       "type": "section",
       "blocks": {
-        "group_K9t8Dn": {
+        "group_CYYAfi": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -376,7 +376,7 @@
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
-            "width": "fill",
+            "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
@@ -384,148 +384,194 @@
             "custom_height": 100,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "background_media": "none",
+            "background_media": "image",
             "video_position": "cover",
+            "background_image": "shopify://shop_images/42865E1C-61B9-4AD6-8871-5C0F7BA789D5_1_102_a.jpg",
             "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 0,
+            "border_radius": 16,
             "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
+            "toggle_overlay": true,
+            "overlay_color": "#0000008e",
             "overlay_style": "solid",
             "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-block-start": 32,
+            "padding-block-end": 32,
+            "padding-inline-start": 32,
+            "padding-inline-end": 32
           },
           "blocks": {
-            "text_e48P3f": {
-              "type": "text",
-              "name": "t:names.heading",
+            "group_x4hPfj": {
+              "type": "group",
+              "name": "t:names.group",
               "settings": {
-                "text": "<h2>Be the first to know</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 96,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "text_9yTBVQ": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h2>Be the first to know</h2>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h2",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_ytxQiK": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Get exclusive updates for new workshop dates and local art exhibitions in Málaga & Costa del Sol.</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_9yTBVQ",
+                "text_ytxQiK"
+              ]
             },
-            "text_mnrfeY": {
-              "type": "text",
-              "name": "t:names.text",
+            "group_nCTXrW": {
+              "type": "group",
+              "name": "t:names.group",
               "settings": {
-                "text": "<p>Get exclusive updates for new workshop dates and local art exhibitions in Málaga & Costa del Sol.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-inline-start": 16,
+                "padding-inline-end": 16
               },
-              "blocks": {}
+              "blocks": {
+                "forms_inline_Dp8UJT": {
+                  "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+                  "settings": {
+                    "form_id": "709386",
+                    "text_color": "#22232e",
+                    "button_background_color": "#13308c",
+                    "button_label_color": "#ffffff",
+                    "links_color": "#4e81cc",
+                    "errors_color": "#e02229",
+                    "text_alignment": "center",
+                    "form_alignment": "center",
+                    "padding_top": 16,
+                    "padding_bottom": 32,
+                    "padding_right": 0,
+                    "padding_left": 0
+                  }
+                }
+              },
+              "block_order": [
+                "forms_inline_Dp8UJT"
+              ]
             }
           },
           "block_order": [
-            "text_e48P3f",
-            "text_mnrfeY"
-          ]
-        },
-        "group_UegqX8": {
-          "type": "group",
-          "name": "t:names.group",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 16,
-            "padding-inline-end": 16
-          },
-          "blocks": {
-            "forms_inline_hNJPiH": {
-              "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
-              "settings": {
-                "form_id": "709386",
-                "text_color": "#22232e",
-                "button_background_color": "#13308c",
-                "button_label_color": "#ffffff",
-                "links_color": "#4e81cc",
-                "errors_color": "#e02229",
-                "text_alignment": "center",
-                "form_alignment": "center",
-                "padding_top": 16,
-                "padding_bottom": 32,
-                "padding_right": 0,
-                "padding_left": 0
-              }
-            }
-          },
-          "block_order": [
-            "forms_inline_hNJPiH"
+            "group_x4hPfj",
+            "group_nCTXrW"
           ]
         }
       },
       "block_order": [
-        "group_K9t8Dn",
-        "group_UegqX8"
+        "group_CYYAfi"
       ],
       "name": "Local events",
       "settings": {
@@ -540,7 +586,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-6",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -552,8 +598,8 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 96,
-        "padding-block-end": 96
+        "padding-block-start": 64,
+        "padding-block-end": 64
       }
     },
     "product_list_XRMWYc": {
