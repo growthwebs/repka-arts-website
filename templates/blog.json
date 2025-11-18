@@ -483,7 +483,7 @@
             "border_radius": 16,
             "placeholder": "",
             "toggle_overlay": true,
-            "overlay_color": "#00000094",
+            "overlay_color": "#000000d6",
             "overlay_style": "gradient",
             "gradient_direction": "to top",
             "padding-block-start": 32,
