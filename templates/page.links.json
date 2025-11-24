@@ -199,7 +199,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Visit us at</h2>",
+                    "text": "<h2>Follow us at</h2>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -235,7 +235,7 @@
                 },
                 "group_Rdqkd3": {
                   "type": "group",
-                  "name": "t:names.group",
+                  "name": "Socials",
                   "settings": {
                     "link": "",
                     "open_in_new_tab": false,
@@ -246,7 +246,7 @@
                     "align_baseline": false,
                     "horizontal_alignment_flex_direction_column": "flex-start",
                     "vertical_alignment_flex_direction_column": "center",
-                    "gap": 12,
+                    "gap": 24,
                     "width": "fill",
                     "custom_width": 100,
                     "width_mobile": "fill",
@@ -273,23 +273,23 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "group_47Uyg7": {
+                    "group_CDG6pW": {
                       "type": "group",
-                      "name": "t:names.group",
+                      "name": "insta repka_arts",
                       "settings": {
                         "link": "",
                         "open_in_new_tab": false,
                         "content_direction": "row",
-                        "vertical_on_mobile": true,
+                        "vertical_on_mobile": false,
                         "horizontal_alignment": "flex-start",
                         "vertical_alignment": "center",
                         "align_baseline": false,
                         "horizontal_alignment_flex_direction_column": "flex-start",
                         "vertical_alignment_flex_direction_column": "center",
                         "gap": 12,
-                        "width": "fit-content",
+                        "width": "fill",
                         "custom_width": 100,
-                        "width_mobile": "fit-content",
+                        "width_mobile": "fill",
                         "custom_width_mobile": 100,
                         "height": "fit",
                         "custom_height": 100,
@@ -309,14 +309,476 @@
                         "gradient_direction": "to top",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
                       },
-                      "blocks": {}
+                      "blocks": {
+                        "icon_CBUDMj": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "instagram",
+                            "width": 20,
+                            "link": "https://www.instagram.com/repka_arts/",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_LeNFXp": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>@repka_arts</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_CBUDMj",
+                        "text_LeNFXp"
+                      ]
+                    },
+                    "group_DkxTeY": {
+                      "type": "group",
+                      "name": "insta repka_art_studio",
+                      "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
+                      },
+                      "blocks": {
+                        "icon_WKiAGk": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "instagram",
+                            "width": 20,
+                            "link": "https://www.instagram.com/repka_art_studio",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_dMYDGE": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>@repka_art_studio</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_WKiAGk",
+                        "text_dMYDGE"
+                      ]
+                    },
+                    "group_6K6QkP": {
+                      "type": "group",
+                      "name": "facebook",
+                      "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
+                      },
+                      "blocks": {
+                        "icon_UnC4yP": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "facebook",
+                            "width": 20,
+                            "link": "https://www.facebook.com/repkaarts/",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_id8Pkp": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>repkaarts</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_UnC4yP",
+                        "text_id8Pkp"
+                      ]
+                    },
+                    "group_aPeAHY": {
+                      "type": "group",
+                      "name": "tiktok",
+                      "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
+                      },
+                      "blocks": {
+                        "icon_EG9G7Y": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "tiktok",
+                            "width": 20,
+                            "link": "https://www.tiktok.com/@repka_arts",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_tGDUHf": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>@repka_arts</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_EG9G7Y",
+                        "text_tGDUHf"
+                      ]
+                    },
+                    "group_BehyDz": {
+                      "type": "group",
+                      "name": "pinterest",
+                      "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
+                      },
+                      "blocks": {
+                        "icon_yQYNG8": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "pinterest",
+                            "width": 20,
+                            "link": "https://pinterest.com/repkaarts/",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_a9btxT": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>repkaarts</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_yQYNG8",
+                        "text_a9btxT"
+                      ]
+                    },
+                    "group_zfAEyU": {
+                      "type": "group",
+                      "name": "youtube",
+                      "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "row",
+                        "vertical_on_mobile": false,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 12,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 24,
+                        "padding-inline-end": 24
+                      },
+                      "blocks": {
+                        "icon_FH7wV6": {
+                          "type": "icon",
+                          "name": "t:names.icon",
+                          "settings": {
+                            "icon": "youtube",
+                            "width": 20,
+                            "link": "https://www.youtube.com/@MarynaRiepnovaRepkaArts",
+                            "open_in_new_tab": true
+                          },
+                          "blocks": {}
+                        },
+                        "text_xyce4t": {
+                          "type": "text",
+                          "name": "Date",
+                          "settings": {
+                            "text": "<p>@MarynaRiepnovaRepkaArts</p>",
+                            "width": "fit-content",
+                            "max_width": "normal",
+                            "alignment": "left",
+                            "type_preset": "custom",
+                            "font": "var(--font-body--family)",
+                            "font_size": "1rem",
+                            "line_height": "normal",
+                            "letter_spacing": "normal",
+                            "case": "none",
+                            "wrap": "pretty",
+                            "color": "var(--color-foreground)",
+                            "background": false,
+                            "background_color": "#00000026",
+                            "corner_radius": 0,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        }
+                      },
+                      "block_order": [
+                        "icon_FH7wV6",
+                        "text_xyce4t"
+                      ]
                     }
                   },
                   "block_order": [
-                    "group_47Uyg7"
+                    "group_CDG6pW",
+                    "group_DkxTeY",
+                    "group_6K6QkP",
+                    "group_aPeAHY",
+                    "group_BehyDz",
+                    "group_zfAEyU"
                   ]
                 }
               },
@@ -408,7 +870,7 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "full-screen",
         "section_height_custom": 50,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "background_media": "none",
@@ -925,7 +1387,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Visit us at</h2>",
+                "text": "<h2>Find us at</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
