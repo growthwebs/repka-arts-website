@@ -1,5 +1,9 @@
 # Repka Arts Theme Development Guide
 
+> **📚 For the complete development workflow**, see [THEME-WORKFLOW.md](./THEME-WORKFLOW.md)
+> 
+> This guide covers local development setup. For feature branches, staging, and deployment workflow, refer to the workflow documentation.
+
 ## 🎨 Local Development Environment
 
 This guide explains how to work on the Repka Arts Shopify theme locally with full development capabilities.

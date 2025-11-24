@@ -10,5 +10,10 @@
     "node_env": "development",
     "theme_name": "repka-arts-website",
     "auto_sync": false
+  },
+  "workflow": {
+    "dev_branch": "dev",
+    "live_branch": "main",
+    "feature_branch_prefix": "feature/"
   }
 }
