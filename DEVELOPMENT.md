@@ -56,7 +56,7 @@ git push origin main
 ### 3. Deploy to Shopify
 ```bash
 # Push to development theme
-shopify theme push --theme=187662336264 --development
+shopify theme push --theme=190171578632 --development
 
 # Or push to live theme
 shopify theme push --theme=187671675144 --live
@@ -103,7 +103,7 @@ npm run sync             # Pull, commit, and push to GitHub
 
 ## 🎨 Theme IDs
 
-- **Development Theme**: 187662336264
+- **Development Theme**: 190171578632
 - **Live Theme**: 187671675144
 
 ## 💡 Development Tips

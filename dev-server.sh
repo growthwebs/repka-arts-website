@@ -10,18 +10,18 @@ echo "======================================"
 start_shopify_dev() {
     echo "🚀 Starting Shopify CLI development server..."
     echo "Port: 3005"
-    echo "Theme ID: 187662336264 (Development)"
+    echo "Theme ID: 190171578632 (Development)"
     echo ""
-    shopify theme dev --theme=187662336264 --port=3005 --live-reload
+    shopify theme dev --theme=190171578632 --port=3005 --live-reload
 }
 
 # Function to start alternative Shopify CLI dev server
 start_shopify_dev_alt() {
     echo "🚀 Starting Shopify CLI development server (Alternative)..."
     echo "Port: 8080"
-    echo "Theme ID: 187662336264 (Development)"
+    echo "Theme ID: 190171578632 (Development)"
     echo ""
-    shopify theme dev --theme=187662336264 --port=8080 --live-reload
+    shopify theme dev --theme=190171578632 --port=8080 --live-reload
 }
 
 # Function to start simple HTTP server
@@ -49,7 +49,7 @@ show_options() {
         1) start_shopify_dev ;;
         2) start_shopify_dev_alt ;;
         3) start_simple_server ;;
-        4) shopify theme push --theme=187662336264 --development ;;
+        4) shopify theme push --theme=190171578632 --development ;;
         5) shopify theme pull --theme=187671675144 ;;
         6) echo "👋 Goodbye!"; exit 0 ;;
         *) echo "❌ Invalid option. Please choose 1-6."; show_options ;;

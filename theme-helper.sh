@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Theme IDs
-DEV_THEME="187662336264"
+DEV_THEME="190171578632"
 LIVE_THEME="187671675144"
 STORE="ipvqw0-j9.myshopify.com"
 

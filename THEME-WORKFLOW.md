@@ -22,7 +22,7 @@ feature/new-feature  →  dev branch  →  main branch
 | Git Branch | Shopify Theme | Theme ID | Purpose |
 |------------|---------------|----------|---------|
 | `main` | Live Theme | 187671675144 | Production site |
-| `dev` | Dev Theme | 187662336264 | Staging/testing |
+| `dev` | Dev Theme | 190171578632 | Staging/testing |
 | `feature/*` | Local only | - | Development |
 
 ## 🚀 Daily Development Workflow
@@ -88,7 +88,7 @@ git merge feature/your-feature-name
 npm run sync:dev:push
 ```
 
-**Preview URL:** `https://ipvqw0-j9.myshopify.com/?preview_theme_id=187662336264`
+**Preview URL:** `https://ipvqw0-j9.myshopify.com/?preview_theme_id=190171578632`
 
 ### 5. Testing in Dev Theme
 
@@ -252,8 +252,8 @@ git checkout feature/footer
 
 - **Local Dev Server**: http://127.0.0.1:3005
 - **Shopify Admin**: https://ipvqw0-j9.myshopify.com/admin
-- **Dev Theme Preview**: https://ipvqw0-j9.myshopify.com/?preview_theme_id=187662336264
-- **Dev Theme Editor**: https://ipvqw0-j9.myshopify.com/admin/themes/187662336264/editor
+- **Dev Theme Preview**: https://ipvqw0-j9.myshopify.com/?preview_theme_id=190171578632
+- **Dev Theme Editor**: https://ipvqw0-j9.myshopify.com/admin/themes/190171578632/editor
 - **Live Theme Editor**: https://ipvqw0-j9.myshopify.com/admin/themes/187671675144/editor
 - **GitHub Repository**: https://github.com/growthwebs/repka-arts-website
 
@@ -261,7 +261,7 @@ git checkout feature/footer
 
 ```json
 {
-  "dev_theme": "187662336264",
+  "dev_theme": "190171578632",
   "live_theme": "187671675144",
   "store": "ipvqw0-j9.myshopify.com"
 }
