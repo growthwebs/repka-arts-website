@@ -65,7 +65,7 @@
           "blocks": {
             "group_LdEXkg": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Brand picture",
               "settings": {
                 "link": "",
                 "open_in_new_tab": false,
@@ -157,7 +157,7 @@
             },
             "group_jeCcdR": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Social links",
               "settings": {
                 "link": "",
                 "open_in_new_tab": false,
@@ -195,9 +195,35 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "text_TxJr3M": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h2>Visit us at</h2>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h4",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "footer_utilities_aXzF8n": {
                   "type": "footer-utilities",
-                  "name": "t:names.footer_utilities",
+                  "name": "Social media",
                   "settings": {
                     "divider_thickness": 1,
                     "padding-block-start": 8,
@@ -284,12 +310,13 @@
                 }
               },
               "block_order": [
+                "text_TxJr3M",
                 "footer_utilities_aXzF8n"
               ]
             },
             "group_PWXWbk": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "Visit buttons",
               "settings": {
                 "link": "https://repkaarts.com",
                 "open_in_new_tab": false,
@@ -649,12 +676,12 @@
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "row",
+            "content_direction": "column",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-start",
             "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
             "gap": 12,
             "width": "fill",
