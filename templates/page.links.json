@@ -220,98 +220,10 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "footer_utilities_aXzF8n": {
-                  "type": "footer-utilities",
-                  "name": "Social media",
-                  "settings": {
-                    "divider_thickness": 1,
-                    "padding-block-start": 8,
-                    "padding-block-end": 8
-                  },
-                  "blocks": {
-                    "copyright": {
-                      "type": "_footer-copyright",
-                      "disabled": true,
-                      "static": true,
-                      "settings": {
-                        "show_powered_by": false,
-                        "font_size": "0.75rem",
-                        "case": "none"
-                      },
-                      "blocks": {}
-                    },
-                    "policy_list": {
-                      "type": "_footer-policy-list",
-                      "disabled": true,
-                      "static": true,
-                      "settings": {
-                        "font_size": "0.75rem",
-                        "case": "none"
-                      },
-                      "blocks": {}
-                    },
-                    "social_icons": {
-                      "type": "_footer-social-icons",
-                      "static": true,
-                      "settings": {},
-                      "blocks": {
-                        "social_link_tbqLw8": {
-                          "type": "_social-link",
-                          "name": "Instagram",
-                          "settings": {
-                            "link": "https://www.instagram.com/repka_arts/"
-                          },
-                          "blocks": {}
-                        },
-                        "social_link_z3x6Wp": {
-                          "type": "_social-link",
-                          "name": "TikTok",
-                          "settings": {
-                            "link": "https://www.tiktok.com/@repka_arts"
-                          },
-                          "blocks": {}
-                        },
-                        "social_link_cWYPL9": {
-                          "type": "_social-link",
-                          "name": "Pinterest",
-                          "settings": {
-                            "link": "https://pinterest.com/repkaarts/"
-                          },
-                          "blocks": {}
-                        },
-                        "social_link_kWkMCq": {
-                          "type": "_social-link",
-                          "name": "Facebook",
-                          "settings": {
-                            "link": "https://www.facebook.com/repkaarts/"
-                          },
-                          "blocks": {}
-                        },
-                        "social_link_kiT39h": {
-                          "type": "_social-link",
-                          "name": "Youtube",
-                          "settings": {
-                            "link": "https://www.youtube.com/@MarynaRiepnovaRepkaArts"
-                          },
-                          "blocks": {}
-                        }
-                      },
-                      "block_order": [
-                        "social_link_tbqLw8",
-                        "social_link_z3x6Wp",
-                        "social_link_cWYPL9",
-                        "social_link_kWkMCq",
-                        "social_link_kiT39h"
-                      ]
-                    }
-                  },
-                  "block_order": []
                 }
               },
               "block_order": [
-                "text_TxJr3M",
-                "footer_utilities_aXzF8n"
+                "text_TxJr3M"
               ]
             },
             "group_PWXWbk": {
@@ -863,6 +775,201 @@
         "gap": 24,
         "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 96,
+        "padding-block-end": 48
+      }
+    },
+    "section_GHJgcU": {
+      "type": "section",
+      "blocks": {
+        "group_wRqTyA": {
+          "type": "group",
+          "name": "Social links",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_VRQNei": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2>Visit us at</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "footer_utilities_3tDaiJ": {
+              "type": "footer-utilities",
+              "name": "Social media",
+              "settings": {
+                "divider_thickness": 1,
+                "padding-block-start": 8,
+                "padding-block-end": 8
+              },
+              "blocks": {
+                "copyright": {
+                  "type": "_footer-copyright",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "show_powered_by": false,
+                    "font_size": "0.75rem",
+                    "case": "none"
+                  },
+                  "blocks": {}
+                },
+                "policy_list": {
+                  "type": "_footer-policy-list",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "font_size": "0.75rem",
+                    "case": "none"
+                  },
+                  "blocks": {}
+                },
+                "social_icons": {
+                  "type": "_footer-social-icons",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {
+                    "social_link_F8hDkG": {
+                      "type": "_social-link",
+                      "name": "Instagram",
+                      "settings": {
+                        "link": "https://www.instagram.com/repka_arts/"
+                      },
+                      "blocks": {}
+                    },
+                    "social_link_MCFN84": {
+                      "type": "_social-link",
+                      "name": "TikTok",
+                      "settings": {
+                        "link": "https://www.tiktok.com/@repka_arts"
+                      },
+                      "blocks": {}
+                    },
+                    "social_link_3neHrt": {
+                      "type": "_social-link",
+                      "name": "Pinterest",
+                      "settings": {
+                        "link": "https://pinterest.com/repkaarts/"
+                      },
+                      "blocks": {}
+                    },
+                    "social_link_KtH666": {
+                      "type": "_social-link",
+                      "name": "Facebook",
+                      "settings": {
+                        "link": "https://www.facebook.com/repkaarts/"
+                      },
+                      "blocks": {}
+                    },
+                    "social_link_cLrH6b": {
+                      "type": "_social-link",
+                      "name": "Youtube",
+                      "settings": {
+                        "link": "https://www.youtube.com/@MarynaRiepnovaRepkaArts"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "social_link_F8hDkG",
+                    "social_link_MCFN84",
+                    "social_link_3neHrt",
+                    "social_link_KtH666",
+                    "social_link_cLrH6b"
+                  ]
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": [
+            "text_VRQNei",
+            "footer_utilities_3tDaiJ"
+          ]
+        }
+      },
+      "block_order": [
+        "group_wRqTyA"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 32,
         "padding-block-end": 96
       }
     }
@@ -871,6 +978,7 @@
     "main",
     "section_VGJBi7",
     "product_list_3NwpzY",
-    "product_list_BWX7TU"
+    "product_list_BWX7TU",
+    "section_GHJgcU"
   ]
 }
