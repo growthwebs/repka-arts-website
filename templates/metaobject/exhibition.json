@@ -96,7 +96,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h1>{{ closest.metaobject.exhibition.exhibition_name.value }}</h1>",
+                    "text": "",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -127,7 +127,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>{{ closest.metaobject.exhibition.exhibition_subtitle.value }}</p>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
@@ -162,8 +162,8 @@
       "name": "t:names.hero_bottom_aligned",
       "settings": {
         "media_type_1": "image",
-        "image_1": "{{ metaobjects.exhibition[\"wild-at-heart\"].media.value }}",
-        "video_1": "{{ metaobjects.exhibition[\"wild-at-heart\"].media.value }}",
+        "image_1": "",
+        "video_1": "",
         "media_type_2": "image",
         "link": "",
         "open_in_new_tab": false,
@@ -574,7 +574,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "{{ closest.metaobject.exhibition.press_link | metafield_tag }}",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -718,7 +718,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>from {{ closest.metaobject.exhibition.start_date | metafield_tag }}</h4>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -744,7 +744,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>to {{ closest.metaobject.exhibition.end_date | metafield_tag }}</h4>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -843,7 +843,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>from {{ closest.metaobject.exhibition.start_date | metafield_tag }}</h4>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -869,7 +869,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<h4>to {{ closest.metaobject.exhibition.end_date | metafield_tag }}</h4>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1014,7 +1014,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>{{ closest.metaobject.exhibition.how_much.value }}</p>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1112,7 +1112,7 @@
                       "type": "text",
                       "name": "t:names.heading",
                       "settings": {
-                        "text": "<p>{{ closest.metaobject.exhibition.discounts.value }}</p>",
+                        "text": "",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -1197,7 +1197,7 @@
               "type": "image",
               "name": "t:names.image",
               "settings": {
-                "image": "{{ closest.metaobject.exhibition.banner.value }}",
+                "image": "",
                 "link": "",
                 "image_ratio": "adapt",
                 "width": "fill",
