@@ -1499,7 +1499,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "Purchase",
+                "label": "Buy a gift card",
                 "link": "shopify://products/repka-arts-gift-cards",
                 "open_in_new_tab": false,
                 "style_class": "button",
