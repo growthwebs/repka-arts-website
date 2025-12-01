@@ -451,6 +451,12 @@
                 "group_CG3DXE"
               ]
             },
+            "share_row": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'share-buttons' %}"
+              }
+            },
             "divider_HrJgFt": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -1220,6 +1226,7 @@
             "text_tAXjcW",
             "divider_JYrnhC",
             "group_i7EwNx",
+            "share_row",
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",

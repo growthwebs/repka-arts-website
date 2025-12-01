@@ -1,0 +1,183 @@
+{% comment %}
+  Share button row – uses Lucide SVGs from snippets.
+{% endcomment %}
+
+{% style %}
+  .share-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #f4f4f5;
+    border: 1px solid #e4e4e7;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    color: #18181b;
+    transition: background 0.2s;
+    line-height: 1;
+  }
+  .share-btn:hover {
+    background: #e4e4e7;
+  }
+  .share-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    color: #52525b;
+    transition: color 0.2s, background 0.2s;
+    text-decoration: none;
+  }
+  .share-icon:hover {
+    background: #f4f4f5;
+    color: #18181b;
+  }
+  .share-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  /* Tooltip for copied state */
+  .share-btn[data-copied='true']::after {
+    content: 'Copied!';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #18181b;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .share-btn {
+    position: relative; /* For tooltip positioning */
+  }
+{% endstyle %}
+
+<div class="share-row" data-product-url="{{ shop.url }}{{ product.url }}">
+  <button class="share-btn copy-link-btn" type="button">
+    {% render 'icon-share' %}
+    <span class="share-label">Share</span>
+  </button>
+  <a
+    class="share-icon facebook"
+    href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Facebook"
+  >
+    {% render 'icon-facebook' %}
+  </a>
+  <a
+    class="share-icon instagram instagram-share-btn"
+    href="javascript:void(0);"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Instagram"
+  >
+    {% render 'icon-instagram' %}
+  </a>
+  <a
+    class="share-icon whatsapp"
+    href="https://api.whatsapp.com/send?text=Hello, I would love to share this with you {{ shop.url }}{{ product.url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on WhatsApp"
+  >
+    {% render 'icon-whatsapp' %}
+  </a>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const shareRow = document.querySelector('.share-row');
+      if (!shareRow) return;
+
+      const productUrl = shareRow.getAttribute('data-product-url');
+      const copyBtn = shareRow.querySelector('.copy-link-btn');
+      const instagramBtn = shareRow.querySelector('.instagram-share-btn');
+
+      const copyToClipboard = (text, triggerElement) => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(text)
+            .then(() => {
+              showTooltip(triggerElement);
+            })
+            .catch((err) => {
+              console.error('Failed to copy:', err);
+              fallbackCopyTextToClipboard(text, triggerElement);
+            });
+        } else {
+          fallbackCopyTextToClipboard(text, triggerElement);
+        }
+      };
+
+      const fallbackCopyTextToClipboard = (text, triggerElement) => {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed'; // Avoid scrolling to bottom
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          showTooltip(triggerElement);
+        } catch (err) {
+          console.error('Fallback: Oops, unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+      };
+
+      const showTooltip = (element) => {
+        element.setAttribute('data-copied', 'true');
+        setTimeout(() => {
+          element.removeAttribute('data-copied');
+        }, 2000);
+      };
+
+      if (copyBtn) {
+        copyBtn.addEventListener('click', async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: document.title,
+                text: 'Check this out!',
+                url: productUrl,
+              });
+              console.log('Shared successfully');
+            } catch (err) {
+              console.error('Error sharing:', err);
+              // Fallback to copy if share fails or is cancelled
+              copyToClipboard(productUrl, copyBtn);
+            }
+          } else {
+            copyToClipboard(productUrl, copyBtn);
+          }
+        });
+      }
+
+      if (instagramBtn) {
+        instagramBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          copyToClipboard(productUrl, instagramBtn);
+          setTimeout(() => {
+            window.open('https://www.instagram.com/', '_blank');
+          }, 500);
+        });
+      }
+    });
+  </script>
+</div>

@@ -83,5 +83,31 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const btn = document.querySelector('.copy-link-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const url = btn.closest('.share-row').dataset.productUrl;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(decodeURIComponent(url)).then(() => showCopied(btn));
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = decodeURIComponent(url);
+            ta.style.position = 'fixed';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+            showCopied(btn);
+          }
+        });
+        function showCopied(el) {
+          el.dataset.copied = 'true';
+          setTimeout(() => delete el.dataset.copied, 2000);
+        }
+      });
+    </script>
   </body>
 </html>
