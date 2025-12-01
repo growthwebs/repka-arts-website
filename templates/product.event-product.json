@@ -540,7 +540,8 @@
               "type": "custom-liquid",
               "settings": {
                 "custom_liquid": "{% render 'share-buttons' %}"
-              }
+              },
+              "blocks": {}
             },
             "divider_HrJgFt": {
               "type": "_divider",
