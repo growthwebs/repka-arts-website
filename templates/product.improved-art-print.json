@@ -386,7 +386,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_7GCe6J": {
+                "group_CE9PQA": {
                   "type": "group",
                   "name": "Worldwide shipping",
                   "settings": {
@@ -426,23 +426,23 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "icon_Y9Y9DX": {
+                    "icon_zCTHMc": {
                       "type": "icon",
                       "name": "t:names.icon",
                       "settings": {
                         "icon": "plane",
-                        "image_upload": "shopify://shop_images/earth.svg",
+                        "image_upload": "shopify://shop_images/truck.svg",
                         "width": 16,
                         "link": "",
                         "open_in_new_tab": false
                       },
                       "blocks": {}
                     },
-                    "text_rjRnWn": {
+                    "text_XpTdBg": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Worldwide shipping</p>",
+                        "text": "<p>Worldwide shipping calculated at checkout</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -466,13 +466,13 @@
                     }
                   },
                   "block_order": [
-                    "icon_Y9Y9DX",
-                    "text_rjRnWn"
+                    "icon_zCTHMc",
+                    "text_XpTdBg"
                   ]
                 }
               },
               "block_order": [
-                "group_7GCe6J"
+                "group_CE9PQA"
               ]
             },
             "group_UhJYfj": {
