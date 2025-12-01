@@ -431,7 +431,7 @@
                       "name": "t:names.icon",
                       "settings": {
                         "icon": "plane",
-                        "image_upload": "shopify://shop_images/earth.svg",
+                        "image_upload": "shopify://shop_images/truck.svg",
                         "width": 16,
                         "link": "",
                         "open_in_new_tab": false
