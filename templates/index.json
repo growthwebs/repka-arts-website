@@ -1291,24 +1291,85 @@
     "section_zhpJDC": {
       "type": "section",
       "blocks": {
-        "button_tAVPhT": {
-          "type": "button",
-          "name": "t:names.button",
+        "group_APQXzR": {
+          "type": "group",
+          "name": "t:names.group",
           "settings": {
-            "label": "Find your art piece",
-            "link": "shopify://collections",
-            "open_in_new_tab": true,
-            "style_class": "button-secondary",
-            "width": "fit-content",
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
             "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "blocks": {}
+          "blocks": {
+            "button_rYWdRN": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Leave a review",
+                "link": "https://g.page/r/CayzyjuKe2f6EBM/review",
+                "open_in_new_tab": true,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            },
+            "button_3F46Pg": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Find your art piece",
+                "link": "shopify://collections",
+                "open_in_new_tab": true,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "button_rYWdRN",
+            "button_3F46Pg"
+          ]
         }
       },
       "block_order": [
-        "button_tAVPhT"
+        "group_APQXzR"
       ],
       "name": "Reviews button",
       "settings": {
@@ -1335,7 +1396,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 0,
+        "padding-block-start": 8,
         "padding-block-end": 96
       }
     },
@@ -1438,7 +1499,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "Purchase",
+                "label": "Buy a gift card",
                 "link": "shopify://products/repka-arts-gift-cards",
                 "open_in_new_tab": false,
                 "style_class": "button",
