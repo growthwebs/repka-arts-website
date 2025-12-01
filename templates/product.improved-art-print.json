@@ -1176,6 +1176,12 @@
                 "accordion_row_RANmfz",
                 "accordion_row_PNHt8h"
               ]
+            },
+            "share_row": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'share-buttons' %}"
+              }
             }
           },
           "block_order": [
@@ -1184,6 +1190,7 @@
             "product_inventory_Jz3T7H",
             "group_xRURQy",
             "group_38rGwN",
+            "share_row",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "group_ECyXij",
