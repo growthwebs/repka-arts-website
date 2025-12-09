@@ -1552,7 +1552,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Shipping Assurance</p>",
+                    "text": "<p>White-glove safe arrival body</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1578,7 +1578,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Since this piece is irreplaceable, we guarantee its safe arrival via white-glove packaging. <strong>If damaged in transit, a refund or a custom commission to replace it is guaranteed.</strong></p>",
+                    "text": "<p>This handmade piece is irreplaceable. We ship it in reinforced, museum-grade double-boxing. <strong>Guaranteed to arrive intact</strong>, or we offer a full refund or a custom commission to replace it.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1708,7 +1708,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Support artists</p>",
+                    "text": "<p>1 of 1 Original creation</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1734,7 +1734,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>All Repka Art products are made in-house by Maryna Riepnova.</p>",
+                    "text": "<p>No molds, no duplicates. This is a singular, hand-sculpted artwork signed by Maryna Riepnova. <strong>Once this specific piece is sold, it is gone forever.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1864,7 +1864,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Original design</p>",
+                    "text": "<p>Certified authenticity</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1890,7 +1890,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our design work and collaborations bring you original pieces.</p>",
+                    "text": "<p>Your handmade piece includes a physical <strong>Certificate of Authenticity</strong>, hand-signed by the artist. This documents the provenance and protects the future value of your art.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
