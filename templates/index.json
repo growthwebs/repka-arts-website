@@ -2061,7 +2061,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Swap the studio for a seat at your favorite local spot. Our traveling workshops bring the easels to you. No experience needed, just a drink in hand and a willingness to create.</p>",
+                    "text": "<p>Swap the studio for a seat at your favorite local spot. Our workshops bring the easels to you. No experience needed, just a drink in hand and a willingness to create.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
