@@ -1708,7 +1708,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>1 of 1 Original creation</p>",
+                    "text": "<p>1 of 1 original creation</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
