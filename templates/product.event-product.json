@@ -114,6 +114,19 @@
               },
               "blocks": {}
             },
+            "product_inventory_ByB4nd": {
+              "type": "product-inventory",
+              "name": "t:names.product_inventory",
+              "settings": {
+                "inventory_threshold": 10,
+                "show_inventory_quantity": true,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_tAXjcW": {
               "type": "text",
               "name": "Event Status",
@@ -1223,6 +1236,7 @@
           "block_order": [
             "product_title_9WaLn7",
             "price_a7krng",
+            "product_inventory_ByB4nd",
             "text_tAXjcW",
             "divider_JYrnhC",
             "group_i7EwNx",
