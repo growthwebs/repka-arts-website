@@ -108,7 +108,7 @@
                 "case": "none",
                 "color": "var(--color-foreground)",
                 "padding-block-start": 0,
-                "padding-block-end": 50,
+                "padding-block-end": 32,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -184,7 +184,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Hand-sculpted <strong>one-of-a-kind</strong> ceramic piece</p>",
+                    "text": "<p><strong>Unique Edition: 1 of 1</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -196,8 +196,8 @@
                     "case": "none",
                     "wrap": "pretty",
                     "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
+                    "background": true,
+                    "background_color": "#fff5f7",
                     "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
