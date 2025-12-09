@@ -173,7 +173,7 @@
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "plane",
-                    "image_upload": "shopify://shop_images/heart-handshake.svg",
+                    "image_upload": "shopify://shop_images/award.svg",
                     "width": 16,
                     "link": "",
                     "open_in_new_tab": false
@@ -184,7 +184,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Handmade one-of-a-kind ceramic piece</p>",
+                    "text": "<p>Hand-sculpted <strong>one-of-a-kind</strong> ceramic piece</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -295,6 +295,13 @@
                 "icon_4pJ6jp",
                 "text_F6ebGG"
               ]
+            },
+            "share_row": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'share-buttons' %}"
+              },
+              "blocks": {}
             },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
@@ -1130,12 +1137,6 @@
                 "accordion_row_RANmfz",
                 "accordion_row_PNHt8h"
               ]
-            },
-            "share_row": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'share-buttons' %}"
-              }
             }
           },
           "block_order": [
