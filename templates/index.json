@@ -964,7 +964,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Heavyweight archival paper, lightfast pigments, and deep color that lasts 100+ years. The perfect start to your collection.</p>",
+                    "text": "<p>Special Offer: <strong>Buy 3</strong>, <strong>Get 20% OFF</strong> with code <strong>WALL20</strong>.</p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
