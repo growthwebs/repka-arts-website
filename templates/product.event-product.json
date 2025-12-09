@@ -1419,7 +1419,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/wallpaper.svg",
+                "image_upload": "shopify://shop_images/heart-handshake.svg",
                 "width": 24,
                 "link": "",
                 "open_in_new_tab": false
@@ -1575,7 +1575,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/landmark.svg",
+                "image_upload": "shopify://shop_images/palette.svg",
                 "width": 24,
                 "link": "",
                 "open_in_new_tab": false
@@ -1731,7 +1731,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/handshake.svg",
+                "image_upload": "shopify://shop_images/party-popper.svg",
                 "width": 24,
                 "link": "",
                 "open_in_new_tab": false
