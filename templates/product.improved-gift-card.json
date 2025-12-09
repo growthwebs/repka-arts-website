@@ -1378,7 +1378,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/wallpaper.svg",
+                "image_upload": "shopify://shop_images/earth.svg",
                 "width": 24,
                 "link": "",
                 "open_in_new_tab": false
@@ -1429,7 +1429,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Build your gallery wall</p>",
+                    "text": "<p>Instant digital delivery</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1455,7 +1455,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Don’t let one artwork feel lonely. <strong>Buy any 3 prints and get 20% OFF</strong> your entire order. Perfect for creating a cohesive look.<br/><strong>Code:</strong> Use code <strong>WALL20</strong> at checkout.</p>",
+                    "text": "<p>Arrives in your inbox seconds after checkout. You can forward it to the lucky recipient immediately or print it out to gift personally in an envelope.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1585,7 +1585,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Museum-quality giclée printing body</p>",
+                    "text": "<p>Valid for everything</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1611,7 +1611,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>These are not standard posters. We use heavy, archival-grade paper and lightfast pigments that retain their deep color and vibrancy for <strong>100+ years</strong>.</p>",
+                    "text": "<p>Let them choose exactly what they love. This card works for original paintings, limited edition ceramics, prints, and even our painting workshops.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1741,7 +1741,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Arrives crisp or we replace it</p>",
+                    "text": "<p>Never expires</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1767,7 +1767,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Shipped in reinforced, crush-proof packaging to ensure your art arrives flat and flawless. If the carrier damages it, we send a <strong>free replacement</strong> instantly.</p>",
+                    "text": "<p>No rush and no deadlines. The balance remains valid forever so they can wait for the perfect collection drop or workshop date without any pressure.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
