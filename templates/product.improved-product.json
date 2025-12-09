@@ -2359,7 +2359,7 @@
             "accordion_row_bxXCFh": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What is the term of changes and returns?",
+                "heading": "What if it doesn't fit my space?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2368,7 +2368,7 @@
                 "text_ezpzrk": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>The deadline for any exchange or return is 3 days.</p>",
+                    "text": "<p>We want you to be absolutely in love with your new artwork. We offer a <strong>7-Day Collector's Inspection Period</strong>. If the piece doesn't sing on your wall, simply return it in its original packaging for a refund or exchange. You can buy with total peace of mind.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -2398,7 +2398,7 @@
             "accordion_row_yLHYB3": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "Do you ship internationally?",
+                "heading": "Is shipping safe for original art?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2407,7 +2407,7 @@
                 "text_E4fdar": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Yes, we ship to a variety of countries, such as Argentina, Austria, Belgium, Brazil, Canada, China, Czech Republic, Denmark, Egypt, Finland, France, Germany, Greece, Hong Kong, Hungary, Ireland, Israel, Italy, Japan, Kuwait, Lebanon, Mexico, Morocco, Norway, Poland, Portugal, Qatar, Saudi Arabia, Singapore, South Korea, Spain (mainland and Balearic Islands), Sweden, Switzerland, Taiwan, The Netherlands, United Arab Emirates, United Kingdom, United States, and Uruguay. In case you have a different country to ship and want a piece of my art, just ask me at hello@repkaarts.com</p>",
+                    "text": "<p>Absolutely. We specialize in shipping unique assets worldwide. Your painting is wrapped in pH-neutral archival paper, protected by high-density foam corners, and double-boxed (or crated) to withstand international transit. <strong>It is fully insured door-to-door.</strong></p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -2437,7 +2437,7 @@
             "accordion_row_xjiBei": {
               "type": "_accordion-row",
               "settings": {
-                "heading": "What kind of art do you create?",
+                "heading": "Does it come framed and ready to hang?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2446,7 +2446,7 @@
                 "text_4akb6J": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>I create a wide range of art, including original oil paintings, watercolours, mixed-media pieces, handmade ceramics, and high-quality art prints. Every piece is a unique creation.</p>",
+                    "text": "<p>It depends on the artwork. Most canvas pieces arrive stretched on wooden bars, ready to hang immediately for a modern, frameless look. If a specific decorative frame is included, it will be listed in the <strong>\"Framing\"</strong> section of the product description above. For works on paper, we recommend local framing to match your personal interior style.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -2477,7 +2477,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "Can I request a custom piece or collaboration?",
+                "heading": "Does it come with a Certificate of Authenticity?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2487,7 +2487,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Absolutely, I specialise in creating custom artworks for private collectors and specialised pieces for hotels and offices. I also love collaborating with interior designers, architects, and real estate firms.</p>",
+                    "text": "<p>Yes. Every original work includes a physical <strong>Certificate of Authenticity (COA)</strong>, hand-signed and dated by Maryna Riepnova. This document guarantees the provenance of your 1-of-1 piece for insurance and future valuation.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
@@ -2518,7 +2518,7 @@
               "type": "_accordion-row",
               "name": "t:names.accordion_dash_row",
               "settings": {
-                "heading": "How to know the status of my order?",
+                "heading": "Do the colors look different in person?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
@@ -2528,7 +2528,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>When your order has been sent to the courier you will receive a link, through that link you will be able to see the status of your updated shipment<br/><br/>The link will reach you and will be activated approximately 24 business hours after placing the order.<br/><br/>If you have any questions, you can contact us at info@repkaarts.com</p>",
+                    "text": "<p>Our collectors consistently report that the texture and depth of the original paint are even more stunning in real life than on a screen. We calibrate our photos for maximum accuracy, but the physical presence of the brushstrokes is something a camera simply can't capture fully.</p>",
                     "width": "100%",
                     "max_width": "none",
                     "alignment": "left",
