@@ -1635,7 +1635,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Free shipping</p>",
+                    "text": "<p>Insured gallery shipping</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1661,7 +1661,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>We offer Free Standard Shipping for domestic orders in Spain, and low rates on orders within the EU.</p>",
+                    "text": "<p>We don't just ship; we protect. Your painting is professionally packed, fully insured, and tracked from our Málaga studio to your door. <strong>Arrives perfect, or we refund you.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1791,7 +1791,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Support artists</p>",
+                    "text": "<p>1 of 1 original masterpiece</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1817,7 +1817,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>All Repka Art products are made in-house by Maryna Riepnova.</p>",
+                    "text": "<p>This is the only one in existence. Hand-painted and signed by Maryna Riepnova. <strong>Once this specific canvas is sold, it will never be available again.</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1947,7 +1947,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Original design</p>",
+                    "text": "<p>Ready to hang & authenticated</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1973,7 +1973,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>Our design work and collaborations bring you original pieces.</p>",
+                    "text": "<p>Arrives stretched on wooden bars with hardware installed, ready for your wall instantly. Includes a physical <strong>Certificate of Authenticity</strong> to secure its value.</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
