@@ -1534,7 +1534,7 @@
               "name": "t:names.icon",
               "settings": {
                 "icon": "price_tag",
-                "image_upload": "shopify://shop_images/landmark.svg",
+                "image_upload": "shopify://shop_images/circle-check-big.svg",
                 "width": 24,
                 "link": "",
                 "open_in_new_tab": false
