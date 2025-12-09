@@ -1286,6 +1286,7 @@
                 "text_H93AHH": {
                   "type": "text",
                   "name": "t:names.text",
+                  "disabled": true,
                   "settings": {
                     "text": "{{ closest.collection.description }}",
                     "width": "fit-content",
