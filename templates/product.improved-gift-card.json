@@ -108,7 +108,7 @@
                 "case": "none",
                 "color": "var(--color-foreground)",
                 "padding-block-start": 0,
-                "padding-block-end": 50,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -211,6 +211,13 @@
                 "icon_8rGmjR",
                 "text_8CUfNH"
               ]
+            },
+            "share_row": {
+              "type": "custom-liquid",
+              "settings": {
+                "custom_liquid": "{% render 'share-buttons' %}"
+              },
+              "blocks": {}
             },
             "group_38rGwN": {
               "type": "group",
@@ -1008,12 +1015,6 @@
                 "accordion_row_RANmfz",
                 "accordion_row_PNHt8h"
               ]
-            },
-            "share_row": {
-              "type": "custom-liquid",
-              "settings": {
-                "custom_liquid": "{% render 'share-buttons' %}"
-              }
             }
           },
           "block_order": [
