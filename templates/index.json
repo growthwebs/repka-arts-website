@@ -1655,7 +1655,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Give the gift of creativity</h2>",
+                "text": "<h2>Digital Gift Cards</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1681,7 +1681,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Surprise your loved ones with a Repka Arts Creative Pass. It's the perfect way to gift original paintings, handmade ceramics, or an inspiring spot in one of our art classes.</p>",
+                "text": "<p>Delivered instantly to their inbox. The perfect way to bring timeless elegance into someone else’s home.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
