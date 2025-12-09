@@ -632,7 +632,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>The Artist & The Studio</h2>",
+                "text": "<h2>Meet Maryna Riepnova</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -658,7 +658,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>I do not just paint landscapes. I paint the feeling of being alive in them.</p><p>From my studio in Málaga, I blend the technical discipline of a Fine Arts degree with the vibrant light of the Mediterranean. My goal is to create original pieces on canvas and ceramics that serve as a window into a brighter reality for your home.</p>",
+                "text": "<p>I don’t just paint landscapes; I capture the vibration of being alive in them.</p><p>Working from my studio in <strong>Málaga</strong>, I fuse the technical discipline of my <strong>Fine Arts degree</strong> with the vibrant, untamed light of the Mediterranean. I create <strong>original canvas art</strong> and <strong>sculptural ceramics</strong> that act as a window into a brighter, calmer reality for your space.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -724,7 +724,7 @@
                   "type": "button",
                   "name": "t:names.button",
                   "settings": {
-                    "label": "Read the full story",
+                    "label": "Visit the studio",
                     "link": "shopify://pages/about",
                     "open_in_new_tab": false,
                     "style_class": "button",
