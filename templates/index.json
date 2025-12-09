@@ -39,7 +39,7 @@
           "type": "text",
           "name": "hero-headline",
           "settings": {
-            "text": "<h1>Original paintings & handmade ceramics by Maryna Riepnova</h1>",
+            "text": "<p>Original oil paintings, watercolors & handmade ceramics</p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "center",
@@ -65,7 +65,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<p>Capturing the vibrant soul of the Mediterranean. Unique pieces designed to bring calm and light to your space.</p>",
+            "text": "<p>Contemporary art by Maryna Riepnova. Crafted in our Málaga studio, collected worldwide. From vibrant landscapes to unique sculptures, find the perfect piece for your space.</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -91,7 +91,7 @@
           "type": "button",
           "name": "hero-button",
           "settings": {
-            "label": "View Signature collection",
+            "label": "Shop available art",
             "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": false,
             "style_class": "button",
@@ -229,7 +229,7 @@
         "text_cPDpXA": {
           "type": "text",
           "settings": {
-            "text": "<p>Join the inner circle for early access</p>",
+            "text": "<p>100% satisfaction guarantee on Originals</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
