@@ -83,13 +83,13 @@
     {% render 'icon-facebook' %}
   </a>
   <a
-    class="share-icon instagram instagram-share-btn"
-    href="javascript:void(0);"
+    class="share-icon pinterest"
+    href="https://pinterest.com/pin/create/button/?url={{ shop.url | append: product.url | url_encode }}&media={{ product.featured_media | image_url: width: 1024 | url_encode }}&description={{ product.title | url_encode }}"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Share on Instagram"
+    aria-label="Share on Pinterest"
   >
-    {% render 'icon-instagram' %}
+    {% render 'icon-pinterest' %}
   </a>
   <a
     class="share-icon whatsapp"
@@ -107,7 +107,6 @@
 
       const productUrl = shareRow.getAttribute('data-product-url');
       const copyBtn = shareRow.querySelector('.copy-link-btn');
-      const instagramBtn = shareRow.querySelector('.instagram-share-btn');
 
       const copyToClipboard = (text, triggerElement) => {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -166,16 +165,6 @@
           } else {
             copyToClipboard(productUrl, copyBtn);
           }
-        });
-      }
-
-      if (instagramBtn) {
-        instagramBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          copyToClipboard(productUrl, instagramBtn);
-          setTimeout(() => {
-            window.open('https://www.instagram.com/', '_blank');
-          }, 500);
         });
       }
     });
