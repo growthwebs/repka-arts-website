@@ -1,7 +1,19 @@
 {% comment %}
   Share button row – uses Lucide SVGs from snippets.
   Variant: Basic (No Pinterest)
+  Arguments:
+  - share_link: Optional. The URL to share. Defaults to product URL.
+  - share_title: Optional. Title for sharing context (used in JS fallbacks if needed).
 {% endcomment %}
+
+{% liquid
+  assign share_url = share_link | default: shop.url | append: product.url
+  if share_link
+    assign share_url = share_link
+  else
+    assign share_url = shop.url | append: product.url
+  endif
+%}
 
 {% style %}
   .share-row {
@@ -69,14 +81,14 @@
   }
 {% endstyle %}
 
-<div class="share-row" data-product-url="{{ shop.url }}{{ product.url }}">
+<div class="share-row" data-product-url="{{ share_url }}">
   <button class="share-btn copy-link-btn" type="button">
     {% render 'icon-share' %}
     <span class="share-label">Share</span>
   </button>
   <a
     class="share-icon facebook"
-    href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}"
+    href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Share on Facebook"
@@ -85,7 +97,7 @@
   </a>
   <a
     class="share-icon whatsapp"
-    href="https://api.whatsapp.com/send?text=Hello, I would love to share this with you {{ shop.url }}{{ product.url }}"
+    href="https://api.whatsapp.com/send?text={{ share_title | default: 'Check this out!' }} {{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Share on WhatsApp"
@@ -94,57 +106,63 @@
   </a>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const shareRow = document.querySelector('.share-row');
-      if (!shareRow) return;
+      // Scope to this specific share-row to avoid conflicts if multiple on page
+      const shareRows = document.querySelectorAll('.share-row');
 
-      const productUrl = shareRow.getAttribute('data-product-url');
-      const copyBtn = shareRow.querySelector('.copy-link-btn');
+      shareRows.forEach((shareRow) => {
+        const productUrl = shareRow.getAttribute('data-product-url');
+        const copyBtn = shareRow.querySelector('.copy-link-btn');
 
-      const copyToClipboard = (text, triggerElement) => {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard
-            .writeText(text)
-            .then(() => {
-              showTooltip(triggerElement);
-            })
-            .catch((err) => {
-              console.error('Failed to copy:', err);
-              fallbackCopyTextToClipboard(text, triggerElement);
-            });
-        } else {
-          fallbackCopyTextToClipboard(text, triggerElement);
-        }
-      };
+        if (!copyBtn) return;
 
-      const fallbackCopyTextToClipboard = (text, triggerElement) => {
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.style.position = 'fixed'; // Avoid scrolling to bottom
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-          document.execCommand('copy');
-          showTooltip(triggerElement);
-        } catch (err) {
-          console.error('Fallback: Oops, unable to copy', err);
-        }
-        document.body.removeChild(textArea);
-      };
+        // Ensure we don't attach multiple listeners if this script runs multiple times or multiple snippets
+        if (copyBtn.dataset.listenerAttached === 'true') return;
+        copyBtn.dataset.listenerAttached = 'true';
 
-      const showTooltip = (element) => {
-        element.setAttribute('data-copied', 'true');
-        setTimeout(() => {
-          element.removeAttribute('data-copied');
-        }, 2000);
-      };
+        const showTooltip = (element) => {
+          element.setAttribute('data-copied', 'true');
+          setTimeout(() => {
+            element.removeAttribute('data-copied');
+          }, 2000);
+        };
 
-      if (copyBtn) {
+        const fallbackCopyTextToClipboard = (text, triggerElement) => {
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed'; // Avoid scrolling to bottom
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            showTooltip(triggerElement);
+          } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+          }
+          document.body.removeChild(textArea);
+        };
+
+        const copyToClipboard = (text, triggerElement) => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard
+              .writeText(text)
+              .then(() => {
+                showTooltip(triggerElement);
+              })
+              .catch((err) => {
+                console.error('Failed to copy:', err);
+                fallbackCopyTextToClipboard(text, triggerElement);
+              });
+          } else {
+            fallbackCopyTextToClipboard(text, triggerElement);
+          }
+        };
+
         copyBtn.addEventListener('click', async () => {
           if (navigator.share) {
             try {
               await navigator.share({
-                title: document.title,
+                title: document.title, // Or pass share_title via data attribute if strictly needed
                 text: 'Check this out!',
                 url: productUrl,
               });
@@ -158,7 +176,7 @@
             copyToClipboard(productUrl, copyBtn);
           }
         });
-      }
+      });
     });
   </script>
 </div>
