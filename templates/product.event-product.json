@@ -637,7 +637,7 @@
             "share_row": {
               "type": "custom-liquid",
               "settings": {
-                "custom_liquid": "{% render 'share-buttons' %}"
+                "custom_liquid": "{% render 'share-buttons-basic' %}"
               },
               "blocks": {}
             },

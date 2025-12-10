@@ -1,5 +1,6 @@
 {% comment %}
   Share button row – uses Lucide SVGs from snippets.
+  Variant: Basic (No Pinterest)
 {% endcomment %}
 
 {% style %}
@@ -81,15 +82,6 @@
     aria-label="Share on Facebook"
   >
     {% render 'icon-facebook' %}
-  </a>
-  <a
-    class="share-icon pinterest"
-    href="https://pinterest.com/pin/create/button/?url={{ shop.url | append: product.url | url_encode }}&media={{ product.featured_media | image_url: width: 1024 | url_encode }}&description={{ product.title | url_encode }}"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Share on Pinterest"
-  >
-    {% render 'icon-pinterest' %}
   </a>
   <a
     class="share-icon whatsapp"
