@@ -82,7 +82,7 @@
           "blocks": {}
         },
         "share_buttons": {
-          "type": "share",
+          "type": "_blog-post-share",
           "settings": {
             "share_copy_icon_size": 20,
             "share_fb_icon_size": 20,
