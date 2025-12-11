@@ -67,7 +67,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-
             "product_title_9WaLn7": {
               "type": "product-title",
               "name": "t:names.title",
@@ -635,7 +634,6 @@
                 "group_j9KUmN"
               ]
             },
-
             "divider_HrJgFt": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -667,6 +665,7 @@
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
+                "custom_add_to_cart_text": "",
                 "padding-block-start": 0,
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
@@ -683,6 +682,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
+                    "custom_add_to_cart_text": "Book now",
                     "style_class": "button"
                   },
                   "blocks": {}
@@ -1229,14 +1229,12 @@
             }
           },
           "block_order": [
-
             "product_title_9WaLn7",
             "price_a7krng",
             "text_tAXjcW",
             "product_inventory_ByB4nd",
             "divider_JYrnhC",
             "group_i7EwNx",
-
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
