@@ -44,12 +44,20 @@
 
   assign wa_icon_col = wa_icon_color | default: '#52525b'
   assign wa_bg_col = wa_bg_color | default: 'transparent'
+
+  assign align_value = 'flex-start'
+  if alignment == 'center'
+    assign align_value = 'center'
+  elsif alignment == 'right'
+    assign align_value = 'flex-end'
+  endif
 %}
 
 {% style %}
   .share-row-blog {
     display: flex;
     align-items: center;
+    justify-content: {{ align_value }};
     gap: 12px;
     margin-top: 16px;
     flex-wrap: wrap;

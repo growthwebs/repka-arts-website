@@ -8,6 +8,8 @@
   style="
     padding-top: {{ block.settings.padding_top }}px;
     padding-bottom: {{ block.settings.padding_bottom }}px;
+    padding-left: {{ block.settings.padding_left }}px;
+    padding-right: {{ block.settings.padding_right }}px;
   "
   {{ block.shopify_attributes }}
 >
@@ -15,6 +17,7 @@
   {% render 'share-buttons-blog',
     share_link: share_url,
     share_title: article.title,
+    alignment: block.settings.alignment,
     copy_label: block.settings.share_copy_label,
     copy_text_color: block.settings.share_copy_text_color,
     copy_bg_color: block.settings.share_copy_bg_color,
@@ -66,6 +69,26 @@
       "step": 4,
       "unit": "px",
       "label": "Padding Bottom",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Right",
       "default": 16
     },
     {
