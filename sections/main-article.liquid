@@ -77,7 +77,20 @@
           {{ block.shopify_attributes }}
         >
           {% assign share_url = request.origin | append: article.url %}
-          {% render 'share-button', block: block, share_link: share_url %}
+          {% render 'share-buttons-blog',
+            share_link: share_url,
+            share_title: article.title,
+            copy_label: block.settings.share_copy_label,
+            copy_text_color: block.settings.share_copy_text_color,
+            copy_bg_color: block.settings.share_copy_bg_color,
+            fb_icon_color: block.settings.share_fb_icon_color,
+            fb_bg_color: block.settings.share_fb_bg_color,
+            wa_icon_color: block.settings.share_wa_icon_color,
+            wa_bg_color: block.settings.share_wa_bg_color,
+            copy_icon_size: block.settings.share_copy_icon_size,
+            fb_icon_size: block.settings.share_fb_icon_size,
+            wa_icon_size: block.settings.share_wa_icon_size
+          %}
         </div>
     {%- endcase -%}
   {%- endfor -%}
@@ -362,10 +375,88 @@
       "limit": 2,
       "settings": [
         {
+          "type": "header",
+          "content": "Copy Link Button"
+        },
+        {
+          "type": "range",
+          "id": "share_copy_icon_size",
+          "min": 12,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 20
+        },
+        {
           "type": "text",
-          "id": "share_label",
-          "label": "t:sections.main-article.blocks.share.settings.text.label",
-          "default": "t:sections.main-article.blocks.share.settings.text.default"
+          "id": "share_copy_label",
+          "label": "Button Label",
+          "default": "Share"
+        },
+        {
+          "type": "color",
+          "id": "share_copy_text_color",
+          "label": "Text Color",
+          "default": "#18181b"
+        },
+        {
+          "type": "color",
+          "id": "share_copy_bg_color",
+          "label": "Background Color",
+          "default": "#f4f4f5"
+        },
+        {
+          "type": "header",
+          "content": "Facebook Button"
+        },
+        {
+          "type": "range",
+          "id": "share_fb_icon_size",
+          "min": 12,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 20
+        },
+        {
+          "type": "color",
+          "id": "share_fb_icon_color",
+          "label": "Icon Color",
+          "default": "#52525b"
+        },
+        {
+          "type": "color",
+          "id": "share_fb_bg_color",
+          "label": "Background Color",
+          "default": "transparent"
+        },
+        {
+          "type": "header",
+          "content": "WhatsApp Button"
+        },
+        {
+          "type": "range",
+          "id": "share_wa_icon_size",
+          "min": 12,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon Size",
+          "default": 20
+        },
+        {
+          "type": "color",
+          "id": "share_wa_icon_color",
+          "label": "Icon Color",
+          "default": "#52525b"
+        },
+        {
+          "type": "color",
+          "id": "share_wa_bg_color",
+          "label": "Background Color",
+          "default": "transparent"
         }
       ]
     }

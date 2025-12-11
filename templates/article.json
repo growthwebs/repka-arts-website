@@ -80,6 +80,16 @@
           "static": true,
           "settings": {},
           "blocks": {}
+        },
+        "share_buttons": {
+          "type": "_blog-post-share",
+          "static": true,
+          "settings": {
+            "share_copy_icon_size": 20,
+            "share_fb_icon_size": 20,
+            "share_wa_icon_size": 20
+          },
+          "blocks": {}
         }
       },
       "settings": {
