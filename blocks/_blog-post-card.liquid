@@ -45,7 +45,9 @@
       fb_bg_color: block_settings.share_fb_bg_color,
       wa_icon_color: block_settings.share_wa_icon_color,
       wa_bg_color: block_settings.share_wa_bg_color,
-      icon_size: block_settings.share_icon_size
+      copy_icon_size: block_settings.share_copy_icon_size,
+      fb_icon_size: block_settings.share_fb_icon_size,
+      wa_icon_size: block_settings.share_wa_icon_size
     %}
   </div>
 </div>
@@ -130,18 +132,18 @@
       "content": "Share Buttons"
     },
     {
+      "type": "header",
+      "content": "Copy Link Button"
+    },
+    {
       "type": "range",
-      "id": "share_icon_size",
+      "id": "share_copy_icon_size",
       "min": 12,
       "max": 40,
       "step": 1,
       "unit": "px",
       "label": "Icon Size",
       "default": 20
-    },
-    {
-      "type": "header",
-      "content": "Copy Link Button"
     },
     {
       "type": "text",
@@ -166,6 +168,16 @@
       "content": "Facebook Button"
     },
     {
+      "type": "range",
+      "id": "share_fb_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
       "type": "color",
       "id": "share_fb_icon_color",
       "label": "Icon Color",
@@ -180,6 +192,16 @@
     {
       "type": "header",
       "content": "WhatsApp Button"
+    },
+    {
+      "type": "range",
+      "id": "share_wa_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
     },
     {
       "type": "color",

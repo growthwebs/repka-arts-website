@@ -29,6 +29,11 @@
   endif
 
   assign icon_size_val = icon_size | default: 20
+
+  assign copy_size = copy_icon_size | default: icon_size_val
+  assign fb_size = fb_icon_size | default: icon_size_val
+  assign wa_size = wa_icon_size | default: icon_size_val
+
   assign copy_label_val = copy_label | default: 'Share'
 
   assign copy_text_col = copy_text_color | default: '#18181b'
@@ -72,8 +77,8 @@
     opacity: 0.8;
   }
   .share-row-blog .share-btn-blog svg {
-     width: {{ icon_size_val }}px;
-     height: {{ icon_size_val }}px;
+     width: {{ copy_size }}px;
+     height: {{ copy_size }}px;
   }
 
   /* Icon Button Styles */
@@ -92,9 +97,15 @@
   .share-row-blog .share-icon-blog:hover {
     opacity: 0.8;
   }
-  .share-row-blog .share-icon-blog svg {
-    width: {{ icon_size_val }}px;
-    height: {{ icon_size_val }}px;
+
+  /* Individual Sizes */
+  .share-row-blog .share-icon-blog.facebook svg {
+    width: {{ fb_size }}px;
+    height: {{ fb_size }}px;
+  }
+  .share-row-blog .share-icon-blog.whatsapp svg {
+    width: {{ wa_size }}px;
+    height: {{ wa_size }}px;
   }
 
   /* Specific Colors */
