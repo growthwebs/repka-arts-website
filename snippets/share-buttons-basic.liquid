@@ -1,11 +1,3 @@
-{% comment %}
-  Share button row – uses Lucide SVGs from snippets.
-  Variant: Basic (No Pinterest)
-  Arguments:
-  - share_link: Optional. The URL to share. Defaults to product URL.
-  - share_title: Optional. Title for sharing context (used in JS fallbacks if needed).
-{% endcomment %}
-
 {% liquid
   assign share_url = share_link | default: shop.url | append: product.url
   if share_link
@@ -13,17 +5,21 @@
   else
     assign share_url = shop.url | append: product.url
   endif
+
+  assign copy_size = share_copy_size | default: 20
+  assign fb_size = share_fb_size | default: 20
+  assign wa_size = share_wa_size | default: 17
 %}
 
 {% style %}
-  .share-row {
+  .share-row-basic {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-top: 16px;
     flex-wrap: wrap;
   }
-  .share-row .share-btn {
+  .share-row-basic .share-btn-basic {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -38,13 +34,13 @@
     color: #18181b;
     transition: background 0.2s;
     line-height: 1;
-    text-decoration: none; /* basic reset */
+    text-decoration: none;
   }
-  .share-row .share-btn:hover {
+  .share-row-basic .share-btn-basic:hover {
     background: #e4e4e7;
-    color: #18181b; /* Ensure color doesn't change unexpectedly */
+    color: #18181b;
   }
-  .share-row .share-icon {
+  .share-row-basic .share-icon-basic {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -54,19 +50,30 @@
     color: #52525b;
     transition: color 0.2s, background 0.2s;
     text-decoration: none;
-    padding: 0; /* Reset any external padding */
-    margin: 0; /* Reset any external margin */
+    padding: 0;
+    margin: 0;
   }
-  .share-row .share-icon:hover {
+  .share-row-basic .share-icon-basic:hover {
     background: #f4f4f5;
     color: #18181b;
   }
-  .share-row .share-icon svg {
-    width: 20px;
-    height: 20px;
+
+  /* Granular Icon Sizes */
+  .share-row-basic .share-btn-basic svg {
+    width: {{ copy_size }}px;
+    height: {{ copy_size }}px;
   }
+  .share-row-basic .share-icon-basic.facebook svg {
+    width: {{ fb_size }}px;
+    height: {{ fb_size }}px;
+  }
+  .share-row-basic .share-icon-basic.whatsapp svg {
+    width: {{ wa_size }}px;
+    height: {{ wa_size }}px;
+  }
+
   /* Tooltip for copied state */
-  .share-row .share-btn[data-copied='true']::after {
+  .share-row-basic .share-btn-basic[data-copied='true']::after {
     content: 'Copied!';
     position: absolute;
     top: -30px;
@@ -80,18 +87,18 @@
     pointer-events: none;
     white-space: nowrap;
   }
-  .share-row .share-btn {
-    position: relative; /* For tooltip positioning */
+  .share-row-basic .share-btn-basic {
+    position: relative;
   }
 {% endstyle %}
 
-<div class="share-row" data-product-url="{{ share_url }}">
-  <button class="share-btn copy-link-btn" type="button">
+<div class="share-row-basic" data-product-url="{{ share_url }}">
+  <button class="share-btn-basic copy-link-btn" type="button">
     {% render 'icon-share' %}
     <span class="share-label">Share</span>
   </button>
   <a
-    class="share-icon facebook"
+    class="share-icon-basic facebook"
     href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
@@ -100,7 +107,7 @@
     {% render 'icon-facebook' %}
   </a>
   <a
-    class="share-icon whatsapp"
+    class="share-icon-basic whatsapp"
     href="https://api.whatsapp.com/send?text={{ share_title | default: 'Check this out!' }} {{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
@@ -111,7 +118,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Scope to this specific share-row to avoid conflicts if multiple on page
-      const shareRows = document.querySelectorAll('.share-row');
+      const shareRows = document.querySelectorAll('.share-row-basic');
 
       shareRows.forEach((shareRow) => {
         const productUrl = shareRow.getAttribute('data-product-url');

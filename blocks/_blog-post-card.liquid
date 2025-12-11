@@ -37,26 +37,26 @@
     {{ description }}
     <div
       style="
-        padding-top: {{ block_settings.share_padding_top }}px;
-        padding-bottom: {{ block_settings.share_padding_bottom }}px;
-        padding-left: {{ block_settings.share_padding_left }}px;
-        padding-right: {{ block_settings.share_padding_right }}px;
+        padding-top: {{ section.settings.share_padding_top }}px;
+        padding-bottom: {{ section.settings.share_padding_bottom }}px;
+        padding-left: {{ section.settings.share_padding_left }}px;
+        padding-right: {{ section.settings.share_padding_right }}px;
       "
     >
       {% render 'share-buttons-blog',
         share_link: article.url,
         share_title: article.title,
-        alignment: block_settings.share_alignment,
-        copy_label: block_settings.share_copy_label,
-        copy_text_color: block_settings.share_copy_text_color,
-        copy_bg_color: block_settings.share_copy_bg_color,
-        fb_icon_color: block_settings.share_fb_icon_color,
-        fb_bg_color: block_settings.share_fb_bg_color,
-        wa_icon_color: block_settings.share_wa_icon_color,
-        wa_bg_color: block_settings.share_wa_bg_color,
-        copy_icon_size: block_settings.share_copy_icon_size,
-        fb_icon_size: block_settings.share_fb_icon_size,
-        wa_icon_size: block_settings.share_wa_icon_size
+        alignment: section.settings.share_alignment,
+        copy_label: section.settings.share_copy_label,
+        copy_text_color: section.settings.share_copy_text_color,
+        copy_bg_color: section.settings.share_copy_bg_color,
+        fb_icon_color: section.settings.share_fb_icon_color,
+        fb_bg_color: section.settings.share_fb_bg_color,
+        wa_icon_color: section.settings.share_wa_icon_color,
+        wa_bg_color: section.settings.share_wa_bg_color,
+        copy_icon_size: section.settings.share_copy_icon_size,
+        fb_icon_size: section.settings.share_fb_icon_size,
+        wa_icon_size: section.settings.share_wa_icon_size
       %}
     </div>
   </div>
