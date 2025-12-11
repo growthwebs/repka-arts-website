@@ -634,6 +634,14 @@
                 "group_j9KUmN"
               ]
             },
+            "custom_liquid_gkJqK4": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": "{% render 'share-buttons-basic' %}"
+              },
+              "blocks": {}
+            },
             "divider_HrJgFt": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -1235,6 +1243,7 @@
             "product_inventory_ByB4nd",
             "divider_JYrnhC",
             "group_i7EwNx",
+            "custom_liquid_gkJqK4",
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
