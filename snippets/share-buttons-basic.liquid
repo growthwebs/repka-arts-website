@@ -23,7 +23,7 @@
     margin-top: 16px;
     flex-wrap: wrap;
   }
-  .share-btn {
+  .share-row .share-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -38,11 +38,13 @@
     color: #18181b;
     transition: background 0.2s;
     line-height: 1;
+    text-decoration: none; /* basic reset */
   }
-  .share-btn:hover {
+  .share-row .share-btn:hover {
     background: #e4e4e7;
+    color: #18181b; /* Ensure color doesn't change unexpectedly */
   }
-  .share-icon {
+  .share-row .share-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -52,17 +54,19 @@
     color: #52525b;
     transition: color 0.2s, background 0.2s;
     text-decoration: none;
+    padding: 0; /* Reset any external padding */
+    margin: 0; /* Reset any external margin */
   }
-  .share-icon:hover {
+  .share-row .share-icon:hover {
     background: #f4f4f5;
     color: #18181b;
   }
-  .share-icon svg {
+  .share-row .share-icon svg {
     width: 20px;
     height: 20px;
   }
   /* Tooltip for copied state */
-  .share-btn[data-copied='true']::after {
+  .share-row .share-btn[data-copied='true']::after {
     content: 'Copied!';
     position: absolute;
     top: -30px;
@@ -76,7 +80,7 @@
     pointer-events: none;
     white-space: nowrap;
   }
-  .share-btn {
+  .share-row .share-btn {
     position: relative; /* For tooltip positioning */
   }
 {% endstyle %}
