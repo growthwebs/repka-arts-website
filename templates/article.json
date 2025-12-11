@@ -80,8 +80,23 @@
           "static": true,
           "settings": {},
           "blocks": {}
+        },
+        "share_buttons": {
+          "type": "share",
+          "settings": {
+            "share_copy_icon_size": 20,
+            "share_fb_icon_size": 20,
+            "share_wa_icon_size": 20
+          }
         }
       },
+      "block_order": [
+        "blog-post-title",
+        "blog-post-details",
+        "blog-post-image",
+        "blog-post-content",
+        "share_buttons"
+      ],
       "settings": {
         "content_direction": "column",
         "gap": 32,
