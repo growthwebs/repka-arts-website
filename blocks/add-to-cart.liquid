@@ -1,16 +1,10 @@
-
-
-{%- doc -%}
-  This block is used to display the add to cart button.
-  Intended for product-form.liquid block.
-
-  @param {string} can_add_to_cart - Whether the product can be added to the cart
-  @param {string} add_to_cart_text - The text of the add to cart button
-{%- enddoc -%}
-
 {% liquid
   assign class = 'add-to-cart-button ' | append: block.settings.style_class
   assign id = 'BuyButtons-ProductSubmitButton-' | append: block.id
+  assign text_to_show = add_to_cart_text
+  if block.settings.custom_add_to_cart_text != blank and can_add_to_cart
+    assign text_to_show = block.settings.custom_add_to_cart_text
+  endif
 %}
 
 <span
@@ -22,7 +16,7 @@
     class: class,
     can_add_to_cart: can_add_to_cart,
     product: closest.product,
-    add_to_cart_text: add_to_cart_text
+    add_to_cart_text: text_to_show
   %}
 </span>
 
@@ -31,6 +25,16 @@
   "name": "t:names.add_to_cart",
   "tag": null,
   "settings": [
+    {
+      "type": "header",
+      "content": "Button Customization"
+    },
+    {
+      "type": "text",
+      "id": "custom_add_to_cart_text",
+      "label": "Custom Button Text",
+      "info": "Leave empty to use default 'Add to cart'. Only applies when item is available."
+    },
     {
       "type": "select",
       "id": "style_class",
