@@ -1,3 +1,25 @@
+{% comment %}
+  Share button row – Blog Variant
+  Fully configurable per instance.
+
+  Arguments:
+  - share_link: The URL to share.
+  - share_title: The title to share.
+
+  - copy_label: Label for the copy button.
+  - copy_text_color: Text color for copy button.
+  - copy_bg_color: Background color for copy button.
+
+  - fb_icon_color: Icon color for Facebook.
+  - fb_bg_color: Background color for Facebook.
+
+  - wa_icon_color: Icon color for WhatsApp.
+  - wa_bg_color: Background color for WhatsApp.
+
+  - icon_size: Size of the icons in pixels.
+  - button_size: Overall scale/padding adjustments (optional, handling via font-size here).
+{% endcomment %}
+
 {% liquid
   assign share_url = share_link | default: shop.url | append: product.url
   if share_link
@@ -6,74 +28,106 @@
     assign share_url = shop.url | append: product.url
   endif
 
-  assign copy_size = share_copy_size | default: 20
-  assign fb_size = share_fb_size | default: 20
-  assign wa_size = share_wa_size | default: 17
+  assign icon_size_val = icon_size | default: 20
+
+  assign copy_size = copy_icon_size | default: icon_size_val
+  assign fb_size = fb_icon_size | default: icon_size_val
+  assign wa_size = wa_icon_size | default: icon_size_val
+
+  assign copy_label_val = copy_label | default: 'Share'
+
+  assign copy_text_col = copy_text_color | default: '#18181b'
+  assign copy_bg_col = copy_bg_color | default: '#f4f4f5'
+
+  assign fb_icon_col = fb_icon_color | default: '#52525b'
+  assign fb_bg_col = fb_bg_color | default: 'transparent'
+
+  assign wa_icon_col = wa_icon_color | default: '#52525b'
+  assign wa_bg_col = wa_bg_color | default: 'transparent'
+
+  assign align_value = 'flex-start'
+  if alignment == 'center'
+    assign align_value = 'center'
+  elsif alignment == 'right'
+    assign align_value = 'flex-end'
+  endif
 %}
 
 {% style %}
-  .share-row-basic {
+  .share-row-blog {
     display: flex;
     align-items: center;
+    justify-content: {{ align_value }};
     gap: 12px;
     margin-top: 16px;
     flex-wrap: wrap;
   }
-  .share-row-basic .share-btn-basic {
+
+  /* Copy Button Styles */
+  .share-row-blog .share-btn-blog {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: #f4f4f5;
     border: 1px solid #e4e4e7;
     border-radius: 4px;
     cursor: pointer;
     font-size: 12px;
     font-family: inherit;
     font-weight: 500;
-    color: #18181b;
-    transition: background 0.2s;
+    transition: opacity 0.2s;
     line-height: 1;
     text-decoration: none;
+    background-color: {{ copy_bg_col }};
+    color: {{ copy_text_col }};
   }
-  .share-row-basic .share-btn-basic:hover {
-    background: #e4e4e7;
-    color: #18181b;
+  .share-row-blog .share-btn-blog:hover {
+    opacity: 0.8;
   }
-  .share-row-basic .share-icon-basic {
+  .share-row-blog .share-btn-blog svg {
+     width: {{ copy_size }}px !important;
+     height: {{ copy_size }}px !important;
+  }
+
+  /* Icon Button Styles */
+  .share-row-blog .share-icon-blog {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
     border-radius: 4px;
-    color: #52525b;
-    transition: color 0.2s, background 0.2s;
+    transition: opacity 0.2s;
     text-decoration: none;
     padding: 0;
     margin: 0;
   }
-  .share-row-basic .share-icon-basic:hover {
-    background: #f4f4f5;
-    color: #18181b;
+  .share-row-blog .share-icon-blog:hover {
+    opacity: 0.8;
   }
 
-  /* Granular Icon Sizes */
-  .share-row-basic .share-btn-basic svg {
-    width: {{ copy_size }}px;
-    height: {{ copy_size }}px;
+  /* Individual Sizes */
+  .share-row-blog .share-icon-blog.facebook svg {
+    width: {{ fb_size }}px !important;
+    height: {{ fb_size }}px !important;
   }
-  .share-row-basic .share-icon-basic.facebook svg {
-    width: {{ fb_size }}px;
-    height: {{ fb_size }}px;
-  }
-  .share-row-basic .share-icon-basic.whatsapp svg {
-    width: {{ wa_size }}px;
-    height: {{ wa_size }}px;
+  .share-row-blog .share-icon-blog.whatsapp svg {
+    width: {{ wa_size }}px !important;
+    height: {{ wa_size }}px !important;
   }
 
-  /* Tooltip for copied state */
-  .share-row-basic .share-btn-basic[data-copied='true']::after {
+  /* Specific Colors */
+  .share-row-blog .share-icon-blog.facebook {
+    background-color: {{ fb_bg_col }};
+    color: {{ fb_icon_col }};
+  }
+  .share-row-blog .share-icon-blog.whatsapp {
+     background-color: {{ wa_bg_col }};
+     color: {{ wa_icon_col }};
+  }
+
+  /* Tooltip */
+  .share-row-blog .share-btn-blog[data-copied='true']::after {
     content: 'Copied!';
     position: absolute;
     top: -30px;
@@ -87,18 +141,19 @@
     pointer-events: none;
     white-space: nowrap;
   }
-  .share-row-basic .share-btn-basic {
+  .share-row-blog .share-btn-blog {
     position: relative;
   }
 {% endstyle %}
 
-<div class="share-row-basic" data-product-url="{{ share_url }}">
-  <button class="share-btn-basic copy-link-btn" type="button">
+<div class="share-row-blog" data-product-url="{{ share_url }}">
+  <button class="share-btn-blog copy-link-btn" type="button">
     {% render 'icon-share' %}
-    <span class="share-label">Share</span>
+    <span class="share-label">{{ copy_label_val }}</span>
   </button>
+
   <a
-    class="share-icon-basic facebook"
+    class="share-icon-blog facebook"
     href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
@@ -106,8 +161,9 @@
   >
     {% render 'icon-facebook' %}
   </a>
+
   <a
-    class="share-icon-basic whatsapp"
+    class="share-icon-blog whatsapp"
     href="https://api.whatsapp.com/send?text={{ share_title | default: 'Check this out!' }} {{ share_url }}"
     target="_blank"
     rel="noopener noreferrer"
@@ -115,18 +171,16 @@
   >
     {% render 'icon-whatsapp' %}
   </a>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Scope to this specific share-row to avoid conflicts if multiple on page
-      const shareRows = document.querySelectorAll('.share-row-basic');
+      const shareRows = document.querySelectorAll('.share-row-blog');
 
       shareRows.forEach((shareRow) => {
         const productUrl = shareRow.getAttribute('data-product-url');
         const copyBtn = shareRow.querySelector('.copy-link-btn');
 
         if (!copyBtn) return;
-
-        // Ensure we don't attach multiple listeners if this script runs multiple times or multiple snippets
         if (copyBtn.dataset.listenerAttached === 'true') return;
         copyBtn.dataset.listenerAttached = 'true';
 
@@ -140,7 +194,7 @@
         const fallbackCopyTextToClipboard = (text, triggerElement) => {
           const textArea = document.createElement('textarea');
           textArea.value = text;
-          textArea.style.position = 'fixed'; // Avoid scrolling to bottom
+          textArea.style.position = 'fixed';
           document.body.appendChild(textArea);
           textArea.focus();
           textArea.select();
@@ -161,7 +215,7 @@
                 showTooltip(triggerElement);
               })
               .catch((err) => {
-                console.error('Failed to copy:', err);
+                console.error('Failed to copy', err);
                 fallbackCopyTextToClipboard(text, triggerElement);
               });
           } else {
@@ -173,14 +227,12 @@
           if (navigator.share) {
             try {
               await navigator.share({
-                title: document.title, // Or pass share_title via data attribute if strictly needed
+                title: document.title,
                 text: 'Check this out!',
                 url: productUrl,
               });
-              console.log('Shared successfully');
             } catch (err) {
               console.error('Error sharing:', err);
-              // Fallback to copy if share fails or is cancelled
               copyToClipboard(productUrl, copyBtn);
             }
           } else {

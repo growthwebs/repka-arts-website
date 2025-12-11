@@ -1,5 +1,3 @@
-
-
 <script
   src="{{ 'blog-posts-list.js' | asset_url }}"
   type="module"
@@ -200,6 +198,140 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Share Buttons"
+    },
+    {
+      "type": "text_alignment",
+      "id": "share_alignment",
+      "label": "Alignment",
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "share_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "share_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "share_padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "share_padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Copy Link Button"
+    },
+    {
+      "type": "range",
+      "id": "share_copy_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "share_copy_label",
+      "label": "Button Label",
+      "default": "Share"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_text_color",
+      "label": "Text Color",
+      "default": "#18181b"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_bg_color",
+      "label": "Background Color",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "header",
+      "content": "Facebook Button"
+    },
+    {
+      "type": "range",
+      "id": "share_fb_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "share_fb_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_fb_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp Button"
+    },
+    {
+      "type": "range",
+      "id": "share_wa_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "share_wa_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_wa_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
     }
   ]
 }

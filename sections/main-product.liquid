@@ -474,6 +474,21 @@
                   assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
                   render 'share-button', block: block, share_link: share_url
                 %}
+              {%- when 'share_buttons' -%}
+                <div
+                  style="
+                    padding-top: {{ block.settings.padding_top }}px;
+                    padding-bottom: {{ block.settings.padding_bottom }}px;
+                    padding-left: {{ block.settings.padding_left }}px;
+                    padding-right: {{ block.settings.padding_right }}px;
+                  "
+                  {{ block.shopify_attributes }}
+                >
+                  {% liquid
+                    assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin
+                    render 'share-buttons-blog', share_link: share_url, share_title: product.title, alignment: block.settings.alignment, copy_label: block.settings.share_copy_label, copy_text_color: block.settings.share_copy_text_color, copy_bg_color: block.settings.share_copy_bg_color, fb_icon_color: block.settings.share_fb_icon_color, fb_bg_color: block.settings.share_fb_bg_color, wa_icon_color: block.settings.share_wa_icon_color, wa_bg_color: block.settings.share_wa_bg_color, copy_icon_size: block.settings.share_copy_icon_size, fb_icon_size: block.settings.share_fb_icon_size, wa_icon_size: block.settings.share_wa_icon_size
+                  %}
+                </div>
 
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -913,6 +928,12 @@
       "limit": 1,
       "settings": [
         {
+          "type": "text",
+          "id": "custom_add_to_cart_text",
+          "label": "Custom Button Text",
+          "info": "Leave empty to use default 'Add to cart' text."
+        },
+        {
           "type": "checkbox",
           "id": "show_dynamic_checkout",
           "default": true,
@@ -925,6 +946,12 @@
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.label",
           "info": "t:sections.main-product.blocks.buy_buttons.settings.show_gift_card_recipient.info"
+        },
+        {
+          "type": "text",
+          "id": "custom_add_to_cart_text",
+          "label": "Custom Button Text",
+          "info": "Leave empty to use default 'Add to cart'. Only applies when item is available."
         }
       ]
     },

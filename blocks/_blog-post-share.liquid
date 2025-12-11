@@ -1,0 +1,180 @@
+<div
+  class="
+    page-width
+    page-width--narrow
+    text-{{ block.settings.alignment }}
+    {% if block.settings.show_alignment %}show-alignment{% endif %}
+  "
+  style="
+    padding-top: {{ block.settings.padding_top }}px;
+    padding-bottom: {{ block.settings.padding_bottom }}px;
+    padding-left: {{ block.settings.padding_left }}px;
+    padding-right: {{ block.settings.padding_right }}px;
+  "
+  {{ block.shopify_attributes }}
+>
+  {% assign share_url = request.origin | append: article.url %}
+  {% render 'share-buttons-blog',
+    share_link: share_url,
+    share_title: article.title,
+    alignment: block.settings.alignment,
+    copy_label: block.settings.share_copy_label,
+    copy_text_color: block.settings.share_copy_text_color,
+    copy_bg_color: block.settings.share_copy_bg_color,
+    fb_icon_color: block.settings.share_fb_icon_color,
+    fb_bg_color: block.settings.share_fb_bg_color,
+    wa_icon_color: block.settings.share_wa_icon_color,
+    wa_bg_color: block.settings.share_wa_bg_color,
+    copy_icon_size: block.settings.share_copy_icon_size,
+    fb_icon_size: block.settings.share_fb_icon_size,
+    wa_icon_size: block.settings.share_wa_icon_size
+  %}
+</div>
+
+{% schema %}
+{
+  "name": "Share Buttons",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Alignment & Spacing"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_alignment",
+      "label": "Show Alignment Class",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Left",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Right",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Copy Link Button"
+    },
+    {
+      "type": "range",
+      "id": "share_copy_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "text",
+      "id": "share_copy_label",
+      "label": "Button Label",
+      "default": "Share"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_text_color",
+      "label": "Text Color",
+      "default": "#18181b"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_bg_color",
+      "label": "Background Color",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "header",
+      "content": "Facebook Button"
+    },
+    {
+      "type": "range",
+      "id": "share_fb_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "share_fb_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_fb_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp Button"
+    },
+    {
+      "type": "range",
+      "id": "share_wa_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "share_wa_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_wa_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    }
+  ]
+}
+{% endschema %}
