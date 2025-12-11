@@ -67,6 +67,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
+
             "product_title_9WaLn7": {
               "type": "product-title",
               "name": "t:names.title",
@@ -634,14 +635,7 @@
                 "group_j9KUmN"
               ]
             },
-            "custom_liquid_XBgC4b": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'share-buttons-basic', share_wa_size: 17 %}"
-              },
-              "blocks": {}
-            },
+
             "divider_HrJgFt": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -1235,13 +1229,14 @@
             }
           },
           "block_order": [
+
             "product_title_9WaLn7",
             "price_a7krng",
             "text_tAXjcW",
             "product_inventory_ByB4nd",
             "divider_JYrnhC",
             "group_i7EwNx",
-            "custom_liquid_XBgC4b",
+
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
