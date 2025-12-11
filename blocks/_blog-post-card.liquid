@@ -35,7 +35,18 @@
     {{ details }}
 
     {{ description }}
-    {% render 'share-buttons-basic', share_link: article.url, share_title: article.title %}
+    {% render 'share-buttons-blog',
+      share_link: article.url,
+      share_title: article.title,
+      copy_label: block_settings.share_copy_label,
+      copy_text_color: block_settings.share_copy_text_color,
+      copy_bg_color: block_settings.share_copy_bg_color,
+      fb_icon_color: block_settings.share_fb_icon_color,
+      fb_bg_color: block_settings.share_fb_bg_color,
+      wa_icon_color: block_settings.share_wa_icon_color,
+      wa_bg_color: block_settings.share_wa_bg_color,
+      icon_size: block_settings.share_icon_size
+    %}
   </div>
 </div>
 
@@ -113,6 +124,74 @@
       "id": "alignment",
       "label": "t:settings.alignment",
       "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Share Buttons"
+    },
+    {
+      "type": "range",
+      "id": "share_icon_size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon Size",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Copy Link Button"
+    },
+    {
+      "type": "text",
+      "id": "share_copy_label",
+      "label": "Button Label",
+      "default": "Share"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_text_color",
+      "label": "Text Color",
+      "default": "#18181b"
+    },
+    {
+      "type": "color",
+      "id": "share_copy_bg_color",
+      "label": "Background Color",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "header",
+      "content": "Facebook Button"
+    },
+    {
+      "type": "color",
+      "id": "share_fb_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_fb_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "header",
+      "content": "WhatsApp Button"
+    },
+    {
+      "type": "color",
+      "id": "share_wa_icon_color",
+      "label": "Icon Color",
+      "default": "#52525b"
+    },
+    {
+      "type": "color",
+      "id": "share_wa_bg_color",
+      "label": "Background Color",
+      "default": "transparent"
     }
   ]
 }

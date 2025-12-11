@@ -1,0 +1,226 @@
+{% comment %}
+  Share button row – Blog Variant
+  Fully configurable per instance.
+
+  Arguments:
+  - share_link: The URL to share.
+  - share_title: The title to share.
+
+  - copy_label: Label for the copy button.
+  - copy_text_color: Text color for copy button.
+  - copy_bg_color: Background color for copy button.
+
+  - fb_icon_color: Icon color for Facebook.
+  - fb_bg_color: Background color for Facebook.
+
+  - wa_icon_color: Icon color for WhatsApp.
+  - wa_bg_color: Background color for WhatsApp.
+
+  - icon_size: Size of the icons in pixels.
+  - button_size: Overall scale/padding adjustments (optional, handling via font-size here).
+{% endcomment %}
+
+{% liquid
+  assign share_url = share_link | default: shop.url | append: product.url
+  if share_link
+    assign share_url = share_link
+  else
+    assign share_url = shop.url | append: product.url
+  endif
+
+  assign icon_size_val = icon_size | default: 20
+  assign copy_label_val = copy_label | default: 'Share'
+
+  assign copy_text_col = copy_text_color | default: '#18181b'
+  assign copy_bg_col = copy_bg_color | default: '#f4f4f5'
+
+  assign fb_icon_col = fb_icon_color | default: '#52525b'
+  assign fb_bg_col = fb_bg_color | default: 'transparent'
+
+  assign wa_icon_col = wa_icon_color | default: '#52525b'
+  assign wa_bg_col = wa_bg_color | default: 'transparent'
+%}
+
+{% style %}
+  .share-row-blog {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Copy Button Styles */
+  .share-row-blog .share-btn-blog {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid #e4e4e7;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    transition: opacity 0.2s;
+    line-height: 1;
+    text-decoration: none;
+    background-color: {{ copy_bg_col }};
+    color: {{ copy_text_col }};
+  }
+  .share-row-blog .share-btn-blog:hover {
+    opacity: 0.8;
+  }
+  .share-row-blog .share-btn-blog svg {
+     width: {{ icon_size_val }}px;
+     height: {{ icon_size_val }}px;
+  }
+
+  /* Icon Button Styles */
+  .share-row-blog .share-icon-blog {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+  }
+  .share-row-blog .share-icon-blog:hover {
+    opacity: 0.8;
+  }
+  .share-row-blog .share-icon-blog svg {
+    width: {{ icon_size_val }}px;
+    height: {{ icon_size_val }}px;
+  }
+
+  /* Specific Colors */
+  .share-row-blog .share-icon-blog.facebook {
+    background-color: {{ fb_bg_col }};
+    color: {{ fb_icon_col }};
+  }
+  .share-row-blog .share-icon-blog.whatsapp {
+     background-color: {{ wa_bg_col }};
+     color: {{ wa_icon_col }};
+  }
+
+  /* Tooltip */
+  .share-row-blog .share-btn-blog[data-copied='true']::after {
+    content: 'Copied!';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #18181b;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .share-row-blog .share-btn-blog {
+    position: relative;
+  }
+{% endstyle %}
+
+<div class="share-row-blog" data-product-url="{{ share_url }}">
+  <button class="share-btn-blog copy-link-btn" type="button">
+    {% render 'icon-share' %}
+    <span class="share-label">{{ copy_label_val }}</span>
+  </button>
+
+  <a
+    class="share-icon-blog facebook"
+    href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Facebook"
+  >
+    {% render 'icon-facebook' %}
+  </a>
+
+  <a
+    class="share-icon-blog whatsapp"
+    href="https://api.whatsapp.com/send?text={{ share_title | default: 'Check this out!' }} {{ share_url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on WhatsApp"
+  >
+    {% render 'icon-whatsapp' %}
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const shareRows = document.querySelectorAll('.share-row-blog');
+
+      shareRows.forEach((shareRow) => {
+        const productUrl = shareRow.getAttribute('data-product-url');
+        const copyBtn = shareRow.querySelector('.copy-link-btn');
+
+        if (!copyBtn) return;
+        if (copyBtn.dataset.listenerAttached === 'true') return;
+        copyBtn.dataset.listenerAttached = 'true';
+
+        const showTooltip = (element) => {
+          element.setAttribute('data-copied', 'true');
+          setTimeout(() => {
+            element.removeAttribute('data-copied');
+          }, 2000);
+        };
+
+        const fallbackCopyTextToClipboard = (text, triggerElement) => {
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          textArea.style.position = 'fixed';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            showTooltip(triggerElement);
+          } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+          }
+          document.body.removeChild(textArea);
+        };
+
+        const copyToClipboard = (text, triggerElement) => {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard
+              .writeText(text)
+              .then(() => {
+                showTooltip(triggerElement);
+              })
+              .catch((err) => {
+                console.error('Failed to copy', err);
+                fallbackCopyTextToClipboard(text, triggerElement);
+              });
+          } else {
+            fallbackCopyTextToClipboard(text, triggerElement);
+          }
+        };
+
+        copyBtn.addEventListener('click', async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: document.title,
+                text: 'Check this out!',
+                url: productUrl,
+              });
+            } catch (err) {
+              console.error('Error sharing:', err);
+              copyToClipboard(productUrl, copyBtn);
+            }
+          } else {
+            copyToClipboard(productUrl, copyBtn);
+          }
+        });
+      });
+    });
+  </script>
+</div>
