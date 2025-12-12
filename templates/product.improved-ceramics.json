@@ -108,7 +108,7 @@
                 "case": "none",
                 "color": "var(--color-foreground)",
                 "padding-block-start": 0,
-                "padding-block-end": 32,
+                "padding-block-end": 16,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -117,10 +117,11 @@
             "product_inventory_Jz3T7H": {
               "type": "product-inventory",
               "name": "t:names.product_inventory",
-              "disabled": true,
               "settings": {
-                "inventory_threshold": 10,
-                "show_inventory_quantity": true,
+                "inventory_threshold": 1,
+                "show_inventory_quantity": false,
+                "low_stock_text": "Unique piece",
+                "no_stock_text": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -322,6 +323,7 @@
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
+                "custom_add_to_cart_text": "",
                 "padding-block-start": 32,
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
@@ -339,6 +341,7 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
+                    "custom_add_to_cart_text": "",
                     "style_class": "button"
                   },
                   "blocks": {}
