@@ -120,7 +120,7 @@
               "settings": {
                 "inventory_threshold": 1,
                 "show_inventory_quantity": false,
-                "low_stock_text": "Unique piece",
+                "low_stock_text": "One of a kind piece",
                 "no_stock_text": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
