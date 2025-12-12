@@ -1,5 +1,3 @@
-
-
 {%- liquid
   assign block_settings = block.settings
   assign variant = closest.product.selected_or_first_available_variant
@@ -66,9 +64,23 @@
       aria-label="{{ 'accessibility.inventory_status' | t }}"
     >
       {%- if show_quantity -%}
-        {{ 'content.inventory_low_stock_show_count' | t: count: inventory_quantity }}
+        {%- if block_settings.low_stock_text != blank and status == 'low' -%}
+          {%- assign search_str = '{{ count }}' -%}
+          {{ block_settings.low_stock_text | replace: search_str, inventory_quantity }}
+        {%- elsif block_settings.no_stock_text != blank and status == 'out_of_stock' -%}
+          {{ block_settings.no_stock_text }}
+        {%- else -%}
+          {{ 'content.inventory_low_stock_show_count' | t: count: inventory_quantity }}
+        {%- endif -%}
       {%- else -%}
-        {{- translation_key | t -}}
+        {%- if block_settings.low_stock_text != blank and status == 'low' -%}
+          {%- assign search_str = '{{ count }}' -%}
+          {{ block_settings.low_stock_text | replace: search_str, inventory_quantity }}
+        {%- elsif block_settings.no_stock_text != blank and status == 'out_of_stock' -%}
+          {{ block_settings.no_stock_text }}
+        {%- else -%}
+          {{- translation_key | t -}}
+        {%- endif -%}
       {%- endif -%}
     </span>
   </span>
@@ -108,7 +120,7 @@
 
 {% schema %}
 {
-  "name": "t:names.product_inventory",
+  "name": "Inventory (Custom)",
   "tag": null,
   "settings": [
     {
@@ -129,6 +141,18 @@
       "id": "show_inventory_quantity",
       "label": "t:settings.show_inventory_quantity",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "low_stock_text",
+      "label": "Custom Low Stock Text",
+      "info": "Overrides 'Low stock' text. Use {{ count }} to insert quantity."
+    },
+    {
+      "type": "text",
+      "id": "no_stock_text",
+      "label": "Custom Out of Stock Text",
+      "info": "Overrides 'Out of stock' text."
     },
     {
       "type": "header",
