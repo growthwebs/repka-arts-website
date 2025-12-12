@@ -67,6 +67,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
+
             "product_title_9WaLn7": {
               "type": "product-title",
               "name": "t:names.title",
@@ -145,7 +146,7 @@
               "name": "t:names.product_inventory",
               "settings": {
                 "inventory_threshold": 10,
-                "show_inventory_quantity": false,
+                "show_inventory_quantity": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -634,14 +635,7 @@
                 "group_j9KUmN"
               ]
             },
-            "custom_liquid_gkJqK4": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "{% render 'share-buttons-basic' %}"
-              },
-              "blocks": {}
-            },
+
             "divider_HrJgFt": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -673,7 +667,6 @@
                 "stacking": true,
                 "show_pickup_availability": false,
                 "gift_card_form": true,
-                "custom_add_to_cart_text": "",
                 "padding-block-start": 0,
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
@@ -690,7 +683,6 @@
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "custom_add_to_cart_text": "Book now",
                     "style_class": "button"
                   },
                   "blocks": {}
@@ -1237,13 +1229,14 @@
             }
           },
           "block_order": [
+
             "product_title_9WaLn7",
             "price_a7krng",
             "text_tAXjcW",
             "product_inventory_ByB4nd",
             "divider_JYrnhC",
             "group_i7EwNx",
-            "custom_liquid_gkJqK4",
+
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
