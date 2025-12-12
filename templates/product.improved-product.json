@@ -121,7 +121,7 @@
                 "inventory_threshold": 10,
                 "show_inventory_quantity": true,
                 "low_stock_text": "Only 1 available",
-                "no_stock_text": "Sold • Commission open",
+                "no_stock_text": "Sold • <a href=\"/pages/commission-an-artwork\" title=\"Commission an artwork\">Commission open</a>",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
