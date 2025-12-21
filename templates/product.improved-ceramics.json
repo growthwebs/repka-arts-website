@@ -2218,6 +2218,7 @@
         "review_QQAane",
         "review_UMABQ4"
       ],
+      "disabled": true,
       "name": "Reviews Carousel",
       "settings": {
         "heading": "Join our happy customers",
@@ -2226,6 +2227,177 @@
         "card_border_color": "#0000001a",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "rich_testimonials_gJw8Fp": {
+      "type": "rich-testimonials",
+      "blocks": {
+        "review_8yJcbt": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_C6gUiq": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_Wyngkj": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_9Y3NpL": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_nH8U7E": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_nerPDa": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_6mmKwz": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_A6rgPr": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_6KMNUq": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_mUCHYm": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_8yJcbt",
+        "review_C6gUiq",
+        "review_Wyngkj",
+        "review_9Y3NpL",
+        "review_nH8U7E",
+        "review_nerPDa",
+        "review_6mmKwz",
+        "review_A6rgPr",
+        "review_6KMNUq",
+        "review_mUCHYm"
+      ],
+      "settings": {
+        "heading": "Join our happy customers",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "metaobject_handle": "print_testimonial",
+        "max_reviews": 15,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "card_alignment": "left",
+        "card_alignment_mobile": "center",
+        "nav_icon": "large_arrows",
+        "nav_icon_background": "circle",
+        "nav_color_scheme": "",
+        "show_button_1": true,
+        "button_label_1": "Leave a review",
+        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
+        "button_style_1": "secondary",
+        "show_button_2": false,
+        "button_label_2": "Find your art piece",
+        "button_link_2": "shopify://collections",
+        "button_style_2": "secondary",
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     },
     "section_wkdff8": {
@@ -2567,6 +2739,7 @@
     "section_cjMw6X",
     "product_list_L7Rce6",
     "reviews_carousel_new_7iMYbJ",
+    "rich_testimonials_gJw8Fp",
     "section_wkdff8"
   ]
 }
