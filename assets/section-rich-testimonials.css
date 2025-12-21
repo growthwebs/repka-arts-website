@@ -1,0 +1,4 @@
+/* Rich Testimonials CSS defined inline in liquid file for now to ensure portability, 
+   but including this file to prevent 404s/build errors if the theme expects it. 
+   The main styles are currently in the <style> block of sections/rich-testimonials.liquid 
+   for easier development editing. */
