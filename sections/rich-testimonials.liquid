@@ -71,7 +71,7 @@
             {%- liquid
               # Logic to determine source: Metaobjects (priority) vs Blocks (fallback)
               # Sort by 'order' field (ascending)
-              assign metaobject_reviews = shop.metaobjects.review.values | sort: 'order.value'
+              assign metaobject_reviews = shop.metaobjects.review.values | sort: 'order'
               assign review_limit = section.settings.max_reviews | default: 8
             -%}
 
