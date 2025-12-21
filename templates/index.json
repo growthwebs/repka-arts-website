@@ -1899,6 +1899,171 @@
         "padding-block-end": 96
       }
     },
+    "rich_testimonials_new": {
+      "type": "rich-testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_7": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_8": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_9": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_10": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6",
+        "review_7",
+        "review_8",
+        "review_9",
+        "review_10"
+      ],
+      "settings": {
+        "heading": "Loved by collectors worldwide",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "nav_icon": "large_arrows",
+        "nav_icon_background": "circle",
+        "nav_color_scheme": "",
+        "button_label_1": "Leave a review",
+        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
+        "button_style_1": "primary",
+        "button_label_2": "Find your art piece",
+        "button_link_2": "shopify://collections",
+        "button_style_2": "secondary",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
     "section_xTkmQm": {
       "type": "section",
       "blocks": {
@@ -3220,96 +3385,6 @@
         "padding-block-start": 96,
         "padding-block-end": 96
       }
-    },
-    "rich_testimonials_new": {
-      "type": "rich-testimonials",
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_4": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_5": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_6": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_7": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_8": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_9": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        },
-        "review_10": {
-          "type": "review",
-          "settings": {
-            "rating": 5
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4",
-        "review_5",
-        "review_6",
-        "review_7",
-        "review_8",
-        "review_9",
-        "review_10"
-      ],
-      "settings": {
-        "heading": "Loved by collectors worldwide (New)",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "button_label_1": "Leave a review",
-        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
-        "button_label_2": "Find your art piece",
-        "button_link_2": "shopify://collections",
-        "padding_top": 96,
-        "padding_bottom": 96
-      }
     }
   },
   "order": [
@@ -3322,8 +3397,8 @@
     "collection_list_dnRNYQ",
     "section_qqRe43",
     "reviews_carousel",
-    "rich_testimonials_new",
     "section_zhpJDC",
+    "rich_testimonials_new",
     "section_xTkmQm",
     "product_list_NLVbT8",
     "featured_blog_posts_PWX7fF",
