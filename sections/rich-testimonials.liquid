@@ -239,7 +239,7 @@
 
     <div class="rich-testimonials__footer">
       <div class="rich-testimonials__buttons">
-        {%- if section.settings.button_label_1 != blank -%}
+        {%- if section.settings.show_button_1 and section.settings.button_label_1 != blank -%}
           <a
             {% if section.settings.button_link_1 == blank %}
               role="link" aria-disabled="true"
@@ -252,7 +252,7 @@
           </a>
         {%- endif -%}
 
-        {%- if section.settings.button_label_2 != blank -%}
+        {%- if section.settings.show_button_2 and section.settings.button_label_2 != blank -%}
           <a
             {% if section.settings.button_link_2 == blank %}
               role="link" aria-disabled="true"
@@ -626,6 +626,12 @@
       "content": "Buttons"
     },
     {
+      "type": "checkbox",
+      "id": "show_button_1",
+      "label": "Show Button 1",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "button_label_1",
       "default": "Leave a review",
@@ -645,6 +651,12 @@
         { "value": "secondary", "label": "Secondary" }
       ],
       "default": "primary"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button_2",
+      "label": "Show Button 2",
+      "default": true
     },
     {
       "type": "text",
