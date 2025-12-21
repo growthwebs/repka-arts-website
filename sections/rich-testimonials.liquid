@@ -105,9 +105,9 @@
                     {%- endif -%}
 
                     {%- if block.settings.text != blank -%}
-                      <blockquote class="testimonial-card__text">
+                      <div class="testimonial-card__text">
                         {{ block.settings.text }}
-                      </blockquote>
+                      </div>
                     {%- endif -%}
 
                     <div class="testimonial-card__author">
@@ -278,6 +278,14 @@
     line-height: 1.6;
     opacity: 0.85;
     font-style: italic;
+  }
+
+  .testimonial-card__text p {
+    margin: 0;
+  }
+
+  .testimonial-card__text p + p {
+    margin-top: 0.75rem;
   }
 
   .testimonial-card__author {
@@ -520,10 +528,10 @@
           "default": "Excellent quality"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "text",
           "label": "Review text",
-          "default": "Share what your customers are saying about your products or service."
+          "default": "<p>Share what your customers are saying about your products or service.</p>"
         },
         {
           "type": "text",
