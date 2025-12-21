@@ -789,7 +789,7 @@
         "video_position": "cover",
         "background_image_position": "cover",
         "padding-block-start": 64,
-        "padding-block-end": 16
+        "padding-block-end": 64
       }
     }
   },
