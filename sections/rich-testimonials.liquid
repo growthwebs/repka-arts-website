@@ -297,6 +297,9 @@
       scrollbar-width: none;
       -ms-overflow-style: none;
       padding-bottom: 2rem;
+
+      /* Mobile: Center the slideshow items */
+      padding-inline: calc((100vw - 85vw) / 2);
   }
 
   slideshow-slides.rich-testimonials__grid::-webkit-scrollbar {
@@ -306,7 +309,8 @@
   /* Slide Styles */
   slideshow-slide.rich-testimonials__item {
       display: block;
-      scroll-snap-align: start;
+      /* Mobile: Snap to center to fix visual alignment */
+      scroll-snap-align: center;
       width: 85vw; /* Mobile */
       flex-shrink: 0;
       box-sizing: border-box;
