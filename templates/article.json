@@ -92,13 +92,6 @@
           "blocks": {}
         }
       },
-      "block_order": [
-        "blog-post-title",
-        "blog-post-details",
-        "blog-post-image",
-        "blog-post-content",
-        "share_buttons"
-      ],
       "settings": {
         "content_direction": "column",
         "gap": 32,
