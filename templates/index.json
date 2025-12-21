@@ -1904,15 +1904,13 @@
       "blocks": {
         "review_1": {
           "type": "review",
+          "source": "{{ metaobjects.review[\"successful-collaborations\"] }}",
           "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
+            "title": "{{ metaobjects.review[\"successful-collaborations\"].title.value }}",
+            "text": "<p>{{ metaobjects.review[\"successful-collaborations\"].review | metafield_tag }}</p>",
+            "author_name": "{{ metaobjects.review[\"successful-collaborations\"].author.value }}",
+            "author_location": "{{ metaobjects.review[\"successful-collaborations\"].source.value }}",
+            "author_source": "{{ metaobjects.review[\"successful-collaborations\"].source.value }}"
           }
         },
         "review_2": {
