@@ -2426,7 +2426,7 @@
         "heading_size": "h2",
         "heading_alignment": "center",
         "metaobject_handle": "print_testimonial",
-        "max_reviews": 5,
+        "max_reviews": 12,
         "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "card_alignment": "left",
