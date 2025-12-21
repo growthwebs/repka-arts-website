@@ -77,13 +77,39 @@
             {%- if metaobject_reviews.count > 0 -%}
               {% comment %} Render from Metaobjects {% endcomment %}
               {%- for review in metaobject_reviews limit: review_limit -%}
+                {%- liquid
+                  # Robust field fallbacks
+                  # Rating: try 'rating', 'stars', 'value'
+                  assign rating_key = review.rating.value | default: review.stars.value | default: 5
+
+                  # Date: try 'date', 'review_date'
+                  assign date_key = review.date.value | default: review.review_date.value
+
+                  # Title: try 'title', 'heading', 'header'
+                  assign title_key = review.title.value | default: review.heading.value | default: review.header.value
+
+                  # Text: try 'review' (user suggestion), 'review_text' (standard), 'text', 'body', 'description'
+                  assign text_key = review.review.value | default: review.review_text.value | default: review.text.value | default: review.body.value | default: review.description.value
+
+                  # Author: try 'author_name' (standard), 'author', 'name'
+                  assign author_key = review.author_name.value | default: review.author.value | default: review.name.value
+
+                  # Verified: try 'verified', 'is_verified'
+                  assign verified_key = review.verified.value | default: review.is_verified.value | default: false
+
+                  # Location: try 'location', 'city', 'place'
+                  assign location_key = review.location.value | default: review.city.value | default: review.place.value
+
+                  # Source: try 'source', 'platform'
+                  assign source_key = review.source.value | default: review.platform.value
+                -%}
+
                 <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
                   <div class="testimonial-card">
                     <div class="testimonial-card__header">
                       <div class="testimonial-card__stars">
-                        {%- assign rating_val = review.rating.value | default: 5 -%}
                         {%- for i in (1..5) -%}
-                          {%- if i <= rating_val -%}
+                          {%- if i <= rating_key -%}
                             <span class="star-icon filled">★</span>
                           {%- else -%}
                             <span class="star-icon empty">☆</span>
@@ -91,27 +117,27 @@
                         {%- endfor -%}
                       </div>
 
-                      {%- if review.date.value != blank -%}
-                        <span class="testimonial-card__date">{{ review.date.value }}</span>
+                      {%- if date_key != blank -%}
+                        <span class="testimonial-card__date">{{ date_key }}</span>
                       {%- endif -%}
                     </div>
 
-                    {%- if review.title.value != blank -%}
-                      <h3 class="testimonial-card__title">{{ review.title.value }}</h3>
+                    {%- if title_key != blank -%}
+                      <h3 class="testimonial-card__title">{{ title_key }}</h3>
                     {%- endif -%}
 
-                    {%- if review.review_text.value != blank -%}
+                    {%- if text_key != blank -%}
                       <div class="testimonial-card__text">
-                        {% comment %} Use simple_format to wrap multi-line text in p tags to match card styling {% endcomment %}
-                        {{ review.review_text.value | simple_format }}
+                        {% comment %} Use simple_format to wrap multi-line text in p tags {% endcomment %}
+                        {{ text_key | simple_format }}
                       </div>
                     {%- endif -%}
 
                     <div class="testimonial-card__author">
-                      {%- if review.author.value != blank -%}
+                      {%- if author_key != blank -%}
                         <p class="author-name">
-                          {{ review.author.value }}
-                          {%- if review.verified.value == true -%}
+                          {{ author_key }}
+                          {%- if verified_key == true -%}
                             <span class="verified-badge" title="Verified Customer">
                               <svg viewBox="0 0 20 20" class="icon-verified" width="14" height="14">
                                 <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1.2 14.4L5.2 10.8l1.6-1.6 2 2 5.6-5.6 1.6 1.6-7.2 7.2z" fill="currentColor"/>
@@ -121,16 +147,16 @@
                         </p>
                       {%- endif -%}
 
-                      {%- if review.location.value != blank or review.source.value != blank -%}
+                      {%- if location_key != blank or source_key != blank -%}
                         <p class="author-details">
-                          {%- if review.location.value != blank -%}
-                            {{ review.location.value }}
+                          {%- if location_key != blank -%}
+                            {{ location_key }}
                           {%- endif -%}
-                          {%- if review.location.value != blank and review.source.value != blank -%}
+                          {%- if location_key != blank and source_key != blank -%}
                             <span class="separator">•</span>
                           {%- endif -%}
-                          {%- if review.source.value != blank -%}
-                            {{ review.source.value }}
+                          {%- if source_key != blank -%}
+                            {{ source_key }}
                           {%- endif -%}
                         </p>
                       {%- endif -%}
