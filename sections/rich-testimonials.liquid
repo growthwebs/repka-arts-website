@@ -272,6 +272,12 @@
       position: relative;
   }
 
+  /* Fix for ghost arrow: Ensure disabled arrows are fully transparent */
+  .rich-testimonials__slideshow .slideshow-control[disabled] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
   /* Slideshow Component Styles */
   slideshow-component.rich-testimonials__slideshow {
       display: block;
