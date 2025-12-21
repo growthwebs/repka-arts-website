@@ -86,29 +86,29 @@
               {% comment %} Render from Metaobjects {% endcomment %}
               {%- for review in metaobject_reviews limit: review_limit -%}
                 {%- liquid
-                  # Robust field fallbacks
-                  # Rating: try 'rating', 'stars', 'value'
+                  # Robust field fallbacks based on Screenshot
+                  # Rating: 'rating' (Screenshot)
                   assign rating_key = review.rating.value | default: review.stars.value | default: 5
 
-                  # Date: try 'date', 'review_date'
+                  # Date: 'date' (Screenshot)
                   assign date_key = review.date.value | default: review.review_date.value
 
-                  # Title: try 'title', 'heading', 'header'
-                  assign title_key = review.title.value | default: review.heading.value | default: review.header.value
+                  # Title: 'title' (Screenshot)
+                  assign title_key = review.title.value | default: review.heading.value
 
-                  # Text: try 'review' (user suggestion), 'review_text' (standard), 'text', 'body', 'description'
-                  assign text_key = review.review.value | default: review.review_text.value | default: review.text.value | default: review.body.value | default: review.description.value
+                  # Text: 'review_text' (Screenshot) - Put primary handle first
+                  assign text_key = review.review_text.value | default: review.review.value | default: review.text.value | default: review.body.value
 
-                  # Author: try 'author_name' (standard), 'author', 'name'
-                  assign author_key = review.author_name.value | default: review.author.value | default: review.name.value
+                  # Author: 'author' (Screenshot)
+                  assign author_key = review.author.value | default: review.author_name.value | default: review.name.value
 
-                  # Verified: try 'verified', 'is_verified'
+                  # Verified: 'verified' (Screenshot)
                   assign verified_key = review.verified.value | default: review.is_verified.value | default: false
 
-                  # Location: try 'location', 'city', 'place'
-                  assign location_key = review.location.value | default: review.city.value | default: review.place.value
+                  # Location: 'location' (Screenshot)
+                  assign location_key = review.location.value | default: review.city.value
 
-                  # Source: try 'source', 'platform'
+                  # Source: 'source' (Screenshot)
                   assign source_key = review.source.value | default: review.platform.value
                 -%}
 
