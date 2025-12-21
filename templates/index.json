@@ -1777,6 +1777,7 @@
         "review_9",
         "review_10"
       ],
+      "disabled": true,
       "name": "Reviews",
       "settings": {
         "heading": "Loved by collectors worldwide",
@@ -1870,6 +1871,7 @@
       "block_order": [
         "group_APQXzR"
       ],
+      "disabled": true,
       "name": "Reviews button",
       "settings": {
         "content_direction": "column",
