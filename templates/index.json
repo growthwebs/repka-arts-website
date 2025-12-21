@@ -1777,7 +1777,6 @@
         "review_9",
         "review_10"
       ],
-      "disabled": true,
       "name": "Reviews",
       "settings": {
         "heading": "Loved by collectors worldwide",
@@ -1871,7 +1870,6 @@
       "block_order": [
         "group_APQXzR"
       ],
-      "disabled": true,
       "name": "Reviews button",
       "settings": {
         "content_direction": "column",
@@ -1899,171 +1897,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 8,
         "padding-block-end": 96
-      }
-    },
-    "rich_testimonials_new": {
-      "type": "rich-testimonials",
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Custom art for our shop",
-            "text": "We collaborated on two important business projects, including custom ceramics and our opening poster. We are 100% happy with the results.",
-            "author_name": "Anna Douve",
-            "verified": true,
-            "author_location": "Fuengirola, Spain",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Arte auténtico y único",
-            "text": "Maryna es una gran profesional и estoy encantada con mi cuadro. Se nota la dedicación en su trabajo y la comunicación fue muy fácil.",
-            "author_name": "Marina Mnatsakanian",
-            "verified": true,
-            "author_location": "Málaga, Spain",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Справжній витвір мистецтва",
-            "text": "Це не просто картина, а справжня знахідка. Якість, стиль та енергетика просто прекрасні. Дякую за цю красу та чудовий сервіс.",
-            "author_name": "Yana Serbul",
-            "verified": true,
-            "author_location": "Odesa, Ukraine",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_4": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "La perle rare",
-            "text": "J'ai enfin trouvé la perle rare pour mon salon. Chaque matin, elle me saute aux yeux. La livraison en France était parfaite.",
-            "author_name": "Isis Fancello",
-            "verified": true,
-            "author_location": "Toulouse, France",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_5": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Stunning and creative",
-            "text": "We recently got a stunning painting and couldn't be happier. Maryna is a talented artist and her attention to detail is remarkable.",
-            "author_name": "Vladyslav Apukhtin",
-            "verified": true,
-            "author_location": "Málaga, Spain",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_6": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "A special memory",
-            "text": "Maryna created a beautiful drawing for a special memory. Her kindness and talent shine through her work. I am truly grateful.",
-            "author_name": "Norah Alhadab",
-            "verified": true,
-            "author_location": "Riyadh, Saudi Arabia",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_7": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "True professional",
-            "text": "The painting Maryna created for our store was even better than expected. She is a great artist and a true professional.",
-            "author_name": "Tiffany Cámara",
-            "verified": true,
-            "author_location": "Málaga, Spain",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_8": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "More beautiful in person",
-            "text": "I am really satisfied with my order. It arrived quickly and the picture is even more beautiful in real life than in the photos.",
-            "author_name": "Natalia Husieva",
-            "verified": true,
-            "author_location": "Odesa, Ukraine",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_9": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Perfect for my home",
-            "text": "I finally found the perfect piece for my living room. It grabs my attention every morning and shipping to Colombia was very easy.",
-            "author_name": "Andres Uribe",
-            "verified": true,
-            "author_location": "Bogotá, Colombia",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_10": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Унікальний стиль",
-            "text": "Чудовий сервіс та унікальні роботи. Все створено з витонченим смаком та професійним підходом. Ця картина підкреслює мою індивідуальність.",
-            "author_name": "Анна Шкляр",
-            "verified": true,
-            "author_location": "Kyiv, Ukraine",
-            "author_source": "via Google",
-            "date": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4",
-        "review_5",
-        "review_6",
-        "review_7",
-        "review_8",
-        "review_9",
-        "review_10"
-      ],
-      "settings": {
-        "heading": "Loved by collectors worldwide",
-        "heading_size": "h2",
-        "heading_alignment": "center",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "nav_icon": "large_arrows",
-        "nav_icon_background": "circle",
-        "nav_color_scheme": "",
-        "button_label_1": "Leave a review",
-        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
-        "button_style_1": "primary",
-        "button_label_2": "Find your art piece",
-        "button_link_2": "shopify://collections",
-        "button_style_2": "secondary",
-        "padding_top": 96,
-        "padding_bottom": 96
       }
     },
     "section_xTkmQm": {
@@ -3387,6 +3220,96 @@
         "padding-block-start": 96,
         "padding-block-end": 96
       }
+    },
+    "rich_testimonials_new": {
+      "type": "rich-testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_7": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_8": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_9": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_10": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6",
+        "review_7",
+        "review_8",
+        "review_9",
+        "review_10"
+      ],
+      "settings": {
+        "heading": "Loved by collectors worldwide (New)",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "button_label_1": "Leave a review",
+        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
+        "button_label_2": "Find your art piece",
+        "button_link_2": "shopify://collections",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
@@ -3399,8 +3322,8 @@
     "collection_list_dnRNYQ",
     "section_qqRe43",
     "reviews_carousel",
-    "section_zhpJDC",
     "rich_testimonials_new",
+    "section_zhpJDC",
     "section_xTkmQm",
     "product_list_NLVbT8",
     "featured_blog_posts_PWX7fF",
