@@ -69,9 +69,16 @@
             "
           >
             {%- liquid
-              # Logic to determine source: Metaobjects (priority) vs Blocks (fallback)
-              # Sort by 'order' field (ascending)
-              assign metaobject_reviews = shop.metaobjects.review.values | sort: 'order'
+              # Safe sorting by 'order' field
+              # If sorting fails or empties the array (e.g. mismatched types), fallback to unsorted.
+              assign raw_reviews = shop.metaobjects.review.values
+              assign sorted_reviews = raw_reviews | sort: 'order'
+
+              if sorted_reviews != blank
+                assign metaobject_reviews = sorted_reviews
+              else
+                assign metaobject_reviews = raw_reviews
+              endif
               assign review_limit = section.settings.max_reviews | default: 8
             -%}
 
