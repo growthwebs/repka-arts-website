@@ -2421,12 +2421,12 @@
         "review_HFhxR8"
       ],
       "settings": {
-        "heading": "Join our happy assistants",
+        "heading": "Join our happy customers",
         "heading_size": "h2",
         "heading_alignment": "center",
-        "metaobject_handle": "event_testimonials",
-        "max_reviews": 7,
-        "columns_desktop": 2,
+        "metaobject_handle": "print_testimonial",
+        "max_reviews": 5,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "card_alignment": "left",
         "card_alignment_mobile": "center",
