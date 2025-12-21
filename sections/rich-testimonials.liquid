@@ -69,9 +69,10 @@
             "
           >
             {%- liquid
-              # Default Fetch: 'Review' metaobject
-              # Sorting removed as requested.
-              assign metaobject_reviews = shop.metaobjects.review.values
+              # Dynamic Fetch: Source from 'metaobject_handle' setting
+              # Default: 'review'
+              assign metaobject_handle = section.settings.metaobject_handle | default: 'review'
+              assign metaobject_reviews = shop.metaobjects[metaobject_handle].values
               assign review_limit = section.settings.max_reviews | default: 8
             -%}
 
@@ -517,6 +518,13 @@
       ],
       "default": "center",
       "label": "Heading alignment"
+    },
+    {
+      "type": "text",
+      "id": "metaobject_handle",
+      "label": "Metaobject Definition Handle",
+      "default": "review",
+      "info": "Key of the Metaobject definition to properly source reviews (e.g. 'review', 'testimonials'). Fields must match."
     },
     {
       "type": "range",
