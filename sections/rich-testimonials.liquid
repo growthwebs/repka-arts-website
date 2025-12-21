@@ -105,7 +105,8 @@
                 -%}
 
                 <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
-                  <div class="testimonial-card text-{{ section.settings.card_alignment }}">
+                <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
+                  <div class="testimonial-card mobile-text-{{ section.settings.card_alignment_mobile }} desktop-text-{{ section.settings.card_alignment }}">
                     <div class="testimonial-card__header">
                       <div class="testimonial-card__stars">
                         {%- for i in (1..5) -%}
@@ -170,7 +171,8 @@
               {%- for block in section.blocks -%}
                 {%- if block.type == 'review' -%}
                   <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
-                    <div class="testimonial-card text-{{ section.settings.card_alignment }}">
+                  <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
+                    <div class="testimonial-card mobile-text-{{ section.settings.card_alignment_mobile }} desktop-text-{{ section.settings.card_alignment }}">
                       <div class="testimonial-card__header">
                         <div class="testimonial-card__stars">
                           {%- for i in (1..5) -%}
@@ -430,19 +432,49 @@
   .rich-testimonials__header.center { text-align: center; }
   .rich-testimonials__header.left { text-align: left; }
 
-  /* Alignment Utility Classes */
-  .testimonial-card.text-center {
+  /* Alignment Utility Classes - Responsive */
+  /* Mobile (Default) */
+  .testimonial-card.mobile-text-center {
     text-align: center;
   }
-
-  .testimonial-card.text-center .testimonial-card__header {
+  .testimonial-card.mobile-text-center .testimonial-card__header {
     justify-content: center;
-    flex-wrap: wrap; /* Ensure date wraps if needed or follows design */
-    gap: 0.5rem;
+  }
+  .testimonial-card.mobile-text-center .author-name {
+    justify-content: center;
+  }
+  
+  .testimonial-card.mobile-text-left {
+    text-align: left;
+  }
+  .testimonial-card.mobile-text-left .testimonial-card__header {
+    justify-content: space-between;
+  }
+  .testimonial-card.mobile-text-left .author-name {
+    justify: flex-start;
   }
 
-  .testimonial-card.text-center .author-name {
-    justify-content: center;
+  /* Desktop Override */
+  @media screen and (min-width: 750px) {
+    .testimonial-card.desktop-text-center {
+      text-align: center;
+    }
+    .testimonial-card.desktop-text-center .testimonial-card__header {
+      justify-content: center;
+    }
+    .testimonial-card.desktop-text-center .author-name {
+      justify-content: center;
+    }
+
+    .testimonial-card.desktop-text-left {
+      text-align: left;
+    }
+    .testimonial-card.desktop-text-left .testimonial-card__header {
+      justify-content: space-between;
+    }
+    .testimonial-card.desktop-text-left .author-name {
+      justify-content: flex-start;
+    }
   }
 
   /* Optional: Stack Header items better in center mode if needed, but existing is fine */
@@ -508,7 +540,17 @@
     {
       "type": "select",
       "id": "card_alignment",
-      "label": "Card alignment",
+      "label": "Desktop card alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "card_alignment_mobile",
+      "label": "Mobile card alignment",
       "options": [
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Center" }
