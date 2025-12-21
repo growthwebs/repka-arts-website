@@ -329,11 +329,13 @@
       overflow-x: hidden; /* Hide scrollbar on desktop */
       width: 100%;
       gap: 2rem;
+      padding-inline: 0;
     }
 
     slideshow-slide.rich-testimonials__item {
       /* Calculate width based on columns */
       width: calc((100% / {{ section.settings.columns_desktop }}) - (2rem * ({{ section.settings.columns_desktop }} - 1) / {{ section.settings.columns_desktop }}));
+      scroll-snap-align: start;
     }
   }
 
