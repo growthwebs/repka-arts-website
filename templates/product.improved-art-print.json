@@ -2264,6 +2264,7 @@
         "review_hfHDbt",
         "review_nEzLk4"
       ],
+      "disabled": true,
       "name": "Reviews Carousel",
       "settings": {
         "heading": "Join our happy customers",
