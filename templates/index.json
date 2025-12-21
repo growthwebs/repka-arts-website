@@ -3220,6 +3220,96 @@
         "padding-block-start": 96,
         "padding-block-end": 96
       }
+    },
+    "rich_testimonials_new": {
+      "type": "rich-testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_6": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_7": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_8": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_9": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        },
+        "review_10": {
+          "type": "review",
+          "settings": {
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5",
+        "review_6",
+        "review_7",
+        "review_8",
+        "review_9",
+        "review_10"
+      ],
+      "settings": {
+        "heading": "Loved by collectors worldwide (New)",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "button_label_1": "Leave a review",
+        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
+        "button_label_2": "Find your art piece",
+        "button_link_2": "shopify://collections",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
@@ -3232,6 +3322,7 @@
     "collection_list_dnRNYQ",
     "section_qqRe43",
     "reviews_carousel",
+    "rich_testimonials_new",
     "section_zhpJDC",
     "section_xTkmQm",
     "product_list_NLVbT8",

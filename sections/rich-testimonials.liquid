@@ -1,0 +1,577 @@
+{% comment %}
+  Rich Testimonials Section
+  Professional multi-column layout with horizontal scroll on mobile, carousel on desktop.
+  Inspired by Tropicfeel's clean, dense list style.
+{% endcomment %}
+
+{{ 'section-rich-testimonials.css' | asset_url | stylesheet_tag }}
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="rich-testimonials color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <div class="rich-testimonials__header {{ section.settings.heading_alignment }}">
+        <h2 class="rich-testimonials__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class="rich-testimonials__slider-wrapper">
+      {% comment %}
+        Using the full native slideshow structure:
+        slideshow-component > slideshow-container > (arrows + slideshow-slides > slideshow-slide)
+      {% endcomment %}
+      <slideshow-component class="rich-testimonials__slideshow" ref="slideshow" initial-slide="0">
+        <slideshow-container class="rich-testimonials__slideshow-container" ref="slideshowContainer">
+          {%- liquid
+            assign nav_icon_setting = section.settings.nav_icon | default: 'large_arrows'
+            assign icon_shape = section.settings.nav_icon_background | default: 'circle'
+
+            # Map nav_icon values to slideshow-arrow icon_style values
+            if nav_icon_setting == 'large_arrows'
+              assign icon_style = 'arrows_large'
+            elsif nav_icon_setting == 'small_arrows'
+              assign icon_style = 'arrow'
+            elsif nav_icon_setting == 'chevrons'
+              assign icon_style = 'chevron'
+            else
+              assign icon_style = nav_icon_setting
+            endif
+
+            assign nav_color = section.settings.nav_color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
+          -%}
+
+          {% comment %}
+            Native slideshow-arrows:
+            - Positioned absolutely (inset: 0) by base.css
+            - Justify-content: space-between (pushes to edges)
+            - Pointer-events: none (container) / auto (buttons)
+            - Hover animation handled by base.css interactions
+          {% endcomment %}
+          {%
+            render 'slideshow-arrows',
+            icon_style: icon_style,
+            icon_shape: icon_shape,
+            arrows_position: 'center',
+            class: 'hidden--mobile color-' | append: nav_color
+          %}
+
+          <slideshow-slides
+            class="rich-testimonials__grid list-unstyled"
+            ref="scroller"
+            tabindex="-1"
+            style="
+              --slide-width-max: calc(100% / {{ section.settings.columns_desktop }});
+              --gap: 2rem;
+            "
+          >
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'review' -%}
+                <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
+                  <div class="testimonial-card">
+                    <div class="testimonial-card__header">
+                      <div class="testimonial-card__stars">
+                        {%- for i in (1..5) -%}
+                          {%- if i <= block.settings.rating -%}
+                            <span class="star-icon filled">★</span>
+                          {%- else -%}
+                            <span class="star-icon empty">☆</span>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+
+                      {%- if block.settings.date != blank -%}
+                        <span class="testimonial-card__date">{{ block.settings.date }}</span>
+                      {%- endif -%}
+                    </div>
+
+                    {%- if block.settings.title != blank -%}
+                      <h3 class="testimonial-card__title">{{ block.settings.title }}</h3>
+                    {%- endif -%}
+
+                    {%- if block.settings.text != blank -%}
+                      <blockquote class="testimonial-card__text">
+                        {{ block.settings.text }}
+                      </blockquote>
+                    {%- endif -%}
+
+                    <div class="testimonial-card__author">
+                      {%- if block.settings.author_name != blank -%}
+                        <p class="author-name">
+                          {{ block.settings.author_name }}
+                          {%- if block.settings.verified -%}
+                            <span class="verified-badge" title="Verified Customer">
+                              <svg viewBox="0 0 20 20" class="icon-verified" width="14" height="14">
+                                <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1.2 14.4L5.2 10.8l1.6-1.6 2 2 5.6-5.6 1.6 1.6-7.2 7.2z" fill="currentColor"/>
+                              </svg>
+                            </span>
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+
+                      {%- if block.settings.author_location != blank or block.settings.author_source != blank -%}
+                        <p class="author-details">
+                          {%- if block.settings.author_location != blank -%}
+                            {{ block.settings.author_location }}
+                          {%- endif -%}
+                          {%- if block.settings.author_location != blank and block.settings.author_source != blank -%}
+                            <span class="separator">•</span>
+                          {%- endif -%}
+                          {%- if block.settings.author_source != blank -%}
+                            {{ block.settings.author_source }}
+                          {%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </slideshow-slide>
+              {%- endif -%}
+            {%- endfor -%}
+          </slideshow-slides>
+        </slideshow-container>
+      </slideshow-component>
+    </div>
+
+    <div class="rich-testimonials__footer">
+      <div class="rich-testimonials__buttons">
+        {%- if section.settings.button_label_1 != blank -%}
+          <a
+            {% if section.settings.button_link_1 == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link_1 }}"
+            {% endif %}
+            class="button{% if section.settings.button_style_1 == 'secondary' %} button-secondary{% else %} button--primary{% endif %}"
+          >
+            {{ section.settings.button_label_1 | escape }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_2 != blank -%}
+          <a
+            {% if section.settings.button_link_2 == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link_2 }}"
+            {% endif %}
+            class="button{% if section.settings.button_style_2 == 'secondary' %} button-secondary{% else %} button--primary{% endif %}"
+          >
+            {{ section.settings.button_label_2 | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .rich-testimonials__slider-wrapper {
+      position: relative;
+  }
+
+  /* Slideshow Component Styles */
+  slideshow-component.rich-testimonials__slideshow {
+      display: block;
+      position: relative;
+  }
+
+  slideshow-container.rich-testimonials__slideshow-container {
+      display: block;
+      position: relative;
+  }
+
+  slideshow-slides.rich-testimonials__grid {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 2rem;
+  }
+
+  slideshow-slides.rich-testimonials__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Slide Styles */
+  slideshow-slide.rich-testimonials__item {
+      display: block;
+      scroll-snap-align: start;
+      width: 85vw; /* Mobile */
+      flex-shrink: 0;
+      box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    slideshow-slides.rich-testimonials__grid {
+      overflow-x: hidden; /* Hide scrollbar on desktop */
+      width: 100%;
+      gap: 2rem;
+    }
+
+    slideshow-slide.rich-testimonials__item {
+      /* Calculate width based on columns */
+      width: calc((100% / {{ section.settings.columns_desktop }}) - (2rem * ({{ section.settings.columns_desktop }} - 1) / {{ section.settings.columns_desktop }}));
+    }
+  }
+
+  /* Card Styles */
+  .testimonial-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgba(var(--color-background), 1);
+    border: 1px solid rgba(var(--color-foreground), 0.08);
+    border-radius: var(--media-radius);
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(var(--color-foreground), 0.2);
+  }
+
+  .testimonial-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card__stars {
+    color: #FFD700; /* Gold */
+    letter-spacing: 2px;
+  }
+
+  .testimonial-card__date {
+    font-size: 0.8em;
+    opacity: 0.6;
+  }
+
+  .testimonial-card__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .testimonial-card__text {
+    flex-grow: 1;
+    margin: 0 0 1.5rem;
+    font-size: 0.95em;
+    line-height: 1.6;
+    opacity: 0.85;
+    font-style: italic;
+  }
+
+  .testimonial-card__author {
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    padding-top: 1rem;
+  }
+
+  .author-name {
+    margin: 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .verified-badge {
+    color: #2E7D32; /* Green check */
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .author-details {
+    margin: 0.25rem 0 0;
+    font-size: 0.85em;
+    opacity: 0.6;
+  }
+
+  .separator {
+    margin: 0 0.25rem;
+  }
+
+  .rich-testimonials__footer {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .rich-testimonials__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .rich-testimonials__header {
+    margin-bottom: 2rem;
+  }
+
+  .rich-testimonials__header.center { text-align: center; }
+  .rich-testimonials__header.left { text-align: left; }
+</style>
+
+{% schema %}
+{
+  "name": "Rich Testimonials",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Loved by collectors worldwide",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "Small" },
+        { "value": "h1", "label": "Medium" },
+        { "value": "h0", "label": "Large" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center",
+      "label": "Heading alignment"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Navigation"
+    },
+    {
+      "type": "select",
+      "id": "nav_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "large_arrows",
+          "label": "Large arrows"
+        },
+        {
+          "value": "small_arrows",
+          "label": "Small arrows"
+        },
+        {
+          "value": "chevrons",
+          "label": "Chevrons"
+        }
+      ],
+      "default": "large_arrows"
+    },
+    {
+      "type": "select",
+      "id": "nav_icon_background",
+      "label": "Icon background",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "color_scheme",
+      "id": "nav_color_scheme",
+      "label": "Navigation color scheme",
+      "default": "scheme-1",
+      "info": "Color scheme for the navigation arrows"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "default": "Leave a review",
+      "label": "Button 1 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "select",
+      "id": "button_style_1",
+      "label": "Button 1 style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "default": "Find your art piece",
+      "label": "Button 2 label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 link"
+    },
+    {
+      "type": "select",
+      "id": "button_style_2",
+      "label": "Button 2 style",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ],
+      "default": "secondary"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star rating",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Review title",
+          "default": "Excellent quality"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review text",
+          "default": "Share what your customers are saying about your products or service."
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Author's name"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "default": true,
+          "label": "Show verified badge"
+        },
+        {
+          "type": "text",
+          "id": "author_location",
+          "label": "Location",
+          "default": "Los Angeles, CA"
+        },
+        {
+          "type": "text",
+          "id": "author_source",
+          "label": "Source",
+          "default": "via Google"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Review Date (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Testimonials",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
