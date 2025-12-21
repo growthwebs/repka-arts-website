@@ -105,7 +105,6 @@
                 -%}
 
                 <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
-                <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
                   <div class="testimonial-card mobile-text-{{ section.settings.card_alignment_mobile }} desktop-text-{{ section.settings.card_alignment }}">
                     <div class="testimonial-card__header">
                       <div class="testimonial-card__stars">
@@ -170,7 +169,6 @@
               {% comment %} Render from Schema Blocks (Fallback) {% endcomment %}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'review' -%}
-                  <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
                   <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
                     <div class="testimonial-card mobile-text-{{ section.settings.card_alignment_mobile }} desktop-text-{{ section.settings.card_alignment }}">
                       <div class="testimonial-card__header">
@@ -443,7 +441,7 @@
   .testimonial-card.mobile-text-center .author-name {
     justify-content: center;
   }
-  
+
   .testimonial-card.mobile-text-left {
     text-align: left;
   }
