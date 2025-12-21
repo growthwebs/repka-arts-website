@@ -32,17 +32,12 @@
     {%- endif -%}
 
     <div class="rich-testimonials__slider-wrapper">
-      {% comment %}
-        Using the full native slideshow structure:
-        slideshow-component > slideshow-container > (arrows + slideshow-slides > slideshow-slide)
-      {% endcomment %}
       <slideshow-component class="rich-testimonials__slideshow" ref="slideshow" initial-slide="0">
         <slideshow-container class="rich-testimonials__slideshow-container" ref="slideshowContainer">
           {%- liquid
             assign nav_icon_setting = section.settings.nav_icon | default: 'large_arrows'
             assign icon_shape = section.settings.nav_icon_background | default: 'circle'
 
-            # Map nav_icon values to slideshow-arrow icon_style values
             if nav_icon_setting == 'large_arrows'
               assign icon_style = 'arrows_large'
             elsif nav_icon_setting == 'small_arrows'
@@ -56,13 +51,6 @@
             assign nav_color = section.settings.nav_color_scheme | default: section.settings.color_scheme | default: 'scheme-1'
           -%}
 
-          {% comment %}
-            Native slideshow-arrows:
-            - Positioned absolutely (inset: 0) by base.css
-            - Justify-content: space-between (pushes to edges)
-            - Pointer-events: none (container) / auto (buttons)
-            - Hover animation handled by base.css interactions
-          {% endcomment %}
           {%
             render 'slideshow-arrows',
             icon_style: icon_style,
@@ -80,14 +68,22 @@
               --gap: 2rem;
             "
           >
-            {%- for block in section.blocks -%}
-              {%- if block.type == 'review' -%}
-                <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
+            {%- liquid
+              # Logic to determine source: Metaobjects (priority) vs Blocks (fallback)
+              assign metaobject_reviews = shop.metaobjects.review.values
+              assign review_limit = section.settings.max_reviews | default: 8
+            -%}
+
+            {%- if metaobject_reviews.count > 0 -%}
+              {% comment %} Render from Metaobjects {% endcomment %}
+              {%- for review in metaobject_reviews limit: review_limit -%}
+                <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ review.system.id }}">
                   <div class="testimonial-card">
                     <div class="testimonial-card__header">
                       <div class="testimonial-card__stars">
+                        {%- assign rating_val = review.rating.value | default: 5 -%}
                         {%- for i in (1..5) -%}
-                          {%- if i <= block.settings.rating -%}
+                          {%- if i <= rating_val -%}
                             <span class="star-icon filled">★</span>
                           {%- else -%}
                             <span class="star-icon empty">☆</span>
@@ -95,26 +91,27 @@
                         {%- endfor -%}
                       </div>
 
-                      {%- if block.settings.date != blank -%}
-                        <span class="testimonial-card__date">{{ block.settings.date }}</span>
+                      {%- if review.date.value != blank -%}
+                        <span class="testimonial-card__date">{{ review.date.value }}</span>
                       {%- endif -%}
                     </div>
 
-                    {%- if block.settings.title != blank -%}
-                      <h3 class="testimonial-card__title">{{ block.settings.title }}</h3>
+                    {%- if review.title.value != blank -%}
+                      <h3 class="testimonial-card__title">{{ review.title.value }}</h3>
                     {%- endif -%}
 
-                    {%- if block.settings.text != blank -%}
+                    {%- if review.review_text.value != blank -%}
                       <div class="testimonial-card__text">
-                        {{ block.settings.text }}
+                        {% comment %} Use simple_format to wrap multi-line text in p tags to match card styling {% endcomment %}
+                        {{ review.review_text.value | simple_format }}
                       </div>
                     {%- endif -%}
 
                     <div class="testimonial-card__author">
-                      {%- if block.settings.author_name != blank -%}
+                      {%- if review.author.value != blank -%}
                         <p class="author-name">
-                          {{ block.settings.author_name }}
-                          {%- if block.settings.verified -%}
+                          {{ review.author.value }}
+                          {%- if review.verified.value == true -%}
                             <span class="verified-badge" title="Verified Customer">
                               <svg viewBox="0 0 20 20" class="icon-verified" width="14" height="14">
                                 <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1.2 14.4L5.2 10.8l1.6-1.6 2 2 5.6-5.6 1.6 1.6-7.2 7.2z" fill="currentColor"/>
@@ -124,24 +121,89 @@
                         </p>
                       {%- endif -%}
 
-                      {%- if block.settings.author_location != blank or block.settings.author_source != blank -%}
+                      {%- if review.location.value != blank or review.source.value != blank -%}
                         <p class="author-details">
-                          {%- if block.settings.author_location != blank -%}
-                            {{ block.settings.author_location }}
+                          {%- if review.location.value != blank -%}
+                            {{ review.location.value }}
                           {%- endif -%}
-                          {%- if block.settings.author_location != blank and block.settings.author_source != blank -%}
+                          {%- if review.location.value != blank and review.source.value != blank -%}
                             <span class="separator">•</span>
                           {%- endif -%}
-                          {%- if block.settings.author_source != blank -%}
-                            {{ block.settings.author_source }}
+                          {%- if review.source.value != blank -%}
+                            {{ review.source.value }}
                           {%- endif -%}
                         </p>
                       {%- endif -%}
                     </div>
                   </div>
                 </slideshow-slide>
-              {%- endif -%}
-            {%- endfor -%}
+              {%- endfor -%}
+
+            {%- else -%}
+              {% comment %} Render from Schema Blocks (Fallback) {% endcomment %}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'review' -%}
+                  <slideshow-slide class="rich-testimonials__item" ref="slides[]" slide-id="{{ block.id }}">
+                    <div class="testimonial-card">
+                      <div class="testimonial-card__header">
+                        <div class="testimonial-card__stars">
+                          {%- for i in (1..5) -%}
+                            {%- if i <= block.settings.rating -%}
+                              <span class="star-icon filled">★</span>
+                            {%- else -%}
+                              <span class="star-icon empty">☆</span>
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+
+                        {%- if block.settings.date != blank -%}
+                          <span class="testimonial-card__date">{{ block.settings.date }}</span>
+                        {%- endif -%}
+                      </div>
+
+                      {%- if block.settings.title != blank -%}
+                        <h3 class="testimonial-card__title">{{ block.settings.title }}</h3>
+                      {%- endif -%}
+
+                      {%- if block.settings.text != blank -%}
+                        <div class="testimonial-card__text">
+                          {{ block.settings.text }}
+                        </div>
+                      {%- endif -%}
+
+                      <div class="testimonial-card__author">
+                        {%- if block.settings.author_name != blank -%}
+                          <p class="author-name">
+                            {{ block.settings.author_name }}
+                            {%- if block.settings.verified -%}
+                              <span class="verified-badge" title="Verified Customer">
+                                <svg viewBox="0 0 20 20" class="icon-verified" width="14" height="14">
+                                  <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1.2 14.4L5.2 10.8l1.6-1.6 2 2 5.6-5.6 1.6 1.6-7.2 7.2z" fill="currentColor"/>
+                                </svg>
+                              </span>
+                            {%- endif -%}
+                          </p>
+                        {%- endif -%}
+
+                        {%- if block.settings.author_location != blank or block.settings.author_source != blank -%}
+                          <p class="author-details">
+                            {%- if block.settings.author_location != blank -%}
+                              {{ block.settings.author_location }}
+                            {%- endif -%}
+                            {%- if block.settings.author_location != blank and block.settings.author_source != blank -%}
+                              <span class="separator">•</span>
+                            {%- endif -%}
+                            {%- if block.settings.author_source != blank -%}
+                              {{ block.settings.author_source }}
+                            {%- endif -%}
+                          </p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  </slideshow-slide>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
           </slideshow-slides>
         </slideshow-container>
       </slideshow-component>
@@ -369,6 +431,15 @@
       ],
       "default": "center",
       "label": "Heading alignment"
+    },
+    {
+      "type": "range",
+      "id": "max_reviews",
+      "min": 3,
+      "max": 50,
+      "step": 1,
+      "default": 8,
+      "label": "Limit number of reviews"
     },
     {
       "type": "range",
