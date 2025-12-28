@@ -479,7 +479,7 @@
               "settings": {
                 "font": "var(--font-heading--family)",
                 "weight": "",
-                "line_height": "normal",
+                "line_height": "loose",
                 "letter_spacing": "normal",
                 "case": "none"
               },
