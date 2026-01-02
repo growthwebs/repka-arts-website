@@ -559,6 +559,134 @@
         "padding-block-end": 96
       }
     },
+    "section_dFr8LL": {
+      "type": "section",
+      "blocks": {
+        "text_WjD6Fd": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>Career highlights</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_WjD6Fd"
+      ],
+      "name": "Highlights title",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 96,
+        "padding-block-end": 16
+      }
+    },
+    "custom_cards_2026_DhxBHR": {
+      "type": "custom-cards-2026",
+      "blocks": {
+        "card_yk4VDG": {
+          "type": "card",
+          "settings": {
+            "title": "Solo exhibitions",
+            "text": "",
+            "date_1": "",
+            "text_1": "",
+            "date_2": "",
+            "text_2": "",
+            "date_3": "",
+            "text_3": "",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "card_yk4VDG"
+      ],
+      "name": "Custom Cards 2026",
+      "settings": {
+        "heading": "2026",
+        "heading_font_source": "theme",
+        "heading_font_custom": "sans_serif_n4",
+        "heading_size": 32,
+        "card_title_size": 20,
+        "card_text_size": 16,
+        "card_title_font": "ebgaramond_n4",
+        "date_font": "red_hat_text_n4",
+        "date_size": 18,
+        "entry_text_size": 14,
+        "entry_layout": "column",
+        "card_vertical_alignment": "flex-start",
+        "card_border_radius": 16,
+        "card_padding_top": 48,
+        "card_padding_bottom": 48,
+        "card_padding_left": 32,
+        "card_padding_right": 32,
+        "section_width": "page",
+        "section_height": "auto",
+        "mobile_layout": "slider",
+        "columns_desktop": 1,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "section_6dGzDy": {
       "type": "section",
       "blocks": {
@@ -6136,6 +6264,8 @@
     "hero_AY9FUC",
     "section_hXBHV7",
     "section_azhYky",
+    "section_dFr8LL",
+    "custom_cards_2026_DhxBHR",
     "section_6dGzDy",
     "section_zqXGwM",
     "section_UEEnKM",
