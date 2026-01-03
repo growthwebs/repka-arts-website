@@ -1083,7 +1083,7 @@
         "padding_bottom": 96
       }
     },
-    "featured_blog_posts_VGeayD": {
+    "featured_blog_posts_BnXeCA": {
       "type": "featured-blog-posts",
       "blocks": {
         "static-blog-title": {
@@ -1091,11 +1091,11 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h3>My exhibitions</h3>",
+            "text": "<h2>Selected exhibitions</h2>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
-            "type_preset": "h2",
+            "type_preset": "rte",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
@@ -1106,8 +1106,8 @@
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "padding-block-start": 16,
-            "padding-block-end": 32,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -1127,7 +1127,7 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 24,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -1161,8 +1161,8 @@
                 "read_only": false,
                 "alignment": "left",
                 "show_alignment": false,
-                "padding-block-start": 24,
-                "padding-block-end": 0,
+                "padding-block-start": 16,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1196,8 +1196,8 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
+                "padding-block-start": 16,
+                "padding-block-end": 16
               },
               "blocks": {}
             }
@@ -1205,24 +1205,24 @@
           "block_order": []
         }
       },
-      "name": "Exhibitions: Carousel",
+      "name": "Exhibitions",
       "settings": {
         "blog": "exhibitions",
         "layout_type": "carousel",
-        "carousel_on_mobile": true,
-        "post_limit": 8,
+        "carousel_on_mobile": false,
+        "post_limit": 6,
         "columns": 2,
-        "mobile_columns": "2",
+        "mobile_columns": "1",
         "mobile_card_size": "60cqw",
         "columns_gap": 24,
-        "rows_gap": 16,
+        "rows_gap": 8,
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 24,
         "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 96,
-        "padding-block-end": 16
+        "padding-block-end": 32
       }
     },
     "section_wK9cAb": {
@@ -1276,7 +1276,7 @@
         "padding-block-end": 96
       }
     },
-    "featured_blog_posts_q7a63W": {
+    "featured_blog_posts_FeCAta": {
       "type": "featured-blog-posts",
       "blocks": {
         "static-blog-title": {
@@ -1355,7 +1355,7 @@
                 "alignment": "left",
                 "show_alignment": false,
                 "padding-block-start": 24,
-                "padding-block-end": 0,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -1389,8 +1389,8 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
+                "padding-block-start": 16,
+                "padding-block-end": 16
               },
               "blocks": {}
             }
@@ -1673,9 +1673,9 @@
     "custom_cards_2026_DhxBHR",
     "custom_cards_2026_6NaDkG",
     "custom_cards_2026_b3Ga9X",
-    "featured_blog_posts_VGeayD",
+    "featured_blog_posts_BnXeCA",
     "section_wK9cAb",
-    "featured_blog_posts_q7a63W",
+    "featured_blog_posts_FeCAta",
     "section_nNBFyw",
     "product_list_kwLpYH"
   ]
