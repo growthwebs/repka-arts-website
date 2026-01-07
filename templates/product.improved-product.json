@@ -2548,6 +2548,13 @@
             "image": "shopify://shop_images/IMG_3050.jpg",
             "title": ""
           }
+        },
+        "image_K7Xe36": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0667.jpg",
+            "title": ""
+          }
         }
       },
       "block_order": [
@@ -2559,7 +2566,8 @@
         "image_cPxePr",
         "image_GzmdCm",
         "image_xtnVTF",
-        "image_4thhmF"
+        "image_4thhmF",
+        "image_K7Xe36"
       ],
       "name": "Image Carousel",
       "settings": {
@@ -2568,8 +2576,8 @@
         "title_alignment": "center",
         "title_font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
         "section_width": "page",
-        "picture_count": 9,
-        "columns": 3,
+        "picture_count": 10,
+        "columns": 4,
         "mobile_columns": "2",
         "columns_gap": 24,
         "vertical_gap": 0,
