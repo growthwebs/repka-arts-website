@@ -2424,6 +2424,13 @@
             "title": ""
           }
         },
+        "image_fqTmiU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0669.jpg",
+            "title": ""
+          }
+        },
         "image_qQJHXq": {
           "type": "image",
           "settings": {
@@ -2471,6 +2478,7 @@
         "image_Vk4PAd",
         "image_YAYp8x",
         "image_qLxWr7",
+        "image_fqTmiU",
         "image_qQJHXq",
         "image_tAKcad",
         "image_9MCzCg",
@@ -2485,8 +2493,8 @@
         "title_alignment": "center",
         "title_font_size": "clamp(1.8rem, 3.5vw, 2.5rem)",
         "section_width": "page",
-        "picture_count": 9,
-        "columns": 3,
+        "picture_count": 10,
+        "columns": 4,
         "mobile_columns": "2",
         "columns_gap": 24,
         "vertical_gap": 0,
