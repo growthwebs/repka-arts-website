@@ -91,7 +91,7 @@
           "type": "button",
           "name": "hero-button",
           "settings": {
-            "label": "Shop available art",
+            "label": "Shop statement art",
             "link": "shopify://collections/oil-paintings",
             "open_in_new_tab": false,
             "style_class": "button",
