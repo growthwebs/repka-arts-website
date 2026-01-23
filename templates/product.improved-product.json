@@ -436,23 +436,23 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "icon_CMFKHC": {
+                    "icon_WLyayQ": {
                       "type": "icon",
                       "name": "t:names.icon",
                       "settings": {
                         "icon": "plane",
-                        "image_upload": "shopify://shop_images/party-popper.svg",
+                        "image_upload": "shopify://shop_images/truck.svg",
                         "width": 16,
                         "link": "",
                         "open_in_new_tab": false
                       },
                       "blocks": {}
                     },
-                    "text_xgHk6L": {
+                    "text_NVJEQz": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Available for free shipping</p>",
+                        "text": "<p>Free shipping within Spain</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -476,8 +476,8 @@
                     }
                   },
                   "block_order": [
-                    "icon_CMFKHC",
-                    "text_xgHk6L"
+                    "icon_WLyayQ",
+                    "text_NVJEQz"
                   ]
                 },
                 "group_7GCe6J": {
@@ -520,23 +520,23 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {
-                    "icon_Y9Y9DX": {
+                    "icon_i3t9hp": {
                       "type": "icon",
                       "name": "t:names.icon",
                       "settings": {
                         "icon": "plane",
-                        "image_upload": "shopify://shop_images/truck.svg",
+                        "image_upload": "shopify://shop_images/earth.svg",
                         "width": 16,
                         "link": "",
                         "open_in_new_tab": false
                       },
                       "blocks": {}
                     },
-                    "text_rjRnWn": {
+                    "text_Vrz8Vx": {
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Shipping calculated at checkout</p>",
+                        "text": "<p>International shipping rates at checkout</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -560,8 +560,8 @@
                     }
                   },
                   "block_order": [
-                    "icon_Y9Y9DX",
-                    "text_rjRnWn"
+                    "icon_i3t9hp",
+                    "text_Vrz8Vx"
                   ]
                 }
               },
