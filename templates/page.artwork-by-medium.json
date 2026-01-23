@@ -822,11 +822,8 @@
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
-          "abstract-moments",
           "andalusian-spirit",
-          "balanced-art",
           "ceramics",
-          "timeless-elegance",
           "toulouse-spirit",
           "wild-at-heart"
         ],
