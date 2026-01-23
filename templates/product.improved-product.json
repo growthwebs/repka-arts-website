@@ -443,13 +443,26 @@
                     "open_in_new_tab": false
                   },
                   "blocks": {}
+                },
+                "icon_JQ6myd": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/paypal_1.svg",
+                    "width": 24,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "icon_7AY3nQ",
                 "icon_b8hxDX",
                 "icon_iWFqkT",
-                "icon_iQD4qG"
+                "icon_iQD4qG",
+                "icon_JQ6myd"
               ]
             },
             "group_ECyXij": {
