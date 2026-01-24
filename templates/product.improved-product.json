@@ -519,7 +519,7 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
-                "padding-block-start": 0,
+                "padding-block-start": 8,
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
@@ -573,6 +573,18 @@
                   },
                   "blocks": {}
                 },
+                "icon_KQMjYK": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/shop-pay-seeklogo.svg",
+                    "width": 24,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                },
                 "icon_JQ6myd": {
                   "type": "icon",
                   "name": "t:names.icon",
@@ -591,6 +603,7 @@
                 "icon_b8hxDX",
                 "icon_iWFqkT",
                 "icon_iQD4qG",
+                "icon_KQMjYK",
                 "icon_JQ6myd"
               ]
             },
