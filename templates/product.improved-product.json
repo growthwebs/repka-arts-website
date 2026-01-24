@@ -690,7 +690,7 @@
                       "type": "text",
                       "name": "t:names.text",
                       "settings": {
-                        "text": "<p>Free shipping within Spain</p>",
+                        "text": "<p>Free insured shipping within Spain</p>",
                         "width": "fit-content",
                         "max_width": "normal",
                         "alignment": "left",
@@ -851,6 +851,7 @@
                 "group_TEBBqy": {
                   "type": "group",
                   "name": "Secure payments",
+                  "disabled": true,
                   "settings": {
                     "link": "",
                     "open_in_new_tab": false,
