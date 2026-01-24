@@ -127,6 +127,27 @@
           {%- endcase -%}
         {% endfor %}
 
+        {%- if settings.cart_show_payment_icons -%}
+          <div
+            class="cart-drawer__payment-icons"
+            style="margin-top: 10px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;"
+          >
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'payment_icon' -%}
+                {%- if block.settings.image != blank -%}
+                  <div class="payment-icon" {{ block.shopify_attributes }}>
+                    {{
+                      block.settings.image
+                      | image_url: width: block.settings.width
+                      | image_tag: loading: 'lazy', style: 'height: auto;'
+                    }}
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
         <div id="cart-errors"></div>
       </div>
     </div>
@@ -147,7 +168,7 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
-    },    
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -182,6 +203,27 @@
     },
     {
       "type": "@app"
+    },
+    {
+      "type": "payment_icon",
+      "name": "Payment Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon Image"
+        },
+        {
+          "type": "range",
+          "id": "width",
+          "min": 10,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Icon Width",
+          "default": 30
+        }
+      ]
     }
   ]
 }
