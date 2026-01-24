@@ -59,6 +59,7 @@
     "button_text_case_secondary": "default",
     "pills_border_radius": 16,
     "cart_type": "drawer",
+    "cart_tax_note_override": "<p>Taxes included. Free shipping within Spain. No hidden fees.</p>",
     "product_title_case": "default",
     "cart_price_font": "primary",
     "auto_open_cart_drawer": true,
