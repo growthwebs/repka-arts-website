@@ -6,7 +6,9 @@
 {%- endcomment -%}
 
 <small>
-  {%- if cart.duties_included and cart.taxes_included -%}
+  {%- if settings.cart_tax_note_override != blank -%}
+    {{ settings.cart_tax_note_override }}
+  {%- elsif cart.duties_included and cart.taxes_included -%}
     {%- if shop.shipping_policy.body == blank -%}
       {%- if has_discounts_enabled -%}
         {{ 'content.duties_and_taxes_included_shipping_at_checkout_without_policy_without_discounts' | t }}

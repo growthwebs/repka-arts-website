@@ -83,6 +83,8 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+    {% section 'cart-drawer' %}
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const btn = document.querySelector('.copy-link-btn');
