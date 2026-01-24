@@ -1812,6 +1812,13 @@
         "default": "page"
       },
       {
+        "type": "richtext",
+        "id": "cart_tax_note_override",
+        "label": "Tax note override",
+        "info": "Replaces the default tax/shipping text in cart drawer and cart page."
+      },
+
+      {
         "type": "select",
         "id": "product_title_case",
         "label": "t:settings.product_title_case",
@@ -1890,6 +1897,16 @@
         "id": "cart_drawer_fallback_collection",
         "label": "Fallback collection for cart drawer recommendations",
         "info": "Shown when Shopify recommendations are unavailable."
+      },
+      {
+        "type": "header",
+        "content": "Cart payment icons"
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_show_payment_icons",
+        "label": "Show payment icons",
+        "default": true
       },
       {
         "type": "header",
