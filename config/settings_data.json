@@ -71,7 +71,7 @@
     "cart_drawer_banner_color_scheme": "scheme-3",
     "cart_drawer_banner_font_size": 12,
     "cart_drawer_banner_icon_size": 16,
-    "cart_drawer_banner_text": "Enjoy 10% OFF your first purchase",
+    "cart_drawer_banner_text": "Enjoy 10% OFF your first purchase with WELCOME10",
     "cart_drawer_banner_left_image": "shopify://shop_images/circle-percent.svg",
     "cart_drawer_banner_right_image": "shopify://shop_images/circle-percent.svg",
     "show_accelerated_checkout_buttons": false,
