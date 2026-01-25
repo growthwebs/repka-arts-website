@@ -823,9 +823,10 @@
       "settings": {
         "collection_list": [
           "andalusian-spirit",
-          "ceramics",
           "toulouse-spirit",
-          "wild-at-heart"
+          "wild-at-heart",
+          "savannah-vibes",
+          "ceramics"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
