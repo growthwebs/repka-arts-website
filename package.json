@@ -14,6 +14,8 @@
     "push:dev": "shopify theme push --theme=193033601288 --development",
     "push:live": "shopify theme push --theme=193003913480 --live",
     "pull": "shopify theme pull --theme=193003913480",
+    "deploy:dev": "git push origin dev && shopify theme push --theme=193033601288",
+    "deploy:live": "git push origin main && shopify theme push --theme=193003913480 --allow-live",
     "deploy": "npm run build && npm run push:live",
     "sync": "npm run pull && git add . && git commit -m 'Sync from Shopify' && git push"
   },
