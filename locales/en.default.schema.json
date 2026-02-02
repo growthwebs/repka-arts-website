@@ -194,6 +194,17 @@
     "buttons": "Buttons",
     "caption": "Caption",
     "cart": "Cart",
+    "main-cart-footer": {
+      "name": "Cart Footer",
+      "blocks": {
+        "subtotal": {
+          "name": "Subtotal"
+        },
+        "buttons": {
+          "name": "Checkout Buttons"
+        }
+      }
+    },
     "cart_items": "Cart items",
     "cart_products": "Cart products",
     "cart_title": "Cart",
@@ -283,6 +294,9 @@
     "page_content": "Content",
     "page_layout": "Page layout",
     "payment_icons": "Payment icons",
+    "cart-drawer": {
+      "name": "Cart Drawer"
+    },
     "policy_list": "Policy links",
     "popovers_and_modals": "Popovers and modals",
     "popup_link": "Popup link",

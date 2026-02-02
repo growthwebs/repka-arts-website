@@ -358,7 +358,7 @@
               },
               "block_order": []
             },
-            "group_yVV3iK": {
+            "group_qrgVCC": {
               "type": "group",
               "name": "Payment icons",
               "settings": {
@@ -392,13 +392,13 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
-                "padding-block-start": 0,
+                "padding-block-start": 8,
                 "padding-block-end": 8,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_mxritw": {
+                "icon_Ad9W6M": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -410,7 +410,7 @@
                   },
                   "blocks": {}
                 },
-                "icon_4EP6C4": {
+                "icon_qNkP4Y": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -422,7 +422,7 @@
                   },
                   "blocks": {}
                 },
-                "icon_e48C33": {
+                "icon_ggXhYb": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -434,7 +434,7 @@
                   },
                   "blocks": {}
                 },
-                "icon_TcV7nQ": {
+                "icon_8TWhnk": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -446,7 +446,19 @@
                   },
                   "blocks": {}
                 },
-                "icon_z9nqjF": {
+                "icon_gNgGCb": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/shop-pay-seeklogo.svg",
+                    "width": 32,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                },
+                "icon_DmrXi7": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -460,11 +472,12 @@
                 }
               },
               "block_order": [
-                "icon_mxritw",
-                "icon_4EP6C4",
-                "icon_e48C33",
-                "icon_TcV7nQ",
-                "icon_z9nqjF"
+                "icon_Ad9W6M",
+                "icon_qNkP4Y",
+                "icon_ggXhYb",
+                "icon_8TWhnk",
+                "icon_gNgGCb",
+                "icon_DmrXi7"
               ]
             },
             "group_ECyXij": {
@@ -1054,7 +1067,7 @@
             "group_38rGwN",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "group_yVV3iK",
+            "group_qrgVCC",
             "group_ECyXij",
             "group_UhJYfj",
             "group_U4FA7q",

@@ -145,6 +145,31 @@
       "success": "Comment posted"
     }
   },
+  "sections": {
+    "cart": {
+      "note": "Special instructions for seller",
+      "estimated_total": "Estimated total",
+      "checkout": "Check out",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Duties and taxes included. Shipping calculated at checkout.",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "taxes_included_shipping_at_checkout_without_policy": "Taxes included. Shipping calculated at checkout.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Taxes included. <a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Duties included. Taxes and shipping calculated at checkout.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Duties included. Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+       "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes and shipping calculated at checkout.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout."
+    },
+    "all": {
+      "colors": {
+        "label": "Color scheme"
+      },
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Padding top",
+        "padding_bottom": "Padding bottom"
+      }
+    }
+  },
   "content": {
     "discount": "Discount",
     "account_title": "Account",
