@@ -430,7 +430,7 @@
       "disabled": true,
       "name": "t:names.blog_posts_editorial",
       "settings": {
-        "blog": "news",
+        "blog": "journal",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "post_limit": 10,
