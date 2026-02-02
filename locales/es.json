@@ -411,5 +411,30 @@
     "page_artwork-by-medium_description": "Explora arte por técnica: pinturas al óleo, acuarelas, cerámicas e impresiones de Maryna Riepnova. Artista Málaga. Encargos personalizados. Envío mundial.",
     "page_artwork-by-series_title": "Colecciones Arte | Pinturas Contemporáneas Málaga",
     "page_artwork-by-series_description": "Descubre colecciones y series de arte de Maryna Riepnova. Pinturas y cerámicas contemporáneas desde Málaga, España. Arte original para coleccionistas en todo el mundo."
+  },
+  "sections": {
+    "cart": {
+      "note": "Instrucciones especiales para el vendedor",
+      "estimated_total": "Total estimado",
+      "checkout": "Verificar",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Aranceles e impuestos incluidos. Los gastos de envío se calculan al finalizar la compra.",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Aranceles e impuestos incluidos. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Los gastos de envío</a> se calculan al finalizar la compra.",
+      "taxes_included_shipping_at_checkout_without_policy": "Impuestos incluidos. Envío calculado al finalizar la compra.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Impuestos incluidos. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">Envío</a> calculado al finalizar la compra.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Impuestos incluidos. Los impuestos y gastos de envío se calculan al finalizar la compra.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Impuestos incluidos. Los impuestos y <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">gastos de envío</a> se calculan al finalizar la compra.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Los impuestos y los gastos de envío se calculan al finalizar la compra.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Los impuestos y <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;/span&gt;\">los gastos de envío</a> se calculan al finalizar la compra."
+    },
+    "all": {
+      "colors": {
+        "label": "Esquema de colores"
+      },
+      "padding": {
+        "section_padding_heading": "Relleno de sección",
+        "padding_top": "Parte superior acolchada",
+        "padding_bottom": "Acolchado inferior"
+      }
+    }
   }
 }
