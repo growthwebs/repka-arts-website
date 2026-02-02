@@ -252,9 +252,9 @@
                   "settings": {
                     "form_id": "747102",
                     "text_color": "#ffffff",
-                    "button_background_color": "#4e81cc",
+                    "button_background_color": "#1d3485",
                     "button_label_color": "#ffffff",
-                    "links_color": "#4e81cc",
+                    "links_color": "#2a4ac0",
                     "errors_color": "#e02229",
                     "text_alignment": "center",
                     "form_alignment": "center",
