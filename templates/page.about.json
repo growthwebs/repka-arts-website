@@ -154,7 +154,7 @@
         "section_width": "page-width",
         "section_height": "full-screen",
         "section_height_custom": 50,
-        "color_scheme": "scheme-ffcd9384-36b3-407a-9152-95a769fcc902",
+        "color_scheme": "scheme-5",
         "toggle_overlay": true,
         "overlay_color": "#0000009c",
         "overlay_style": "gradient",
@@ -165,160 +165,9 @@
         "padding-block-end": 40
       }
     },
-    "section_cVgCVh": {
-      "type": "section",
-      "blocks": {
-        "text_xQjJEt": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h2>Art for Living</h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "text_8gAb9m": {
-          "type": "text",
-          "name": "t:names.text",
-          "settings": {
-            "text": "<p>I believe art shouldn't just be for galleries. It should be part of your morning coffee, your quiet Sunday afternoon, and the messy, beautiful moments of your home. Repka Arts was born from a desire to bring the spontaneous joy of my Málaga studio directly into your daily life. It is accessible, organic, and full of Mediterranean light.</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "custom",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "divider_ygQtwh": {
-          "type": "_divider",
-          "name": "t:names.divider",
-          "settings": {
-            "thickness": 1,
-            "corner_radius": "rounded",
-            "width_percent": 25,
-            "padding-block-start": 0,
-            "padding-block-end": 0
-          },
-          "blocks": {}
-        },
-        "text_zmLNjf": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<h2><em>Maryna</em> <em>Riepnova</em></h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "custom",
-            "font": "var(--font-subheading--family)",
-            "font_size": "1.125rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_xQjJEt",
-        "text_8gAb9m",
-        "divider_ygQtwh",
-        "text_zmLNjf"
-      ],
-      "name": "The philosophy",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 25,
-        "section_width": "page-width",
-        "section_height": "small",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "section_hXBHV7": {
       "type": "section",
       "blocks": {
-        "image_RjzjBC": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/F69C9617-585E-4F77-8173-13203D97CFB1_1_105_c.jpg",
-            "link": "",
-            "image_ratio": "adapt",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 16,
-            "padding-block-start": 8,
-            "padding-block-end": 8,
-            "padding-inline-start": 8,
-            "padding-inline-end": 8
-          },
-          "blocks": {}
-        },
         "group_nYcwpj": {
           "type": "group",
           "settings": {
@@ -374,7 +223,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Made by Hand</p>",
+                "text": "<p>Capturing the soul of Andalusia</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -390,7 +239,33 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 16,
-                "padding-block-end": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_TeBLV6": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Fine Art & Ceramics - Málaga Studio</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -399,7 +274,7 @@
             "text_nRAmQ3": {
               "type": "text",
               "settings": {
-                "text": "<p>Everything is created right here in the Málaga studio. There are no machines involved. You will see brushstrokes, texture, and the natural variation of the clay. It is real work, made one piece at a time.</p>",
+                "text": "<p>My work is a dialogue between the vibrant energy of the Mediterranean and the quiet magic of the natural world.</p><p>Originally from Ukraine, I fell in love with the unique light of the Costa del Sol. Today, I founded Repka Arts to translate that light into something tangible. Through original oil paintings, handmade ceramics, and immersive workshops, my mission is to bring a piece of that beauty and calm into your home.</p><p>Art rooted in passion. Crafted in Spain.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -414,25 +289,10 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 8,
-                "padding-block-end": 24,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_fJTkGD": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Shop the collection",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
               },
               "blocks": {}
             },
@@ -455,17 +315,39 @@
           "block_order": [
             "icon_6UQjyY",
             "text_EJ9EwV",
+            "text_TeBLV6",
             "text_nRAmQ3",
-            "button_fJTkGD",
             "button_k36HeA"
           ]
+        },
+        "image_RjzjBC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_5674.heic",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 16,
+            "padding-block-start": 8,
+            "padding-block-end": 8,
+            "padding-inline-start": 8,
+            "padding-inline-end": 8
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "image_RjzjBC",
-        "group_nYcwpj"
+        "group_nYcwpj",
+        "image_RjzjBC"
       ],
-      "name": "Made by hand",
+      "name": "t:names.image_with_text",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -474,11 +356,11 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 64,
+        "gap": 48,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-c49d593a-b378-40e1-a60e-fe4420a6d831",
+        "color_scheme": "",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -497,6 +379,28 @@
     "section_azhYky": {
       "type": "section",
       "blocks": {
+        "image_qtxXXz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/DSC01302.jpg",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 16,
+            "padding-block-start": 8,
+            "padding-block-end": 8,
+            "padding-inline-start": 8,
+            "padding-inline-end": 8
+          },
+          "blocks": {}
+        },
         "group_FwKYB8": {
           "type": "group",
           "settings": {
@@ -539,7 +443,6 @@
             "icon_rx9JrG": {
               "type": "icon",
               "name": "t:names.icon",
-              "disabled": true,
               "settings": {
                 "icon": "price_tag",
                 "image_upload": "shopify://shop_images/Repka_arts_logo-04.svg",
@@ -553,7 +456,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>Meet Maryna</h1>",
+                "text": "<h1>The discipline behind the art</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -568,8 +471,8 @@
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
-                "padding-block-start": 8,
-                "padding-block-end": 8,
+                "padding-block-start": 16,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -578,7 +481,7 @@
             "text_iLcADg": {
               "type": "text",
               "settings": {
-                "text": "<p>My name is Maryna Riepnova. I am an artist living and working in Málaga. I started Repka Arts to share the spontaneous joy of my studio practice. The name 'Repka' is a play on my last name, but in Ukrainian it also means 'turnip.' It is a nod to my roots. Simple, grounded, and growing naturally.</p>",
+                "text": "<p>I combine the rigor of a Fine Arts Master's degree with the vibrant light of the Mediterranean. My academic background ensures technical excellence while the landscapes of Spain provide the soul. Every piece is a balance of structure and emotion designed to bring calm to your space.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -603,10 +506,10 @@
             "button_heBQre": {
               "type": "button",
               "settings": {
-                "label": "View artist portfolio",
-                "link": "https://www.marynariepnova.com/",
-                "open_in_new_tab": true,
-                "style_class": "button",
+                "label": "See the collections",
+                "link": "shopify://collections",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -621,35 +524,13 @@
             "text_iLcADg",
             "button_heBQre"
           ]
-        },
-        "image_qtxXXz": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/DSC01302.jpg",
-            "link": "",
-            "image_ratio": "portrait",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 16,
-            "padding-block-start": 8,
-            "padding-block-end": 8,
-            "padding-inline-start": 8,
-            "padding-inline-end": 8
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "group_FwKYB8",
-        "image_qtxXXz"
+        "image_qtxXXz",
+        "group_FwKYB8"
       ],
-      "name": "Meet Maryna",
+      "name": "t:names.image_with_text",
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
@@ -658,11 +539,11 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 64,
+        "gap": 48,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -678,229 +559,40 @@
         "padding-block-end": 96
       }
     },
-    "section_wMwtfK": {
+    "section_dFr8LL": {
       "type": "section",
       "blocks": {
-        "group_DrNrbT": {
-          "type": "group",
-          "name": "t:names.group",
+        "text_WjD6Fd": {
+          "type": "text",
+          "name": "t:names.heading",
           "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 0,
+            "text": "<h2>Career highlights</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
             "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
-          "blocks": {
-            "text_cc344E": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h2>Made in Málaga</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_HDFAkf": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Inspired by the sea, the sun, and the energy of the Costa del Sol.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_cc344E",
-            "text_HDFAkf"
-          ]
-        },
-        "group_JEKgfD": {
-          "type": "group",
-          "name": "t:names.group",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "row",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 8,
-            "padding-block-end": 8,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image_rPU7Vm": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/F13F6A08-1E86-47D0-8616-6C7800840EFE_1_105_c.jpg",
-                "link": "",
-                "image_ratio": "portrait",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 20,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "image_a6ptME": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/32E38C5A-2BB5-4496-ADC3-EBDF95D54B0C_1_105_c.jpg",
-                "link": "",
-                "image_ratio": "portrait",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 20,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "image_fQCVaQ": {
-              "type": "image",
-              "name": "t:names.image",
-              "settings": {
-                "image": "shopify://shop_images/E9808629-0F68-43A6-B966-3210B15E33EE_1_105_c.jpg",
-                "link": "",
-                "image_ratio": "portrait",
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 20,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "image_rPU7Vm",
-            "image_a6ptME",
-            "image_fQCVaQ"
-          ]
+          "blocks": {}
         }
       },
       "block_order": [
-        "group_DrNrbT",
-        "group_JEKgfD"
+        "text_WjD6Fd"
       ],
-      "name": "t:names.custom_section",
+      "name": "Highlights title",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -911,9 +603,9 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-c49d593a-b378-40e1-a60e-fe4420a6d831",
+        "color_scheme": "",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -925,7 +617,662 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
+        "padding-block-start": 80,
+        "padding-block-end": 16
+      }
+    },
+    "custom_cards_2026_DhxBHR": {
+      "type": "custom-cards-2026",
+      "blocks": {
+        "card_yk4VDG": {
+          "type": "card",
+          "settings": {
+            "title": "Solo exhibitions",
+            "text": "",
+            "date_1": "Jan-Feb 2026",
+            "text_1": "<p>Beyond wilder horizons at Aplama in Málaga, Spain</p>",
+            "date_2": "",
+            "text_2": "",
+            "date_3": "",
+            "text_3": "",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "card_yk4VDG"
+      ],
+      "name": "Custom Cards 2026",
+      "settings": {
+        "heading": "2026",
+        "heading_font_source": "theme",
+        "heading_font_custom": "sans_serif_n4",
+        "heading_size": 32,
+        "card_title_size": 24,
+        "card_text_size": 16,
+        "card_title_font": "ebgaramond_n4",
+        "date_font": "red_hat_text_n4",
+        "date_size": 18,
+        "entry_text_size": 14,
+        "entry_layout": "column",
+        "card_vertical_alignment": "flex-start",
+        "card_border_radius": 16,
+        "card_padding_top": 48,
+        "card_padding_bottom": 48,
+        "card_padding_left": 32,
+        "card_padding_right": 32,
+        "section_width": "page",
+        "section_height": "auto",
+        "mobile_layout": "slider",
+        "columns_desktop": 1,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "custom_cards_2026_6NaDkG": {
+      "type": "custom-cards-2026",
+      "blocks": {
+        "card_pQDKAB": {
+          "type": "card",
+          "settings": {
+            "title": "Solo exhibitions",
+            "text": "",
+            "date_1": "08 Oct 2025",
+            "text_1": "<p>Wild at heart exhibition at Nina Café in Málaga, Spain</p>",
+            "date_2": "03-05 Oct 2025",
+            "text_2": "<p>Watercolors exhibition at '9º Ruta del Arte' in Frigiliana, Spain</p>",
+            "date_3": "Jul-Sep 2025",
+            "text_3": "<p>Wild at heart at Coeo Pod Hostel in Málaga, Spain</p>",
+            "date_4": "Jun 2025",
+            "text_4": "<p>Caos Italia-Marbella, Spain</p>",
+            "date_5": "Feb-Mar 2025",
+            "text_5": "<p>Wild and serene at BIC Euronova in Málaga, Spain</p>",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_EkYrzz": {
+          "type": "card",
+          "settings": {
+            "title": "Group exhibitions",
+            "text": "",
+            "date_1": "Dec 2025",
+            "text_1": "<p>Jomasa de Navidad in Málaga, Spain</p>",
+            "date_2": "Dec 2025",
+            "text_2": "<p>Aplama 10x10 in Málaga, Spain</p>",
+            "date_3": "Dec 2025",
+            "text_3": "<p>Jomasa 20x20 in Málaga, Spain</p>",
+            "date_4": "25 Oct 2025",
+            "text_4": "<p>Exhibition at 'Little people' Gallery in Málaga, Spain</p>",
+            "date_5": "Jun-Aug 2025",
+            "text_5": "<p>Jomasa Gallery in Málaga, Spain</p>",
+            "date_6": "July 2025",
+            "text_6": "<p>Jardín botánico 'La Concepción' in Málaga, Spain</p>",
+            "date_7": "Apr 2025",
+            "text_7": "<p>Collective exhibition 'Presencias 59 Animalia 2025'</p>",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_zVcdgm": {
+          "type": "card",
+          "settings": {
+            "title": "Virtual exhibitions",
+            "text": "",
+            "date_1": "Nov 2025",
+            "text_1": "<p>All about animals. Virtual exhibition.</p>",
+            "date_2": "Jul-Aug 2025",
+            "text_2": "<p>Memories. Virtual exhibition.</p>",
+            "date_3": "May 2025",
+            "text_3": "<p>Visual Art Journal artwork. Virtual exhibition.</p>",
+            "date_4": "Apr 2025",
+            "text_4": "<p>'Time and Memory'. Virtual exhibition.</p>",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_LxJLW8": {
+          "type": "card",
+          "settings": {
+            "title": "Awards & Recognition",
+            "text": "",
+            "date_1": "Nov 2025",
+            "text_1": "<p>Pintura rápida, Guadalcázar (Prize)</p><p>Pintura rápida, Pedro Abad (Finalist)</p>",
+            "date_2": "Sep 2025",
+            "text_2": "<p>Pintura rápida, Loja (Prize)</p>",
+            "date_3": "Jun 2025",
+            "text_3": "<p>Pintura rápida, Jardín botánico 'La Concepción' (Selection)</p>",
+            "date_4": "May 2025",
+            "text_4": "<p>Pintura rápida, Estepona (Winner)</p><p>Pintura rápida, Ríogordo (Selection)</p>",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_KyP9PT": {
+          "type": "card",
+          "settings": {
+            "title": "Publications",
+            "text": "",
+            "date_1": "Nov 2025",
+            "text_1": "<p>All about animals. Interview and article.</p>",
+            "date_2": "Aug 2025",
+            "text_2": "<p>The Power of She Artbook</p>",
+            "date_3": "May 2025",
+            "text_3": "<p>Visual Art Journal artwork publication & interview</p><p>Top international business magazine Diario SUR</p>",
+            "date_4": "Mar 2025",
+            "text_4": "<p>'Time and Memory' art book publication</p>",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_fJNATe": {
+          "type": "card",
+          "settings": {
+            "title": "Events",
+            "text": "",
+            "date_1": "2025",
+            "text_1": "<p>Member of APLAMA (Asociación de Artistas Plásticos de Málaga)</p>",
+            "date_2": "June 2025",
+            "text_2": "<p>Live painting Caos Italia-Marbella</p>",
+            "date_3": "",
+            "text_3": "",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "card_pQDKAB",
+        "card_EkYrzz",
+        "card_zVcdgm",
+        "card_LxJLW8",
+        "card_KyP9PT",
+        "card_fJNATe"
+      ],
+      "name": "Custom Cards 2025",
+      "settings": {
+        "heading": "2025",
+        "heading_font_source": "theme",
+        "heading_font_custom": "sans_serif_n4",
+        "heading_size": 32,
+        "card_title_size": 24,
+        "card_text_size": 16,
+        "card_title_font": "ebgaramond_n4",
+        "date_font": "red_hat_text_n4",
+        "date_size": 18,
+        "entry_text_size": 14,
+        "entry_layout": "column",
+        "card_vertical_alignment": "flex-start",
+        "card_border_radius": 16,
+        "card_padding_top": 48,
+        "card_padding_bottom": 48,
+        "card_padding_left": 32,
+        "card_padding_right": 32,
+        "section_width": "page",
+        "section_height": "auto",
+        "mobile_layout": "slider",
+        "columns_desktop": 2,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "custom_cards_2026_b3Ga9X": {
+      "type": "custom-cards-2026",
+      "blocks": {
+        "card_nbTNwM": {
+          "type": "card",
+          "settings": {
+            "title": "Education",
+            "text": "",
+            "date_1": "2023-2025",
+            "text_1": "<p>Watercolor classes with Miguel Linares</p><p>Daniel Parra’s classes of live model drawing</p>",
+            "date_2": "2013-2017",
+            "text_2": "<p>University of K.D. Ushinsky, Faculty of Fine Arts (Masters degree)</p>",
+            "date_3": "2009-2013",
+            "text_3": "<p>College of M.B. Grekov, Faculty of Decoration of the environment and Ceramics (Associate degree)</p>",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_XY4f8V": {
+          "type": "card",
+          "settings": {
+            "title": "Events & Teaching",
+            "text": "",
+            "date_1": "2022-2024",
+            "text_1": "<p>Personal practice</p><p>Organizing plein airs & teaching</p><p>Member of APLAMA (Asociación de Artistas Plásticos de Málaga)</p>",
+            "date_2": "May 2016",
+            "text_2": "<p>I created a charity project ‘Spring for a soldier’ where students from Art university gifted pictures to a department for mental rehabilitation of soldiers after hostilities.</p>",
+            "date_3": "2015-2016",
+            "text_3": "<p>Worked with Art therapists as a teacher of Arts and History of Arts</p><p>Worked in Art studios with children and teenagers</p>",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_MVBjmY": {
+          "type": "card",
+          "settings": {
+            "title": "Competitions & Publications",
+            "text": "",
+            "date_1": "Nov 2024",
+            "text_1": "<p>Pintura rápida, Torremolinos (Prize)</p>",
+            "date_2": "Aug 2024",
+            "text_2": "<p>Pintura rapida, Benalmádena (Selection)</p>",
+            "date_3": "2024",
+            "text_3": "<p>Watercolors Contest Iberia 2024, Málaga</p>",
+            "date_4": "Jul 2024",
+            "text_4": "<p>London Graphic Center, topic ‘Joy’</p>",
+            "date_5": "Oct 2016",
+            "text_5": "<p>National Competition for Higher Art Universities of Ukraine in Uzhgorod</p>",
+            "date_6": "Apr 2016",
+            "text_6": "<p>National Competition for Higher Art Universities of Ukraine in Poltava. 1st place</p>",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        },
+        "card_UGKdPW": {
+          "type": "card",
+          "settings": {
+            "title": "Classes",
+            "text": "",
+            "date_1": "2024-2025",
+            "text_1": "<p>Plein-air sessions and classes in Málaga and Marbella</p>",
+            "date_2": "2022-2025",
+            "text_2": "<p>Personal practice</p>",
+            "date_3": "2015-2016",
+            "text_3": "<p>Worked with Art therapists as a teacher of Arts and History of Arts</p><p>Worked in Art studios with children and teenagers</p>",
+            "date_4": "",
+            "text_4": "",
+            "date_5": "",
+            "text_5": "",
+            "date_6": "",
+            "text_6": "",
+            "date_7": "",
+            "text_7": "",
+            "date_8": "",
+            "text_8": "",
+            "date_9": "",
+            "text_9": "",
+            "date_10": "",
+            "text_10": "",
+            "link": "",
+            "background_color": "#fff5f7",
+            "text_color": "#000000",
+            "font_family": "body",
+            "custom_font": "sans_serif_n4"
+          }
+        }
+      },
+      "block_order": [
+        "card_nbTNwM",
+        "card_XY4f8V",
+        "card_MVBjmY",
+        "card_UGKdPW"
+      ],
+      "name": "Custom Cards 2024",
+      "settings": {
+        "heading": "2024 and before",
+        "heading_font_source": "theme",
+        "heading_font_custom": "sans_serif_n4",
+        "heading_size": 32,
+        "card_title_size": 24,
+        "card_text_size": 16,
+        "card_title_font": "ebgaramond_n4",
+        "date_font": "red_hat_text_n4",
+        "date_size": 18,
+        "entry_text_size": 14,
+        "entry_layout": "column",
+        "card_vertical_alignment": "flex-start",
+        "card_border_radius": 16,
+        "card_padding_top": 48,
+        "card_padding_bottom": 48,
+        "card_padding_left": 32,
+        "card_padding_right": 32,
+        "section_width": "page",
+        "section_height": "auto",
+        "mobile_layout": "slider",
+        "columns_desktop": 2,
+        "padding_top": 32,
+        "padding_bottom": 96
+      }
+    },
+    "featured_blog_posts_BnXeCA": {
+      "type": "featured-blog-posts",
+      "blocks": {
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "name": "t:names.title",
+          "static": true,
+          "settings": {
+            "text": "<h2>Selected exhibitions</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "name": "t:names.blog_card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 0,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
+              "settings": {
+                "image_ratio": "landscape",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16
+              },
+              "blocks": {}
+            },
+            "title": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
+              "settings": {
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "read_only": false,
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 16,
+                "padding-block-end": 12,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
+              "settings": {
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "name": "t:names.excerpt",
+              "static": true,
+              "settings": {
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 16,
+                "padding-block-end": 16
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        }
+      },
+      "name": "Exhibitions",
+      "settings": {
+        "blog": "exhibitions",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "post_limit": 6,
+        "columns": 2,
+        "mobile_columns": "1",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 8,
+        "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 96,
+        "padding-block-end": 32
+      }
+    },
+    "section_wK9cAb": {
+      "type": "section",
+      "blocks": {
+        "button_tgVheq": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "View all exhibitions",
+            "link": "shopify://blogs/exhibitions",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "button_tgVheq"
+      ],
+      "name": "Exhibitions button",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 16,
         "padding-block-end": 96
       }
     },
@@ -1066,9 +1413,9 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 24,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "padding-block-start": 96,
-        "padding-block-end": 24
+        "padding-block-end": 48
       }
     },
     "section_nNBFyw": {
@@ -1079,9 +1426,9 @@
           "name": "t:names.button",
           "settings": {
             "label": "Read all stories",
-            "link": "shopify://blogs/news",
+            "link": "shopify://blogs/journal",
             "open_in_new_tab": false,
-            "style_class": "button",
+            "style_class": "button-secondary",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -1106,7 +1453,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1118,7 +1465,201 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 24,
+        "padding-block-start": 16,
+        "padding-block-end": 96
+      }
+    },
+    "product_list_kwLpYH": {
+      "type": "product-list",
+      "blocks": {
+        "static-header": {
+          "type": "_product-list-content",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_list_text_BWVi4w": {
+              "type": "_product-list-text",
+              "name": "t:names.collection_title",
+              "settings": {
+                "text": "<h2>{{ closest.collection.title }}</h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_list_button_CEcNmp": {
+              "type": "_product-list-button",
+              "name": "t:names.product_list_button",
+              "settings": {
+                "label": "View all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_list_text_BWVi4w",
+            "product_list_button_CEcNmp"
+          ]
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_nQjemz": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_Yz6Bnf": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_Lb3wb8": {
+              "type": "price",
+              "name": "t:names.product_price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": true,
+                "type_preset": "custom",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_nQjemz",
+            "product_title_Yz6Bnf",
+            "price_Lb3wb8"
+          ]
+        }
+      },
+      "name": "Featured collection: Season highlights",
+      "settings": {
+        "collection": "season-highlights",
+        "layout_type": "carousel",
+        "carousel_on_mobile": false,
+        "max_products": 8,
+        "columns": 4,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 24,
+        "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "horizontal_alignment": "flex-start",
+        "gap": 24,
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "padding-block-start": 96,
         "padding-block-end": 96
       }
     }
@@ -1126,11 +1667,16 @@
   "order": [
     "main",
     "hero_AY9FUC",
-    "section_cVgCVh",
     "section_hXBHV7",
     "section_azhYky",
-    "section_wMwtfK",
+    "section_dFr8LL",
+    "custom_cards_2026_DhxBHR",
+    "custom_cards_2026_6NaDkG",
+    "custom_cards_2026_b3Ga9X",
+    "featured_blog_posts_BnXeCA",
+    "section_wK9cAb",
     "featured_blog_posts_FeCAta",
-    "section_nNBFyw"
+    "section_nNBFyw",
+    "product_list_kwLpYH"
   ]
 }

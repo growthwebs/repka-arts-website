@@ -68,7 +68,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-1",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -352,35 +352,20 @@
         "columns_gap_vertical": 16,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 64
       }
     },
-    "product_list_pipznd": {
+    "product_list_cfw3iD": {
       "type": "product-list",
       "blocks": {
-        "button_p3Lq83": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Start your wall",
-            "link": "shopify://collections/art-prints",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
@@ -409,39 +394,13 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_3TnnX6": {
+            "product_list_text_DhnH9r": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Check related prints</h2>",
+                "text": "<h2>Related fine prints</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_J3NATm": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Special Offer: <strong>Buy 3</strong>, <strong>Get 20% OFF</strong> with code <strong>WALL20</strong>.</p>",
-                "width": "fit-content",
-                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -461,10 +420,9 @@
               },
               "blocks": {}
             },
-            "product_list_button_XR4aPt": {
+            "product_list_button_BcK7fd": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
-              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -478,9 +436,8 @@
             }
           },
           "block_order": [
-            "product_list_text_3TnnX6",
-            "text_J3NATm",
-            "product_list_button_XR4aPt"
+            "product_list_text_DhnH9r",
+            "product_list_button_BcK7fd"
           ]
         },
         "static-product-card": {
@@ -496,12 +453,12 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 16,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_RWn3jR": {
+            "product_card_gallery_JWWtYC": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -517,7 +474,7 @@
               },
               "blocks": {}
             },
-            "product_title_kHVyzy": {
+            "product_title_GihY9N": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -542,7 +499,7 @@
               },
               "blocks": {}
             },
-            "price_xGYJ93": {
+            "price_xzWLUD": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -567,18 +524,15 @@
             }
           },
           "block_order": [
-            "product_card_gallery_RWn3jR",
-            "product_title_kHVyzy",
-            "price_xGYJ93"
+            "product_card_gallery_JWWtYC",
+            "product_title_GihY9N",
+            "price_xzWLUD"
           ]
         }
       },
-      "block_order": [
-        "button_p3Lq83"
-      ],
       "name": "Featured collection: Season highlights",
       "settings": {
-        "collection": "balanced-prints",
+        "collection": "art-prints",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -590,37 +544,22 @@
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "horizontal_alignment": "center",
+        "horizontal_alignment": "flex-start",
         "gap": 24,
-        "color_scheme": "scheme-c49d593a-b378-40e1-a60e-fe4420a6d831",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 96,
         "padding-block-end": 96
       }
     },
-    "product_list_PThgVk": {
+    "product_list_qcxm4X": {
       "type": "product-list",
       "blocks": {
-        "button_y3e3HX": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Show latest",
-            "link": "shopify://collections/season-highlights",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
@@ -644,45 +583,18 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 16,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_Djgjcy": {
+            "product_list_text_xnpdac": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Season highlights</h2>",
+                "text": "<h2>{{ closest.collection.title }}</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_JMn3hk": {
-              "type": "text",
-              "name": "t:names.text",
-              "disabled": true,
-              "settings": {
-                "text": "<p>New studio paintings. One-of-a-kind pieces from the Málaga studio.</p>",
-                "width": "fit-content",
-                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -702,10 +614,9 @@
               },
               "blocks": {}
             },
-            "product_list_button_EdxUyK": {
+            "product_list_button_MCf6RN": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
-              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -719,9 +630,8 @@
             }
           },
           "block_order": [
-            "product_list_text_Djgjcy",
-            "text_JMn3hk",
-            "product_list_button_EdxUyK"
+            "product_list_text_xnpdac",
+            "product_list_button_MCf6RN"
           ]
         },
         "static-product-card": {
@@ -737,16 +647,16 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 24,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_3DFtnb": {
+            "product_card_gallery_aTpFkP": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "portrait",
+                "image_ratio": "square",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -758,7 +668,7 @@
               },
               "blocks": {}
             },
-            "product_title_6Afx68": {
+            "product_title_pDfmGk": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -767,7 +677,7 @@
                 "alignment": "left",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -783,7 +693,7 @@
               },
               "blocks": {}
             },
-            "price_LATkkR": {
+            "price_dLbd8Q": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -808,15 +718,12 @@
             }
           },
           "block_order": [
-            "product_card_gallery_3DFtnb",
-            "product_title_6Afx68",
-            "price_LATkkR"
+            "product_card_gallery_aTpFkP",
+            "product_title_pDfmGk",
+            "price_dLbd8Q"
           ]
         }
       },
-      "block_order": [
-        "button_y3e3HX"
-      ],
       "name": "Featured collection: Season highlights",
       "settings": {
         "collection": "season-highlights",
@@ -825,15 +732,15 @@
         "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
+        "mobile_card_size": "44cqw",
         "columns_gap": 24,
         "rows_gap": 24,
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "horizontal_alignment": "center",
+        "horizontal_alignment": "flex-start",
         "gap": 24,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 96,
         "padding-block-end": 96
       }
@@ -842,7 +749,7 @@
   "order": [
     "section",
     "main",
-    "product_list_pipznd",
-    "product_list_PThgVk"
+    "product_list_cfw3iD",
+    "product_list_qcxm4X"
   ]
 }

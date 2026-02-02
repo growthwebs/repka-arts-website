@@ -177,7 +177,7 @@
         "section_width": "page-width",
         "section_height": "large",
         "section_height_custom": 50,
-        "color_scheme": "scheme-ffcd9384-36b3-407a-9152-95a769fcc902",
+        "color_scheme": "scheme-5",
         "toggle_overlay": true,
         "overlay_color": "#38383894",
         "overlay_style": "gradient",
@@ -221,22 +221,7 @@
           "type": "_blog-post-card",
           "static": true,
           "settings": {
-            "alignment": "left",
-            "share_alignment": "left",
-            "share_padding_top": 16,
-            "share_padding_bottom": 16,
-            "share_padding_left": 0,
-            "share_padding_right": 0,
-            "share_copy_icon_size": 20,
-            "share_copy_label": "Share",
-            "share_copy_text_color": "#18181b",
-            "share_copy_bg_color": "#f4f4f5",
-            "share_fb_icon_size": 20,
-            "share_fb_icon_color": "#52525b",
-            "share_fb_bg_color": "rgba(0,0,0,0)",
-            "share_wa_icon_size": 20,
-            "share_wa_icon_color": "#52525b",
-            "share_wa_bg_color": "rgba(0,0,0,0)"
+            "alignment": "left"
           },
           "blocks": {
             "heading": {
@@ -315,24 +300,9 @@
         "title"
       ],
       "settings": {
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-2",
         "padding-block-start": 32,
-        "padding-block-end": 64,
-        "share_alignment": "left",
-        "share_padding_top": 16,
-        "share_padding_bottom": 16,
-        "share_padding_left": 0,
-        "share_padding_right": 0,
-        "share_copy_icon_size": 20,
-        "share_copy_label": "Share",
-        "share_copy_text_color": "#18181b",
-        "share_copy_bg_color": "#f4f4f5",
-        "share_fb_icon_size": 20,
-        "share_fb_icon_color": "#52525b",
-        "share_fb_bg_color": "rgba(0,0,0,0)",
-        "share_wa_icon_size": 20,
-        "share_wa_icon_color": "#52525b",
-        "share_wa_bg_color": "rgba(0,0,0,0)"
+        "padding-block-end": 64
       }
     },
     "featured_blog_posts_DBUX3D": {
@@ -678,10 +648,10 @@
                   "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
                   "settings": {
                     "form_id": "719693",
-                    "text_color": "#1d3485",
-                    "button_background_color": "#1d3485",
+                    "text_color": "#ffffff",
+                    "button_background_color": "#4e81cc",
                     "button_label_color": "#ffffff",
-                    "links_color": "#2a4ac0",
+                    "links_color": "#4e81cc",
                     "errors_color": "#e02229",
                     "text_alignment": "center",
                     "form_alignment": "center",
@@ -720,7 +690,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-ffcd9384-36b3-407a-9152-95a769fcc902",
+        "color_scheme": "scheme-6",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -736,30 +706,15 @@
         "padding-block-end": 64
       }
     },
-    "product_list_6LxhWz": {
+    "product_list_7pRNxR": {
       "type": "product-list",
       "blocks": {
-        "button_FR9fRC": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Show latest",
-            "link": "shopify://collections/season-highlights",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
@@ -783,45 +738,18 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 16,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_QydwAB": {
+            "product_list_text_FyMFYa": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Season highlights</h2>",
+                "text": "<h2>{{ closest.collection.title }}</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_FJX7RY": {
-              "type": "text",
-              "name": "t:names.text",
-              "disabled": true,
-              "settings": {
-                "text": "<p>New studio paintings. One-of-a-kind pieces from the Málaga studio.</p>",
-                "width": "fit-content",
-                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -841,10 +769,9 @@
               },
               "blocks": {}
             },
-            "product_list_button_E3yhYy": {
+            "product_list_button_ekTaDr": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
-              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -858,9 +785,8 @@
             }
           },
           "block_order": [
-            "product_list_text_QydwAB",
-            "text_FJX7RY",
-            "product_list_button_E3yhYy"
+            "product_list_text_FyMFYa",
+            "product_list_button_ekTaDr"
           ]
         },
         "static-product-card": {
@@ -876,12 +802,12 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 24,
+            "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_KDA4Wh": {
+            "product_card_gallery_4hWiHT": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -897,7 +823,7 @@
               },
               "blocks": {}
             },
-            "product_title_4JBFdF": {
+            "product_title_U9EzBW": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -906,7 +832,7 @@
                 "alignment": "left",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -922,7 +848,7 @@
               },
               "blocks": {}
             },
-            "price_ipKjHq": {
+            "price_cBMGRy": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -947,15 +873,12 @@
             }
           },
           "block_order": [
-            "product_card_gallery_KDA4Wh",
-            "product_title_4JBFdF",
-            "price_ipKjHq"
+            "product_card_gallery_4hWiHT",
+            "product_title_U9EzBW",
+            "price_cBMGRy"
           ]
         }
       },
-      "block_order": [
-        "button_FR9fRC"
-      ],
       "name": "Featured collection: Season highlights",
       "settings": {
         "collection": "season-highlights",
@@ -964,94 +887,85 @@
         "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
+        "mobile_card_size": "44cqw",
         "columns_gap": 24,
         "rows_gap": 24,
-        "icons_style": "arrows_large",
+        "icons_style": "arrow",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "horizontal_alignment": "center",
+        "horizontal_alignment": "flex-start",
         "gap": 24,
-        "color_scheme": "scheme-c49d593a-b378-40e1-a60e-fe4420a6d831",
+        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
         "padding-block-start": 96,
         "padding-block-end": 96
       }
     },
-    "section_fQMeAw": {
-      "type": "section",
+    "featured_blog_posts_tqHNUy": {
+      "type": "featured-blog-posts",
       "blocks": {
-        "group_8wnB8N": {
-          "type": "group",
+        "static-blog-title": {
+          "type": "_featured-blog-posts-title",
+          "name": "t:names.title",
+          "static": true,
           "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
+            "text": "<h3>Selected exhibitions</h3>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 16,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-blog-post-card": {
+          "type": "_featured-blog-posts-card",
+          "name": "t:names.blog_card",
+          "static": true,
+          "settings": {
+            "alignment": "left",
+            "gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "placeholder": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_KLPtrG": {
-              "type": "text",
-              "name": "t:names.heading",
+            "image": {
+              "type": "_featured-blog-posts-image",
+              "static": true,
               "settings": {
-                "text": "<p>Exhibitions & Fine Art</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "image_ratio": "landscape",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 16
               },
               "blocks": {}
             },
-            "text_fLyqrt": {
-              "type": "text",
+            "title": {
+              "type": "_heading",
+              "name": "t:names.title",
+              "static": true,
               "settings": {
-                "text": "<p>Repka Arts captures the intimacy of the studio. For my large-scale works, gallery exhibitions, and formal portfolio, please visit my main artist site.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1060,78 +974,110 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 24,
+                "text": "<h4>{{ closest.article.title }}</h4>",
+                "read_only": false,
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 24,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {}
             },
-            "button_pcjqTk": {
-              "type": "button",
+            "blog-post-info-text": {
+              "type": "_blog-post-info-text",
+              "name": "t:names.details",
+              "static": true,
               "settings": {
-                "label": "View gallery collection",
-                "link": "https://www.marynariepnova.com",
-                "open_in_new_tab": true,
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "show_date": true,
+                "show_author": false,
+                "type_preset": "",
+                "alignment": "left",
+                "show_alignment": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "blog-post-description": {
+              "type": "_blog-post-description",
+              "name": "t:names.excerpt",
+              "static": true,
+              "settings": {
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 8,
+                "padding-block-end": 0
               },
               "blocks": {}
             }
           },
-          "block_order": [
-            "text_KLPtrG",
-            "text_fLyqrt",
-            "button_pcjqTk"
-          ]
-        },
-        "image_EMBk9A": {
-          "type": "image",
+          "block_order": []
+        }
+      },
+      "name": "Exhibitions: Carousel",
+      "settings": {
+        "blog": "exhibitions",
+        "layout_type": "carousel",
+        "carousel_on_mobile": true,
+        "post_limit": 8,
+        "columns": 2,
+        "mobile_columns": "2",
+        "mobile_card_size": "60cqw",
+        "columns_gap": 24,
+        "rows_gap": 16,
+        "icons_style": "arrows_large",
+        "icons_shape": "circle",
+        "section_width": "page-width",
+        "gap": 24,
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
+        "padding-block-start": 96,
+        "padding-block-end": 16
+      }
+    },
+    "section_4VrVYT": {
+      "type": "section",
+      "blocks": {
+        "button_HM4MbM": {
+          "type": "button",
+          "name": "t:names.button",
           "settings": {
-            "image": "shopify://shop_images/DSC00941.jpg",
-            "link": "",
-            "image_ratio": "portrait",
-            "width": "fill",
+            "label": "View all exhibitions",
+            "link": "shopify://blogs/exhibitions",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "fit-content",
             "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 20,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "group_8wnB8N",
-        "image_EMBk9A"
+        "button_HM4MbM"
       ],
-      "name": "Large commissions",
+      "name": "Exhibitions button",
       "settings": {
-        "content_direction": "row",
+        "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
+        "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 64,
+        "gap": 12,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -1143,7 +1089,7 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 96,
+        "padding-block-start": 16,
         "padding-block-end": 96
       }
     }
@@ -1153,7 +1099,8 @@
     "main",
     "featured_blog_posts_DBUX3D",
     "section_M3tzf9",
-    "product_list_6LxhWz",
-    "section_fQMeAw"
+    "product_list_7pRNxR",
+    "featured_blog_posts_tqHNUy",
+    "section_4VrVYT"
   ]
 }
