@@ -85,9 +85,22 @@
           "type": "_blog-post-share",
           "static": true,
           "settings": {
+            "alignment": "center",
+            "show_alignment": false,
+            "padding_top": 16,
+            "padding_bottom": 16,
+            "padding_left": 16,
+            "padding_right": 16,
             "share_copy_icon_size": 20,
+            "share_copy_label": "Share",
+            "share_copy_text_color": "#18181b",
+            "share_copy_bg_color": "#f4f4f5",
             "share_fb_icon_size": 20,
-            "share_wa_icon_size": 20
+            "share_fb_icon_color": "#52525b",
+            "share_fb_bg_color": "rgba(0,0,0,0)",
+            "share_wa_icon_size": 20,
+            "share_wa_icon_color": "#52525b",
+            "share_wa_bg_color": "rgba(0,0,0,0)"
           },
           "blocks": {}
         }
@@ -95,15 +108,15 @@
       "settings": {
         "content_direction": "column",
         "gap": 32,
-        "color_scheme": "",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "padding-block-start": 80,
         "padding-block-end": 80
       }
     },
-    "section_jVkjnA": {
+    "section_PzTPpQ": {
       "type": "section",
       "blocks": {
-        "group_ibHBRL": {
+        "group_XtMYiX": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -144,7 +157,7 @@
             "padding-inline-end": 32
           },
           "blocks": {
-            "spacer_7kDeFX": {
+            "spacer_jy8Mxy": {
               "type": "spacer",
               "name": "t:names.spacer",
               "settings": {
@@ -158,7 +171,7 @@
               },
               "blocks": {}
             },
-            "group_RVrKqf": {
+            "group_eQQ6D8": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -198,7 +211,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_JHnJWL": {
+                "text_BdPgiP": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
@@ -224,7 +237,7 @@
                   },
                   "blocks": {}
                 },
-                "text_ECF94U": {
+                "text_eaBy4A": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
@@ -252,11 +265,11 @@
                 }
               },
               "block_order": [
-                "text_JHnJWL",
-                "text_ECF94U"
+                "text_BdPgiP",
+                "text_eaBy4A"
               ]
             },
-            "group_gqfBMB": {
+            "group_YPqV7e": {
               "type": "group",
               "name": "t:names.group",
               "settings": {
@@ -296,14 +309,14 @@
                 "padding-inline-end": 16
               },
               "blocks": {
-                "forms_inline_qKpzPw": {
+                "forms_inline_TM7Tpm": {
                   "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
                   "settings": {
                     "form_id": "719693",
-                    "text_color": "#ffffff",
-                    "button_background_color": "#4e81cc",
+                    "text_color": "#1d3485",
+                    "button_background_color": "#1d3485",
                     "button_label_color": "#ffffff",
-                    "links_color": "#4e81cc",
+                    "links_color": "#2a4ac0",
                     "errors_color": "#e02229",
                     "text_alignment": "center",
                     "form_alignment": "center",
@@ -315,19 +328,19 @@
                 }
               },
               "block_order": [
-                "forms_inline_qKpzPw"
+                "forms_inline_TM7Tpm"
               ]
             }
           },
           "block_order": [
-            "spacer_7kDeFX",
-            "group_RVrKqf",
-            "group_gqfBMB"
+            "spacer_jy8Mxy",
+            "group_eQQ6D8",
+            "group_YPqV7e"
           ]
         }
       },
       "block_order": [
-        "group_ibHBRL"
+        "group_XtMYiX"
       ],
       "name": "Newsletter",
       "settings": {
@@ -342,7 +355,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-6",
+        "color_scheme": "scheme-ffcd9384-36b3-407a-9152-95a769fcc902",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -358,7 +371,7 @@
         "padding-block-end": 64
       }
     },
-    "featured_blog_posts_MxzxkT": {
+    "featured_blog_posts_zq7twB": {
       "type": "featured-blog-posts",
       "blocks": {
         "static-blog-title": {
@@ -381,8 +394,8 @@
             "background": false,
             "background_color": "#00000026",
             "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 16,
+            "padding-block-start": 16,
+            "padding-block-end": 32,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -394,7 +407,7 @@
           "static": true,
           "settings": {
             "alignment": "left",
-            "gap": 8,
+            "gap": 0,
             "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "none",
@@ -402,7 +415,7 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -437,201 +450,7 @@
                 "alignment": "left",
                 "show_alignment": false,
                 "padding-block-start": 24,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-info-text": {
-              "type": "_blog-post-info-text",
-              "name": "t:names.details",
-              "static": true,
-              "settings": {
-                "show_date": true,
-                "show_author": false,
-                "type_preset": "",
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            },
-            "blog-post-description": {
-              "type": "_blog-post-description",
-              "name": "t:names.excerpt",
-              "disabled": true,
-              "static": true,
-              "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "name": "t:names.blog_posts_carousel",
-      "settings": {
-        "blog": "journal",
-        "layout_type": "carousel",
-        "carousel_on_mobile": true,
-        "post_limit": 9,
-        "columns": 3,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 24,
-        "rows_gap": 16,
-        "icons_style": "arrows_large",
-        "icons_shape": "circle",
-        "section_width": "page-width",
-        "gap": 24,
-        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 96,
-        "padding-block-end": 16
-      }
-    },
-    "section_rtAkz7": {
-      "type": "section",
-      "blocks": {
-        "button_tekBDq": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Read all stories",
-            "link": "shopify://blogs/journal",
-            "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "button_tekBDq"
-      ],
-      "name": "Blog posts button",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 96
-      }
-    },
-    "featured_blog_posts_DpxNrE": {
-      "type": "featured-blog-posts",
-      "blocks": {
-        "static-blog-title": {
-          "type": "_featured-blog-posts-title",
-          "name": "t:names.title",
-          "static": true,
-          "settings": {
-            "text": "<h2>Selected exhibitions</h2>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 16,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "static-blog-post-card": {
-          "type": "_featured-blog-posts-card",
-          "name": "t:names.blog_card",
-          "static": true,
-          "settings": {
-            "alignment": "left",
-            "gap": 0,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "image": {
-              "type": "_featured-blog-posts-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "landscape",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 16
-              },
-              "blocks": {}
-            },
-            "title": {
-              "type": "_heading",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "text": "<h4>{{ closest.article.title }}</h4>",
-                "read_only": false,
-                "alignment": "left",
-                "show_alignment": false,
-                "padding-block-start": 16,
-                "padding-block-end": 0,
+                "padding-block-end": 12,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -665,8 +484,8 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "padding-block-start": 8,
-                "padding-block-end": 0
+                "padding-block-start": 16,
+                "padding-block-end": 16
               },
               "blocks": {}
             }
@@ -674,37 +493,37 @@
           "block_order": []
         }
       },
-      "name": "Exhibitions",
+      "name": "t:names.blog_posts_carousel",
       "settings": {
-        "blog": "exhibitions",
+        "blog": "journal",
         "layout_type": "carousel",
-        "carousel_on_mobile": false,
-        "post_limit": 6,
-        "columns": 3,
-        "mobile_columns": "1",
+        "carousel_on_mobile": true,
+        "post_limit": 8,
+        "columns": 2,
+        "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 24,
-        "rows_gap": 8,
-        "icons_style": "arrow",
+        "rows_gap": 16,
+        "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 24,
-        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
-        "padding-block-start": 64,
-        "padding-block-end": 16
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "padding-block-start": 96,
+        "padding-block-end": 24
       }
     },
-    "section_rVm7mm": {
+    "section_aK7kUh": {
       "type": "section",
       "blocks": {
-        "button_jK8ipW": {
+        "button_kYtQyA": {
           "type": "button",
           "name": "t:names.button",
           "settings": {
-            "label": "View all exhibitions",
-            "link": "shopify://blogs/exhibitions",
+            "label": "Read all stories",
+            "link": "shopify://blogs/news",
             "open_in_new_tab": false,
-            "style_class": "button-secondary",
+            "style_class": "button",
             "width": "fit-content",
             "custom_width": 100,
             "width_mobile": "fit-content",
@@ -714,9 +533,9 @@
         }
       },
       "block_order": [
-        "button_jK8ipW"
+        "button_kYtQyA"
       ],
-      "name": "Exhibitions button",
+      "name": "Blog posts button",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -729,7 +548,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-ff3d154c-41ac-40bb-ace3-2e3ac086919b",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -741,19 +560,34 @@
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 64
+        "padding-block-start": 24,
+        "padding-block-end": 96
       }
     },
-    "product_list_FVieGf": {
+    "product_list_djXbWN": {
       "type": "product-list",
       "blocks": {
+        "button_ALkG4L": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Show latest",
+            "link": "shopify://collections/buy-art-on-sale",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "row",
+            "content_direction": "column",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
@@ -777,18 +611,45 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_efwW4K": {
+            "product_list_text_VkHx3T": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Don't miss out the discounts</h2>",
+                "text": "<h2>Don't miss out</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_WYtFcf": {
+              "type": "text",
+              "name": "t:names.text",
+              "disabled": true,
+              "settings": {
+                "text": "<p>New studio paintings. One-of-a-kind pieces from the Málaga studio.</p>",
+                "width": "fit-content",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -808,9 +669,10 @@
               },
               "blocks": {}
             },
-            "product_list_button_irwRPK": {
+            "product_list_button_aDXYeD": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
+              "disabled": true,
               "settings": {
                 "label": "View all",
                 "open_in_new_tab": false,
@@ -824,8 +686,9 @@
             }
           },
           "block_order": [
-            "product_list_text_efwW4K",
-            "product_list_button_irwRPK"
+            "product_list_text_VkHx3T",
+            "text_WYtFcf",
+            "product_list_button_aDXYeD"
           ]
         },
         "static-product-card": {
@@ -841,16 +704,16 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_pLtUaf": {
+            "product_card_gallery_zBnnqg": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "portrait",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
@@ -862,7 +725,7 @@
               },
               "blocks": {}
             },
-            "product_title_WdNkeU": {
+            "product_title_8x8Ryz": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -871,7 +734,7 @@
                 "alignment": "left",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -887,7 +750,7 @@
               },
               "blocks": {}
             },
-            "price_66pHyU": {
+            "price_3YTGPd": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -912,12 +775,15 @@
             }
           },
           "block_order": [
-            "product_card_gallery_pLtUaf",
-            "product_title_WdNkeU",
-            "price_66pHyU"
+            "product_card_gallery_zBnnqg",
+            "product_title_8x8Ryz",
+            "price_3YTGPd"
           ]
         }
       },
+      "block_order": [
+        "button_ALkG4L"
+      ],
       "name": "Featured collection: Season highlights",
       "settings": {
         "collection": "buy-art-on-sale",
@@ -926,27 +792,25 @@
         "max_products": 8,
         "columns": 4,
         "mobile_columns": "2",
-        "mobile_card_size": "44cqw",
+        "mobile_card_size": "60cqw",
         "columns_gap": 24,
         "rows_gap": 24,
-        "icons_style": "arrow",
+        "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "center",
         "gap": 24,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
-        "padding-block-start": 64,
-        "padding-block-end": 64
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
+        "padding-block-start": 96,
+        "padding-block-end": 96
       }
     }
   },
   "order": [
     "section",
-    "section_jVkjnA",
-    "featured_blog_posts_MxzxkT",
-    "section_rtAkz7",
-    "featured_blog_posts_DpxNrE",
-    "section_rVm7mm",
-    "product_list_FVieGf"
+    "section_PzTPpQ",
+    "featured_blog_posts_zq7twB",
+    "section_aK7kUh",
+    "product_list_djXbWN"
   ]
 }
