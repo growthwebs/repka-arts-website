@@ -699,7 +699,7 @@
               },
               "block_order": []
             },
-            "group_7JEExR": {
+            "group_UCmyzy": {
               "type": "group",
               "name": "Payment icons",
               "settings": {
@@ -739,7 +739,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "icon_pMRtJi": {
+                "icon_R4jyCf": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -751,7 +751,7 @@
                   },
                   "blocks": {}
                 },
-                "icon_EkxmdV": {
+                "icon_DFBN7y": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -763,7 +763,19 @@
                   },
                   "blocks": {}
                 },
-                "icon_neYN7G": {
+                "icon_gmifje": {
+                  "type": "icon",
+                  "name": "t:names.icon",
+                  "settings": {
+                    "icon": "price_tag",
+                    "image_upload": "shopify://shop_images/amex_9c8a95e4-7fa1-4714-9bd3-1e153c9f99eb.svg",
+                    "width": 20,
+                    "link": "",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                },
+                "icon_AkpReY": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -775,19 +787,19 @@
                   },
                   "blocks": {}
                 },
-                "icon_NCinpg": {
+                "icon_wyf6eB": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
                     "image_upload": "shopify://shop_images/g-pay.svg",
-                    "width": 24,
+                    "width": 28,
                     "link": "",
                     "open_in_new_tab": false
                   },
                   "blocks": {}
                 },
-                "icon_KKNKYU": {
+                "icon_aqtcCB": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
@@ -799,13 +811,13 @@
                   },
                   "blocks": {}
                 },
-                "icon_YW3pNy": {
+                "icon_UTXt8T": {
                   "type": "icon",
                   "name": "t:names.icon",
                   "settings": {
                     "icon": "price_tag",
                     "image_upload": "shopify://shop_images/paypal_1.svg",
-                    "width": 24,
+                    "width": 28,
                     "link": "",
                     "open_in_new_tab": false
                   },
@@ -813,12 +825,13 @@
                 }
               },
               "block_order": [
-                "icon_pMRtJi",
-                "icon_EkxmdV",
-                "icon_neYN7G",
-                "icon_NCinpg",
-                "icon_KKNKYU",
-                "icon_YW3pNy"
+                "icon_R4jyCf",
+                "icon_DFBN7y",
+                "icon_gmifje",
+                "icon_AkpReY",
+                "icon_wyf6eB",
+                "icon_aqtcCB",
+                "icon_UTXt8T"
               ]
             },
             "group_YVhwjF": {
@@ -1362,7 +1375,7 @@
             "divider_HrJgFt",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "group_7JEExR",
+            "group_UCmyzy",
             "group_YVhwjF",
             "group_hQBpmd",
             "accordion_NKWPiW"
@@ -1375,7 +1388,7 @@
         "equal_columns": true,
         "limit_details_width": true,
         "gap": 0,
-        "color_scheme": "",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "padding-block-start": 0,
         "padding-block-end": 32
       }
@@ -1475,15 +1488,15 @@
         "corner_radius_value": 16,
         "nav_icon": "large_arrows",
         "nav_icon_background": "circle",
-        "nav_color_scheme": "",
+        "nav_color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "auto_play": false,
         "auto_play_interval": 5000,
         "button_label": "I want to be featured",
         "button_link": "mailto:classes@repkaarts.com",
-        "button_style": "secondary",
+        "button_style": "primary",
         "button_alignment": "center",
         "button_open_new_tab": true,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "padding_top": 96,
         "padding_bottom": 96,
         "section_height": "auto",
@@ -1996,6 +2009,177 @@
         "padding-block-end": 48
       }
     },
+    "rich_testimonials_xrH63T": {
+      "type": "rich-testimonials",
+      "blocks": {
+        "review_PbTGUG": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_Jp6HjQ": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_JfiXLb": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_n88JPN": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_AqyiTj": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_URB9RH": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_kph4bP": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_tTyiaY": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_i3F8ef": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        },
+        "review_8qQUBM": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "title": "Excellent quality",
+            "text": "<p>Share what your customers are saying about your products or service.</p>",
+            "author_name": "Author's name",
+            "verified": true,
+            "author_location": "Los Angeles, CA",
+            "author_source": "via Google",
+            "date": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_PbTGUG",
+        "review_Jp6HjQ",
+        "review_JfiXLb",
+        "review_n88JPN",
+        "review_AqyiTj",
+        "review_URB9RH",
+        "review_kph4bP",
+        "review_tTyiaY",
+        "review_i3F8ef",
+        "review_8qQUBM"
+      ],
+      "settings": {
+        "heading": "Join our happy assistants",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "metaobject_handle": "event_testimonials",
+        "max_reviews": 7,
+        "columns_desktop": 2,
+        "color_scheme": "scheme-1",
+        "card_alignment": "left",
+        "card_alignment_mobile": "center",
+        "nav_icon": "large_arrows",
+        "nav_icon_background": "circle",
+        "nav_color_scheme": "",
+        "show_button_1": true,
+        "button_label_1": "Leave a review",
+        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
+        "button_style_1": "secondary",
+        "show_button_2": false,
+        "button_label_2": "Find your art piece",
+        "button_link_2": "shopify://collections",
+        "button_style_2": "secondary",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
     "product_list_BwXbNm": {
       "type": "product-list",
       "blocks": {
@@ -2046,7 +2230,7 @@
                 "label": "View all events",
                 "link": "shopify://collections/art-events",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "width": "fit-content",
                 "custom_width": 100,
                 "width_mobile": "fit-content",
@@ -2249,20 +2433,35 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 24,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "padding-block-start": 96,
         "padding-block-end": 96
       }
     },
-    "product_list_RmCzYK": {
+    "product_list_y7KRxF": {
       "type": "product-list",
       "blocks": {
+        "button_eDHpmi": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Show latest",
+            "link": "shopify://collections/season-highlights",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        },
         "static-header": {
           "type": "_product-list-content",
           "name": "t:names.header",
           "static": true,
           "settings": {
-            "content_direction": "row",
+            "content_direction": "column",
             "vertical_on_mobile": false,
             "horizontal_alignment": "space-between",
             "vertical_alignment": "flex-end",
@@ -2286,19 +2485,46 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 16,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_list_text_8cpVit": {
+            "product_list_text_nnb4Ec": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
                 "text": "<h2>You might be interested</h2>",
-                "width": "100%",
+                "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "center",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_JmrcMg": {
+              "type": "text",
+              "name": "t:names.text",
+              "disabled": true,
+              "settings": {
+                "text": "<p>New studio paintings. One-of-a-kind pieces from the Málaga studio.</p>",
+                "width": "fit-content",
+                "max_width": "none",
+                "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -2317,7 +2543,7 @@
               },
               "blocks": {}
             },
-            "product_list_button_NkPeYY": {
+            "product_list_button_BWwHyj": {
               "type": "_product-list-button",
               "name": "t:names.product_list_button",
               "disabled": true,
@@ -2334,8 +2560,9 @@
             }
           },
           "block_order": [
-            "product_list_text_8cpVit",
-            "product_list_button_NkPeYY"
+            "product_list_text_nnb4Ec",
+            "text_JmrcMg",
+            "product_list_button_BWwHyj"
           ]
         },
         "static-product-card": {
@@ -2351,12 +2578,12 @@
             "border_opacity": 100,
             "border_radius": 0,
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 24,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "product_card_gallery_4mJbWx": {
+            "product_card_gallery_ahMPYC": {
               "type": "_product-card-gallery",
               "name": "t:names.product_card_media",
               "settings": {
@@ -2372,7 +2599,7 @@
               },
               "blocks": {}
             },
-            "product_title_e8NHnx": {
+            "product_title_gVgQye": {
               "type": "product-title",
               "name": "t:names.product_title",
               "settings": {
@@ -2381,7 +2608,7 @@
                 "alignment": "left",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
-                "font_size": "",
+                "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
@@ -2397,7 +2624,7 @@
               },
               "blocks": {}
             },
-            "price_eQa3p8": {
+            "price_amzVbE": {
               "type": "price",
               "name": "t:names.product_price",
               "settings": {
@@ -2422,12 +2649,15 @@
             }
           },
           "block_order": [
-            "product_card_gallery_4mJbWx",
-            "product_title_e8NHnx",
-            "price_eQa3p8"
+            "product_card_gallery_ahMPYC",
+            "product_title_gVgQye",
+            "price_amzVbE"
           ]
         }
       },
+      "block_order": [
+        "button_eDHpmi"
+      ],
       "name": "Featured collection: Season highlights",
       "settings": {
         "collection": "season-highlights",
@@ -2442,9 +2672,9 @@
         "icons_style": "arrows_large",
         "icons_shape": "circle",
         "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "center",
         "gap": 24,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-c49d593a-b378-40e1-a60e-fe4420a6d831",
         "padding-block-start": 96,
         "padding-block-end": 96
       }
@@ -2541,177 +2771,6 @@
         "card_border_color": "#0000001a",
         "padding_top": 80,
         "padding_bottom": 80
-      }
-    },
-    "rich_testimonials_xrH63T": {
-      "type": "rich-testimonials",
-      "blocks": {
-        "review_PbTGUG": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_Jp6HjQ": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_JfiXLb": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_n88JPN": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_AqyiTj": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_URB9RH": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_kph4bP": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_tTyiaY": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_i3F8ef": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        },
-        "review_8qQUBM": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "title": "Excellent quality",
-            "text": "<p>Share what your customers are saying about your products or service.</p>",
-            "author_name": "Author's name",
-            "verified": true,
-            "author_location": "Los Angeles, CA",
-            "author_source": "via Google",
-            "date": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_PbTGUG",
-        "review_Jp6HjQ",
-        "review_JfiXLb",
-        "review_n88JPN",
-        "review_AqyiTj",
-        "review_URB9RH",
-        "review_kph4bP",
-        "review_tTyiaY",
-        "review_i3F8ef",
-        "review_8qQUBM"
-      ],
-      "settings": {
-        "heading": "Join our happy assistants",
-        "heading_size": "h2",
-        "heading_alignment": "center",
-        "metaobject_handle": "event_testimonials",
-        "max_reviews": 7,
-        "columns_desktop": 2,
-        "color_scheme": "scheme-1",
-        "card_alignment": "left",
-        "card_alignment_mobile": "center",
-        "nav_icon": "large_arrows",
-        "nav_icon_background": "circle",
-        "nav_color_scheme": "",
-        "show_button_1": true,
-        "button_label_1": "Leave a review",
-        "button_link_1": "https://g.page/r/CayzyjuKe2f6EBM/review",
-        "button_style_1": "secondary",
-        "show_button_2": false,
-        "button_label_2": "Find your art piece",
-        "button_link_2": "shopify://collections",
-        "button_style_2": "secondary",
-        "padding_top": 96,
-        "padding_bottom": 96
       }
     },
     "section_x7TiLw": {
@@ -3116,7 +3175,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+        "color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
@@ -3137,10 +3196,10 @@
     "main",
     "image_carousel_TJREp4",
     "section_wnNPbw",
-    "product_list_BwXbNm",
-    "product_list_RmCzYK",
-    "reviews_carousel_new_pPXRhY",
     "rich_testimonials_xrH63T",
+    "product_list_BwXbNm",
+    "product_list_y7KRxF",
+    "reviews_carousel_new_pPXRhY",
     "section_x7TiLw"
   ]
 }
