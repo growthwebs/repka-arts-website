@@ -317,7 +317,7 @@
                   "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
                   "settings": {
                     "form_id": "719693",
-                    "text_color": "#1d3485",
+                    "text_color": "#181e25",
                     "button_background_color": "#1d3485",
                     "button_label_color": "#ffffff",
                     "links_color": "#2a4ac0",
