@@ -71,7 +71,7 @@
     "show_installments": false,
     "cart_drawer_fallback_collection": "cups-vases",
     "cart_drawer_show_banner": true,
-    "cart_drawer_banner_color_scheme": "scheme-3",
+    "cart_drawer_banner_color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
     "cart_drawer_banner_font_size": 12,
     "cart_drawer_banner_icon_size": 16,
     "cart_drawer_banner_text": "Enjoy 10% OFF your first purchase with WELCOME10",
@@ -80,7 +80,7 @@
     "show_accelerated_checkout_buttons": false,
     "cart_thumbnail_border": "none",
     "cart_thumbnail_border_radius": 16,
-    "drawer_color_scheme": "scheme-363b50d0-0bde-4841-9c38-462c971ae4c5",
+    "drawer_color_scheme": "scheme-8526a979-7420-41a6-9de1-e1f8bd266b40",
     "drawer_border": "none",
     "icon_stroke": "thin",
     "input_border_width": 1,
@@ -182,6 +182,18 @@
                 },
                 "blocks": {}
               },
+              "icon_ChqExY": {
+                "type": "icon",
+                "name": "t:names.icon",
+                "settings": {
+                  "icon": "price_tag",
+                  "image_upload": "shopify://shop_images/amex_9c8a95e4-7fa1-4714-9bd3-1e153c9f99eb.svg",
+                  "width": 20,
+                  "link": "",
+                  "open_in_new_tab": false
+                },
+                "blocks": {}
+              },
               "icon_XAiALU": {
                 "type": "icon",
                 "name": "t:names.icon",
@@ -234,6 +246,7 @@
             "block_order": [
               "icon_DfTxw6",
               "icon_dgR7yR",
+              "icon_ChqExY",
               "icon_XAiALU",
               "icon_WVKz6t",
               "icon_LBzPQ9",
