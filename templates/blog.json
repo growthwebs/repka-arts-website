@@ -681,7 +681,7 @@
                     "text_color": "#1d3485",
                     "button_background_color": "#1d3485",
                     "button_label_color": "#ffffff",
-                    "links_color": "#2a4ac0",
+                    "links_color": "#ffffff",
                     "errors_color": "#e02229",
                     "text_alignment": "center",
                     "form_alignment": "center",
