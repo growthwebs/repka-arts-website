@@ -1400,7 +1400,7 @@
       },
       "name": "t:names.blog_posts_carousel",
       "settings": {
-        "blog": "news",
+        "blog": "journal",
         "layout_type": "carousel",
         "carousel_on_mobile": true,
         "post_limit": 8,
@@ -1426,7 +1426,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "Read all stories",
-            "link": "shopify://blogs/news",
+            "link": "shopify://blogs/journal",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "width": "fit-content",
