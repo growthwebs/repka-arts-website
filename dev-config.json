@@ -1,8 +1,8 @@
 {
   "shopify": {
     "store": "ipvqw0-j9.myshopify.com",
-    "theme_id_dev": "193033601288",
-    "theme_id_live": "193003913480",
+    "theme_id_dev": "193035895048",
+    "theme_id_live": "193035174152",
     "port": 3005,
     "live_reload": true
   },
