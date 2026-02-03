@@ -52,12 +52,26 @@
             "case": "none"
           },
           "blocks": {}
+        },
+        "announcement_QgbWcz": {
+          "type": "_announcement",
+          "settings": {
+            "text": "Visit the academy",
+            "link": "https://academy.repkaarts.com",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "announcement_NtGbWV",
         "announcement_6VKV9k",
-        "announcement_JwikWT"
+        "announcement_JwikWT",
+        "announcement_QgbWcz"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
