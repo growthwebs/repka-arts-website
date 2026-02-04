@@ -39,7 +39,7 @@
           "type": "text",
           "name": "hero-headline",
           "settings": {
-            "text": "<p>Art for Living</p>",
+            "text": "<p>Art for <em>Living</em></p>",
             "width": "fit-content",
             "max_width": "none",
             "alignment": "center",
@@ -620,7 +620,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>Fresh from the Easel</h2>",
+                "text": "<h2><em>Fresh</em> from the Easel</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -872,7 +872,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Captured in a Moment.</h2>",
+                "text": "<h2>Captured in a <em>Moment</em>.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1020,7 +1020,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Not just a Cup. A Ritual.</h2>",
+                "text": "<h2>Not just a <em>Cup</em>. A Ritual.</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1285,7 +1285,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>Museum-quality giclée prints</h2>",
+                    "text": "<h2>Museum-quality <em>giclée prints</em></h2>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1783,7 +1783,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Paint, Sip & Socialize</p>",
+                "text": "<p><em>Paint</em>, Sip & Socialize</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -2887,7 +2887,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Give the Mediterranean</h2>",
+                "text": "<h2><em>Give</em> the Mediterranean</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -3037,7 +3037,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Large Scale & Commissions</h2>",
+                "text": "<h2>Large Scale & <em>Commissions</em></h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
