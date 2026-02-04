@@ -172,7 +172,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>Art for Living</h2>",
+            "text": "<h2>Art for <em>Living</em></h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -374,7 +374,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<p>Made by Hand</p>",
+                "text": "<p>Made by <em>Hand</em></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "center",
@@ -553,7 +553,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1>Meet Maryna</h1>",
+                "text": "<h1>Meet <em>Maryna</em></h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -685,7 +685,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>The Atelier</h2>",
+            "text": "<h2>The <em>Atelier</em></h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -830,7 +830,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Made in Málaga</h2>",
+                "text": "<h2>Made in <em>Málaga</em></h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1042,7 +1042,7 @@
           "name": "t:names.title",
           "static": true,
           "settings": {
-            "text": "<h3>The artist's journal</h3>",
+            "text": "<h3>The artist's <em>journal</em></h3>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
