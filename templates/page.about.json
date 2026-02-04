@@ -236,7 +236,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2><em>Maryna</em> <em>Riepnova</em></h2>",
+            "text": "<h2>Maryna <em>Riepnova</em></h2>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
