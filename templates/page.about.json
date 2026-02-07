@@ -604,7 +604,7 @@
               "type": "button",
               "settings": {
                 "label": "View artist portfolio",
-                "link": "https://www.marynariepnova.com/",
+                "link": "https://www.marynariepnova.com/the-artist",
                 "open_in_new_tab": true,
                 "style_class": "button",
                 "width": "fit-content",
